@@ -1,4 +1,5 @@
 import officialRecordsJson from "./judicial-fourth-questions.json";
+import { buildOfficialAnalysis } from "./judicial-fourth-analyses";
 
 export type Question = {
   id: string;
@@ -28,7 +29,7 @@ export type Question = {
     conclusion: string;
     trap: string;
   };
-  statutes: { article: string; text: string; url: string }[];
+  statutes: { article: string; lawName?: string; text: string; url: string }[];
 };
 
 const lawUrl = (article: string) =>
@@ -247,14 +248,19 @@ type OfficialQuestionRecord = {
 
 const officialQuestions: Question[] = (
   officialRecordsJson as OfficialQuestionRecord[]
-).map((record) => ({
-  ...record,
-  category: "待分類" as const,
-  type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
-  difficulty: "進階" as const,
-  source: `${record.rocYear} 年司法特考四等｜${record.subject}｜第 ${record.officialQuestionNumber} 題`,
-  statutes: [],
-})).sort(
+).map((record) => {
+  const explanation = buildOfficialAnalysis(record);
+  return {
+    ...record,
+    category: "待分類" as const,
+    type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
+    difficulty: "進階" as const,
+    source: `${record.rocYear} 年司法特考四等｜${record.subject}｜第 ${record.officialQuestionNumber} 題`,
+    confidence: explanation?.confidence,
+    analysis: explanation?.analysis,
+    statutes: explanation?.statutes ?? [],
+  };
+}).sort(
   (left, right) =>
     (right.rocYear ?? 0) - (left.rocYear ?? 0) ||
     (left.officialQuestionNumber ?? 0) - (right.officialQuestionNumber ?? 0),

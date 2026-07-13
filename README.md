@@ -16,7 +16,7 @@
 
 目前已收錄民國 105–114 年司法特考四等「民法概要」全部官方試題：175 題選擇題與 26 題申論題。105–107 年為全申論；108 年起為 2 題申論加 25 題選擇。另保留 10 題自行編寫且明確標示的示範題。
 
-民國 112、113 年第 24 題依考選部更正答案標為一律給分。考選部未提供官方解析，因此考古題目前只顯示官方答案與來源 PDF；解析會在逐題人工複核後再補上。
+175 題選擇題均已補上「題目在問什麼、法律規則、套入本題、結論、常見誤區與相關法條」。民國 112、113 年第 24 題依考選部更正答案標為一律給分，並說明無法形成唯一正解的原因。民國 108 年利率上限與 111 年成年年齡題依命題時法解析，另行提示現行法差異。
 
 ## 本機使用
 
@@ -42,7 +42,10 @@ npm run lint
 
 - 題庫：`app/data/questions.ts`
 - 司法四等官方題庫：`app/data/judicial-fourth-questions.json`
+- 逐年選擇題解析：`app/data/analyses/`
+- 民法完整條文索引：`app/data/civil-code-articles.json`
 - 考選部 PDF 匯入器：`scripts/import-moex-judicial-fourth.py`
+- 民法條文更新工具：`scripts/import-civil-code.py`
 - 本機進度介面：`app/lib/progress-store.ts`
 - 主要互動：`app/page.tsx`
 

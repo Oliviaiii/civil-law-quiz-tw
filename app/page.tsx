@@ -513,14 +513,14 @@ function QuestionCard({
                   <p className="eyebrow">相關法條</p>
                   {question.statutes.map((statute) => (
                     <a key={statute.article} href={statute.url} target="_blank" rel="noreferrer">
-                      <span>民法第 {statute.article} 條</span>
+                      <span>{statute.lawName ?? "民法"}第 {statute.article} 條</span>
                       <p>{statute.text}</p>
                       <b>查看官方條文 ↗</b>
                     </a>
                   ))}
                 </div>
               )}
-              <p className="verification-note">本題為自行編寫之示範題，解析已依官方法條複核；個案仍可能因事實細節而有不同判斷。</p>
+              <p className="verification-note">答案以考選部公告為準；解析由本站依命題時法、官方法條及實務資料自行整理，遇修法題已另行註明。</p>
             </>
           ) : (
             <div className="official-answer-note">

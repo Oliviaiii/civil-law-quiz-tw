@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -32,7 +32,7 @@ test("server-renders the civil law practice experience", async () => {
 });
 
 test("keeps questions and local progress behind replaceable data modules", async () => {
-  const [page, questions, officialData, progress, layout, packageJson, css] = await Promise.all([
+  const [page, questions, officialData, progress, layout, packageJson, css, analysisModule, civilCode] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data/questions.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/judicial-fourth-questions.json", import.meta.url), "utf8"),
@@ -40,6 +40,8 @@ test("keeps questions and local progress behind replaceable data modules", async
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/judicial-fourth-analyses.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/civil-code-articles.json", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /loadProgress\(\)/);
@@ -52,6 +54,8 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(questions, /export const questions: Question\[\]/);
   assert.equal((questions.match(/id: "demo-/g) ?? []).length, 10);
   assert.match(questions, /officialQuestionCount/);
+  assert.match(analysisModule, /buildOfficialAnalysis/);
+  assert.match(analysisModule, /officialAnalysisCount/);
 
   const records = JSON.parse(officialData);
   assert.equal(records.length, 201);
@@ -68,6 +72,24 @@ test("keeps questions and local progress behind replaceable data modules", async
     ["judicial-fourth-112-mcq-24", "judicial-fourth-113-mcq-24"],
   );
   assert.ok(records.every((item) => item.sourceUrl.includes("wwwq.moex.gov.tw")));
+  const analysisFiles = await readdir(new URL("../app/data/analyses/", import.meta.url));
+  const analyses = Object.assign(
+    {},
+    ...await Promise.all(
+      analysisFiles.map(async (file) =>
+        JSON.parse(await readFile(new URL(`../app/data/analyses/${file}`, import.meta.url), "utf8")),
+      ),
+    ),
+  );
+  assert.equal(Object.keys(analyses).length, 175);
+  assert.deepEqual(
+    new Set(Object.keys(analyses)),
+    new Set(records.filter((item) => item.format === "選擇題").map((item) => item.id)),
+  );
+  assert.ok(Object.values(analyses).every((item) =>
+    item.issue && item.rule && item.application && item.trap && item.articles.length > 0
+  ));
+  assert.equal(Object.keys(JSON.parse(civilCode).articles).length, 1439);
   assert.match(progress, /localStorage/);
   assert.match(progress, /civil-law-quiz-tw:progress:v2/);
   assert.match(progress, /LEGACY_PROGRESS_STORAGE_KEY = "civil-law-quiz-tw:progress:v1"/);
