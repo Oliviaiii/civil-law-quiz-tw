@@ -1,5 +1,9 @@
 import officialRecordsJson from "./judicial-fourth-questions.json";
+import criminalRecordsJson from "./criminal-law-questions.json";
 import { buildOfficialAnalysis } from "./judicial-fourth-analyses";
+import { buildCriminalAnalysis } from "./criminal-law-analyses";
+
+export type StudySubject = "民法" | "刑法";
 
 export type Question = {
   id: string;
@@ -15,11 +19,14 @@ export type Question = {
   gregorianYear?: number;
   exam?: string;
   subject?: string;
+  studySubject: StudySubject;
+  paper?: "civil-law-summary" | "criminal-law-summary";
   officialQuestionNumber?: number;
   applicableCategories?: string[];
   prompt: string;
   options: string[];
   answer: number | null;
+  acceptedAnswers?: number[];
   allCredit?: boolean;
   confidence?: "高" | "中";
   analysis?: {
@@ -35,7 +42,7 @@ export type Question = {
 const lawUrl = (article: string) =>
   `https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=${article}`;
 
-const demoQuestions: Question[] = [
+const demoQuestions: Omit<Question, "studySubject">[] = [
   {
     id: "demo-001",
     category: "總則",
@@ -234,6 +241,8 @@ type OfficialQuestionRecord = {
   rocYear: number;
   gregorianYear: number;
   subject: string;
+  studySubject?: StudySubject;
+  paper?: "civil-law-summary" | "criminal-law-summary";
   applicableCategories: string[];
   sourceUrl: string;
   format: "選擇題" | "申論題";
@@ -241,17 +250,24 @@ type OfficialQuestionRecord = {
   prompt: string;
   options: string[];
   answer: number | null;
+  acceptedAnswers?: number[];
   allCredit: boolean;
   answerSource: string | null;
   answerUrl: string | null;
 };
 
-const officialQuestions: Question[] = (
+const civilOfficialQuestions: Question[] = (
   officialRecordsJson as OfficialQuestionRecord[]
 ).map((record) => {
-  const explanation = buildOfficialAnalysis(record);
-  return {
+  const normalized = {
     ...record,
+    studySubject: "民法" as const,
+    paper: "civil-law-summary" as const,
+    acceptedAnswers: record.answer === null ? [] : [record.answer],
+  };
+  const explanation = buildOfficialAnalysis(normalized);
+  return {
+    ...normalized,
     category: "待分類" as const,
     type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
     difficulty: "進階" as const,
@@ -260,15 +276,40 @@ const officialQuestions: Question[] = (
     analysis: explanation?.analysis,
     statutes: explanation?.statutes ?? [],
   };
-}).sort(
+});
+
+const criminalOfficialQuestions: Question[] = (
+  criminalRecordsJson as OfficialQuestionRecord[]
+).map((record) => {
+  const explanation = buildCriminalAnalysis(record);
+  return {
+    ...record,
+    studySubject: "刑法" as const,
+    paper: "criminal-law-summary" as const,
+    category: "待分類" as const,
+    type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
+    difficulty: "進階" as const,
+    source: `${record.rocYear} 年司法特考四等｜${record.subject}｜第 ${record.officialQuestionNumber} 題`,
+    confidence: explanation?.confidence,
+    analysis: explanation?.analysis,
+    statutes: explanation?.statutes ?? [],
+  };
+});
+
+const officialQuestions = [...civilOfficialQuestions, ...criminalOfficialQuestions].sort(
   (left, right) =>
     (right.rocYear ?? 0) - (left.rocYear ?? 0) ||
+    left.studySubject.localeCompare(right.studySubject, "zh-Hant") ||
     (left.officialQuestionNumber ?? 0) - (right.officialQuestionNumber ?? 0),
 );
 
 export const questions: Question[] = [
   ...officialQuestions,
-  ...demoQuestions.map((question) => ({ ...question, format: "選擇題" as const })),
+  ...demoQuestions.map((question) => ({
+    ...question,
+    studySubject: "民法" as const,
+    format: "選擇題" as const,
+  })),
 ];
 
 export const officialQuestionCount = officialQuestions.length;
@@ -278,3 +319,16 @@ export const officialMultipleChoiceCount = officialQuestions.filter(
 export const officialEssayCount = officialQuestions.filter(
   (question) => question.format === "申論題",
 ).length;
+
+export const officialCountsBySubject = Object.fromEntries(
+  (["民法", "刑法"] as StudySubject[]).map((studySubject) => {
+    const subjectQuestions = officialQuestions.filter(
+      (question) => question.studySubject === studySubject,
+    );
+    return [studySubject, {
+      total: subjectQuestions.length,
+      multipleChoice: subjectQuestions.filter((question) => question.format === "選擇題").length,
+      essay: subjectQuestions.filter((question) => question.format === "申論題").length,
+    }];
+  }),
+) as Record<StudySubject, { total: number; multipleChoice: number; essay: number }>;

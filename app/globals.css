@@ -131,7 +131,7 @@ button { color: inherit; }
 .result-summary span, .result-summary small { display: block; color: var(--muted); font-size: 10px; letter-spacing: .12em; }
 .result-summary strong { display: block; font-family: Georgia, serif; font-size: 36px; line-height: 1.15; }
 
-.filters { min-height: 54px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.filters { min-height: 54px; margin-bottom: 16px; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
 .segmented { display: flex; padding: 3px; border: 1px solid var(--line); background: #ebe6dd; border-radius: 8px; }
 .segmented button { border: 0; background: transparent; padding: 7px 13px; color: var(--muted); font-size: 12px; border-radius: 5px; cursor: pointer; }
 .segmented button.selected { background: var(--surface); color: var(--ink); font-weight: 700; box-shadow: 0 2px 8px rgba(60,50,38,.08); }
@@ -142,6 +142,7 @@ button { color: inherit; }
 .question-meta { padding: 24px 28px 14px; display: flex; justify-content: space-between; align-items: center; }
 .tag { display: inline-block; padding: 4px 9px; margin-right: 5px; border-radius: 3px; font-size: 10px; font-weight: 800; letter-spacing: .06em; }
 .tag.category { background: var(--navy); color: white; }
+.tag.subject { background: #f4e4dc; color: var(--accent-dark); }
 .tag.type { background: #edf1f2; color: var(--navy); }
 .tag.type.case { background: #f7e6df; color: var(--accent-dark); }
 .tag.difficulty { border: 1px solid var(--line); color: var(--muted); }

@@ -2,30 +2,35 @@ import assert from "node:assert/strict";
 import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 
-test("builds the civil law practice experience as static HTML", async () => {
+test("builds the Court Clerk multi-subject practice experience as static HTML", async () => {
   const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
   assert.match(html, /<html lang="zh-Hant">/);
-  assert.match(html, /<title>民法研習室｜法院書記官民法考古題練習<\/title>/);
+  assert.match(html, /<title>書記官研習室｜司法特考四等民刑法考古題<\/title>/);
   assert.match(html, /近十年法院書記官民法考古題/);
   assert.match(html, /民國 105–114 年司法特考四等官方試題/);
   assert.match(html, /錯題本/);
   assert.match(html, /學習紀錄/);
+  assert.match(html, /<option[^>]*>刑法<\/option>/);
   assert.match(html, /<strong>201<\/strong>/);
   assert.match(html, /175[\s\S]*選擇＋[\s\S]*26[\s\S]*申論/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
 test("keeps questions and local progress behind replaceable data modules", async () => {
-  const [page, questions, officialData, progress, layout, packageJson, css, analysisModule, civilCode] = await Promise.all([
+  const [page, questions, officialData, criminalData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, civilCode, criminalCode, criminalImporter] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data/questions.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/judicial-fourth-questions.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/criminal-law-questions.json", import.meta.url), "utf8"),
     readFile(new URL("../app/lib/progress-store.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/data/judicial-fourth-analyses.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/criminal-law-analyses.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/civil-code-articles.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/criminal-code-articles.json", import.meta.url), "utf8"),
+    readFile(new URL("../scripts/import-moex-criminal-law.py", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /loadProgress\(\)/);
@@ -41,6 +46,8 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(questions, /export const questions: Question\[\]/);
   assert.equal((questions.match(/id: "demo-/g) ?? []).length, 10);
   assert.match(questions, /officialQuestionCount/);
+  assert.match(questions, /officialCountsBySubject/);
+  assert.match(questions, /criminalRecordsJson/);
   assert.match(analysisModule, /buildOfficialAnalysis/);
   assert.match(analysisModule, /officialAnalysisCount/);
 
@@ -60,10 +67,11 @@ test("keeps questions and local progress behind replaceable data modules", async
   );
   assert.ok(records.every((item) => item.sourceUrl.includes("wwwq.moex.gov.tw")));
   const analysisFiles = await readdir(new URL("../app/data/analyses/", import.meta.url));
+  const civilAnalysisFiles = analysisFiles.filter((file) => file.startsWith("judicial-fourth-"));
   const analyses = Object.assign(
     {},
     ...await Promise.all(
-      analysisFiles.map(async (file) =>
+      civilAnalysisFiles.map(async (file) =>
         JSON.parse(await readFile(new URL(`../app/data/analyses/${file}`, import.meta.url), "utf8")),
       ),
     ),
@@ -77,6 +85,53 @@ test("keeps questions and local progress behind replaceable data modules", async
     item.issue && item.rule && item.application && item.trap && item.articles.length > 0
   ));
   assert.equal(Object.keys(JSON.parse(civilCode).articles).length, 1439);
+  const criminalRecords = JSON.parse(criminalData);
+  assert.equal(criminalRecords.length, 201);
+  assert.equal(criminalRecords.filter((item) => item.format === "選擇題").length, 175);
+  assert.equal(criminalRecords.filter((item) => item.format === "申論題").length, 26);
+  assert.equal(new Set(criminalRecords.map((item) => item.id)).size, 201);
+  assert.ok(criminalRecords.every((item) => item.studySubject === "刑法"));
+  for (let year = 108; year <= 114; year += 1) {
+    assert.equal(
+      criminalRecords.filter((item) => item.rocYear === year && item.format === "選擇題").length,
+      25,
+    );
+  }
+  assert.deepEqual(
+    criminalRecords.filter((item) => item.allCredit).map((item) => item.id),
+    ["judicial-fourth-111-criminal-law-mcq-11"],
+  );
+  assert.deepEqual(
+    criminalRecords.find((item) => item.id === "judicial-fourth-112-criminal-law-mcq-16").acceptedAnswers,
+    [2, 3],
+  );
+  assert.deepEqual(
+    criminalRecords.find((item) => item.id === "judicial-fourth-113-criminal-law-mcq-22").acceptedAnswers,
+    [1, 3],
+  );
+  assert.ok(criminalRecords.every((item) => item.sourceUrl.includes("wwwq.moex.gov.tw")));
+  assert.match(criminalAnalysisModule, /criminalAnalysisCount/);
+  const criminalAnalysisFiles = analysisFiles.filter((file) => file.startsWith("criminal-law-"));
+  const criminalAnalyses = Object.assign(
+    {},
+    ...await Promise.all(
+      criminalAnalysisFiles.map(async (file) =>
+        JSON.parse(await readFile(new URL(`../app/data/analyses/${file}`, import.meta.url), "utf8")),
+      ),
+    ),
+  );
+  assert.equal(Object.keys(criminalAnalyses).length, 175);
+  assert.deepEqual(
+    new Set(Object.keys(criminalAnalyses)),
+    new Set(criminalRecords.filter((item) => item.format === "選擇題").map((item) => item.id)),
+  );
+  assert.ok(Object.values(criminalAnalyses).every((item) =>
+    item.issue && item.rule && item.application && item.trap && item.articles.length > 0
+  ));
+  assert.equal(Object.keys(JSON.parse(criminalCode).articles).length, 422);
+  assert.match(criminalImporter, /answer_type = "M" if valid_pdf\(corrected\) else "S"/);
+  assert.match(criminalImporter, /accepted\[16\] = \[2, 3\]/);
+  assert.match(criminalImporter, /accepted\[22\] = \[1, 3\]/);
   assert.match(progress, /localStorage/);
   assert.match(progress, /civil-law-quiz-tw:progress:v2/);
   assert.match(progress, /LEGACY_PROGRESS_STORAGE_KEY = "civil-law-quiz-tw:progress:v1"/);

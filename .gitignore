@@ -44,3 +44,7 @@ next-env.d.ts
 /tmp/
 /.playwright-cli/
 /work/
+
+# python tooling
+__pycache__/
+*.py[cod]
