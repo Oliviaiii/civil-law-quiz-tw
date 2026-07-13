@@ -17,12 +17,13 @@ type View = "practice" | "wrong" | "stats";
 type Scope = "all" | "unanswered" | "wrong";
 type Corpus = "司法特考四等" | "全部來源" | "示範題";
 type FormatFilter = "選擇題" | "申論題" | "全部題型";
-type SubjectFilter = "civil-law" | "criminal-law" | "constitution" | "all";
+type SubjectFilter = "civil-law" | "criminal-law" | "constitution" | "legal-introduction" | "all";
 
 const subjectLabels: Record<Exclude<SubjectFilter, "all">, string> = {
   "civil-law": "民法",
   "criminal-law": "刑法",
   constitution: "憲法",
+  "legal-introduction": "法學緒論",
 };
 
 const viewLabels: Record<View, string> = {
@@ -342,7 +343,7 @@ export default function Home() {
                     const nextSubject = event.target.value as SubjectFilter;
                     setReviewingId(null);
                     setSubjectFilter(nextSubject);
-                    if (nextSubject === "constitution") {
+                    if (nextSubject === "constitution" || nextSubject === "legal-introduction") {
                       setCorpus("司法特考四等");
                       setFormatFilter("選擇題");
                     }
@@ -350,6 +351,7 @@ export default function Home() {
                     <option value="civil-law">民法</option>
                     <option value="criminal-law">刑法</option>
                     <option value="constitution">憲法</option>
+                    <option value="legal-introduction">法學緒論</option>
                     <option value="all">全部科目</option>
                   </select>
                 </label>

@@ -1,11 +1,4 @@
-export type ConstitutionalReference = {
-  type: "statute" | "constitutional-decision" | "official-material";
-  title: string;
-  locator?: string;
-  url: string;
-  text?: string;
-  publishedAt?: string;
-};
+import type { Reference } from "./references";
 
 type ConstitutionQuestion = {
   id: string;
@@ -154,7 +147,7 @@ const fallbackRule: TopicRule = {
   article: "憲法本文及增修條文",
 };
 
-function statuteReference(rule: TopicRule): ConstitutionalReference {
+function statuteReference(rule: TopicRule): Reference {
   const amendments = rule.law === "amendments" || rule.article.includes("增修條文");
   return {
     type: "statute",
@@ -165,8 +158,8 @@ function statuteReference(rule: TopicRule): ConstitutionalReference {
   };
 }
 
-function decisionReferences(prompt: string): ConstitutionalReference[] {
-  const references: ConstitutionalReference[] = [];
+function decisionReferences(prompt: string): Reference[] {
+  const references: Reference[] = [];
   for (const match of prompt.matchAll(/釋字第\s*(\d+)\s*號/g)) {
     references.push({
       type: "constitutional-decision",

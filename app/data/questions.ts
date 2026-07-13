@@ -3,7 +3,9 @@ import criminalRecordsJson from "./criminal-law-questions.json";
 import combinedPaperRecordsJson from "./legal-knowledge-and-english-questions.json";
 import { buildOfficialAnalysis } from "./judicial-fourth-analyses";
 import { buildCriminalAnalysis } from "./criminal-law-analyses";
-import { buildConstitutionAnalysis, type ConstitutionalReference } from "./constitution-analyses";
+import { buildConstitutionAnalysis } from "./constitution-analyses";
+import { buildLegalIntroductionAnalysis } from "./legal-introduction-analyses";
+import type { Reference } from "./references";
 
 export type Subject =
   | "civil-law"
@@ -16,15 +18,6 @@ export type Paper =
   | "civil-law-summary"
   | "criminal-law-summary"
   | "legal-knowledge-and-english";
-
-export type Reference = ConstitutionalReference | {
-  type: "court-decision";
-  title: string;
-  locator?: string;
-  url: string;
-  text?: string;
-  publishedAt?: string;
-};
 
 export type Question = {
   id: string;
@@ -390,9 +383,42 @@ const constitutionQuestions: Question[] = (
       left.officialQuestionNumber - right.officialQuestionNumber,
   );
 
+const legalIntroductionQuestions: Question[] = (
+  combinedPaperRecordsJson as CombinedPaperRecord[]
+)
+  .filter((record) => record.subject === "legal-introduction")
+  .map((record) => {
+    const explanation = buildLegalIntroductionAnalysis(record);
+    return {
+      ...record,
+      subjectLabel: "法學緒論",
+      category: "待分類" as const,
+      type: "概念型" as const,
+      difficulty: "進階" as const,
+      source: `${record.rocYear} 年司法特考四等｜法學知識與英文｜官方第 ${record.officialQuestionNumber} 題`,
+      confidence: explanation.confidence,
+      analysis: explanation.analysis,
+      statutes: explanation.references
+        .filter((reference) => reference.type === "statute")
+        .map((reference) => ({
+          article: reference.locator ?? "相關規定",
+          lawName: reference.title,
+          text: reference.text ?? "請開啟官方來源核對命題時有效規定。",
+          url: reference.url,
+        })),
+      references: explanation.references,
+    };
+  })
+  .sort(
+    (left, right) =>
+      right.rocYear - left.rocYear ||
+      left.officialQuestionNumber - right.officialQuestionNumber,
+  );
+
 export const questions: Question[] = [
   ...officialQuestions,
   ...constitutionQuestions,
+  ...legalIntroductionQuestions,
   ...demoQuestions.map((question) => ({
     ...question,
     subject: "civil-law" as const,
@@ -409,7 +435,7 @@ export const questions: Question[] = [
   })),
 ];
 
-const allOfficialQuestions = [...officialQuestions, ...constitutionQuestions];
+const allOfficialQuestions = [...officialQuestions, ...constitutionQuestions, ...legalIntroductionQuestions];
 
 export const officialQuestionCount = allOfficialQuestions.length;
 export const officialMultipleChoiceCount = allOfficialQuestions.filter(
@@ -423,4 +449,5 @@ export const officialCountsBySubject = {
   "civil-law": civilOfficialQuestions.length,
   "criminal-law": criminalOfficialQuestions.length,
   constitution: constitutionQuestions.length,
+  "legal-introduction": legalIntroductionQuestions.length,
 } as const;
