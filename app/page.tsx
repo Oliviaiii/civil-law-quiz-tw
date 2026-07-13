@@ -232,7 +232,7 @@ export default function Home() {
           <span className="brand-mark">民</span>
           <span>
             <strong>民法研習室</strong>
-            <small>台灣民法選擇題練習</small>
+            <small>法院書記官民法考古題練習</small>
           </span>
         </button>
         <div className="top-progress" aria-label="整體進度">
@@ -292,8 +292,8 @@ export default function Home() {
               <div className="page-heading">
                 <div>
                   <p className="eyebrow">{view === "wrong" ? "REVIEW" : "PRACTICE"}</p>
-                  <h1>{view === "wrong" ? "把易錯題目集中重練" : "近十年司法四等民法考古題"}</h1>
-                  <p>民國 105–114 年官方試題；選擇題依考選部答案判定，申論題保留原題供閱讀與標記。</p>
+                  <h1>{view === "wrong" ? "把易錯題目集中重練" : "近十年法院書記官民法考古題"}</h1>
+                  <p>民國 105–114 年司法特考四等官方試題；選擇題依考選部答案判定，申論題保留原題供閱讀與標記。</p>
                 </div>
                 <div className="result-summary">
                   <span>官方考古題</span>
