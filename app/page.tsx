@@ -44,6 +44,7 @@ export default function Home() {
   const [formatFilter, setFormatFilter] = useState<FormatFilter>("選擇題");
   const [yearFilter, setYearFilter] = useState("全部年度");
   const [currentId, setCurrentId] = useState(questions[0].id);
+  const [reviewingId, setReviewingId] = useState<string | null>(null);
   const [progress, setProgress] = useState<ProgressData>(createEmptyProgress());
   const [ready, setReady] = useState(false);
   const [notice, setNotice] = useState("");
@@ -93,12 +94,17 @@ export default function Home() {
         yearFilter === "全部年度" || question.rocYear === Number(yearFilter);
       const scopeMatch =
         scope === "all" ||
-        (scope === "unanswered" && !answeredIds.includes(question.id)) ||
-        (scope === "wrong" && wrongIds.includes(question.id));
-      const viewMatch = view !== "wrong" || wrongIds.includes(question.id);
+        (scope === "unanswered" &&
+          (!answeredIds.includes(question.id) || question.id === reviewingId)) ||
+        (scope === "wrong" &&
+          (wrongIds.includes(question.id) || question.id === reviewingId));
+      const viewMatch =
+        view !== "wrong" ||
+        wrongIds.includes(question.id) ||
+        question.id === reviewingId;
       return corpusMatch && formatMatch && yearMatch && scopeMatch && viewMatch;
     });
-  }, [answeredIds, corpus, formatFilter, scope, view, wrongIds, yearFilter]);
+  }, [answeredIds, corpus, formatFilter, reviewingId, scope, view, wrongIds, yearFilter]);
 
   const currentQuestion =
     visibleQuestions.find((question) => question.id === currentId) ??
@@ -109,6 +115,7 @@ export default function Home() {
 
   function chooseAnswer(index: number) {
     if (!currentQuestion || currentQuestion.format === "申論題") return;
+    setReviewingId(currentQuestion.id);
     const isCorrect = Boolean(
       currentQuestion.allCredit || index === currentQuestion.answer,
     );
@@ -131,6 +138,7 @@ export default function Home() {
 
   function markEssayRead() {
     if (!currentQuestion || currentQuestion.format !== "申論題") return;
+    setReviewingId(currentQuestion.id);
     setProgress((previous) => {
       const oldAnswer = previous.answers[currentQuestion.id];
       return {
@@ -156,6 +164,7 @@ export default function Home() {
     const nextIndex =
       (currentIndex + direction + visibleQuestions.length) %
       visibleQuestions.length;
+    setReviewingId(null);
     setCurrentId(visibleQuestions[nextIndex].id);
     if (window.matchMedia("(max-width: 620px)").matches) {
       window.requestAnimationFrame(() => {
@@ -173,6 +182,7 @@ export default function Home() {
   }
 
   function startView(nextView: View) {
+    setReviewingId(null);
     setView(nextView);
     if (nextView === "wrong") setScope("wrong");
     if (nextView === "practice" && scope === "wrong") setScope("all");
@@ -298,7 +308,10 @@ export default function Home() {
                     <button
                       key={item}
                       className={scope === item ? "selected" : ""}
-                      onClick={() => setScope(item)}
+                      onClick={() => {
+                        setReviewingId(null);
+                        setScope(item);
+                      }}
                     >
                       {item === "all" ? "全部" : item === "unanswered" ? "未作答" : "曾答錯"}
                     </button>
@@ -306,7 +319,10 @@ export default function Home() {
                 </div>
                 <label>
                   <span className="sr-only">依題庫來源篩選</span>
-                  <select value={corpus} onChange={(event) => setCorpus(event.target.value as Corpus)}>
+                  <select value={corpus} onChange={(event) => {
+                    setReviewingId(null);
+                    setCorpus(event.target.value as Corpus);
+                  }}>
                     <option>司法特考四等</option>
                     <option>全部來源</option>
                     <option>示範題</option>
@@ -314,7 +330,10 @@ export default function Home() {
                 </label>
                 <label>
                   <span className="sr-only">依題型篩選</span>
-                  <select value={formatFilter} onChange={(event) => setFormatFilter(event.target.value as FormatFilter)}>
+                  <select value={formatFilter} onChange={(event) => {
+                    setReviewingId(null);
+                    setFormatFilter(event.target.value as FormatFilter);
+                  }}>
                     <option>選擇題</option>
                     <option>申論題</option>
                     <option>全部題型</option>
@@ -322,7 +341,10 @@ export default function Home() {
                 </label>
                 <label>
                   <span className="sr-only">依年度篩選</span>
-                  <select value={yearFilter} onChange={(event) => setYearFilter(event.target.value)}>
+                  <select value={yearFilter} onChange={(event) => {
+                    setReviewingId(null);
+                    setYearFilter(event.target.value);
+                  }}>
                     <option>全部年度</option>
                     {years.map((year) => <option key={year} value={year}>{year} 年</option>)}
                   </select>

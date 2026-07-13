@@ -50,6 +50,9 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(page, /importProgress/);
   assert.match(page, /question\.analysis\.application/);
   assert.match(page, /question-quick-nav/);
+  assert.match(page, /setReviewingId\(currentQuestion\.id\)/);
+  assert.match(page, /question\.id === reviewingId/);
+  assert.match(page, /setReviewingId\(null\)/);
   assert.match(page, /官方答案 PDF/);
   assert.match(questions, /export const questions: Question\[\]/);
   assert.equal((questions.match(/id: "demo-/g) ?? []).length, 10);
