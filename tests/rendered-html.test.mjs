@@ -69,7 +69,9 @@ test("keeps questions and local progress behind replaceable data modules", async
   );
   assert.ok(records.every((item) => item.sourceUrl.includes("wwwq.moex.gov.tw")));
   assert.match(progress, /localStorage/);
-  assert.match(progress, /civil-law-quiz-tw:progress:v1/);
+  assert.match(progress, /civil-law-quiz-tw:progress:v2/);
+  assert.match(progress, /LEGACY_PROGRESS_STORAGE_KEY = "civil-law-quiz-tw:progress:v1"/);
+  assert.match(progress, /id\.startsWith\("judicial-fourth-"\)/);
   assert.match(layout, /lang="zh-Hant"/);
   assert.match(css, /position: fixed;[\s\S]*bottom: 0;[\s\S]*env\(safe-area-inset-bottom\)/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);

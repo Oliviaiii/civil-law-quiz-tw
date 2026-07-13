@@ -11,6 +11,7 @@ import {
 import {
   createEmptyProgress,
   loadProgress,
+  parseProgress,
   saveProgress,
   type ProgressData,
 } from "./lib/progress-store";
@@ -194,10 +195,7 @@ export default function Home() {
     const file = event.target.files?.[0];
     if (!file) return;
     try {
-      const data = JSON.parse(await file.text()) as ProgressData;
-      if (data.version !== 1 || typeof data.answers !== "object") {
-        throw new Error("invalid");
-      }
+      const data = parseProgress(JSON.parse(await file.text()));
       setProgress(data);
       setNotice("學習紀錄已匯入");
     } catch {
