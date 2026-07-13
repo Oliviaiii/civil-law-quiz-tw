@@ -1,15 +1,15 @@
-# 民法研習室
+# 書記官研習室
 
 **正式前台：** <https://oliviaiii1224.github.io/civil-law-quiz-tw/>
 
-台灣民法考古題的純前端練習工具。本專案的主要使用者與產品設計基準是準備**司法特考四等法院書記官**的考生；題庫雖也保留執達員、執行員等共同適用類科標示，但功能取捨、題目編排與解析深度均優先服務法院書記官備考需求。
+司法特考四等法院書記官考古題的純前端練習工具。本專案的主要使用者與產品設計基準是準備**司法特考四等法院書記官**的考生；功能取捨、題目編排與解析深度均優先服務法院書記官備考需求。
 
 第一版聚焦在作答、官方答案核對、錯題本與本機進度保存，不需要帳號或資料庫。
 
 ## 科目範圍
 
-- 已上線：民法。
-- 下一階段：[刑法（#1）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/1)、[憲法（#2）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/2)、[法學緒論（#3）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/3)、[英文（#4）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/4)。
+- 已上線：民法、刑法。
+- 下一階段：[憲法（#2）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/2)、[法學緒論（#3）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/3)、[英文（#4）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/4)。
 
 上述五個模組是目前產品規劃範圍，不等於法院書記官完整應試科目；官方另列國文、行政法概要及民事訴訟法概要與刑事訴訟法概要等科目。新增科目前請先閱讀 [科目擴充共同規格](./docs/SUBJECT_EXPANSION.md)，並以當年度考選部公告為準。
 
@@ -29,9 +29,9 @@
 - 響應式版面，支援手機與桌面
 - 手機版固定顯示上一題／下一題，不必捲過完整解析
 
-目前已收錄民國 105–114 年司法特考四等「民法概要」全部官方試題：175 題選擇題與 26 題申論題。105–107 年為全申論；108 年起為 2 題申論加 25 題選擇。另保留 10 題自行編寫且明確標示的示範題。
+目前已收錄民國 105–114 年法院書記官「民法概要」與「刑法概要」全部官方試題：共 350 題選擇題與 52 題申論題。兩科 105–107 年均為全申論；108 年起均為 2 題申論加 25 題選擇。另保留 10 題自行編寫且明確標示的民法示範題。
 
-175 題選擇題均已補上「題目在問什麼、法律規則、套入本題、結論、常見誤區與相關法條」。民國 112、113 年第 24 題依考選部更正答案標為一律給分，並說明無法形成唯一正解的原因。民國 108 年利率上限與 111 年成年年齡題依命題時法解析，另行提示現行法差異。
+350 題選擇題均已補上「題目在問什麼、法律規則、套入本題、結論、常見誤區與相關法條」。民法 112、113 年第 24 題與刑法 111 年第 11 題依考選部更正為一律給分；刑法 112 年第 16 題接受 C、D，113 年第 22 題接受 B、D。更正答案均優先於原標準答案。
 
 ## 本機使用
 
@@ -59,8 +59,13 @@ npm run lint
 - 司法四等官方題庫：`app/data/judicial-fourth-questions.json`
 - 逐年選擇題解析：`app/data/analyses/`
 - 民法完整條文索引：`app/data/civil-code-articles.json`
+- 刑法官方題庫：`app/data/criminal-law-questions.json`
+- 刑法逐年解析：`app/data/analyses/criminal-law-*.json`
+- 刑法完整條文索引：`app/data/criminal-code-articles.json`
 - 考選部 PDF 匯入器：`scripts/import-moex-judicial-fourth.py`
+- 刑法 PDF 匯入器：`scripts/import-moex-criminal-law.py`
 - 民法條文更新工具：`scripts/import-civil-code.py`
+- 刑法條文更新工具：`scripts/import-criminal-code.py`
 - 本機進度介面：`app/lib/progress-store.ts`
 - 主要互動：`app/page.tsx`
 

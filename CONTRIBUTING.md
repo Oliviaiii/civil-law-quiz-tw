@@ -1,6 +1,6 @@
 # 協作開發與交接規範
 
-本文件是「民法研習室」的開發、內容維護與部署準則。接手任何工作前，請先讀完本文件與 [README.md](./README.md)，不要只依畫面推測資料結構或產品方向。
+本文件是「書記官研習室」的開發、內容維護與部署準則。接手任何工作前，請先讀完本文件與 [README.md](./README.md)，不要只依畫面推測資料結構或產品方向。
 
 涉及刑法、法學緒論、憲法或英文等新科目時，還必須閱讀 [科目擴充共同規格](./docs/SUBJECT_EXPANSION.md)。跨科共同規則放在該文件，單一科目的工作範圍與驗收條件則放在對應 GitHub Issue。
 
@@ -9,7 +9,7 @@
 ### 主要對象
 
 - 主要使用者：準備**司法特考四等法院書記官**的考生。
-- 主要題庫：司法特考四等「民法概要」官方考古題。
+- 主要題庫：司法特考四等法院書記官「民法概要」與「刑法概要」官方考古題。
 - 同份試題若也適用執達員、執行員等類科，必須保留於 `applicableCategories`，但不因此改變法院書記官優先的產品定位。
 - 新功能若有取捨，優先考慮法院書記官考生的刷題效率、個案題辨識、法條核對、錯題複習與手機操作。
 
@@ -50,9 +50,15 @@
 | `app/data/analyses/` | 依年度拆分的選擇題解析 |
 | `app/data/judicial-fourth-analyses.ts` | 合併解析、產生結論、附加法條原文 |
 | `app/data/civil-code-articles.json` | 民法條文索引及資料版本 |
+| `app/data/criminal-law-questions.json` | 刑法官方題目、答案、更正答案及來源連結 |
+| `app/data/analyses/criminal-law-*.json` | 刑法各年度測驗題解析 |
+| `app/data/criminal-code-articles.json` | 刑法條文索引及資料版本 |
 | `app/lib/progress-store.ts` | localStorage 格式、驗證與舊版本遷移 |
 | `scripts/import-moex-judicial-fourth.py` | 從已下載的考選部 PDF 匯入題目及答案 |
 | `scripts/import-civil-code.py` | 更新民法條文索引 |
+| `scripts/import-moex-criminal-law.py` | 匯入法院書記官刑法概要 PDF，並處理更正及複數答案 |
+| `scripts/import-criminal-code.py` | 更新刑法條文索引 |
+| `scripts/generate-criminal-analyses.py` | 產生可逐題審查、修訂的刑法結構化解析初稿 |
 | `tests/rendered-html.test.mjs` | 靜態輸出、題數、解析覆蓋率及重要行為防退化測試 |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages 自動建置與部署 |
 

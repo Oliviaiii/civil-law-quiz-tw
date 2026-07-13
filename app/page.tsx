@@ -2,11 +2,10 @@
 
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
-  officialEssayCount,
-  officialMultipleChoiceCount,
-  officialQuestionCount,
+  officialCountsBySubject,
   questions,
   type Question,
+  type StudySubject,
 } from "./data/questions";
 import {
   createEmptyProgress,
@@ -18,7 +17,8 @@ import {
 
 type View = "practice" | "wrong" | "stats";
 type Scope = "all" | "unanswered" | "wrong";
-type Corpus = "司法特考四等" | "全部來源" | "示範題";
+type Corpus = "官方題庫" | "全部來源" | "示範題";
+type SubjectFilter = StudySubject | "全部科目";
 type FormatFilter = "選擇題" | "申論題" | "全部題型";
 
 const viewLabels: Record<View, string> = {
@@ -40,7 +40,8 @@ function formatDate(value?: string) {
 export default function Home() {
   const [view, setView] = useState<View>("practice");
   const [scope, setScope] = useState<Scope>("all");
-  const [corpus, setCorpus] = useState<Corpus>("司法特考四等");
+  const [corpus, setCorpus] = useState<Corpus>("官方題庫");
+  const [subjectFilter, setSubjectFilter] = useState<SubjectFilter>("民法");
   const [formatFilter, setFormatFilter] = useState<FormatFilter>("選擇題");
   const [yearFilter, setYearFilter] = useState("全部年度");
   const [currentId, setCurrentId] = useState(questions[0].id);
@@ -86,8 +87,10 @@ export default function Home() {
     return questions.filter((question) => {
       const corpusMatch =
         corpus === "全部來源" ||
-        (corpus === "司法特考四等" && question.exam === "司法特考四等") ||
+        (corpus === "官方題庫" && question.exam === "司法特考四等") ||
         (corpus === "示範題" && !question.exam);
+      const subjectMatch =
+        subjectFilter === "全部科目" || question.studySubject === subjectFilter;
       const formatMatch =
         formatFilter === "全部題型" || question.format === formatFilter;
       const yearMatch =
@@ -102,9 +105,9 @@ export default function Home() {
         view !== "wrong" ||
         wrongIds.includes(question.id) ||
         question.id === reviewingId;
-      return corpusMatch && formatMatch && yearMatch && scopeMatch && viewMatch;
+      return corpusMatch && subjectMatch && formatMatch && yearMatch && scopeMatch && viewMatch;
     });
-  }, [answeredIds, corpus, formatFilter, reviewingId, scope, view, wrongIds, yearFilter]);
+  }, [answeredIds, corpus, formatFilter, reviewingId, scope, subjectFilter, view, wrongIds, yearFilter]);
 
   const currentQuestion =
     visibleQuestions.find((question) => question.id === currentId) ??
@@ -117,7 +120,10 @@ export default function Home() {
     if (!currentQuestion || currentQuestion.format === "申論題") return;
     setReviewingId(currentQuestion.id);
     const isCorrect = Boolean(
-      currentQuestion.allCredit || index === currentQuestion.answer,
+      currentQuestion.allCredit ||
+      (currentQuestion.acceptedAnswers?.length
+        ? currentQuestion.acceptedAnswers.includes(index)
+        : index === currentQuestion.answer),
     );
     setProgress((previous) => {
       const oldAnswer = previous.answers[currentQuestion.id];
@@ -195,7 +201,7 @@ export default function Home() {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = `民法練習紀錄-${new Date().toISOString().slice(0, 10)}.json`;
+    anchor.download = `書記官考古題練習紀錄-${new Date().toISOString().slice(0, 10)}.json`;
     anchor.click();
     URL.revokeObjectURL(url);
     setNotice("學習紀錄已匯出");
@@ -224,15 +230,26 @@ export default function Home() {
   const years = Array.from(
     new Set(questions.flatMap((question) => question.rocYear ?? [])),
   ).sort((a, b) => b - a);
+  const selectedOfficialCounts = subjectFilter === "全部科目"
+    ? Object.values(officialCountsBySubject).reduce(
+        (total, count) => ({
+          total: total.total + count.total,
+          multipleChoice: total.multipleChoice + count.multipleChoice,
+          essay: total.essay + count.essay,
+        }),
+        { total: 0, multipleChoice: 0, essay: 0 },
+      )
+    : officialCountsBySubject[subjectFilter];
+  const subjectHeading = subjectFilter === "全部科目" ? "民刑法" : subjectFilter;
 
   return (
     <main className="app-shell">
       <header className="topbar">
         <button className="brand" onClick={() => startView("practice")}>
-          <span className="brand-mark">民</span>
+          <span className="brand-mark">書</span>
           <span>
-            <strong>民法研習室</strong>
-            <small>法院書記官民法考古題練習</small>
+            <strong>書記官研習室</strong>
+            <small>司法特考四等考古題練習</small>
           </span>
         </button>
         <div className="top-progress" aria-label="整體進度">
@@ -292,13 +309,13 @@ export default function Home() {
               <div className="page-heading">
                 <div>
                   <p className="eyebrow">{view === "wrong" ? "REVIEW" : "PRACTICE"}</p>
-                  <h1>{view === "wrong" ? "把易錯題目集中重練" : "近十年法院書記官民法考古題"}</h1>
+                  <h1>{view === "wrong" ? "把易錯題目集中重練" : `近十年法院書記官${subjectHeading}考古題`}</h1>
                   <p>民國 105–114 年司法特考四等官方試題；選擇題依考選部答案判定，申論題保留原題供閱讀與標記。</p>
                 </div>
                 <div className="result-summary">
                   <span>官方考古題</span>
-                  <strong>{officialQuestionCount}</strong>
-                  <small>{officialMultipleChoiceCount} 選擇＋{officialEssayCount} 申論</small>
+                  <strong>{selectedOfficialCounts.total}</strong>
+                  <small>{selectedOfficialCounts.multipleChoice} 選擇＋{selectedOfficialCounts.essay} 申論</small>
                 </div>
               </div>
 
@@ -318,12 +335,23 @@ export default function Home() {
                   ))}
                 </div>
                 <label>
+                  <span className="sr-only">依科目篩選</span>
+                  <select value={subjectFilter} onChange={(event) => {
+                    setReviewingId(null);
+                    setSubjectFilter(event.target.value as SubjectFilter);
+                  }}>
+                    <option>民法</option>
+                    <option>刑法</option>
+                    <option>全部科目</option>
+                  </select>
+                </label>
+                <label>
                   <span className="sr-only">依題庫來源篩選</span>
                   <select value={corpus} onChange={(event) => {
                     setReviewingId(null);
                     setCorpus(event.target.value as Corpus);
                   }}>
-                    <option>司法特考四等</option>
+                    <option>官方題庫</option>
                     <option>全部來源</option>
                     <option>示範題</option>
                   </select>
@@ -368,7 +396,7 @@ export default function Home() {
                   <span>✓</span>
                   <h2>{view === "wrong" ? "錯題已全部清空" : "這個篩選目前沒有題目"}</h2>
                   <p>{view === "wrong" ? "答對後會自動離開錯題本，繼續保持。" : "換一個年度、題型或切回全部題目看看。"}</p>
-                  <button onClick={() => { setScope("all"); setCorpus("司法特考四等"); setFormatFilter("選擇題"); setYearFilter("全部年度"); startView("practice"); }}>
+                  <button onClick={() => { setScope("all"); setSubjectFilter("民法"); setCorpus("官方題庫"); setFormatFilter("選擇題"); setYearFilter("全部年度"); startView("practice"); }}>
                     回到全部題目
                   </button>
                 </div>
@@ -408,14 +436,17 @@ function QuestionCard({
   const [selected, setSelected] = useState<number | null>(null);
   const [revealed, setRevealed] = useState(false);
   const isEssay = question.format === "申論題";
+  const acceptedAnswers = question.acceptedAnswers?.length
+    ? question.acceptedAnswers
+    : question.answer === null ? [] : [question.answer];
   const answeredCorrect = Boolean(
-    revealed && (question.allCredit || selected === question.answer),
+    revealed && (question.allCredit || (selected !== null && acceptedAnswers.includes(selected))),
   );
   const answerLabel = question.allCredit
     ? "本題一律給分"
-    : question.answer === null
+    : acceptedAnswers.length === 0
       ? "未公布"
-      : String.fromCharCode(65 + question.answer);
+      : acceptedAnswers.map((index) => String.fromCharCode(65 + index)).join(" 或 ");
 
   function handleChoose(index: number) {
     if (revealed || isEssay) return;
@@ -436,6 +467,7 @@ function QuestionCard({
       <div className="question-meta">
         <div>
           <span className="tag category">{question.exam ?? question.category}</span>
+          <span className="tag subject">{question.studySubject}</span>
           {question.rocYear && <span className="tag year">民國 {question.rocYear} 年</span>}
           <span className="tag difficulty">{question.format ?? "選擇題"}</span>
           {!question.exam && (
@@ -473,9 +505,9 @@ function QuestionCard({
           <div className="options">
             {question.options.map((option, index) => {
               const isCorrect = revealed && (
-                question.allCredit ? selected === index : index === question.answer
+                question.allCredit ? selected === index : acceptedAnswers.includes(index)
               );
-              const isWrong = revealed && !question.allCredit && selected === index && index !== question.answer;
+              const isWrong = revealed && !question.allCredit && selected === index && !acceptedAnswers.includes(index);
               return (
                 <button
                   key={`${index}-${option}`}
@@ -588,12 +620,16 @@ function StatsView({
   onReset: () => void;
 }) {
   const groups = [
-    ...Array.from(new Set(questions.flatMap((question) => question.rocYear ?? [])))
-      .sort((a, b) => b - a)
-      .map((year) => ({
-        label: `民國 ${year} 年`,
-        questions: questions.filter((question) => question.rocYear === year),
-      })),
+    ...(["民法", "刑法"] as StudySubject[]).flatMap((studySubject) =>
+      Array.from(new Set(questions.flatMap((question) => question.rocYear ?? [])))
+        .sort((a, b) => b - a)
+        .map((year) => ({
+          label: `${studySubject}｜民國 ${year} 年`,
+          questions: questions.filter(
+            (question) => question.studySubject === studySubject && question.rocYear === year,
+          ),
+        })),
+    ),
     {
       label: "自行編寫示範題",
       questions: questions.filter((question) => !question.rocYear),
