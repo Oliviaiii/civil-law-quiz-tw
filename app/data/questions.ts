@@ -1,14 +1,27 @@
+import officialRecordsJson from "./judicial-fourth-questions.json";
+
 export type Question = {
   id: string;
-  category: "總則" | "債編" | "物權" | "親屬與繼承";
+  category: "總則" | "債編" | "物權" | "親屬與繼承" | "待分類";
   type: "概念型" | "個案型";
   difficulty: "基礎" | "進階";
+  format?: "選擇題" | "申論題";
   source: string;
+  sourceUrl?: string;
+  answerUrl?: string | null;
+  answerSource?: string | null;
+  rocYear?: number;
+  gregorianYear?: number;
+  exam?: string;
+  subject?: string;
+  officialQuestionNumber?: number;
+  applicableCategories?: string[];
   prompt: string;
   options: string[];
-  answer: number;
-  confidence: "高" | "中";
-  analysis: {
+  answer: number | null;
+  allCredit?: boolean;
+  confidence?: "高" | "中";
+  analysis?: {
     issue: string;
     rule: string;
     application: string;
@@ -21,7 +34,7 @@ export type Question = {
 const lawUrl = (article: string) =>
   `https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=${article}`;
 
-export const questions: Question[] = [
+const demoQuestions: Question[] = [
   {
     id: "demo-001",
     category: "總則",
@@ -213,3 +226,49 @@ export const questions: Question[] = [
     statutes: [{ article: "197", text: "因侵權行為所生之損害賠償請求權，自請求權人知有損害及賠償義務人時起，二年間不行使而消滅。", url: lawUrl("197") }],
   },
 ];
+
+type OfficialQuestionRecord = {
+  id: string;
+  exam: string;
+  rocYear: number;
+  gregorianYear: number;
+  subject: string;
+  applicableCategories: string[];
+  sourceUrl: string;
+  format: "選擇題" | "申論題";
+  officialQuestionNumber: number;
+  prompt: string;
+  options: string[];
+  answer: number | null;
+  allCredit: boolean;
+  answerSource: string | null;
+  answerUrl: string | null;
+};
+
+const officialQuestions: Question[] = (
+  officialRecordsJson as OfficialQuestionRecord[]
+).map((record) => ({
+  ...record,
+  category: "待分類" as const,
+  type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
+  difficulty: "進階" as const,
+  source: `${record.rocYear} 年司法特考四等｜${record.subject}｜第 ${record.officialQuestionNumber} 題`,
+  statutes: [],
+})).sort(
+  (left, right) =>
+    (right.rocYear ?? 0) - (left.rocYear ?? 0) ||
+    (left.officialQuestionNumber ?? 0) - (right.officialQuestionNumber ?? 0),
+);
+
+export const questions: Question[] = [
+  ...officialQuestions,
+  ...demoQuestions.map((question) => ({ ...question, format: "選擇題" as const })),
+];
+
+export const officialQuestionCount = officialQuestions.length;
+export const officialMultipleChoiceCount = officialQuestions.filter(
+  (question) => question.format === "選擇題",
+).length;
+export const officialEssayCount = officialQuestions.filter(
+  (question) => question.format === "申論題",
+).length;
