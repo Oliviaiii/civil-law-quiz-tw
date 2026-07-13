@@ -15,7 +15,7 @@
 
 ## 協作開發
 
-開始修改前，請先閱讀 [CONTRIBUTING.md](./CONTRIBUTING.md)。該文件記錄本專案的產品邊界、資料格式、解析標準、文件要求、測試流程、Git 協作方式、GitHub Pages 部署與交接清單；功能或資料結構有變動時，必須同步更新相關文件。
+開始修改前，請先閱讀 [CONTRIBUTING.md](./CONTRIBUTING.md)；處理考選部 PDF、GitHub 留言、Windows 建置或 Sites 部署時，另先查看[開發與題庫匯入問題排除](./docs/TROUBLESHOOTING.md)。這些文件記錄產品邊界、資料格式、解析標準、測試流程、已知環境問題與交接清單；功能或資料結構有變動時，必須同步更新相關文件。
 
 ## 已有功能
 

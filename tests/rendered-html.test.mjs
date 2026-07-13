@@ -82,6 +82,8 @@ test("keeps questions and local progress behind replaceable data modules", async
     assert.equal(yearly.filter((item) => item.subject === "legal-introduction").length, 15);
     assert.equal(yearly.filter((item) => item.subject === "english").length, 20);
     assert.ok(yearly.every((item) => item.paper === "legal-knowledge-and-english"));
+    assert.ok(yearly.filter((item) => item.subject === "constitution").every((item) => item.humanVerified));
+    assert.ok(yearly.filter((item) => item.subject !== "constitution").every((item) => !item.humanVerified));
   }
   assert.equal(combinedRecords.filter((item) => item.subject === "constitution").length, 150);
   assert.deepEqual(

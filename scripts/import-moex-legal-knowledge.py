@@ -209,7 +209,7 @@ def build_records() -> list[dict[str, Any]]:
                     "allCredit": False,
                     "answerSource": answer_label,
                     "answerUrl": official_url(year, answer_type),
-                    "humanVerified": True,
+                    "humanVerified": logical_subject(number) == "constitution",
                 }
             )
     return records
