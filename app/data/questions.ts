@@ -1,5 +1,28 @@
 import officialRecordsJson from "./judicial-fourth-questions.json";
+import combinedPaperRecordsJson from "./legal-knowledge-and-english-questions.json";
 import { buildOfficialAnalysis } from "./judicial-fourth-analyses";
+import { buildConstitutionAnalysis, type ConstitutionalReference } from "./constitution-analyses";
+
+export type Subject =
+  | "civil-law"
+  | "criminal-law"
+  | "constitution"
+  | "legal-introduction"
+  | "english";
+
+export type Paper =
+  | "civil-law-summary"
+  | "criminal-law-summary"
+  | "legal-knowledge-and-english";
+
+export type Reference = ConstitutionalReference | {
+  type: "court-decision";
+  title: string;
+  locator?: string;
+  url: string;
+  text?: string;
+  publishedAt?: string;
+};
 
 export type Question = {
   id: string;
@@ -14,13 +37,16 @@ export type Question = {
   rocYear?: number;
   gregorianYear?: number;
   exam?: string;
-  subject?: string;
+  subject: Subject;
+  subjectLabel: string;
+  paper: Paper;
   officialQuestionNumber?: number;
   applicableCategories?: string[];
   prompt: string;
   options: string[];
   answer: number | null;
   allCredit?: boolean;
+  acceptedAnswers?: number[] | null;
   confidence?: "高" | "中";
   analysis?: {
     issue: string;
@@ -30,12 +56,13 @@ export type Question = {
     trap: string;
   };
   statutes: { article: string; lawName?: string; text: string; url: string }[];
+  references: Reference[];
 };
 
 const lawUrl = (article: string) =>
   `https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=${article}`;
 
-const demoQuestions: Question[] = [
+const demoQuestions: Array<Omit<Question, "subject" | "subjectLabel" | "paper" | "references">> = [
   {
     id: "demo-001",
     category: "總則",
@@ -246,12 +273,37 @@ type OfficialQuestionRecord = {
   answerUrl: string | null;
 };
 
+type CombinedPaperRecord = {
+  id: string;
+  exam: string;
+  rocYear: number;
+  gregorianYear: number;
+  paper: "legal-knowledge-and-english";
+  paperTitle: string;
+  subject: "constitution" | "legal-introduction" | "english";
+  applicableCategories: string[];
+  sourceUrl: string;
+  format: "選擇題";
+  officialQuestionNumber: number;
+  prompt: string;
+  options: string[];
+  answer: number;
+  acceptedAnswers: number[] | null;
+  allCredit: boolean;
+  answerSource: string;
+  answerUrl: string;
+  humanVerified: boolean;
+};
+
 const officialQuestions: Question[] = (
   officialRecordsJson as OfficialQuestionRecord[]
 ).map((record) => {
   const explanation = buildOfficialAnalysis(record);
   return {
     ...record,
+    subject: "civil-law" as const,
+    subjectLabel: record.subject,
+    paper: "civil-law-summary" as const,
     category: "待分類" as const,
     type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
     difficulty: "進階" as const,
@@ -259,6 +311,13 @@ const officialQuestions: Question[] = (
     confidence: explanation?.confidence,
     analysis: explanation?.analysis,
     statutes: explanation?.statutes ?? [],
+    references: (explanation?.statutes ?? []).map((statute) => ({
+      type: "statute" as const,
+      title: statute.lawName ?? "民法",
+      locator: `第 ${statute.article} 條`,
+      url: statute.url,
+      text: statute.text,
+    })),
   };
 }).sort(
   (left, right) =>
@@ -266,15 +325,61 @@ const officialQuestions: Question[] = (
     (left.officialQuestionNumber ?? 0) - (right.officialQuestionNumber ?? 0),
 );
 
+const constitutionQuestions: Question[] = (
+  combinedPaperRecordsJson as CombinedPaperRecord[]
+)
+  .filter((record) => record.subject === "constitution")
+  .map((record) => {
+    const explanation = buildConstitutionAnalysis(record);
+    return {
+      ...record,
+      subjectLabel: "憲法",
+      category: "待分類" as const,
+      type: "概念型" as const,
+      difficulty: "進階" as const,
+      source: `${record.rocYear} 年司法特考四等｜法學知識與英文｜官方第 ${record.officialQuestionNumber} 題`,
+      confidence: explanation.confidence,
+      analysis: explanation.analysis,
+      statutes: [],
+      references: explanation.references,
+    };
+  })
+  .sort(
+    (left, right) =>
+      right.rocYear - left.rocYear ||
+      left.officialQuestionNumber - right.officialQuestionNumber,
+  );
+
 export const questions: Question[] = [
   ...officialQuestions,
-  ...demoQuestions.map((question) => ({ ...question, format: "選擇題" as const })),
+  ...constitutionQuestions,
+  ...demoQuestions.map((question) => ({
+    ...question,
+    subject: "civil-law" as const,
+    subjectLabel: "民法",
+    paper: "civil-law-summary" as const,
+    references: question.statutes.map((statute) => ({
+      type: "statute" as const,
+      title: statute.lawName ?? "民法",
+      locator: `第 ${statute.article} 條`,
+      url: statute.url,
+      text: statute.text,
+    })),
+    format: "選擇題" as const,
+  })),
 ];
 
-export const officialQuestionCount = officialQuestions.length;
-export const officialMultipleChoiceCount = officialQuestions.filter(
+const allOfficialQuestions = [...officialQuestions, ...constitutionQuestions];
+
+export const officialQuestionCount = allOfficialQuestions.length;
+export const officialMultipleChoiceCount = allOfficialQuestions.filter(
   (question) => question.format === "選擇題",
 ).length;
-export const officialEssayCount = officialQuestions.filter(
+export const officialEssayCount = allOfficialQuestions.filter(
   (question) => question.format === "申論題",
 ).length;
+
+export const officialCountsBySubject = {
+  "civil-law": officialQuestions.length,
+  constitution: constitutionQuestions.length,
+} as const;
