@@ -1,21 +1,21 @@
-# 書記官研習室
+# 書記官法科研習室
 
 **正式前台：** <https://oliviaiii1224.github.io/civil-law-quiz-tw/>
 
-司法特考四等法院書記官考古題的純前端練習工具。本專案的主要使用者與產品設計基準是準備**司法特考四等法院書記官**的考生；功能取捨、題目編排與解析深度均優先服務法院書記官備考需求。
+台灣法院書記官法科考古題的純前端練習工具。本專案的主要使用者與產品設計基準是準備**司法特考四等法院書記官**的考生；題庫保留共同適用類科標示，但功能取捨、題目編排與解析深度均優先服務法院書記官備考需求。
 
 第一版聚焦在作答、官方答案核對、錯題本與本機進度保存，不需要帳號或資料庫。
 
 ## 科目範圍
 
-- 已上線：民法、刑法。
-- 下一階段：[憲法（#2）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/2)、[法學緒論（#3）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/3)、[英文（#4）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/4)。
+- 已上線：民法、刑法、憲法。
+- 下一階段：[法學緒論（#3）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/3)、[英文（#4）](https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/4)。
 
 上述五個模組是目前產品規劃範圍，不等於法院書記官完整應試科目；官方另列國文、行政法概要及民事訴訟法概要與刑事訴訟法概要等科目。新增科目前請先閱讀 [科目擴充共同規格](./docs/SUBJECT_EXPANSION.md)，並以當年度考選部公告為準。
 
 ## 協作開發
 
-開始修改前，請先閱讀 [CONTRIBUTING.md](./CONTRIBUTING.md)。該文件記錄本專案的產品邊界、資料格式、解析標準、文件要求、測試流程、Git 協作方式、GitHub Pages 部署與交接清單；功能或資料結構有變動時，必須同步更新相關文件。
+開始修改前，請先閱讀 [CONTRIBUTING.md](./CONTRIBUTING.md)；處理考選部 PDF、GitHub 留言、Windows 建置或 Sites 部署時，另先查看[開發與題庫匯入問題排除](./docs/TROUBLESHOOTING.md)。這些文件記錄產品邊界、資料格式、解析標準、測試流程、已知環境問題與交接清單；功能或資料結構有變動時，必須同步更新相關文件。
 
 ## 已有功能
 
@@ -23,15 +23,16 @@
 - 以「爭點、法律規則、套入本題、結論」拆解個案題
 - 解析信心標示、常見誤區與全國法規資料庫連結
 - 依章節、未作答、曾答錯篩選
+- 依民法／刑法／憲法科目篩選與分科進度統計
 - 錯題本與各章進度統計
 - `localStorage` 保存作答紀錄
 - JSON 匯出／匯入，方便備份或換裝置
 - 響應式版面，支援手機與桌面
 - 手機版固定顯示上一題／下一題，不必捲過完整解析
 
-目前已收錄民國 105–114 年法院書記官「民法概要」與「刑法概要」全部官方試題：共 350 題選擇題與 52 題申論題。兩科 105–107 年均為全申論；108 年起均為 2 題申論加 25 題選擇。另保留 10 題自行編寫且明確標示的民法示範題。
+目前已收錄民國 105–114 年司法特考四等「民法概要」與「刑法概要」全部官方試題：兩科各 175 題選擇題與 26 題申論題；另從同期間「法學知識與英文」共用試卷拆分 150 題憲法題。正式題共 552 題，另保留 10 題自行編寫且明確標示的民法示範題。
 
-350 題選擇題均已補上「題目在問什麼、法律規則、套入本題、結論、常見誤區與相關法條」。民法 112、113 年第 24 題與刑法 111 年第 11 題依考選部更正為一律給分；刑法 112 年第 16 題接受 C、D，113 年第 22 題接受 B、D。更正答案均優先於原標準答案。
+500 題選擇題均提供「題目在問什麼、法律規則、套入本題、結論、常見誤區與官方依據」。民法 112、113 年第 24 題與刑法 111 年第 11 題依考選部更正為一律給分；刑法 112 年第 16 題接受 C、D，113 年第 22 題接受 B、D。114 年法學知識與英文第 18 題依更正答案保存 A／B／C 皆可，但該題屬法學緒論，待 #3 上線時才會顯示。
 
 ## 本機使用
 
@@ -57,13 +58,16 @@ npm run lint
 
 - 題庫：`app/data/questions.ts`
 - 司法四等官方題庫：`app/data/judicial-fourth-questions.json`
+- 法學知識與英文共用原始題庫：`app/data/legal-knowledge-and-english-questions.json`
 - 逐年選擇題解析：`app/data/analyses/`
+- 憲法解析與官方依據：`app/data/constitution-analyses.ts`
 - 民法完整條文索引：`app/data/civil-code-articles.json`
 - 刑法官方題庫：`app/data/criminal-law-questions.json`
 - 刑法逐年解析：`app/data/analyses/criminal-law-*.json`
 - 刑法完整條文索引：`app/data/criminal-code-articles.json`
 - 考選部 PDF 匯入器：`scripts/import-moex-judicial-fourth.py`
 - 刑法 PDF 匯入器：`scripts/import-moex-criminal-law.py`
+- 法學知識與英文共用匯入器：`scripts/import-moex-legal-knowledge.py`
 - 民法條文更新工具：`scripts/import-civil-code.py`
 - 刑法條文更新工具：`scripts/import-criminal-code.py`
 - 本機進度介面：`app/lib/progress-store.ts`

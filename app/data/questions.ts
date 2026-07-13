@@ -1,9 +1,30 @@
 import officialRecordsJson from "./judicial-fourth-questions.json";
 import criminalRecordsJson from "./criminal-law-questions.json";
+import combinedPaperRecordsJson from "./legal-knowledge-and-english-questions.json";
 import { buildOfficialAnalysis } from "./judicial-fourth-analyses";
 import { buildCriminalAnalysis } from "./criminal-law-analyses";
+import { buildConstitutionAnalysis, type ConstitutionalReference } from "./constitution-analyses";
 
-export type StudySubject = "民法" | "刑法";
+export type Subject =
+  | "civil-law"
+  | "criminal-law"
+  | "constitution"
+  | "legal-introduction"
+  | "english";
+
+export type Paper =
+  | "civil-law-summary"
+  | "criminal-law-summary"
+  | "legal-knowledge-and-english";
+
+export type Reference = ConstitutionalReference | {
+  type: "court-decision";
+  title: string;
+  locator?: string;
+  url: string;
+  text?: string;
+  publishedAt?: string;
+};
 
 export type Question = {
   id: string;
@@ -18,16 +39,16 @@ export type Question = {
   rocYear?: number;
   gregorianYear?: number;
   exam?: string;
-  subject?: string;
-  studySubject: StudySubject;
-  paper?: "civil-law-summary" | "criminal-law-summary";
+  subject: Subject;
+  subjectLabel: string;
+  paper: Paper;
   officialQuestionNumber?: number;
   applicableCategories?: string[];
   prompt: string;
   options: string[];
   answer: number | null;
-  acceptedAnswers?: number[];
   allCredit?: boolean;
+  acceptedAnswers?: number[] | null;
   confidence?: "高" | "中";
   analysis?: {
     issue: string;
@@ -37,12 +58,13 @@ export type Question = {
     trap: string;
   };
   statutes: { article: string; lawName?: string; text: string; url: string }[];
+  references: Reference[];
 };
 
 const lawUrl = (article: string) =>
   `https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=${article}`;
 
-const demoQuestions: Omit<Question, "studySubject">[] = [
+const demoQuestions: Array<Omit<Question, "subject" | "subjectLabel" | "paper" | "references">> = [
   {
     id: "demo-001",
     category: "總則",
@@ -241,7 +263,7 @@ type OfficialQuestionRecord = {
   rocYear: number;
   gregorianYear: number;
   subject: string;
-  studySubject?: StudySubject;
+  studySubject?: string;
   paper?: "civil-law-summary" | "criminal-law-summary";
   applicableCategories: string[];
   sourceUrl: string;
@@ -261,13 +283,16 @@ const civilOfficialQuestions: Question[] = (
 ).map((record) => {
   const normalized = {
     ...record,
-    studySubject: "民法" as const,
-    paper: "civil-law-summary" as const,
-    acceptedAnswers: record.answer === null ? [] : [record.answer],
+    acceptedAnswers: record.acceptedAnswers?.length
+      ? record.acceptedAnswers
+      : record.answer === null ? [] : [record.answer],
   };
   const explanation = buildOfficialAnalysis(normalized);
   return {
     ...normalized,
+    subject: "civil-law" as const,
+    subjectLabel: record.subject,
+    paper: "civil-law-summary" as const,
     category: "待分類" as const,
     type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
     difficulty: "進階" as const,
@@ -275,8 +300,37 @@ const civilOfficialQuestions: Question[] = (
     confidence: explanation?.confidence,
     analysis: explanation?.analysis,
     statutes: explanation?.statutes ?? [],
+    references: (explanation?.statutes ?? []).map((statute) => ({
+      type: "statute" as const,
+      title: statute.lawName ?? "民法",
+      locator: `第 ${statute.article} 條`,
+      url: statute.url,
+      text: statute.text,
+    })),
   };
 });
+
+type CombinedPaperRecord = {
+  id: string;
+  exam: string;
+  rocYear: number;
+  gregorianYear: number;
+  paper: "legal-knowledge-and-english";
+  paperTitle: string;
+  subject: "constitution" | "legal-introduction" | "english";
+  applicableCategories: string[];
+  sourceUrl: string;
+  format: "選擇題";
+  officialQuestionNumber: number;
+  prompt: string;
+  options: string[];
+  answer: number;
+  acceptedAnswers: number[] | null;
+  allCredit: boolean;
+  answerSource: string;
+  answerUrl: string;
+  humanVerified: boolean;
+};
 
 const criminalOfficialQuestions: Question[] = (
   criminalRecordsJson as OfficialQuestionRecord[]
@@ -284,7 +338,8 @@ const criminalOfficialQuestions: Question[] = (
   const explanation = buildCriminalAnalysis(record);
   return {
     ...record,
-    studySubject: "刑法" as const,
+    subject: "criminal-law" as const,
+    subjectLabel: record.subject,
     paper: "criminal-law-summary" as const,
     category: "待分類" as const,
     type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
@@ -293,42 +348,79 @@ const criminalOfficialQuestions: Question[] = (
     confidence: explanation?.confidence,
     analysis: explanation?.analysis,
     statutes: explanation?.statutes ?? [],
+    references: (explanation?.statutes ?? []).map((statute) => ({
+      type: "statute" as const,
+      title: statute.lawName ?? "刑法",
+      locator: `第 ${statute.article} 條`,
+      url: statute.url,
+      text: statute.text,
+    })),
   };
 });
 
 const officialQuestions = [...civilOfficialQuestions, ...criminalOfficialQuestions].sort(
   (left, right) =>
     (right.rocYear ?? 0) - (left.rocYear ?? 0) ||
-    left.studySubject.localeCompare(right.studySubject, "zh-Hant") ||
+    left.subjectLabel.localeCompare(right.subjectLabel, "zh-Hant") ||
     (left.officialQuestionNumber ?? 0) - (right.officialQuestionNumber ?? 0),
 );
 
+const constitutionQuestions: Question[] = (
+  combinedPaperRecordsJson as CombinedPaperRecord[]
+)
+  .filter((record) => record.subject === "constitution")
+  .map((record) => {
+    const explanation = buildConstitutionAnalysis(record);
+    return {
+      ...record,
+      subjectLabel: "憲法",
+      category: "待分類" as const,
+      type: "概念型" as const,
+      difficulty: "進階" as const,
+      source: `${record.rocYear} 年司法特考四等｜法學知識與英文｜官方第 ${record.officialQuestionNumber} 題`,
+      confidence: explanation.confidence,
+      analysis: explanation.analysis,
+      statutes: [],
+      references: explanation.references,
+    };
+  })
+  .sort(
+    (left, right) =>
+      right.rocYear - left.rocYear ||
+      left.officialQuestionNumber - right.officialQuestionNumber,
+  );
+
 export const questions: Question[] = [
   ...officialQuestions,
+  ...constitutionQuestions,
   ...demoQuestions.map((question) => ({
     ...question,
-    studySubject: "民法" as const,
+    subject: "civil-law" as const,
+    subjectLabel: "民法",
+    paper: "civil-law-summary" as const,
+    references: question.statutes.map((statute) => ({
+      type: "statute" as const,
+      title: statute.lawName ?? "民法",
+      locator: `第 ${statute.article} 條`,
+      url: statute.url,
+      text: statute.text,
+    })),
     format: "選擇題" as const,
   })),
 ];
 
-export const officialQuestionCount = officialQuestions.length;
-export const officialMultipleChoiceCount = officialQuestions.filter(
+const allOfficialQuestions = [...officialQuestions, ...constitutionQuestions];
+
+export const officialQuestionCount = allOfficialQuestions.length;
+export const officialMultipleChoiceCount = allOfficialQuestions.filter(
   (question) => question.format === "選擇題",
 ).length;
-export const officialEssayCount = officialQuestions.filter(
+export const officialEssayCount = allOfficialQuestions.filter(
   (question) => question.format === "申論題",
 ).length;
 
-export const officialCountsBySubject = Object.fromEntries(
-  (["民法", "刑法"] as StudySubject[]).map((studySubject) => {
-    const subjectQuestions = officialQuestions.filter(
-      (question) => question.studySubject === studySubject,
-    );
-    return [studySubject, {
-      total: subjectQuestions.length,
-      multipleChoice: subjectQuestions.filter((question) => question.format === "選擇題").length,
-      essay: subjectQuestions.filter((question) => question.format === "申論題").length,
-    }];
-  }),
-) as Record<StudySubject, { total: number; multipleChoice: number; essay: number }>;
+export const officialCountsBySubject = {
+  "civil-law": civilOfficialQuestions.length,
+  "criminal-law": criminalOfficialQuestions.length,
+  constitution: constitutionQuestions.length,
+} as const;

@@ -3,18 +3,18 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://oliviaiii1224.github.io/civil-law-quiz-tw/"),
-  title: "書記官研習室｜司法特考四等民刑法考古題",
-  description: "收錄近十年司法特考四等法院書記官民法概要與刑法概要官方考古題、標準答案及逐題解析。",
+  title: "書記官法科研習室｜民法、刑法與憲法考古題練習",
+  description: "收錄近十年司法特考四等法院書記官民法、刑法與憲法官方考古題、標準答案及解析，並分科保存錯題與學習進度。",
   openGraph: {
-    title: "書記官研習室｜司法特考四等民刑法考古題",
-    description: "民國 105–114 年法院書記官民法概要與刑法概要，共 350 題選擇題與 52 題申論題。",
-    images: [{ url: "https://oliviaiii1224.github.io/civil-law-quiz-tw/og.png", width: 1200, height: 630, alt: "書記官研習室" }],
+    title: "書記官法科研習室｜民法、刑法與憲法考古題練習",
+    description: "民國 105–114 年司法特考四等民法、刑法與憲法題庫，共 552 題官方試題。",
+    images: [{ url: "https://oliviaiii1224.github.io/civil-law-quiz-tw/og-multisubject.png", width: 1200, height: 630, alt: "書記官法科研習室" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "書記官研習室｜司法特考四等民刑法考古題",
-    description: "民國 105–114 年法院書記官民法概要與刑法概要，共 350 題選擇題與 52 題申論題。",
-    images: ["https://oliviaiii1224.github.io/civil-law-quiz-tw/og.png"],
+    title: "書記官法科研習室｜民法、刑法與憲法考古題練習",
+    description: "民國 105–114 年司法特考四等民法、刑法與憲法題庫，共 552 題官方試題。",
+    images: ["https://oliviaiii1224.github.io/civil-law-quiz-tw/og-multisubject.png"],
   },
 };
 
