@@ -7,6 +7,7 @@ import { buildCriminalAnalysis } from "./criminal-law-analyses";
 import { buildConstitutionAnalysis } from "./constitution-analyses";
 import { buildLegalIntroductionAnalysis } from "./legal-introduction-analyses";
 import { buildEnglishAnalysis, type EnglishAnalysis } from "./english-analyses";
+import { buildChineseAnalysis } from "./chinese-analyses";
 import type { Reference } from "./references";
 
 export type Subject =
@@ -488,33 +489,39 @@ const englishQuestions: Question[] = (
 
 const remainingClerkQuestions: Question[] = (
   remainingClerkRecordsJson as RemainingClerkRecord[]
-).map((record) => ({
-  ...record,
-  subject: record.studySubject,
-  subjectLabel: record.subject,
-  category: "待分類" as const,
-  type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
-  difficulty: "進階" as const,
-  source: `${record.rocYear} 年司法特考四等｜${record.subject}｜${record.questionKind}第 ${record.officialQuestionNumber} 題`,
-  confidence: undefined,
-  statutes: [],
-  references: [
-    {
-      type: "official-material" as const,
-      title: "考選部官方試題",
-      locator: `第 ${record.officialQuestionNumber} 題`,
-      url: record.sourceUrl,
-    },
-    ...(record.answerUrl && record.answerSource
-      ? [{
-          type: "official-material" as const,
-          title: record.answerSource,
-          locator: `第 ${record.officialQuestionNumber} 題`,
-          url: record.answerUrl,
-        }]
-      : []),
-  ],
-})).sort(
+).map((record) => {
+  const explanation = record.studySubject === "chinese"
+    ? buildChineseAnalysis(record)
+    : undefined;
+  return {
+    ...record,
+    subject: record.studySubject,
+    subjectLabel: record.subject,
+    category: "待分類" as const,
+    type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
+    difficulty: "進階" as const,
+    source: `${record.rocYear} 年司法特考四等｜${record.subject}｜${record.questionKind}第 ${record.officialQuestionNumber} 題`,
+    confidence: explanation?.confidence,
+    analysis: explanation?.analysis,
+    statutes: [],
+    references: [
+      {
+        type: "official-material" as const,
+        title: "考選部官方試題",
+        locator: `第 ${record.officialQuestionNumber} 題`,
+        url: record.sourceUrl,
+      },
+      ...(record.answerUrl && record.answerSource
+        ? [{
+            type: "official-material" as const,
+            title: record.answerSource,
+            locator: `第 ${record.officialQuestionNumber} 題`,
+            url: record.answerUrl,
+          }]
+        : []),
+    ],
+  };
+}).sort(
   (left, right) =>
     (right.rocYear ?? 0) - (left.rocYear ?? 0) ||
     left.subjectLabel.localeCompare(right.subjectLabel, "zh-Hant") ||

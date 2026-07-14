@@ -24,7 +24,7 @@ test("builds the multi-subject clerk exam practice experience as static HTML", a
 });
 
 test("keeps questions and local progress behind replaceable data modules", async () => {
-  const [page, questions, officialData, criminalData, combinedData, remainingData, englishTranslationsData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, civilCode, criminalCode, criminalImporter, importer, remainingImporter, englishTranslationImporter] = await Promise.all([
+  const [page, questions, officialData, criminalData, combinedData, remainingData, englishTranslationsData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, chineseAnalysisModule, civilCode, criminalCode, criminalImporter, importer, remainingImporter, englishTranslationImporter] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data/questions.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/judicial-fourth-questions.json", import.meta.url), "utf8"),
@@ -41,6 +41,7 @@ test("keeps questions and local progress behind replaceable data modules", async
     readFile(new URL("../app/data/constitution-analyses.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/legal-introduction-analyses.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/english-analyses.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/chinese-analyses.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/civil-code-articles.json", import.meta.url), "utf8"),
     readFile(new URL("../app/data/criminal-code-articles.json", import.meta.url), "utf8"),
     readFile(new URL("../scripts/import-moex-criminal-law.py", import.meta.url), "utf8"),
@@ -74,6 +75,9 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(constitutionAnalysisModule, /decisionReferences/);
   assert.match(legalIntroductionAnalysisModule, /buildLegalIntroductionAnalysis/);
   assert.match(englishAnalysisModule, /buildEnglishAnalysis/);
+  assert.match(chineseAnalysisModule, /buildChineseAnalysis/);
+  assert.equal((chineseAnalysisModule.match(/"clerk-chinese-\d+-mcq-\d+"/g) ?? []).length, 100);
+  assert.match(page, /選項辨析與常見誤區/);
   assert.match(page, /question\.passage/);
   assert.match(page, /question\.englishAnalysis/);
   assert.match(page, /promptTranslation/);
@@ -149,6 +153,12 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.equal(remainingRecords.filter((item) => item.studySubject === "civil-procedure").length, 20);
   assert.equal(remainingRecords.filter((item) => item.studySubject === "criminal-procedure").length, 20);
   assert.ok(remainingRecords.every((item) => item.sourceUrl.includes("wwwq.moex.gov.tw")));
+  assert.ok(remainingRecords.filter((item) => item.studySubject === "chinese" && item.format === "選擇題").every((item) =>
+    chineseAnalysisModule.includes(`"${item.id}"`)
+  ));
+  assert.ok(remainingRecords.filter((item) => item.studySubject === "chinese").every((item) =>
+    !/公務人員特種考試|考試試題|類科組|科目：國文/.test(`${item.prompt} ${item.options.join(" ")}`)
+  ));
   assert.ok(remainingRecords.filter((item) => item.format === "申論題").every((item) => item.answer === null && item.options.length === 0));
   for (let year = 105; year <= 114; year += 1) {
     assert.equal(remainingRecords.filter((item) => item.studySubject === "chinese" && item.rocYear === year && item.format === "選擇題").length, 10);

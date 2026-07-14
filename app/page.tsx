@@ -649,12 +649,12 @@ function QuestionCard({
                 <h3>{question.analysis.issue}</h3>
               </div>
               <div className="reasoning-grid">
-                <div><span>01</span><h3>法律規則</h3><p>{question.analysis.rule}</p></div>
-                <div><span>02</span><h3>套入本題</h3><p>{question.analysis.application}</p></div>
+                <div><span>01</span><h3>{question.subject === "chinese" ? "判讀原則" : "法律規則"}</h3><p>{question.analysis.rule}</p></div>
+                <div><span>02</span><h3>{question.subject === "chinese" ? "解析" : "套入本題"}</h3><p>{question.analysis.application}</p></div>
                 <div><span>03</span><h3>結論</h3><p>{question.analysis.conclusion}</p></div>
               </div>
               <div className="trap-note">
-                <strong>常見誤區</strong>
+                <strong>{question.subject === "chinese" ? "選項辨析與常見誤區" : "常見誤區"}</strong>
                 <p>{question.analysis.trap}</p>
               </div>
               {question.references.length > 0 && (
@@ -669,7 +669,11 @@ function QuestionCard({
                   ))}
                 </div>
               )}
-              <p className="verification-note">答案以考選部公告為準；解析由本站依命題時法、官方法條及實務資料自行整理，遇修法題已另行註明。</p>
+              <p className="verification-note">
+                {question.subject === "chinese"
+                  ? "答案以考選部公告為準；解析依題文語境、典故與常用語義自行整理，不轉載坊間題庫詳解。"
+                  : "答案以考選部公告為準；解析由本站依命題時法、官方法條及實務資料自行整理，遇修法題已另行註明。"}
+              </p>
             </>
           ) : (
             <div className="official-answer-note">
