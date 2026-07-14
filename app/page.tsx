@@ -41,7 +41,7 @@ import type { SearchEntry } from "./lib/search";
 import { reviewQueueOf } from "./lib/spaced-repetition";
 import { relatedQuestionsFor } from "./lib/statute-links";
 
-const COPY_LINK_NOTICE = "題目連結已複製（不含個人作答與筆記）";
+const COPY_LINK_NOTICE = "題目連結已複製（不含個人作答資料）";
 
 export default function Home() {
   const [view, setView] = useState<View>("practice");
@@ -72,7 +72,6 @@ export default function Home() {
     recordEssayRead,
     toggleStarred,
     toggleUncertain,
-    saveNote,
     saveEssayDraft,
     completeDailyQuestion,
     setExamDate,
@@ -792,7 +791,6 @@ export default function Home() {
                   onOpenRelated={openQuestionInPractice}
                   onToggleStarred={() => toggleStarred(currentQuestion.id)}
                   onToggleUncertain={() => toggleUncertain(currentQuestion.id)}
-                  onSaveNote={(note) => saveNote(currentQuestion.id, note)}
                   onCopyLink={() => copyQuestionLink(currentQuestion.id)}
                   essay={progress.essays?.[currentQuestion.id]}
                   onSaveEssay={(draft, seconds) => {

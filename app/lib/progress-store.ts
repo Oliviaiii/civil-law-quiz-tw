@@ -18,11 +18,10 @@ export type AnswerProgress = {
   dueAt?: string;
 };
 
-/** 收藏、不確定與純文字筆記（獨立於答對／答錯）。 */
+/** 收藏與不確定標記（獨立於答對／答錯）。 */
 export type QuestionFlags = {
   starred?: boolean;
   uncertain?: boolean;
-  note?: string;
 };
 
 /** 申論題自我練習：本機草稿與累計用時（秒）。 */
@@ -40,7 +39,7 @@ export type StatuteCardState = {
 };
 
 /**
- * 進度格式 v3：一次擴充間隔複習、收藏／筆記、每日計數、每日一題、
+ * 進度格式 v3：一次擴充間隔複習、收藏標記、每日計數、每日一題、
  * 最後檢視位置與考試日期所需欄位，避免連環升版。
  */
 export type ProgressData = {
@@ -103,10 +102,6 @@ function sanitizeFlags(value: unknown): QuestionFlags | null {
   const sanitized: QuestionFlags = {};
   if (flags.starred === true) sanitized.starred = true;
   if (flags.uncertain === true) sanitized.uncertain = true;
-  // 筆記為本機私人純文字；限制長度避免匯入異常大的檔案。
-  if (typeof flags.note === "string" && flags.note.trim()) {
-    sanitized.note = flags.note.slice(0, 5000);
-  }
   return Object.keys(sanitized).length > 0 ? sanitized : null;
 }
 

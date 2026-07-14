@@ -470,11 +470,11 @@ test("複製題目連結不含個人資料", async ({ page }) => {
   await useDemoCorpus(page);
   await page.locator(".question-tools button", { hasText: "複製連結" }).click();
   const toast = page.locator(".toast");
-  await expect(toast).toContainText("不含個人作答與筆記");
+  await expect(toast).toContainText("不含個人作答資料");
   await expect(toast).toBeHidden({ timeout: 4_000 });
 });
 
-test("收藏、不確定與個人筆記", async ({ page }) => {
+test("收藏與不確定標記", async ({ page }) => {
   await openApp(page);
   await useDemoCorpus(page);
 
@@ -486,11 +486,7 @@ test("收藏、不確定與個人筆記", async ({ page }) => {
   await uncertainButton.click();
   await expect(uncertainButton).toHaveAttribute("aria-pressed", "true");
 
-  // 筆記保存（明確標示為本機私人資料）
-  await page.locator(".question-tools button", { hasText: "筆記" }).click();
-  await expect(page.locator(".question-note")).toContainText("僅保存在這台裝置");
-  await page.getByRole("textbox", { name: "個人筆記" }).fill("成年年齡已改為 18 歲");
-  await page.getByRole("button", { name: "儲存筆記" }).click();
+  await expect(page.getByRole("button", { name: "筆記" })).toHaveCount(0);
 
   // 篩選只看收藏／不確定
   await page.locator(".filters .segmented button", { hasText: "收藏" }).click();
@@ -499,14 +495,13 @@ test("收藏、不確定與個人筆記", async ({ page }) => {
   await page.locator(".filters .segmented button", { hasText: "不確定" }).click();
   expect(await readPosition(page)).toEqual({ position: 1, total: 1 });
 
-  // 重新整理後筆記仍在（切回示範題來源與收藏範圍）
+  // 重新整理後收藏與不確定標記仍在。
   await page.reload();
   await page.waitForSelector('html[data-app-ready="true"]');
   await useDemoCorpus(page);
-  await page.locator(".filters .segmented button", { hasText: "收藏" }).click();
   await expect(page.locator("article.question-card h2")).toContainText(DEMO_PROMPT);
-  await page.locator(".question-tools button", { hasText: "筆記" }).click();
-  await expect(page.getByRole("textbox", { name: "個人筆記" })).toHaveValue("成年年齡已改為 18 歲");
+  await expect(page.locator(".question-tools button", { hasText: "收藏" })).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(".question-tools button", { hasText: "不確定" })).toHaveAttribute("aria-pressed", "true");
 });
 
 test("題目報錯：預填 GitHub Issue 連結正確編碼", async ({ page }) => {
@@ -897,7 +892,7 @@ test("匯入紀錄：有效檔、格式錯誤與 v1 migration", async ({ page })
   await expect(doneStat).toContainText(/^1\s*\//);
   await expect(page.locator(".nav-item", { hasText: "錯題本" }).locator("b")).toHaveText("1");
 
-  // v3 格式（含收藏、筆記與每日計數欄位）可完整匯入
+  // v3 格式可完整匯入；舊版 note 欄位會被丟棄。
   await fileInput.setInputFiles(
     progressFile("progress-v3.json", {
       version: 3,
@@ -918,4 +913,8 @@ test("匯入紀錄：有效檔、格式錯誤與 v1 migration", async ({ page })
   );
   await expect(page.locator(".toast")).toContainText("學習紀錄已匯入");
   await expect(doneStat).toContainText(/^1\s*\//);
+  await expect.poll(() => page.evaluate(() => {
+    const stored = JSON.parse(localStorage.getItem("civil-law-quiz-tw:progress:v3") ?? "{}");
+    return stored.flags?.["demo-001"];
+  })).toEqual({ starred: true });
 });

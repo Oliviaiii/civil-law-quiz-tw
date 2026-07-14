@@ -33,7 +33,6 @@ export function QuestionCard({
   onOpenRelated,
   onToggleStarred,
   onToggleUncertain,
-  onSaveNote,
   onCopyLink,
   essay,
   onSaveEssay,
@@ -51,15 +50,12 @@ export function QuestionCard({
   onOpenRelated?: (question: Question) => void;
   onToggleStarred?: () => void;
   onToggleUncertain?: () => void;
-  onSaveNote?: (note: string) => void;
   onCopyLink?: () => void;
   essay?: EssayPracticeState;
   onSaveEssay?: (draft: string, seconds: number) => void;
 }) {
   const [selected, setSelected] = useState<number | null>(null);
   const [revealed, setRevealed] = useState(false);
-  const [noteOpen, setNoteOpen] = useState(false);
-  const [noteDraft, setNoteDraft] = useState(flags?.note ?? "");
   const isEssay = question.format === "申論題";
   // 顯示順序在掛載時決定一次，單次作答內穩定；判題一律以原始 index 為準。
   const [optionOrder] = useState<number[]>(() =>
@@ -131,8 +127,8 @@ export function QuestionCard({
         </a>
       </div>
 
-      {(onToggleStarred || onToggleUncertain || onSaveNote) && (
-        <div className="question-tools" aria-label="收藏與筆記">
+      {(onToggleStarred || onToggleUncertain || onCopyLink) && (
+        <div className="question-tools" aria-label="題目工具">
           {onToggleStarred && (
             <button
               type="button"
@@ -155,44 +151,11 @@ export function QuestionCard({
               ？{flags?.uncertain ? "已標不確定" : "不確定"}
             </button>
           )}
-          {onSaveNote && (
-            <button
-              type="button"
-              aria-label="筆記"
-              className={flags?.note ? "tool active" : "tool"}
-              onClick={() => setNoteOpen((previous) => !previous)}
-            >
-              ✎ 筆記{flags?.note ? "＊" : ""}
-            </button>
-          )}
           {onCopyLink && (
             <button type="button" aria-label="複製題目連結" className="tool" onClick={onCopyLink}>
               🔗 複製連結
             </button>
           )}
-        </div>
-      )}
-
-      {noteOpen && onSaveNote && (
-        <div className="question-note">
-          <label>
-            <span>個人筆記（僅保存在這台裝置的瀏覽器，不會上傳或公開分享）</span>
-            <textarea
-              rows={3}
-              aria-label="個人筆記"
-              value={noteDraft}
-              onChange={(event) => setNoteDraft(event.target.value)}
-            />
-          </label>
-          <button
-            type="button"
-            onClick={() => {
-              onSaveNote(noteDraft);
-              setNoteOpen(false);
-            }}
-          >
-            儲存筆記
-          </button>
         </div>
       )}
 

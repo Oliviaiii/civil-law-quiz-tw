@@ -563,7 +563,7 @@ button { color: inherit; }
   color: white;
 }
 
-/* 收藏、不確定與筆記 */
+/* 收藏、不確定與題目工具 */
 .question-tools { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 2px; }
 .question-tools .tool {
   border: 1px solid var(--line);
@@ -580,32 +580,6 @@ button { color: inherit; }
   background: var(--red-soft);
   color: var(--accent-dark);
   font-weight: 700;
-}
-
-.question-note {
-  margin: 8px 0 4px;
-  border: 1px dashed var(--line);
-  border-radius: 10px;
-  background: var(--surface);
-  padding: 12px;
-}
-.question-note label span { display: block; color: var(--muted); font-size: 12px; margin-bottom: 6px; }
-.question-note textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 8px 10px;
-  resize: vertical;
-  background: var(--paper);
-}
-.question-note > button {
-  margin-top: 8px;
-  border: 0;
-  border-radius: 8px;
-  background: var(--accent);
-  color: white;
-  padding: 7px 16px;
-  cursor: pointer;
 }
 
 /* 申論題自我練習 */

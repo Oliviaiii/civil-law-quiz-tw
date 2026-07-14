@@ -129,13 +129,12 @@ export function useProgress() {
     });
   }
 
-  /** 更新收藏／不確定／筆記；全空的紀錄自動移除。 */
+  /** 更新收藏／不確定標記；全空的紀錄自動移除。 */
   function updateFlags(id: string, patch: Partial<QuestionFlags>) {
     setProgress((previous) => {
       const merged: QuestionFlags = { ...previous.flags[id], ...patch };
       if (!merged.starred) delete merged.starred;
       if (!merged.uncertain) delete merged.uncertain;
-      if (!merged.note?.trim()) delete merged.note;
       const flags = { ...previous.flags };
       if (Object.keys(merged).length > 0) flags[id] = merged;
       else delete flags[id];
@@ -149,10 +148,6 @@ export function useProgress() {
 
   function toggleUncertain(id: string) {
     updateFlags(id, { uncertain: !progress.flags[id]?.uncertain });
-  }
-
-  function saveNote(id: string, note: string) {
-    updateFlags(id, { note });
   }
 
   /** 保存申論題草稿與練習用時；內容全空時移除該筆。 */
@@ -221,7 +216,6 @@ export function useProgress() {
     recordEssayRead,
     toggleStarred,
     toggleUncertain,
-    saveNote,
     saveEssayDraft,
     completeDailyQuestion,
     setExamDate,
