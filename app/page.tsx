@@ -41,6 +41,8 @@ import type { SearchEntry } from "./lib/search";
 import { reviewQueueOf } from "./lib/spaced-repetition";
 import { relatedQuestionsFor } from "./lib/statute-links";
 
+const COPY_LINK_NOTICE = "題目連結已複製（不含個人作答與筆記）";
+
 export default function Home() {
   const [view, setView] = useState<View>("practice");
   const [scope, setScope] = useState<Scope>("all");
@@ -80,6 +82,12 @@ export default function Home() {
 
   const { practiceSet, createSet, leaveSet, moveCursor, markCompleted } = usePracticeSet();
   const { preferences, ready: preferencesReady, updatePreferences } = usePreferences();
+
+  useEffect(() => {
+    if (notice !== COPY_LINK_NOTICE) return;
+    const timeout = window.setTimeout(() => setNotice(""), 3_000);
+    return () => window.clearTimeout(timeout);
+  }, [notice]);
 
   // 深連結（#q=題目ID）優先；否則若有上次練習快照則顯示「繼續上次練習」。
   useEffect(() => {
@@ -405,7 +413,7 @@ export default function Home() {
     const url = `${window.location.origin}${window.location.pathname}#q=${id}`;
     try {
       await navigator.clipboard.writeText(url);
-      setNotice("題目連結已複製（不含個人作答與筆記）");
+      setNotice(COPY_LINK_NOTICE);
     } catch {
       setNotice(`題目連結：${url}`);
     }

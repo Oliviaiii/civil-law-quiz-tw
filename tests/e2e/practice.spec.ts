@@ -469,7 +469,9 @@ test("複製題目連結不含個人資料", async ({ page }) => {
   await openApp(page);
   await useDemoCorpus(page);
   await page.locator(".question-tools button", { hasText: "複製連結" }).click();
-  await expect(page.locator(".toast")).toContainText("不含個人作答與筆記");
+  const toast = page.locator(".toast");
+  await expect(toast).toContainText("不含個人作答與筆記");
+  await expect(toast).toBeHidden({ timeout: 4_000 });
 });
 
 test("收藏、不確定與個人筆記", async ({ page }) => {
