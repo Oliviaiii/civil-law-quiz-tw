@@ -44,6 +44,11 @@ SUBJECT_RANGES = {
     "english": range(31, 51),
 }
 
+PASSAGE_HEADER = re.compile(
+    r"(?:請依下文回答第\s*(\d+)\s*題至第\s*(\d+)\s*題|"
+    r"請回答下列第\s*(\d+)\s*題至第\s*(\d+)\s*題)\s*[：:]?"
+)
+
 
 def official_url(year: int, document_type: str) -> str:
     item = MANIFEST[year]
@@ -93,9 +98,41 @@ def normalize(text: str) -> str:
     return text.strip()
 
 
+def normalize_passage(text: str, *, mark_blanks: bool) -> str:
+    """Preserve English word boundaries while removing PDF layout padding."""
+    lines = []
+    for raw_line in text.replace("年", "年").replace("立", "立").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith(("代號：", "頁次：")):
+            continue
+        # Underlined blanks are represented only by a wide horizontal gap in
+        # MOEX's PDF text layer.  Make that gap visible before whitespace is
+        # normalized, otherwise the sentence appears to have no blank at all.
+        if mark_blanks:
+            line = re.sub(r"[ \t]{6,}", " _____ ", line)
+        lines.append(re.sub(r"\s+", " ", line))
+    return " ".join(lines).strip()
+
+
+def normalize_english_prompt(text: str) -> str:
+    lines = []
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith(("代號：", "頁次：")):
+            continue
+        line = re.sub(r"[ \t]{6,}", " _____ ", line)
+        lines.append(re.sub(r"\s+", " ", line))
+    return " ".join(lines).strip()
+
+
 def extract_questions(year: int) -> list[dict[str, Any]]:
     with pdfplumber.open(PDF_DIR / f"{year}-Q.pdf") as pdf:
-        text = "\n".join(page.extract_text() or "" for page in pdf.pages)
+        # Layout extraction is essential for English: ordinary extraction joins
+        # words such as ``This is`` into ``Thisis`` on several official PDFs.
+        text = "\n".join(
+            page.extract_text(layout=True, x_density=4, x_tolerance=1, y_tolerance=3) or ""
+            for page in pdf.pages
+        )
 
     first_option = min(text.find(marker) for marker in OPTION_MARKERS if marker in text)
     first_question = [
@@ -104,21 +141,76 @@ def extract_questions(year: int) -> list[dict[str, Any]]:
         if match.start() < first_option
     ][-1]
     section = text[first_question.start() :]
-    starts = list(
+    candidates = list(
         re.finditer(r"(?m)^\s*([1-9]|[1-4][0-9]|50)\s+(?=\S)", section)
     )
+    # A wrapped line in 114 Q5 also begins with the digit 5.  Select the first
+    # candidate for each expected number instead of treating that continuation
+    # line as a second question.
+    starts = []
+    expected = 1
+    for candidate in candidates:
+        if int(candidate.group(1)) == expected:
+            starts.append(candidate)
+            expected += 1
+            if expected == 51:
+                break
     numbers = [int(match.group(1)) for match in starts]
     if numbers != QUESTION_SEQUENCE:
         raise ValueError(f"{year}: unexpected question sequence {numbers}")
+
+    passage_ranges: list[tuple[int, int, str, str]] = []
+    for match in PASSAGE_HEADER.finditer(section):
+        passage_start = int(match.group(1) or match.group(3))
+        passage_end = int(match.group(2) or match.group(4))
+        question_start = starts[passage_start - 1].start()
+        first_question_end = (
+            starts[passage_start].start()
+            if passage_start < len(starts)
+            else len(section)
+        )
+        first_question_block = section[
+            starts[passage_start - 1].end() : first_question_end
+        ]
+        first_marker = min(
+            (first_question_block.find(marker) for marker in OPTION_MARKERS if marker in first_question_block),
+            default=-1,
+        )
+        has_independent_prompt = bool(
+            first_marker > 0 and normalize(first_question_block[:first_marker])
+        )
+        passage = normalize_passage(
+            section[match.end() : question_start],
+            mark_blanks=not has_independent_prompt,
+        )
+        if not passage:
+            raise ValueError(f"{year} Q{passage_start}-{passage_end}: empty passage")
+        passage_ranges.append(
+            (
+                passage_start,
+                passage_end,
+                f"judicial-fourth-{year}-english-passage-{passage_start}-{passage_end}",
+                passage,
+            )
+        )
 
     questions: list[dict[str, Any]] = []
     for index, start in enumerate(starts):
         end = starts[index + 1].start() if index + 1 < len(starts) else len(section)
         block = section[start.end() : end]
+        # A passage is printed after the preceding question's D option.  Cut it
+        # before parsing options so it cannot leak into that answer choice.
+        passage_header = PASSAGE_HEADER.search(block)
+        if passage_header:
+            block = block[: passage_header.start()]
         marker_positions = [block.find(marker) for marker in OPTION_MARKERS]
         if any(position == -1 for position in marker_positions):
             raise ValueError(f"{year} Q{index + 1}: missing option marker")
-        prompt = normalize(block[: marker_positions[0]])
+        prompt = (
+            normalize_english_prompt(block[: marker_positions[0]])
+            if index + 1 >= 31
+            else normalize(block[: marker_positions[0]])
+        )
         if not prompt and index + 1 >= 31:
             # Some English cloze questions contain only option markers because
             # their stem is a numbered blank in the shared passage above.
@@ -133,7 +225,15 @@ def extract_questions(year: int) -> list[dict[str, Any]]:
             options.append(normalize(block[position + 1 : option_end]))
         if not prompt or any(not option for option in options):
             raise ValueError(f"{year} Q{index + 1}: empty prompt or option")
-        questions.append({"prompt": prompt, "options": options})
+        passage_data = next(
+            (
+                {"passageId": passage_id, "passage": passage}
+                for passage_start, passage_end, passage_id, passage in passage_ranges
+                if passage_start <= index + 1 <= passage_end
+            ),
+            {},
+        )
+        questions.append({"prompt": prompt, "options": options, **passage_data})
     return questions
 
 
@@ -204,12 +304,20 @@ def build_records() -> list[dict[str, Any]]:
                     "officialQuestionNumber": number,
                     "prompt": question["prompt"],
                     "options": question["options"],
+                    **(
+                        {
+                            "passageId": question["passageId"],
+                            "passage": question["passage"],
+                        }
+                        if question.get("passageId")
+                        else {}
+                    ),
                     "answer": primary_answer,
                     "acceptedAnswers": accepted_answers,
                     "allCredit": False,
                     "answerSource": answer_label,
                     "answerUrl": official_url(year, answer_type),
-                    "humanVerified": logical_subject(number) in {"constitution", "legal-introduction"},
+                    "humanVerified": True,
                 }
             )
     return records

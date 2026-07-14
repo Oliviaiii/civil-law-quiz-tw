@@ -15,7 +15,7 @@
 | vinext 在 Windows 建置後異常結束 | 已顯示 `Build complete`，之後出現 `UV_HANDLE_CLOSING` | 檢查 `dist/server/index.js`，再以 `npm test` 獨立驗證正式建置 |
 | Sites 建立站點被限流 | HTTP 429、`2400 requests per 300 seconds` | 不改 slug，不重複建立；等待後以相同參數重試一次 |
 | Sites 包裝腳本在 WSL 無法執行 | `pipefail\r: invalid option name` | 以 `sed` 移除 CR，直接執行內層 packaging helper |
-| 英文共用題組解析不完整 | 題號只有選項、題幹為空或單字黏在一起 | 暫留題組提示；英文票必須另做 passage 正規化與人工 PDF 核對 |
+| 英文共用題組切分異常 | 文章混入前題 D 選項、題幹空格消失或單字黏在一起 | 確認 layout extraction、`passageId` 與題組範圍測試；重新執行匯入器 |
 
 ## 1. 考選部 URL 與逐年科目代碼
 
@@ -120,22 +120,11 @@ urllib.request.urlopen(request, context=ssl_context)
 
 105–114 年憲法題可從 PDF 文字層穩定取得題號、題幹與四個 private-use option markers。仍須移除跨頁產生的 `代號：`、`頁次：`，並驗證題號必須完整為 1–50。
 
-### 英文題仍有待處理的限制
+### 英文題組的正式處理方式
 
-部分英文克漏字／閱讀題會出現：
+共用匯入器以 `pdfplumber.extract_text(layout=True, x_density=4, x_tolerance=1, y_tolerance=3)` 讀取試卷，保留英文單字邊界；六個以上的水平空白會轉成可見的 `_____`。題組標題支援「請依下文回答……」及舊卷的「請回答下列……」格式，文章切到第一個題號之前，並以 `passageId`／`passage` 掛到範圍內每一題。
 
-- 題號所在行只有 A–D 選項，沒有獨立題幹。
-- 共用文章落在前一題 block 的尾端。
-- PDF 字型定位讓英文單字之間失去空格，例如 `Thisis...`。
-
-目前 combined-paper importer 只為空題幹保存「請依官方試卷的共用文章作答」提示，足以讓憲法票建立唯一的共用原始資料層，但不代表英文內容已達上線品質。
-
-執行英文 issue 時必須：
-
-1. 建立 `passageId` 或等效的共用文章模型。
-2. 從座標與題組範圍重新切分 passage，不把文章塞入前一題 D 選項。
-3. 人工對照 PDF 補回空格、底線、引號、連字號與段落。
-4. 不另建第二份 500 題原始資料；應改善現有 importer 與共用 JSON。
+維護時不得另建第二份英文題庫。修改 `scripts/import-moex-legal-knowledge.py` 後重新產生共用 JSON，並確認：200 題英文、20 個唯一 `passageId`、98 筆題目與文章關聯、每題四個選項且單一選項少於 200 字。若官方未為克漏字另印題幹，前台顯示共用文章及「請依官方試卷的共用文章作答」提示，這是資料忠實呈現，不是漏題。
 
 ## 5. UTF-8 與 Windows 主控台
 
@@ -284,7 +273,7 @@ git status --short --branch
 - 新題 ID 不碰既有民法 ID。
 - `civil-law-quiz-tw:progress:v2` 與舊進度匯出入仍可使用。
 - `.temp`、`__pycache__`、PDF 與部署 archive 沒有被加入 Git。
-- 英文題組限制沒有被誤標成「已人工完整核對」。
+- 英文 200 題、20 組文章與 98 筆題組關聯均通過資料稽核。
 
 ## 10. 何時更新本文件
 
@@ -294,6 +283,6 @@ git status --short --branch
 - 新版 Python、Node、vinext、Next.js 或 Windows 出現新的相容性問題。
 - GitHub connector／CLI 的權限流程改變。
 - Sites packaging 或部署命令改變。
-- 找到英文 passage／空格還原的正式解法。
+- 英文 passage／空格還原邏輯異動。
 
 記錄至少要包含：完整症狀、原因、採用的解法、為何沒有採用較危險的替代方案，以及可重現的驗證指令。

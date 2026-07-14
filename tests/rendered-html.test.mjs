@@ -5,20 +5,22 @@ import test from "node:test";
 test("builds the multi-subject clerk exam practice experience as static HTML", async () => {
   const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
   assert.match(html, /<html lang="zh-Hant">/);
-  assert.match(html, /<title>書記官法科研習室｜民法、刑法與憲法考古題練習<\/title>/);
+  assert.match(html, /<title>書記官法科研習室｜五科近十年考古題<\/title>/);
   assert.match(html, /近十年法院書記官民法考古題/);
   assert.match(html, /民國 105–114 年司法特考四等官方試題/);
   assert.match(html, /錯題本/);
   assert.match(html, /學習紀錄/);
   assert.match(html, /<option value="criminal-law">刑法<\/option>/);
   assert.match(html, /<option value="constitution">憲法<\/option>/);
+  assert.match(html, /<option value="legal-introduction">法學緒論<\/option>/);
+  assert.match(html, /<option value="english">英文<\/option>/);
   assert.match(html, /<strong>201<\/strong>/);
   assert.match(html, /175[\s\S]*選擇＋[\s\S]*26[\s\S]*申論/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
 test("keeps questions and local progress behind replaceable data modules", async () => {
-  const [page, questions, officialData, criminalData, combinedData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, civilCode, criminalCode, criminalImporter, importer] = await Promise.all([
+  const [page, questions, officialData, criminalData, combinedData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, civilCode, criminalCode, criminalImporter, importer] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data/questions.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/judicial-fourth-questions.json", import.meta.url), "utf8"),
@@ -31,6 +33,8 @@ test("keeps questions and local progress behind replaceable data modules", async
     readFile(new URL("../app/data/judicial-fourth-analyses.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/criminal-law-analyses.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/constitution-analyses.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/legal-introduction-analyses.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/english-analyses.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/civil-code-articles.json", import.meta.url), "utf8"),
     readFile(new URL("../app/data/criminal-code-articles.json", import.meta.url), "utf8"),
     readFile(new URL("../scripts/import-moex-criminal-law.py", import.meta.url), "utf8"),
@@ -60,6 +64,10 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(analysisModule, /officialAnalysisCount/);
   assert.match(constitutionAnalysisModule, /buildConstitutionAnalysis/);
   assert.match(constitutionAnalysisModule, /decisionReferences/);
+  assert.match(legalIntroductionAnalysisModule, /buildLegalIntroductionAnalysis/);
+  assert.match(englishAnalysisModule, /buildEnglishAnalysis/);
+  assert.match(page, /question\.passage/);
+  assert.match(page, /question\.englishAnalysis/);
   assert.match(importer, /legal-knowledge-and-english/);
   assert.match(importer, /answer_type = "M"/);
 
@@ -90,10 +98,19 @@ test("keeps questions and local progress behind replaceable data modules", async
     assert.equal(yearly.filter((item) => item.subject === "legal-introduction").length, 15);
     assert.equal(yearly.filter((item) => item.subject === "english").length, 20);
     assert.ok(yearly.every((item) => item.paper === "legal-knowledge-and-english"));
-    assert.ok(yearly.filter((item) => item.subject === "constitution").every((item) => item.humanVerified));
-    assert.ok(yearly.filter((item) => item.subject !== "constitution").every((item) => !item.humanVerified));
+    assert.ok(yearly.every((item) => item.humanVerified));
   }
   assert.equal(combinedRecords.filter((item) => item.subject === "constitution").length, 150);
+  assert.equal(combinedRecords.filter((item) => item.subject === "legal-introduction").length, 150);
+  assert.equal(combinedRecords.filter((item) => item.subject === "english").length, 200);
+  assert.equal(combinedRecords.filter((item) => item.subject === "english" && item.passageId).length, 98);
+  assert.equal(new Set(combinedRecords.filter((item) => item.passageId).map((item) => item.passageId)).size, 20);
+  assert.ok(combinedRecords.filter((item) => item.subject === "english").every((item) =>
+    item.prompt && item.options.length === 4 && item.options.every((option) => option.length < 200)
+  ));
+  assert.ok(combinedRecords.filter((item) => item.subject === "english" && !item.passageId).every((item) =>
+    item.prompt.includes("_____")
+  ));
   assert.deepEqual(
     combinedRecords.find((item) => item.id === "judicial-fourth-114-legal-knowledge-18").acceptedAnswers,
     [0, 1, 2],

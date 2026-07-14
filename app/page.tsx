@@ -17,13 +17,14 @@ type View = "practice" | "wrong" | "stats";
 type Scope = "all" | "unanswered" | "wrong";
 type Corpus = "司法特考四等" | "全部來源" | "示範題";
 type FormatFilter = "選擇題" | "申論題" | "全部題型";
-type SubjectFilter = "civil-law" | "criminal-law" | "constitution" | "legal-introduction" | "all";
+type SubjectFilter = "civil-law" | "criminal-law" | "constitution" | "legal-introduction" | "english" | "all";
 
 const subjectLabels: Record<Exclude<SubjectFilter, "all">, string> = {
   "civil-law": "民法",
   "criminal-law": "刑法",
   constitution: "憲法",
   "legal-introduction": "法學緒論",
+  english: "英文",
 };
 
 const viewLabels: Record<View, string> = {
@@ -313,7 +314,7 @@ export default function Home() {
                 <div>
                   <p className="eyebrow">{view === "wrong" ? "REVIEW" : "PRACTICE"}</p>
                   <h1>{view === "wrong" ? `把${subjectName}易錯題目集中重練` : `近十年法院書記官${subjectName}考古題`}</h1>
-                  <p>民國 105–114 年司法特考四等官方試題；民法、刑法與憲法分科保存進度，選擇題依考選部答案判定，申論題保留原題供閱讀與標記。</p>
+                  <p>民國 105–114 年司法特考四等官方試題；民法、刑法、憲法、法學緒論與英文分科保存進度，選擇題依考選部答案判定，申論題保留原題供閱讀與標記。</p>
                 </div>
                 <div className="result-summary">
                   <span>官方考古題</span>
@@ -343,7 +344,7 @@ export default function Home() {
                     const nextSubject = event.target.value as SubjectFilter;
                     setReviewingId(null);
                     setSubjectFilter(nextSubject);
-                    if (nextSubject === "constitution" || nextSubject === "legal-introduction") {
+                    if (nextSubject === "constitution" || nextSubject === "legal-introduction" || nextSubject === "english") {
                       setCorpus("司法特考四等");
                       setFormatFilter("選擇題");
                     }
@@ -352,6 +353,7 @@ export default function Home() {
                     <option value="criminal-law">刑法</option>
                     <option value="constitution">憲法</option>
                     <option value="legal-introduction">法學緒論</option>
+                    <option value="english">英文</option>
                     <option value="all">全部科目</option>
                   </select>
                 </label>
@@ -496,6 +498,12 @@ function QuestionCard({
         {previousAnswer && <span>上次作答 {formatDate(previousAnswer.lastAnsweredAt)}</span>}
       </div>
 
+      {question.passage && (
+        <section className="passage-box" aria-label="共用文章">
+          <p className="eyebrow">PASSAGE｜第 {question.officialQuestionNumber} 題所屬題組</p>
+          <p>{question.passage}</p>
+        </section>
+      )}
       <h2>{question.prompt}</h2>
       {isEssay ? (
         <>
@@ -557,7 +565,35 @@ function QuestionCard({
             )}
           </div>
 
-          {question.analysis ? (
+          {question.englishAnalysis ? (
+            <>
+              <div className="issue-box">
+                <p className="eyebrow">考點</p>
+                <h3>{question.englishAnalysis.skill}</h3>
+              </div>
+              <div className="english-analysis-grid">
+                <div><span>01</span><h3>正確答案理由</h3><p>{question.englishAnalysis.answerReason}</p></div>
+                <div><span>02</span><h3>關鍵句或文法結構</h3><p>{question.englishAnalysis.keyPoint}</p></div>
+                {question.englishAnalysis.supportingSentence && (
+                  <div><span>03</span><h3>文章定位</h3><p>{question.englishAnalysis.supportingSentence}</p></div>
+                )}
+              </div>
+              <div className="trap-note">
+                <strong>干擾選項</strong>
+                <p>{question.englishAnalysis.distractors}</p>
+              </div>
+              <div className="statutes">
+                <p className="eyebrow">官方來源</p>
+                {question.references.map((reference) => (
+                  <a key={`${reference.title}-${reference.locator ?? ""}`} href={reference.url} target="_blank" rel="noreferrer">
+                    <span>{reference.title}{reference.locator ? `｜${reference.locator}` : ""}</span>
+                    <b>查看官方資料 ↗</b>
+                  </a>
+                ))}
+              </div>
+              <p className="verification-note">答案以考選部公告為準；英文解析依官方文章、句法與語境自行整理，不轉載坊間題庫詳解。</p>
+            </>
+          ) : question.analysis ? (
             <>
               <div className="issue-box">
                 <p className="eyebrow">題目在問什麼</p>

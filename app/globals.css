@@ -151,6 +151,8 @@ button { color: inherit; }
 .source-line span + span { padding-left: 14px; border-left: 1px solid var(--line); }
 .source-line a { color: var(--accent-dark); font-weight: 800; text-decoration: none; }
 .question-card > h2 { margin: 28px 28px 8px; font-family: "Noto Serif TC", "PMingLiU", serif; font-size: clamp(20px, 2vw, 27px); line-height: 1.75; font-weight: 800; }
+.passage-box { margin: 28px 28px 0; padding: 22px; border: 1px solid var(--line); background: #faf8f3; }
+.passage-box > p:last-child { margin: 8px 0 0; color: #3f3b35; font-family: Georgia, "Times New Roman", serif; font-size: 15px; line-height: 1.9; }
 .instruction { margin: 0 28px 22px; color: var(--muted); font-size: 12px; }
 
 .options { display: grid; gap: 10px; padding: 0 28px; }
@@ -183,6 +185,11 @@ button { color: inherit; }
 .reasoning-grid span { color: var(--accent); font-family: Georgia, serif; font-size: 11px; }
 .reasoning-grid h3 { margin: 3px 0 6px; font-size: 13px; }
 .reasoning-grid p { margin: 0; color: #625e57; font-size: 13px; line-height: 1.85; }
+.english-analysis-grid { padding: 17px 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.english-analysis-grid > div { min-width: 0; padding: 17px 0; border-top: 1px solid var(--line); }
+.english-analysis-grid span { color: var(--accent); font-family: Georgia, serif; font-size: 11px; }
+.english-analysis-grid h3 { margin: 3px 0 6px; font-size: 13px; }
+.english-analysis-grid p { margin: 0; color: #625e57; font-size: 13px; line-height: 1.85; }
 .trap-note { margin: 0 28px 25px; padding: 14px 17px; display: grid; grid-template-columns: 80px 1fr; gap: 10px; border: 1px solid #e7d9c2; background: #fff8ea; font-size: 12px; }
 .trap-note strong { color: #9d5a24; }
 .trap-note p { margin: 0; color: #6c6256; }
@@ -244,6 +251,7 @@ button { color: inherit; }
   .nav-item > span, .sidebar-card, .storage-note { display: none; }
   .content { padding: 35px 25px 70px; }
   .reasoning-grid { grid-template-columns: 1fr; gap: 0; }
+  .english-analysis-grid { grid-template-columns: 1fr; gap: 0; }
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -266,6 +274,7 @@ button { color: inherit; }
   .source-line { padding-left: 18px; padding-right: 18px; flex-wrap: wrap; gap: 5px 10px; }
   .source-line span + span { padding-left: 0; border-left: 0; }
   .question-card > h2 { margin-left: 18px; margin-right: 18px; font-size: 20px; }
+  .passage-box { margin-left: 18px; margin-right: 18px; padding: 18px; }
   .instruction, .verification-note { margin-left: 18px; margin-right: 18px; }
   .options { padding: 0 18px; }
   .option { grid-template-columns: 32px 1fr; }
@@ -274,6 +283,7 @@ button { color: inherit; }
   .essay-callout, .official-answer-note { margin-left: 18px; margin-right: 18px; }
   .essay-callout { align-items: stretch; flex-direction: column; }
   .reasoning-grid { padding-left: 18px; padding-right: 18px; }
+  .english-analysis-grid { padding-left: 18px; padding-right: 18px; }
   .trap-note { grid-template-columns: 1fr; }
   .statutes a { grid-template-columns: 1fr; gap: 5px; }
   .question-footer { display: none; }

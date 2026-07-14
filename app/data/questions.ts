@@ -5,6 +5,7 @@ import { buildOfficialAnalysis } from "./judicial-fourth-analyses";
 import { buildCriminalAnalysis } from "./criminal-law-analyses";
 import { buildConstitutionAnalysis } from "./constitution-analyses";
 import { buildLegalIntroductionAnalysis } from "./legal-introduction-analyses";
+import { buildEnglishAnalysis, type EnglishAnalysis } from "./english-analyses";
 import type { Reference } from "./references";
 
 export type Subject =
@@ -50,6 +51,9 @@ export type Question = {
     conclusion: string;
     trap: string;
   };
+  englishAnalysis?: EnglishAnalysis;
+  passageId?: string;
+  passage?: string;
   statutes: { article: string; lawName?: string; text: string; url: string }[];
   references: Reference[];
 };
@@ -323,6 +327,8 @@ type CombinedPaperRecord = {
   answerSource: string;
   answerUrl: string;
   humanVerified: boolean;
+  passageId?: string;
+  passage?: string;
 };
 
 const criminalOfficialQuestions: Question[] = (
@@ -415,10 +421,46 @@ const legalIntroductionQuestions: Question[] = (
       left.officialQuestionNumber - right.officialQuestionNumber,
   );
 
+const englishQuestions: Question[] = (
+  combinedPaperRecordsJson as CombinedPaperRecord[]
+)
+  .filter((record) => record.subject === "english")
+  .map((record) => ({
+    ...record,
+    subjectLabel: "英文",
+    category: "待分類" as const,
+    type: "概念型" as const,
+    difficulty: "進階" as const,
+    source: `${record.rocYear} 年司法特考四等｜法學知識與英文｜官方第 ${record.officialQuestionNumber} 題`,
+    confidence: "中" as const,
+    englishAnalysis: buildEnglishAnalysis(record),
+    statutes: [],
+    references: [
+      {
+        type: "official-material" as const,
+        title: "考選部官方試題",
+        locator: `第 ${record.officialQuestionNumber} 題`,
+        url: record.sourceUrl,
+      },
+      {
+        type: "official-material" as const,
+        title: record.answerSource,
+        locator: `第 ${record.officialQuestionNumber} 題`,
+        url: record.answerUrl,
+      },
+    ],
+  }))
+  .sort(
+    (left, right) =>
+      right.rocYear - left.rocYear ||
+      left.officialQuestionNumber - right.officialQuestionNumber,
+  );
+
 export const questions: Question[] = [
   ...officialQuestions,
   ...constitutionQuestions,
   ...legalIntroductionQuestions,
+  ...englishQuestions,
   ...demoQuestions.map((question) => ({
     ...question,
     subject: "civil-law" as const,
@@ -435,7 +477,7 @@ export const questions: Question[] = [
   })),
 ];
 
-const allOfficialQuestions = [...officialQuestions, ...constitutionQuestions, ...legalIntroductionQuestions];
+const allOfficialQuestions = [...officialQuestions, ...constitutionQuestions, ...legalIntroductionQuestions, ...englishQuestions];
 
 export const officialQuestionCount = allOfficialQuestions.length;
 export const officialMultipleChoiceCount = allOfficialQuestions.filter(
@@ -450,4 +492,5 @@ export const officialCountsBySubject = {
   "criminal-law": criminalOfficialQuestions.length,
   constitution: constitutionQuestions.length,
   "legal-introduction": legalIntroductionQuestions.length,
+  english: englishQuestions.length,
 } as const;
