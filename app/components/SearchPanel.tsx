@@ -77,7 +77,7 @@ export function SearchPanel({
                     >
                       <span className="search-result-meta">
                         {entry.subjectLabel}
-                        {entry.rocYear ? `｜${entry.rocYear} 年` : "｜示範題"}
+                        {entry.rocYear ? `｜${entry.rocYear} 年` : "｜未標年度"}
                         {entry.number ? `｜第 ${entry.number} 題` : ""}
                         ｜{entry.format}
                       </span>

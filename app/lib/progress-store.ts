@@ -130,7 +130,8 @@ export function parseProgress(value: unknown): ProgressData {
   for (const [id, rawAnswer] of Object.entries(stored.answers)) {
     const answer = sanitizeAnswer(rawAnswer);
     if (!answer) continue;
-    // v1 是只有示範題時使用的格式；升級時移除示範題舊紀錄，避免正式題庫顯示幽靈錯題。
+    // 已移除的舊示範題不再寫回，避免任何版本的匯入資料顯示幽靈錯題。
+    if (id.startsWith("demo-")) continue;
     if (stored.version === 1 && !id.startsWith("judicial-fourth-")) continue;
     answers[id] = answer;
   }
@@ -138,6 +139,7 @@ export function parseProgress(value: unknown): ProgressData {
   const flags: Record<string, QuestionFlags> = {};
   if (stored.flags && typeof stored.flags === "object") {
     for (const [id, rawFlags] of Object.entries(stored.flags)) {
+      if (id.startsWith("demo-")) continue;
       const entry = sanitizeFlags(rawFlags);
       if (entry) flags[id] = entry;
     }
@@ -168,7 +170,10 @@ export function parseProgress(value: unknown): ProgressData {
   }
   if (stored.lastVisited && typeof stored.lastVisited === "object") {
     const lastVisited = stored.lastVisited as { questionId?: unknown };
-    if (typeof lastVisited.questionId === "string") {
+    if (
+      typeof lastVisited.questionId === "string" &&
+      !lastVisited.questionId.startsWith("demo-")
+    ) {
       progress.lastVisited = { questionId: lastVisited.questionId };
     }
   }

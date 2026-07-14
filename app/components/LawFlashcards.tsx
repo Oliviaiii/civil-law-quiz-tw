@@ -104,7 +104,7 @@ export function LawFlashcards({
                     <button type="button" onClick={() => onOpenQuestion(question)}>
                       <span className="search-result-meta">
                         {question.subjectLabel}
-                        {question.rocYear ? `｜${question.rocYear} 年` : "｜示範題"}
+                        {question.rocYear ? `｜${question.rocYear} 年` : "｜未標年度"}
                         {question.officialQuestionNumber ? `｜第 ${question.officialQuestionNumber} 題` : ""}
                       </span>
                       <span className="search-result-prompt">{question.prompt}</span>

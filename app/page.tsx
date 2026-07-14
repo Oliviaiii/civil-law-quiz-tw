@@ -41,8 +41,6 @@ import type { SearchEntry } from "./lib/search";
 import { reviewQueueOf } from "./lib/spaced-repetition";
 import { relatedQuestionsFor } from "./lib/statute-links";
 
-const COPY_LINK_NOTICE = "題目連結已複製（不含個人作答資料）";
-
 export default function Home() {
   const [view, setView] = useState<View>("practice");
   const [scope, setScope] = useState<Scope>("all");
@@ -83,12 +81,6 @@ export default function Home() {
 
   const { practiceSet, createSet, leaveSet, moveCursor, markCompleted } = usePracticeSet();
   const { preferences, ready: preferencesReady, updatePreferences } = usePreferences();
-
-  useEffect(() => {
-    if (notice !== COPY_LINK_NOTICE) return;
-    const timeout = window.setTimeout(() => setNotice(""), 3_000);
-    return () => window.clearTimeout(timeout);
-  }, [notice]);
 
   useEffect(() => {
     if (!mobileMenuOpen) return;
@@ -421,17 +413,6 @@ export default function Home() {
     else delete document.documentElement.dataset.theme;
   }
 
-  // 複製不含任何個人紀錄的題目深連結。
-  async function copyQuestionLink(id: string) {
-    const url = `${window.location.origin}${window.location.pathname}#q=${id}`;
-    try {
-      await navigator.clipboard.writeText(url);
-      setNotice(COPY_LINK_NOTICE);
-    } catch {
-      setNotice(`題目連結：${url}`);
-    }
-  }
-
   // 間隔複習入口：切到練習畫面的「到期複習」範圍。
   function startDueReview() {
     resetQuestionCursor();
@@ -593,7 +574,7 @@ export default function Home() {
             remainingQuestions={Math.max(
               0,
               officialQuestionCount -
-                answeredIds.filter((id) => !id.startsWith("demo-")).length,
+                answeredIds.length,
             )}
             onSet={(date) => setExamDate(date)}
             onClear={() => setExamDate(undefined)}
@@ -790,7 +771,6 @@ export default function Home() {
                   onOpenRelated={openQuestionInPractice}
                   onToggleStarred={() => toggleStarred(currentQuestion.id)}
                   onToggleUncertain={() => toggleUncertain(currentQuestion.id)}
-                  onCopyLink={() => copyQuestionLink(currentQuestion.id)}
                   essay={progress.essays?.[currentQuestion.id]}
                   onSaveEssay={(draft, seconds) => {
                     saveEssayDraft(currentQuestion.id, draft, seconds);

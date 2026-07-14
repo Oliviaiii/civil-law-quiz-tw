@@ -49,7 +49,7 @@ test("keeps the initial JS payload free of question data and under budget", asyn
 });
 
 test("keeps questions and local progress behind replaceable data modules", async () => {
-  const [page, questions, officialData, criminalData, combinedData, remainingData, englishTranslationsData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, chineseAnalysisModule, civilCode, criminalCode, criminalImporter, importer, remainingImporter, englishTranslationImporter, progressHook, quizFilters, questionCard, questionAnalysis, filtersBar, civilBank, criminalBank, bankManifest, questionBankHook, demoJson, searchIndexJson, dataManifestJson, taxonomyJson, civilTagsJson] = await Promise.all([
+  const [page, questions, officialData, criminalData, combinedData, remainingData, englishTranslationsData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, chineseAnalysisModule, civilCode, criminalCode, criminalImporter, importer, remainingImporter, englishTranslationImporter, progressHook, quizFilters, questionCard, questionAnalysis, filtersBar, civilBank, criminalBank, bankManifest, questionBankHook, searchIndexJson, dataManifestJson, taxonomyJson, civilTagsJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data/questions.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/judicial-fourth-questions.json", import.meta.url), "utf8"),
@@ -82,7 +82,6 @@ test("keeps questions and local progress behind replaceable data modules", async
     readFile(new URL("../app/data/banks/criminal-law.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/bank-manifest.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/hooks/use-question-bank.ts", import.meta.url), "utf8"),
-    readFile(new URL("../app/data/demo-questions.json", import.meta.url), "utf8"),
     readFile(new URL("../public/data/search-index.json", import.meta.url), "utf8"),
     readFile(new URL("../public/data/manifest.json", import.meta.url), "utf8"),
     readFile(new URL("../app/data/taxonomy/taxonomy.json", import.meta.url), "utf8"),
@@ -113,10 +112,7 @@ test("keeps questions and local progress behind replaceable data modules", async
   // 題庫依科目拆檔按需載入：questions.ts 只保留型別，資料在 banks/* 與產生的 manifest。
   assert.match(questions, /export type Question = \{/);
   assert.doesNotMatch(questions, /questions\.json/);
-  const demoRecords = JSON.parse(demoJson);
-  assert.equal(demoRecords.length, 10);
-  assert.ok(demoRecords.every((item) => item.id.startsWith("demo-")));
-  assert.match(civilBank, /demo-questions\.json/);
+  assert.doesNotMatch(civilBank, /demo-questions\.json/);
   assert.match(civilBank, /buildOfficialAnalysis/);
   assert.match(criminalBank, /criminalRecordsJson/);
   assert.match(criminalBank, /buildCriminalAnalysis/);
@@ -132,7 +128,7 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.equal(Number(bankManifest.match(/officialQuestionCount = (\d+)/)[1]), allOfficialRecords.length);
   assert.equal(
     Number(bankManifest.match(/totalQuestionCount = (\d+)/)[1]),
-    allOfficialRecords.length + demoRecords.length,
+    allOfficialRecords.length,
   );
   assert.equal(
     Number(bankManifest.match(/officialMultipleChoiceCount = (\d+)/)[1]),
@@ -143,7 +139,7 @@ test("keeps questions and local progress behind replaceable data modules", async
     allOfficialRecords.filter((item) => item.format === "申論題").length,
   );
   const searchEntries = JSON.parse(searchIndexJson);
-  assert.equal(searchEntries.length, allOfficialRecords.length + demoRecords.length);
+  assert.equal(searchEntries.length, allOfficialRecords.length);
   assert.ok(searchEntries.every((item) =>
     item.id && item.subject && item.subjectLabel && item.prompt && Array.isArray(item.options) && item.source
   ));

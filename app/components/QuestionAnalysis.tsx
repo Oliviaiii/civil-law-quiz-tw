@@ -162,7 +162,7 @@ export function QuestionAnalysis({
                 <button type="button" onClick={() => onOpenRelated(related)}>
                   <span className="search-result-meta">
                     {related.subjectLabel}
-                    {related.rocYear ? `｜${related.rocYear} 年` : "｜示範題"}
+                    {related.rocYear ? `｜${related.rocYear} 年` : "｜未標年度"}
                     {related.officialQuestionNumber ? `｜第 ${related.officialQuestionNumber} 題` : ""}
                   </span>
                   <span className="search-result-prompt">{related.prompt}</span>

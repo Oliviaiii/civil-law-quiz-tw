@@ -77,11 +77,6 @@ export async function gotoQuestionByPrompt(page: Page, promptSnippet: string, ma
   throw new Error(`在 ${maxSteps} 步內找不到題目：${promptSnippet}`);
 }
 
-/** 切到「示範題」來源（取消司法特考四等、勾選示範題）。 */
-export async function useDemoCorpus(page: Page) {
-  await toggleFilterOptions(page, "依題庫來源複選篩選", ["司法特考四等", "示範題"]);
-}
-
 /** 建立一份可供 setInputFiles 使用的 JSON 匯入檔。 */
 export function progressFile(name: string, payload: unknown) {
   return {

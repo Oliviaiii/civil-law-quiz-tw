@@ -33,7 +33,6 @@ export function QuestionCard({
   onOpenRelated,
   onToggleStarred,
   onToggleUncertain,
-  onCopyLink,
   essay,
   onSaveEssay,
 }: {
@@ -50,7 +49,6 @@ export function QuestionCard({
   onOpenRelated?: (question: Question) => void;
   onToggleStarred?: () => void;
   onToggleUncertain?: () => void;
-  onCopyLink?: () => void;
   essay?: EssayPracticeState;
   onSaveEssay?: (draft: string, seconds: number) => void;
 }) {
@@ -87,8 +85,31 @@ export function QuestionCard({
     onChoose(index);
   }
 
+  const hasQuickTools = Boolean(onToggleStarred && onToggleUncertain);
   const navigation = (
-    <div className="question-quick-nav" aria-label="題目切換">
+    <div className={hasQuickTools ? "question-quick-nav has-tools" : "question-quick-nav"} aria-label="題目切換">
+      {hasQuickTools && (
+        <>
+          <button
+            type="button"
+            aria-label={flags?.starred ? "取消收藏" : "收藏"}
+            aria-pressed={flags?.starred ?? false}
+            className={flags?.starred ? "quick-tool active" : "quick-tool"}
+            onClick={() => onToggleStarred?.()}
+          >
+            ★<small>收藏</small>
+          </button>
+          <button
+            type="button"
+            aria-label={flags?.uncertain ? "取消不確定標記" : "不確定"}
+            aria-pressed={flags?.uncertain ?? false}
+            className={flags?.uncertain ? "quick-tool active" : "quick-tool"}
+            onClick={() => onToggleUncertain?.()}
+          >
+            ？<small>不確定</small>
+          </button>
+        </>
+      )}
       <button onClick={() => onMove(-1)}>← 上一題</button>
       <button className="next-button" onClick={() => onMove(1)}>下一題 →</button>
     </div>
@@ -127,7 +148,7 @@ export function QuestionCard({
         </a>
       </div>
 
-      {(onToggleStarred || onToggleUncertain || onCopyLink) && (
+      {(onToggleStarred || onToggleUncertain) && (
         <div className="question-tools" aria-label="題目工具">
           {onToggleStarred && (
             <button
@@ -149,11 +170,6 @@ export function QuestionCard({
               onClick={onToggleUncertain}
             >
               ？{flags?.uncertain ? "已標不確定" : "不確定"}
-            </button>
-          )}
-          {onCopyLink && (
-            <button type="button" aria-label="複製題目連結" className="tool" onClick={onCopyLink}>
-              🔗 複製連結
             </button>
           )}
         </div>

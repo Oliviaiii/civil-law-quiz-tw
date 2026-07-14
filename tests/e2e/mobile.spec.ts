@@ -15,7 +15,7 @@ test("手機版主要操作流程：作答、換題、篩選與清除", async ({
     const top = await page.locator("article.question-card > h2").evaluate((heading) =>
       Math.round(heading.getBoundingClientRect().top),
     );
-    return top >= 80 && top <= 92;
+    return top >= 140 && top <= 152;
   }).toBe(true);
 
   // 年度篩選可開啟操作
@@ -80,4 +80,32 @@ test("手機版篩選區預設收合並可展開", async ({ page }) => {
 
   await toggle.click();
   await expect(page.locator(".filters")).toBeHidden();
+
+  await page.evaluate(() => window.scrollTo(0, 700));
+  await expect.poll(async () => {
+    const top = await toggle.evaluate((button) => Math.round(button.getBoundingClientRect().top));
+    return top >= 74 && top <= 78;
+  }).toBe(true);
+});
+
+test("手機版底部整合收藏、不確定與題目切換", async ({ page }) => {
+  await openApp(page);
+
+  const navigation = page.locator(".question-quick-nav.has-tools");
+  const buttons = navigation.locator("button");
+  await expect(buttons).toHaveCount(4);
+
+  const widths = await buttons.evaluateAll((items) =>
+    items.map((item) => item.getBoundingClientRect().width),
+  );
+  expect(widths[0] / widths[2]).toBeCloseTo(15 / 35, 1);
+  expect(widths[1] / widths[3]).toBeCloseTo(15 / 35, 1);
+
+  const starred = navigation.getByRole("button", { name: "收藏" });
+  const uncertain = navigation.getByRole("button", { name: "不確定" });
+  await starred.click();
+  await uncertain.click();
+  await expect(starred).toHaveAttribute("aria-pressed", "true");
+  await expect(uncertain).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(".question-tools")).toBeHidden();
 });

@@ -1,9 +1,8 @@
-// 民法題庫：司法特考四等民法概要官方題＋自行編寫示範題。
+// 民法題庫：司法特考四等民法概要官方題。
 import officialRecordsJson from "../judicial-fourth-questions.json";
-import demoRecordsJson from "../demo-questions.json";
 import civilChapterTagsJson from "../taxonomy/civil-law-tags.json";
 import { buildOfficialAnalysis } from "../judicial-fourth-analyses";
-import type { DemoQuestionRecord, OfficialQuestionRecord } from "../record-types";
+import type { OfficialQuestionRecord } from "../record-types";
 import type { Question } from "../questions";
 import { byYearSubjectNumber, statuteReferences } from "./shared";
 
@@ -36,13 +35,4 @@ const officialQuestions: Question[] = (
   };
 }).sort(byYearSubjectNumber);
 
-const demoQuestions: Question[] = (demoRecordsJson as DemoQuestionRecord[]).map((record) => ({
-  ...record,
-  subject: "civil-law" as const,
-  subjectLabel: "民法",
-  paper: "civil-law-summary" as const,
-  format: "選擇題" as const,
-  references: statuteReferences(record.statutes, "民法"),
-}));
-
-export const bank: Question[] = [...officialQuestions, ...demoQuestions];
+export const bank: Question[] = officialQuestions;

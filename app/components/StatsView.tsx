@@ -31,23 +31,17 @@ export function StatsView({
   onReset: () => void;
 }) {
   const dueSet = new Set(dueIds);
-  const groups = [
-    ...Object.entries(subjectLabels).flatMap(([subject, label]) =>
-      Array.from(new Set(questions.flatMap((question) => question.rocYear ?? [])))
-        .sort((a, b) => b - a)
-        .map((year) => ({
-          label: `${label}｜民國 ${year} 年`,
-          questions: questions.filter(
-            (question) => question.subject === subject && question.rocYear === year,
-          ),
-        }))
-        .filter((group) => group.questions.length > 0),
-    ),
-    {
-      label: "自行編寫示範題",
-      questions: questions.filter((question) => !question.rocYear),
-    },
-  ];
+  const groups = Object.entries(subjectLabels).flatMap(([subject, label]) =>
+    Array.from(new Set(questions.flatMap((question) => question.rocYear ?? [])))
+      .sort((a, b) => b - a)
+      .map((year) => ({
+        label: `${label}｜民國 ${year} 年`,
+        questions: questions.filter(
+          (question) => question.subject === subject && question.rocYear === year,
+        ),
+      }))
+      .filter((group) => group.questions.length > 0),
+  );
   return (
     <div className="stats-view">
       <div className="page-heading">

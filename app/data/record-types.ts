@@ -66,23 +66,3 @@ export type RemainingClerkRecord = {
   answerSource: string | null;
   answerUrl: string | null;
 };
-
-export type DemoQuestionRecord = {
-  id: string;
-  category: "總則" | "債編" | "物權" | "親屬與繼承";
-  type: "概念型" | "個案型";
-  difficulty: "基礎" | "進階";
-  source: string;
-  prompt: string;
-  options: string[];
-  answer: number;
-  confidence: "高" | "中";
-  analysis: {
-    issue: string;
-    rule: string;
-    application: string;
-    conclusion: string;
-    trap: string;
-  };
-  statutes: { article: string; text: string; url: string }[];
-};

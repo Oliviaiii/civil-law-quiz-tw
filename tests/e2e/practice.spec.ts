@@ -8,10 +8,9 @@ import {
   readMatchCount,
   readPosition,
   toggleFilterOptions,
-  useDemoCorpus,
 } from "./helpers";
 
-const DEMO_PROMPT = "依我國現行民法，關於成年的敘述";
+const FIRST_CIVIL_PROMPT = "法人若有數名監察人";
 const ALL_CREDIT_PROMPT = "關於遺產分割之實行";
 const MULTI_ANSWER_PROMPT = "有關刑法第15章偽造文書印文罪";
 
@@ -41,17 +40,16 @@ test("科目、來源、年度複選與一鍵清除", async ({ page }) => {
   await expect.poll(() => readMatchCount(page)).toBeGreaterThan(twoSubjectCount);
 });
 
-test("示範題作答：立即判題答對與答錯", async ({ page }) => {
+test("正式題作答：立即判題答對與答錯", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
-  await expect(page.locator("article.question-card h2")).toContainText(DEMO_PROMPT);
+  await expect(page.locator("article.question-card h2")).toContainText(FIRST_CIVIL_PROMPT);
 
-  // 答錯（正解為 B，點 A）
-  await page.locator(".options .option").nth(0).click();
+  // 答錯（正解為 A，點 B）
+  await page.locator(".options .option").nth(1).click();
   await expect(analysisResult(page)).toContainText("本題答錯");
-  await expect(analysisResult(page)).toContainText("答案是 B");
-  await expect(page.locator(".options .option").nth(0)).toContainText("你的答案");
-  await expect(page.locator(".options .option").nth(1)).toContainText("正確");
+  await expect(analysisResult(page)).toContainText("答案是 A");
+  await expect(page.locator(".options .option").nth(1)).toContainText("你的答案");
+  await expect(page.locator(".options .option").nth(0)).toContainText("正確");
   await expect(page.locator(".nav-item", { hasText: "錯題本" }).locator("b")).toHaveText("1");
 });
 
@@ -80,21 +78,20 @@ test("一律給分題：任何選項都判給分", async ({ page }) => {
 
 test("錯題本：答錯加入、答對後離開", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
 
-  // 答錯 demo-001
-  await page.locator(".options .option").nth(0).click();
+  // 答錯第一題
+  await page.locator(".options .option").nth(1).click();
   await expect(page.locator(".nav-item", { hasText: "錯題本" }).locator("b")).toHaveText("1");
 
   // 進錯題本：只剩這一題
   await page.locator(".nav-item", { hasText: "錯題本" }).click();
-  await expect(page.locator("article.question-card h2")).toContainText(DEMO_PROMPT);
+  await expect(page.locator("article.question-card h2")).toContainText(FIRST_CIVIL_PROMPT);
   expect(await readPosition(page)).toEqual({ position: 1, total: 1 });
 
   // 這次答對：reviewing 狀態下題目仍留在畫面
-  await page.locator(".options .option").nth(1).click();
+  await page.locator(".options .option").nth(0).click();
   await expect(analysisResult(page)).toContainText("判斷正確");
-  await expect(page.locator("article.question-card h2")).toContainText(DEMO_PROMPT);
+  await expect(page.locator("article.question-card h2")).toContainText(FIRST_CIVIL_PROMPT);
 
   // 離開本題後錯題本清空
   await clickNav(page, "下一題");
@@ -104,25 +101,24 @@ test("錯題本：答錯加入、答對後離開", async ({ page }) => {
 
 test("未作答篩選：作答後題目保留至換題才移出", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
 
-  // 答對 demo-001
-  await page.locator(".options .option").nth(1).click();
+  // 答對第一題
+  await page.locator(".options .option").nth(0).click();
   await expect(analysisResult(page)).toContainText("判斷正確");
 
-  // 切到未作答：demo-001 消失，剩 9 題
+  // 切到未作答：第一題消失，剩 174 題
   await page.locator(".segmented button", { hasText: "未作答" }).click();
-  expect(await readPosition(page)).toEqual({ position: 1, total: 9 });
-  await expect(page.locator("article.question-card h2")).not.toContainText(DEMO_PROMPT);
+  expect(await readPosition(page)).toEqual({ position: 1, total: 174 });
+  await expect(page.locator("article.question-card h2")).not.toContainText(FIRST_CIVIL_PROMPT);
 
   // 作答目前題目：reviewing 讓題目留在畫面，總數不變
   await page.locator(".options .option").nth(0).click();
   await expect(analysisResult(page)).toBeVisible();
-  expect(await readPosition(page)).toEqual({ position: 1, total: 9 });
+  expect(await readPosition(page)).toEqual({ position: 1, total: 174 });
 
   // 換題後已作答題移出清單
   await clickNav(page, "下一題");
-  expect(await readPosition(page)).toEqual({ position: 1, total: 8 });
+  expect(await readPosition(page)).toEqual({ position: 1, total: 173 });
 });
 
 test("導航防退化：篩選改變後游標與畫面一致", async ({ page }) => {
@@ -158,10 +154,9 @@ test("導航防退化：篩選改變後游標與畫面一致", async ({ page }) 
 
 test("空結果不留幽靈狀態，可一鍵回到預設", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
-  expect((await readPosition(page)).total).toBe(10);
 
-  // 示範題沒有申論題 → 空結果
+  // 「總則」章節沒有申論題 → 空結果
+  await toggleFilterOptions(page, "依章節複選篩選", ["總則"]);
   await page.locator(".filters select").selectOption("申論題");
   await expect(page.locator(".empty-state")).toContainText("這個篩選目前沒有題目");
   await expect(page.locator(".filter-count")).toHaveText("符合 0 題");
@@ -204,15 +199,14 @@ test("民法章節篩選：可複選並與其他條件組合", async ({ page }) 
 
 test("全文搜尋：關鍵字找到題目並跳轉", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
 
-  await page.getByRole("searchbox").fill("善意取得");
-  const target = page.locator(".search-results li button", { hasText: "善意取得相機所有權" });
+  await page.getByRole("searchbox").fill("監察權");
+  const target = page.locator(".search-results li button", { hasText: FIRST_CIVIL_PROMPT });
   await expect(target).toBeVisible();
   await target.click();
 
   // 跳到目標題目，搜尋框清空
-  await expect(page.locator("article.question-card h2")).toContainText("善意取得相機所有權");
+  await expect(page.locator("article.question-card h2")).toContainText(FIRST_CIVIL_PROMPT);
   await expect(page.getByRole("searchbox")).toHaveValue("");
 });
 
@@ -243,7 +237,6 @@ test("搜尋無結果：顯示清除條件入口", async ({ page }) => {
 
 test("練習集：建立、續作與離開", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
 
   await page.getByRole("button", { name: "建立練習集" }).click();
   await page.getByRole("button", { name: /^10 題$/ }).click();
@@ -281,15 +274,15 @@ test("練習集：建立、續作與離開", async ({ page }) => {
 
 test("練習集：題數不足時全部納入並清楚說明", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
+  await toggleFilterOptions(page, "依年度複選篩選", ["114 年"]);
 
   await page.getByRole("button", { name: "建立練習集" }).click();
   await page.getByRole("button", { name: /^50 題$/ }).click();
-  await expect(page.locator(".practice-set-note")).toContainText("只有 10 題");
+  await expect(page.locator(".practice-set-note")).toContainText("只有 25 題");
 
   await page.getByRole("button", { name: "開始練習", exact: true }).click();
   await expect(page.locator(".toast")).toContainText("已全部納入練習集");
-  await expect(page.locator(".practice-set-bar")).toContainText("第 1 / 10 題");
+  await expect(page.locator(".practice-set-bar")).toContainText("第 1 / 25 題");
 });
 
 test("間隔複習：逾期入口、複習後移出佇列", async ({ page }) => {
@@ -334,12 +327,11 @@ test("間隔複習：逾期入口、複習後移出佇列", async ({ page }) => 
 
 test("基礎統計：區分最後一次與所有嘗試正確率", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
 
   // 第一次答錯，再從錯題本答對（共 2 次嘗試、最後為對）
-  await page.locator(".options .option").nth(0).click();
-  await page.locator(".nav-item", { hasText: "錯題本" }).click();
   await page.locator(".options .option").nth(1).click();
+  await page.locator(".nav-item", { hasText: "錯題本" }).click();
+  await page.locator(".options .option").nth(0).click();
 
   await page.locator(".nav-item", { hasText: "學習紀錄" }).click();
   await expect(
@@ -350,16 +342,15 @@ test("基礎統計：區分最後一次與所有嘗試正確率", async ({ page 
   ).toContainText("50");
 
   // 分科分年度列顯示完成數、正確數與待複習數
-  const demoRow = page.locator(".chapter-row", { hasText: "自行編寫示範題" });
-  await expect(demoRow).toContainText("1/10 完成・1 對・0 待複習");
+  const yearRow = page.locator(".chapter-row", { hasText: "民法｜民國 114 年" });
+  await expect(yearRow).toContainText("1/27 完成・1 對・0 待複習");
 });
 
 test("作答熱力圖：今日作答數即時反映", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
 
   // 作答兩題
-  await page.locator(".options .option").nth(1).click();
+  await page.locator(".options .option").nth(0).click();
   await clickNav(page, "下一題");
   await page.locator(".options .option").nth(0).click();
 
@@ -465,18 +456,8 @@ test("題目深連結：無效 ID 安全回到預設畫面", async ({ page }) =>
   expect((await readPosition(page)).position).toBe(1);
 });
 
-test("複製題目連結不含個人資料", async ({ page }) => {
-  await openApp(page);
-  await useDemoCorpus(page);
-  await page.locator(".question-tools button", { hasText: "複製連結" }).click();
-  const toast = page.locator(".toast");
-  await expect(toast).toContainText("不含個人作答資料");
-  await expect(toast).toBeHidden({ timeout: 4_000 });
-});
-
 test("收藏與不確定標記", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
 
   // 收藏與不確定為獨立狀態
   const starButton = page.locator(".question-tools button", { hasText: "收藏" });
@@ -491,22 +472,20 @@ test("收藏與不確定標記", async ({ page }) => {
   // 篩選只看收藏／不確定
   await page.locator(".filters .segmented button", { hasText: "收藏" }).click();
   expect(await readPosition(page)).toEqual({ position: 1, total: 1 });
-  await expect(page.locator("article.question-card h2")).toContainText(DEMO_PROMPT);
+  await expect(page.locator("article.question-card h2")).toContainText(FIRST_CIVIL_PROMPT);
   await page.locator(".filters .segmented button", { hasText: "不確定" }).click();
   expect(await readPosition(page)).toEqual({ position: 1, total: 1 });
 
   // 重新整理後收藏與不確定標記仍在。
   await page.reload();
   await page.waitForSelector('html[data-app-ready="true"]');
-  await useDemoCorpus(page);
-  await expect(page.locator("article.question-card h2")).toContainText(DEMO_PROMPT);
+  await expect(page.locator("article.question-card h2")).toContainText(FIRST_CIVIL_PROMPT);
   await expect(page.locator(".question-tools button", { hasText: "收藏" })).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(".question-tools button", { hasText: "不確定" })).toHaveAttribute("aria-pressed", "true");
 });
 
 test("題目報錯：預填 GitHub Issue 連結正確編碼", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
 
   const href = await page
     .locator(".source-line a", { hasText: "回報問題" })
@@ -517,23 +496,16 @@ test("題目報錯：預填 GitHub Issue 連結正確編碼", async ({ page }) =
     "https://github.com/Oliviaiii/civil-law-quiz-tw/issues/new",
   );
   // 中文與特殊字元經 URL 編碼後可正確還原
-  expect(url.searchParams.get("title")).toBe("【題庫勘誤】demo-001｜民法");
+  expect(url.searchParams.get("title")).toBe(
+    "【題庫勘誤】judicial-fourth-114-mcq-01｜民法概要 114 年 第 1 題",
+  );
   expect(url.searchParams.get("labels")).toBe("題庫勘誤");
-  expect(url.searchParams.get("body")).toContain("題目 ID：demo-001");
-  expect(url.searchParams.get("body")).toContain("關於成年的敘述");
-
-  // 官方題含年度與題號
-  await toggleFilterOptions(page, "依題庫來源複選篩選", ["示範題", "司法特考四等"]);
-  const officialHref = await page
-    .locator(".source-line a", { hasText: "回報問題" })
-    .getAttribute("href");
-  const officialTitle = new URL(officialHref!).searchParams.get("title");
-  expect(officialTitle).toMatch(/【題庫勘誤】judicial-fourth-.+｜民法概要 \d{3} 年 第 \d+ 題/);
+  expect(url.searchParams.get("body")).toContain("題目 ID：judicial-fourth-114-mcq-01");
+  expect(url.searchParams.get("body")).toContain(FIRST_CIVIL_PROMPT);
 });
 
 test("選項亂序：判題與答案標示對應原始選項", async ({ page }) => {
   await openApp(page);
-  await useDemoCorpus(page);
 
   await page.getByRole("checkbox", { name: "選項亂序" }).check();
   // 换題讓卡片以亂序狀態重新掛載
@@ -541,14 +513,14 @@ test("選項亂序：判題與答案標示對應原始選項", async ({ page }) 
   await clickNav(page, "上一題");
 
   // 答錯：以選項文字定位（不依賴位置），判題與標示仍正確
-  await page.locator(".options .option", { hasText: "滿二十歲為成年" }).click();
+  await page.locator(".options .option", { hasText: "應由全體監察人過半數之同意行使" }).click();
   await expect(page.locator(".analysis .analysis-result")).toContainText("本題答錯");
-  await expect(page.locator(".options .option", { hasText: "滿二十歲為成年" })).toContainText("你的答案");
-  await expect(page.locator(".options .option", { hasText: "滿十八歲為成年" })).toContainText("正確");
+  await expect(page.locator(".options .option", { hasText: "應由全體監察人過半數之同意行使" })).toContainText("你的答案");
+  await expect(page.locator(".options .option", { hasText: "各監察人均得單獨行使" })).toContainText("正確");
 
   // 下一題答對
   await clickNav(page, "下一題");
-  await page.locator(".options .option", { hasText: "效力未定，經甲承認始生效力" }).click();
+  await page.locator(".options .option", { hasText: "得隨時不具理由開除社員" }).click();
   await expect(page.locator(".analysis .analysis-result")).toContainText("判斷正確");
 
   // 偏好保存：重新整理後仍為開啟
@@ -649,19 +621,17 @@ test("法條出題頻率排行：可點入條文與相關題目", async ({ page 
 });
 
 test("解析區顯示考同一法條的其他題目並可跳題", async ({ page }) => {
-  await openApp(page);
-  await useDemoCorpus(page);
+  await page.goto(appUrl("#q=judicial-fourth-112-mcq-25"));
+  await page.waitForSelector('html[data-app-ready="true"]');
 
-  // 跳到示範題「應繼分」（民法 1144 條，另有多題官方題引用）
-  await page.getByRole("searchbox").fill("應繼分");
-  await page.locator(".search-results li button").first().click();
+  // 官方題引用民法第 1144 條，另有其他正式題引用同一條文。
   await page.locator(".options .option").nth(1).click();
 
   const related = page.locator(".related-questions li button");
   await expect(related.first()).toBeVisible();
   await related.first().click();
 
-  // 跳到引用同一條的官方民法題
+  // 跳到引用同一條的另一題官方民法題
   await expect(page.locator("article.question-card")).toBeVisible();
   await expect(page.locator(".question-card .tag.type")).toHaveText("民法概要");
 });
@@ -826,7 +796,7 @@ test("匯入紀錄：有效檔、格式錯誤與 v1 migration", async ({ page })
     progressFile("progress-v2.json", {
       version: 2,
       answers: {
-        "demo-001": {
+        "judicial-fourth-114-mcq-01": {
           attempts: 1,
           lastSelected: 1,
           lastCorrect: true,
@@ -843,7 +813,7 @@ test("匯入紀錄：有效檔、格式錯誤與 v1 migration", async ({ page })
   await expect(page.locator(".toast")).toContainText("檔案格式不正確");
   await expect(doneStat).toContainText(/^1\s*\//);
 
-  // v1 舊格式：只保留 judicial-fourth-* 舊紀錄，示範題舊紀錄捨棄
+  // v1 舊格式：只保留 judicial-fourth-* 舊紀錄，已移除的示範題紀錄捨棄
   await fileInput.setInputFiles(
     progressFile("progress-v1.json", {
       version: 1,
@@ -872,7 +842,7 @@ test("匯入紀錄：有效檔、格式錯誤與 v1 migration", async ({ page })
     progressFile("progress-v3.json", {
       version: 3,
       answers: {
-        "demo-001": {
+        "judicial-fourth-114-mcq-01": {
           attempts: 2,
           lastSelected: 1,
           lastCorrect: true,
@@ -881,7 +851,9 @@ test("匯入紀錄：有效檔、格式錯誤與 v1 migration", async ({ page })
           wrongCount: 1,
         },
       },
-      flags: { "demo-001": { starred: true, note: "重點：成年年齡 18 歲" } },
+      flags: {
+        "judicial-fourth-114-mcq-01": { starred: true, note: "舊版筆記應被移除" },
+      },
       daily: { "2026-07-10": 5 },
       examDate: "2026-08-09",
     }),
@@ -890,6 +862,6 @@ test("匯入紀錄：有效檔、格式錯誤與 v1 migration", async ({ page })
   await expect(doneStat).toContainText(/^1\s*\//);
   await expect.poll(() => page.evaluate(() => {
     const stored = JSON.parse(localStorage.getItem("civil-law-quiz-tw:progress:v3") ?? "{}");
-    return stored.flags?.["demo-001"];
+    return stored.flags?.["judicial-fourth-114-mcq-01"];
   })).toEqual({ starred: true });
 });

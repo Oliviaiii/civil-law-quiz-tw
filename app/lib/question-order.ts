@@ -3,7 +3,7 @@ import type { Question } from "../data/questions";
 /**
  * 跨科合併時的全站題目順序，維持與單一題庫時代相同的排列：
  * 民法＋刑法官方題（年度新到舊交錯）→ 憲法 → 法學緒論 → 英文 →
- * 國文與其餘書記官科目 → 示範題。
+ * 國文與其餘書記官科目。
  */
 export function sortGroupOf(question: Question): number {
   if (!question.exam) return 5;

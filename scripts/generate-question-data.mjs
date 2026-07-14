@@ -15,7 +15,6 @@ const civilRecords = require("../app/data/judicial-fourth-questions.json");
 const criminalRecords = require("../app/data/criminal-law-questions.json");
 const combinedRecords = require("../app/data/legal-knowledge-and-english-questions.json");
 const remainingRecords = require("../app/data/clerk-remaining-questions.json");
-const demoRecords = require("../app/data/demo-questions.json");
 
 const analysisYears = [108, 109, 110, 111, 112, 113, 114];
 const civilAnalyses = Object.assign(
@@ -118,18 +117,6 @@ const searchIndex = [
     laws: [],
     keywords: "",
   })),
-  ...demoRecords.map((record) => ({
-    id: record.id,
-    subject: "civil-law",
-    subjectLabel: "民法",
-    corpus: "示範題",
-    format: "選擇題",
-    source: record.source,
-    prompt: record.prompt,
-    options: record.options,
-    laws: record.statutes.map((statute) => `民法第${statute.article}條`),
-    keywords: keywordsFromSeed({ issue: record.analysis.issue, trap: record.analysis.trap }),
-  })),
 ];
 
 const officialRecords = [...civilRecords, ...criminalRecords, ...combinedRecords, ...remainingRecords];
@@ -185,7 +172,7 @@ const dataVersion = createHash("sha256").update(searchIndexJson).digest("hex").s
 const manifestTs = `// 此檔由 scripts/generate-question-data.mjs 自動產生，請勿手動修改。
 // 提供首頁 shell 在題庫載入前就需要的統計與年度資訊（不含題目內容）。
 export const questionYears = ${JSON.stringify(questionYears)};
-export const totalQuestionCount = ${officialRecords.length + demoRecords.length};
+export const totalQuestionCount = ${officialRecords.length};
 export const officialQuestionCount = ${officialRecords.length};
 export const officialMultipleChoiceCount = ${officialRecords.filter((record) => record.format === "選擇題").length};
 export const officialEssayCount = ${officialRecords.filter((record) => record.format === "申論題").length};

@@ -257,7 +257,7 @@ export function LawBrowserView({
                         <button type="button" onClick={() => onOpenQuestion(question)}>
                           <span className="search-result-meta">
                             {question.subjectLabel}
-                            {question.rocYear ? `｜${question.rocYear} 年` : "｜示範題"}
+                            {question.rocYear ? `｜${question.rocYear} 年` : "｜未標年度"}
                             {question.officialQuestionNumber ? `｜第 ${question.officialQuestionNumber} 題` : ""}
                           </span>
                           <span className="search-result-prompt">{question.prompt}</span>
@@ -283,7 +283,7 @@ export function LawBrowserView({
                       <button type="button" onClick={() => setSelected(item.article)}>
                         <strong>第 {item.article} 條</strong>
                         <span>{item.count} 題</span>
-                        <small>{item.yearText ? `${item.yearText} 年` : "含示範題"}</small>
+                        <small>{item.yearText ? `${item.yearText} 年` : "未標年度"}</small>
                       </button>
                     </li>
                   ))}

@@ -4,7 +4,7 @@ export { questionYears } from "../data/bank-manifest";
 
 export type View = "about" | "practice" | "wrong" | "mock" | "law" | "stats";
 export type Scope = "all" | "unanswered" | "wrong" | "due" | "starred" | "uncertain";
-export type Corpus = "司法特考四等" | "示範題";
+export type Corpus = "司法特考四等";
 export type FormatFilter = "選擇題" | "申論題" | "全部題型";
 export type SubjectFilter = Subject;
 
@@ -34,7 +34,6 @@ export const subjectOptions: { value: SubjectFilter; label: string }[] = [
 
 export const corpusOptions: { value: Corpus; label: string }[] = [
   { value: "司法特考四等", label: "司法特考四等" },
-  { value: "示範題", label: "示範題" },
 ];
 
 export const viewLabels: Record<View, string> = {
@@ -80,10 +79,7 @@ export function filterQuestions(
   return allQuestions.filter((question) => {
     const categoryMatch = categories.length === 0 || categories.includes(question.category);
     if (!categoryMatch) return false;
-    const corpusMatch =
-      corpora.length === 0 ||
-      (corpora.includes("司法特考四等") && question.exam === "司法特考四等") ||
-      (corpora.includes("示範題") && !question.exam);
+    const corpusMatch = corpora.length === 0 || question.exam === "司法特考四等";
     const subjectMatch = subjects.length === 0 || subjects.includes(question.subject);
     const formatMatch = format === "全部題型" || question.format === format;
     const yearMatch =
