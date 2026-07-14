@@ -30,11 +30,15 @@
 考選部 PDF
   -> scripts/import-moex-judicial-fourth.py
   -> app/data/judicial-fourth-questions.json
-  -> app/data/questions.ts
+  -> app/data/banks/*（依科目拆分，動態 import 按需載入）
                               -> app/page.tsx -> 靜態網站
 逐年自行撰寫解析 JSON
   -> app/data/judicial-fourth-analyses.ts
   -> 民法條文索引
+
+scripts/generate-question-data.mjs（build 前自動執行）
+  -> app/data/bank-manifest.ts（年度與題數統計）
+  -> public/data/search-index.json＋manifest.json（搜尋索引與資料版本 hash）
 
 作答結果 -> app/lib/progress-store.ts -> 瀏覽器 localStorage
 ```
@@ -45,7 +49,11 @@
 | --- | --- |
 | `app/page.tsx` | 篩選、作答、顯示解析、錯題本、進度及匯出入互動 |
 | `app/globals.css` | 桌面與手機版樣式 |
-| `app/data/questions.ts` | 統一的 `Question` 型別、示範題與正式題庫組裝 |
+| `app/data/questions.ts` | 統一的 `Question` 與科目型別（僅型別，不含資料） |
+| `app/data/banks/` | 依科目拆分的題庫組裝模組，經動態 import 按需載入 |
+| `app/data/bank-manifest.ts` | 由腳本產生的年度與題數統計（請勿手改） |
+| `app/hooks/use-question-bank.ts` | 題庫按需載入、快取與載入狀態 |
+| `scripts/generate-question-data.mjs` | 產生 bank-manifest、搜尋索引與資料版本 hash |
 | `app/data/judicial-fourth-questions.json` | 考選部題目與官方答案的正規化資料 |
 | `app/data/analyses/` | 依年度拆分的選擇題解析 |
 | `app/data/judicial-fourth-analyses.ts` | 合併解析、產生結論、附加法條原文 |
@@ -86,7 +94,9 @@ npm run dev
 python -m pip install pdfplumber
 ```
 
-請保留 npm、Next.js、vinext 與既有鎖定檔，不要因個人偏好改用另一個套件管理器或替換整體架構。
+請保留 npm、Next.js 與既有鎖定檔，不要因個人偏好改用另一個套件管理器或替換整體架構。
+
+> 2026-07-14 起已移除早期範本殘留的 vinext／Cloudflare Worker／drizzle 後端腳手架（`worker/`、`vite.config.ts`、`db/`、`drizzle/`、`examples/` 等），與「純靜態 GitHub Pages」原則一致；`npm run dev` 現在直接使用 `next dev`，`npm start` 以本機靜態伺服器預覽 `out/`。如需這些檔案可從 Git 歷史還原。
 
 ## 4. 日常開發流程
 
@@ -308,7 +318,7 @@ npm run lint
 npm test
 ```
 
-`npm test` 會先用正式 GitHub Pages 路徑建立 `out/`，再驗證靜態 HTML、題庫數量、解析覆蓋率與重要行為。測試以實際部署產物為準，不依賴 vinext 的本機伺服器輸出。
+`npm test` 會先建立 `out/`，再驗證靜態 HTML、題庫數量、解析覆蓋率與重要行為；`npm run test:e2e` 以 Playwright 對 `out/` 執行瀏覽器互動測試（需先跑過 `npm run build:pages`）。測試以實際部署產物為準。
 
 另外模擬 GitHub Pages 的正式 base path 建置：
 

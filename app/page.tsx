@@ -1,141 +1,45 @@
 "use client";
 
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
-import {
-  questions,
-  type Question,
-} from "./data/questions";
+import type { Question } from "./data/questions";
+import { ExamCountdownCard } from "./components/ExamCountdownCard";
+import { FiltersBar } from "./components/FiltersBar";
+import { LawBrowserView } from "./components/LawBrowserView";
+import { MockExamView } from "./components/MockExamView";
+import { OfflineNotice } from "./components/OfflineNotice";
+import { PracticeSetCreator, type PracticeSetRange } from "./components/PracticeSetCreator";
+import { PracticeSetSession } from "./components/PracticeSetSession";
+import { QuestionCard } from "./components/QuestionCard";
+import { SearchPanel } from "./components/SearchPanel";
+import { StatsView } from "./components/StatsView";
+import { VocabView } from "./components/VocabView";
+import { useMockExam } from "./hooks/use-mock-exam";
+import { usePracticeSet } from "./hooks/use-practice-set";
+import { usePreferences } from "./hooks/use-preferences";
+import { useProgress } from "./hooks/use-progress";
+import { useQuestionBank } from "./hooks/use-question-bank";
+import { officialQuestionCount } from "./data/bank-manifest";
+import { dailyPointer, dailyQuestionFrom } from "./lib/daily-question";
+import { loadPreferences, type SessionSnapshot } from "./lib/preferences";
 import {
   createEmptyProgress,
   loadProgress,
+  localDateKey,
   parseProgress,
-  saveProgress,
-  type ProgressData,
 } from "./lib/progress-store";
-
-type View = "practice" | "wrong" | "stats";
-type Scope = "all" | "unanswered" | "wrong";
-type Corpus = "司法特考四等" | "示範題";
-type FormatFilter = "選擇題" | "申論題" | "全部題型";
-type SubjectFilter =
-  | "civil-law"
-  | "criminal-law"
-  | "constitution"
-  | "legal-introduction"
-  | "english"
-  | "chinese"
-  | "administrative-law"
-  | "civil-procedure"
-  | "criminal-procedure";
-
-const subjectLabels: Record<SubjectFilter, string> = {
-  "civil-law": "民法",
-  "criminal-law": "刑法",
-  constitution: "憲法",
-  "legal-introduction": "法學緒論",
-  english: "英文",
-  chinese: "國文",
-  "administrative-law": "行政法概要",
-  "civil-procedure": "民事訴訟法概要",
-  "criminal-procedure": "刑事訴訟法概要",
-};
-
-const subjectOptions: { value: SubjectFilter; label: string }[] = [
-  { value: "chinese", label: "國文" },
-  { value: "civil-law", label: "民法" },
-  { value: "criminal-law", label: "刑法" },
-  { value: "administrative-law", label: "行政法概要" },
-  { value: "civil-procedure", label: "民事訴訟法概要" },
-  { value: "criminal-procedure", label: "刑事訴訟法概要" },
-  { value: "constitution", label: "憲法" },
-  { value: "legal-introduction", label: "法學緒論" },
-  { value: "english", label: "英文" },
-];
-
-const corpusOptions: { value: Corpus; label: string }[] = [
-  { value: "司法特考四等", label: "司法特考四等" },
-  { value: "示範題", label: "示範題" },
-];
-
-const viewLabels: Record<View, string> = {
-  practice: "開始練習",
-  wrong: "錯題本",
-  stats: "學習紀錄",
-};
-
-function formatDate(value?: string) {
-  if (!value) return "尚未作答";
-  return new Intl.DateTimeFormat("zh-TW", {
-    month: "numeric",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(new Date(value));
-}
-
-function MultiSelectFilter<T extends string | number>({
-  ariaLabel,
-  className = "",
-  allLabel,
-  options,
-  selected,
-  summary,
-  onChange,
-}: {
-  ariaLabel: string;
-  className?: string;
-  allLabel: string;
-  options: { value: T; label: string }[];
-  selected: T[];
-  summary: string;
-  onChange: (values: T[]) => void;
-}) {
-  function toggle(value: T) {
-    const next = selected.includes(value)
-      ? selected.filter((item) => item !== value)
-      : [...selected, value];
-    onChange(next.length === options.length ? [] : next);
-  }
-
-  return (
-    <details className={`multi-select ${className}`}>
-      <summary aria-label={ariaLabel}>{summary}</summary>
-      <div className="multi-select-menu">
-        <button
-          type="button"
-          className={selected.length === 0 ? "all-option selected" : "all-option"}
-          onClick={() => onChange([])}
-        >
-          {allLabel}
-          {selected.length === 0 && <span>✓</span>}
-        </button>
-        <div className="multi-select-options">
-          {options.map((option) => (
-            <label key={String(option.value)}>
-              <input
-                type="checkbox"
-                value={option.value}
-                checked={selected.includes(option.value)}
-                onChange={() => toggle(option.value)}
-              />
-              <span>{option.label}</span>
-            </label>
-          ))}
-        </div>
-        <button
-          type="button"
-          className="multi-select-done"
-          onClick={(event) => {
-            const details = event.currentTarget.closest("details");
-            if (details) details.open = false;
-          }}
-        >
-          完成
-        </button>
-      </div>
-    </details>
-  );
-}
+import {
+  filterQuestions,
+  subjectLabels,
+  viewLabels,
+  type Corpus,
+  type FormatFilter,
+  type Scope,
+  type SubjectFilter,
+  type View,
+} from "./lib/quiz-filters";
+import type { SearchEntry } from "./lib/search";
+import { reviewQueueOf } from "./lib/spaced-repetition";
+import { relatedQuestionsFor } from "./lib/statute-links";
 
 export default function Home() {
   const [view, setView] = useState<View>("practice");
@@ -144,68 +48,116 @@ export default function Home() {
   const [selectedCorpora, setSelectedCorpora] = useState<Corpus[]>(["司法特考四等"]);
   const [formatFilter, setFormatFilter] = useState<FormatFilter>("選擇題");
   const [selectedYears, setSelectedYears] = useState<number[]>([]);
-  const [currentId, setCurrentId] = useState(questions[0].id);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [currentId, setCurrentId] = useState<string | null>(null);
   const [reviewingId, setReviewingId] = useState<string | null>(null);
-  const [progress, setProgress] = useState<ProgressData>(createEmptyProgress());
-  const [ready, setReady] = useState(false);
   const [notice, setNotice] = useState("");
+  const [resumeOffer, setResumeOffer] = useState<
+    { session: SessionSnapshot; questionId?: string } | null
+  >(null);
+  const [pendingDailyJump, setPendingDailyJump] = useState(false);
   const importRef = useRef<HTMLInputElement>(null);
 
+  const {
+    progress,
+    setProgress,
+    answeredIds,
+    wrongIds,
+    correctCount,
+    accuracy,
+    attemptAccuracy,
+    recordAnswer,
+    recordEssayRead,
+    toggleStarred,
+    toggleUncertain,
+    saveNote,
+    saveEssayDraft,
+    completeDailyQuestion,
+    setExamDate,
+    gradeStatuteCard,
+    ready: progressReady,
+  } = useProgress();
+
+  const { practiceSet, createSet, leaveSet, moveCursor, markCompleted } = usePracticeSet();
+  const { preferences, ready: preferencesReady, updatePreferences } = usePreferences();
+
+  // 深連結（#q=題目ID）優先；否則若有上次練習快照則顯示「繼續上次練習」。
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
-      setProgress(loadProgress());
-      setReady(true);
+      const match = window.location.hash.match(/^#q=([A-Za-z0-9-]+)$/);
+      if (match) {
+        // 放寬全部篩選，確保任何科目的目標題都會出現；無效 ID 會自然回到第一題。
+        setSelectedSubjects([]);
+        setSelectedCorpora([]);
+        setFormatFilter("全部題型");
+        setSelectedYears([]);
+        setSelectedCategories([]);
+        setScope("all");
+        setCurrentId(match[1]);
+        return;
+      }
+      const savedPreferences = loadPreferences();
+      if (savedPreferences.lastSession) {
+        setResumeOffer({
+          session: savedPreferences.lastSession,
+          questionId: loadProgress().lastVisited?.questionId,
+        });
+      }
     });
     return () => window.cancelAnimationFrame(frame);
   }, []);
+  const mock = useMockExam({
+    // 進行中的模擬考在重新整理後直接回到模擬考畫面。
+    onRestoreRunning: () => setView("mock"),
+  });
 
-  useEffect(() => {
-    if (ready) saveProgress(progress);
-  }, [progress, ready]);
-
-  const answeredIds = useMemo(() => Object.keys(progress.answers), [progress]);
-  const multipleChoiceIds = useMemo(
-    () => new Set(questions.filter((question) => question.format !== "申論題").map((question) => question.id)),
-    [],
+  // 學習紀錄與模擬考需要全科題庫；法條速查需要民法＋刑法；
+  // 練習集進行中依集合內科目載入；其餘依選取科目。
+  const {
+    questions,
+    loading: bankLoading,
+    error: bankError,
+  } = useQuestionBank(
+    view === "stats" || view === "mock"
+      ? []
+      : view === "law"
+        ? ["civil-law", "criminal-law"]
+        : view === "practice" && practiceSet ? practiceSet.subjects : selectedSubjects,
   );
-  const answeredMultipleChoiceIds = answeredIds.filter((id) => multipleChoiceIds.has(id));
-  const wrongIds = useMemo(
-    () =>
-      Object.entries(progress.answers)
-        .filter(([, answer]) => !answer.lastCorrect)
-        .map(([id]) => id),
+
+  // 間隔複習佇列：今日到期與逾期的題目。
+  const reviewQueue = useMemo(() => reviewQueueOf(progress, new Date()), [progress]);
+  const dueIds = useMemo(
+    () => [...reviewQueue.overdue, ...reviewQueue.dueToday],
+    [reviewQueue],
+  );
+  // 收藏與不確定標記（獨立於答對／答錯）。
+  const starredIds = useMemo(
+    () => Object.keys(progress.flags).filter((id) => progress.flags[id].starred),
     [progress],
   );
-  const correctCount = answeredMultipleChoiceIds.filter(
-    (id) => progress.answers[id]?.lastCorrect,
-  ).length;
-  const accuracy = answeredMultipleChoiceIds.length
-    ? Math.round((correctCount / answeredMultipleChoiceIds.length) * 100)
-    : 0;
+  const uncertainIds = useMemo(
+    () => Object.keys(progress.flags).filter((id) => progress.flags[id].uncertain),
+    [progress],
+  );
 
-  const visibleQuestions = useMemo(() => {
-    return questions.filter((question) => {
-      const corpusMatch =
-        selectedCorpora.length === 0 ||
-        (selectedCorpora.includes("司法特考四等") && question.exam === "司法特考四等") ||
-        (selectedCorpora.includes("示範題") && !question.exam);
-      const subjectMatch = selectedSubjects.length === 0 || selectedSubjects.includes(question.subject as SubjectFilter);
-      const formatMatch =
-        formatFilter === "全部題型" || question.format === formatFilter;
-      const yearMatch = selectedYears.length === 0 || (question.rocYear !== undefined && selectedYears.includes(question.rocYear));
-      const scopeMatch =
-        scope === "all" ||
-        (scope === "unanswered" &&
-          (!answeredIds.includes(question.id) || question.id === reviewingId)) ||
-        (scope === "wrong" &&
-          (wrongIds.includes(question.id) || question.id === reviewingId));
-      const viewMatch =
-        view !== "wrong" ||
-        wrongIds.includes(question.id) ||
-        question.id === reviewingId;
-      return subjectMatch && corpusMatch && formatMatch && yearMatch && scopeMatch && viewMatch;
-    });
-  }, [answeredIds, formatFilter, reviewingId, scope, selectedCorpora, selectedSubjects, selectedYears, view, wrongIds]);
+  const visibleQuestions = useMemo(
+    () =>
+      filterQuestions(
+        questions,
+        {
+          view,
+          scope,
+          subjects: selectedSubjects,
+          corpora: selectedCorpora,
+          format: formatFilter,
+          years: selectedYears,
+          categories: selectedCategories,
+        },
+        { answeredIds, wrongIds, dueIds, starredIds, uncertainIds, reviewingId },
+      ),
+    [answeredIds, dueIds, formatFilter, questions, reviewingId, scope, selectedCategories, selectedCorpora, selectedSubjects, selectedYears, starredIds, uncertainIds, view, wrongIds],
+  );
 
   const currentQuestion =
     visibleQuestions.find((question) => question.id === currentId) ??
@@ -214,49 +166,111 @@ export default function Home() {
     (question) => progress.answers[question.id],
   ).length;
 
+  // 練習集題目依建立時抽定的順序排列，不因重新 render 改變。
+  const practiceSetQuestions = useMemo(() => {
+    if (!practiceSet) return [];
+    const byId = new Map(questions.map((question) => [question.id, question]));
+    return practiceSet.ids
+      .map((id) => byId.get(id))
+      .filter((question): question is Question => Boolean(question));
+  }, [practiceSet, questions]);
+  const currentSetQuestion = practiceSet
+    ? practiceSetQuestions[Math.min(practiceSet.cursor, practiceSetQuestions.length - 1)]
+    : undefined;
+
+  // 考同一法條的其他題目（只由 statutes 欄位建立關聯）。
+  const currentRelatedQuestions = useMemo(
+    () => (currentQuestion ? relatedQuestionsFor(questions, currentQuestion) : []),
+    [currentQuestion, questions],
+  );
+
+  // 每日一題：以日期種子決定，同日全站相同；題庫載入後解析出實際題目。
+  const todayKey = localDateKey(new Date());
+  const todayPointer = useMemo(() => dailyPointer(todayKey), [todayKey]);
+  const dailyQuestion = useMemo(
+    () => dailyQuestionFrom(questions, todayPointer),
+    [questions, todayPointer],
+  );
+  const dailyCompletedToday = progress.dailyQuestion?.lastCompletedDate === todayKey;
+
+  useEffect(() => {
+    if (!pendingDailyJump || !dailyQuestion) return;
+    const timer = window.setTimeout(() => {
+      setCurrentId(dailyQuestion.id);
+      setPendingDailyJump(false);
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [pendingDailyJump, dailyQuestion]);
+
+  // 保存最後檢視位置與篩選條件（debounce 後寫入，供「繼續上次練習」使用）。
+  const currentQuestionId = currentQuestion?.id;
+  useEffect(() => {
+    if (view !== "practice" && view !== "wrong") return;
+    if (practiceSet || !preferencesReady || !progressReady) return;
+    // 「繼續上次練習」尚未回應前不覆寫快照，避免重新整理兩次後遺失原位置。
+    if (resumeOffer) return;
+    const timer = window.setTimeout(() => {
+      updatePreferences({
+        lastSession: {
+          view,
+          scope,
+          subjects: selectedSubjects,
+          corpora: selectedCorpora,
+          format: formatFilter,
+          years: selectedYears,
+          categories: selectedCategories,
+        },
+      });
+      if (currentQuestionId) {
+        setProgress((previous) =>
+          previous.lastVisited?.questionId === currentQuestionId
+            ? previous
+            : { ...previous, lastVisited: { questionId: currentQuestionId } },
+        );
+      }
+    }, 400);
+    return () => window.clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 只在畫面狀態變動時重寫快照
+  }, [view, scope, selectedSubjects, selectedCorpora, formatFilter, selectedYears, selectedCategories, currentQuestionId, practiceSet, preferencesReady, progressReady, resumeOffer]);
+
+  // currentId 代表使用者明確導航到的題目；為 null 時以篩選結果第一題為準。
+  // 篩選或畫面切換時一律歸零，避免舊題目重新符合條件時畫面跳回舊位置，
+  // 也避免空結果時殘留幽靈題目狀態。
+  function resetQuestionCursor() {
+    setReviewingId(null);
+    setCurrentId(null);
+    // 使用者已開始操作，收起「繼續上次練習」提示。
+    setResumeOffer(null);
+  }
+
   function chooseAnswer(index: number) {
     if (!currentQuestion || currentQuestion.format === "申論題") return;
     setReviewingId(currentQuestion.id);
-    const isCorrect = Boolean(
-      currentQuestion.allCredit ||
-      (currentQuestion.acceptedAnswers?.length
-        ? currentQuestion.acceptedAnswers.includes(index)
-        : index === currentQuestion.answer),
-    );
-    setProgress((previous) => {
-      const oldAnswer = previous.answers[currentQuestion.id];
-      return {
-        ...previous,
-        answers: {
-          ...previous.answers,
-          [currentQuestion.id]: {
-            attempts: (oldAnswer?.attempts ?? 0) + 1,
-            lastSelected: index,
-            lastCorrect: isCorrect,
-            lastAnsweredAt: new Date().toISOString(),
-          },
-        },
-      };
-    });
+    setCurrentId(currentQuestion.id);
+    recordAnswer(currentQuestion, index);
+    // 作答的正好是今日題目時累計連續天數。
+    if (dailyQuestion && currentQuestion.id === dailyQuestion.id) completeDailyQuestion();
   }
 
   function markEssayRead() {
     if (!currentQuestion || currentQuestion.format !== "申論題") return;
     setReviewingId(currentQuestion.id);
-    setProgress((previous) => {
-      const oldAnswer = previous.answers[currentQuestion.id];
-      return {
-        ...previous,
-        answers: {
-          ...previous.answers,
-          [currentQuestion.id]: {
-            attempts: (oldAnswer?.attempts ?? 0) + 1,
-            lastSelected: -1,
-            lastCorrect: true,
-            lastAnsweredAt: new Date().toISOString(),
-          },
-        },
-      };
+    setCurrentId(currentQuestion.id);
+    recordEssayRead(currentQuestion);
+  }
+
+  function scrollCardIntoViewOnMobile() {
+    if (!window.matchMedia("(max-width: 620px)").matches) return;
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        const card = document.querySelector<HTMLElement>(".question-card");
+        if (!card) return;
+        const stickyHeaderOffset = 122;
+        window.scrollTo({
+          top: card.getBoundingClientRect().top + window.scrollY - stickyHeaderOffset,
+          behavior: "smooth",
+        });
+      });
     });
   }
 
@@ -270,35 +284,174 @@ export default function Home() {
       visibleQuestions.length;
     setReviewingId(null);
     setCurrentId(visibleQuestions[nextIndex].id);
-    if (window.matchMedia("(max-width: 620px)").matches) {
-      window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
-          const card = document.querySelector<HTMLElement>(".question-card");
-          if (!card) return;
-          const stickyHeaderOffset = 122;
-          window.scrollTo({
-            top: card.getBoundingClientRect().top + window.scrollY - stickyHeaderOffset,
-            behavior: "smooth",
-          });
-        });
-      });
-    }
+    setResumeOffer(null);
+    scrollCardIntoViewOnMobile();
+  }
+
+  // ---- 練習集 ----
+
+  function practicePoolFor(range: PracticeSetRange): Question[] {
+    return filterQuestions(
+      questions,
+      {
+        view: "practice",
+        scope: range,
+        subjects: selectedSubjects,
+        corpora: selectedCorpora,
+        format: formatFilter,
+        years: selectedYears,
+        categories: selectedCategories,
+      },
+      { answeredIds, wrongIds, dueIds, starredIds, uncertainIds, reviewingId: null },
+    );
+  }
+
+  function createPracticeSet(range: PracticeSetRange, size: number, rangeLabel: string) {
+    const pool = practicePoolFor(range);
+    if (!pool.length) return;
+    const actualSize = Math.min(size, pool.length);
+    const label = `${subjectName}｜${rangeLabel}｜共 ${actualSize} 題`;
+    createSet(pool, size, label);
+    if (pool.length < size) setNotice(`目前條件只有 ${pool.length} 題，已全部納入練習集`);
+    resetQuestionCursor();
+  }
+
+  function chooseSetAnswer(index: number) {
+    if (!currentSetQuestion || currentSetQuestion.format === "申論題") return;
+    recordAnswer(currentSetQuestion, index);
+    markCompleted(currentSetQuestion.id);
+  }
+
+  function markSetEssayRead() {
+    if (!currentSetQuestion || currentSetQuestion.format !== "申論題") return;
+    recordEssayRead(currentSetQuestion);
+    markCompleted(currentSetQuestion.id);
+  }
+
+  function moveSetQuestion(direction: 1 | -1) {
+    moveCursor(direction);
+    scrollCardIntoViewOnMobile();
+  }
+
+  // ---- 模擬考 ----
+
+  function submitMockExam(auto: boolean) {
+    mock.submitExam();
+    if (auto) setNotice("考試時間到，已自動交卷");
+  }
+
+  // 回練習模式檢視指定題目（含解析）：供模擬考錯題清單、法條頁與同法條關聯題使用。
+  function openQuestionInPractice(question: Question) {
+    setSelectedSubjects([question.subject]);
+    setSelectedCorpora([]);
+    setFormatFilter("選擇題");
+    setSelectedYears([]);
+    setSelectedCategories([]);
+    setScope("all");
+    setReviewingId(null);
+    setCurrentId(question.id);
+    setView("practice");
+  }
+
+  // 搜尋結果跳題：保留科目、來源、年度與題型篩選，但離開錯題本／未作答範圍，
+  // 確保目標題目會出現在清單中。
+  function jumpToQuestion(entry: SearchEntry) {
+    setView("practice");
+    setScope("all");
+    setReviewingId(null);
+    setCurrentId(entry.id);
   }
 
   function startView(nextView: View) {
-    setReviewingId(null);
+    resetQuestionCursor();
     setView(nextView);
     if (nextView === "wrong") setScope("wrong");
     if (nextView === "practice" && scope === "wrong") setScope("all");
   }
 
-  function clearFilters() {
+  // 恢復上次練習的畫面、篩選與最後檢視題目。
+  function resumeLastSession() {
+    const offer = resumeOffer;
+    setResumeOffer(null);
+    if (!offer) return;
+    const { session } = offer;
+    setScope((session.scope as Scope) ?? "all");
+    setSelectedSubjects((session.subjects as SubjectFilter[]) ?? []);
+    setSelectedCorpora((session.corpora as Corpus[]) ?? []);
+    setFormatFilter((session.format as FormatFilter) ?? "全部題型");
+    setSelectedYears(session.years ?? []);
+    setSelectedCategories(session.categories ?? []);
+    setView(session.view === "wrong" ? "wrong" : "practice");
     setReviewingId(null);
+    setCurrentId(offer.questionId ?? null);
+  }
+
+  function dismissResume() {
+    setResumeOffer(null);
+    updatePreferences({ lastSession: undefined });
+  }
+
+  // 深淺色主題：未設定→深色→淺色→回到跟隨系統。
+  function cycleTheme() {
+    const current = preferences.theme;
+    const next = current === undefined ? "dark" : current === "dark" ? "light" : undefined;
+    updatePreferences({ theme: next });
+    if (next) document.documentElement.dataset.theme = next;
+    else delete document.documentElement.dataset.theme;
+  }
+
+  // 複製不含任何個人紀錄的題目深連結。
+  async function copyQuestionLink(id: string) {
+    const url = `${window.location.origin}${window.location.pathname}#q=${id}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setNotice("題目連結已複製（不含個人作答與筆記）");
+    } catch {
+      setNotice(`題目連結：${url}`);
+    }
+  }
+
+  // 間隔複習入口：切到練習畫面的「到期複習」範圍。
+  function startDueReview() {
+    resetQuestionCursor();
+    setView("practice");
+    setScope("due");
+  }
+
+  // 單字本連回原題：以題目 ID 直接定位（英文題庫載入後即顯示該題）。
+  function openVocabQuestion(questionId: string) {
+    setView("practice");
+    setScope("all");
+    setSelectedSubjects(["english"]);
+    setSelectedCorpora([]);
+    setFormatFilter("全部題型");
+    setSelectedYears([]);
+    setSelectedCategories([]);
+    setReviewingId(null);
+    setCurrentId(questionId);
+  }
+
+  // 每日一題入口：切到該科練習並跳到今日題目（題庫載入完成後定位）。
+  function openDailyQuestion() {
+    resetQuestionCursor();
+    setView("practice");
+    setScope("all");
+    setSelectedSubjects([todayPointer.subject]);
+    setSelectedCorpora([]);
+    setFormatFilter("選擇題");
+    setSelectedYears([]);
+    setSelectedCategories([]);
+    setPendingDailyJump(true);
+  }
+
+  function clearFilters() {
+    resetQuestionCursor();
     setScope("all");
     setSelectedSubjects([]);
     setSelectedCorpora([]);
     setFormatFilter("全部題型");
     setSelectedYears([]);
+    setSelectedCategories([]);
     setView("practice");
   }
 
@@ -335,40 +488,23 @@ export default function Home() {
     setNotice("作答紀錄已清除");
   }
 
-  const years = Array.from(
-    new Set(questions.flatMap((question) => question.rocYear ?? [])),
-  ).sort((a, b) => b - a);
   const subjectName = selectedSubjects.length === 0
     ? "全科"
     : selectedSubjects.length <= 2
       ? selectedSubjects.map((subject) => subjectLabels[subject]).join("＋")
       : `${selectedSubjects.length}科`;
-  const subjectSummary = selectedSubjects.length === 0
-    ? "全部科目"
-    : selectedSubjects.length <= 2
-      ? selectedSubjects.map((subject) => subjectLabels[subject]).join("＋")
-      : `已選 ${selectedSubjects.length} 科`;
-  const yearSummary = selectedYears.length === 0
-    ? "全部年度"
-    : selectedYears.length === 1
-      ? `${selectedYears[0]} 年`
-      : `已選 ${selectedYears.length} 年`;
-  const corpusSummary = selectedCorpora.length === 0
-    ? "全部來源"
-    : selectedCorpora.length === 1
-      ? selectedCorpora[0]
-      : `已選 ${selectedCorpora.length} 個來源`;
   const hasActiveFilters =
     scope !== "all" ||
     selectedSubjects.length > 0 ||
     selectedCorpora.length > 0 ||
     formatFilter !== "全部題型" ||
-    selectedYears.length > 0;
+    selectedYears.length > 0 ||
+    selectedCategories.length > 0;
   const selectedOfficialQuestions = questions.filter(
     (question) =>
       question.exam &&
       (selectedCorpora.length === 0 || selectedCorpora.includes("司法特考四等")) &&
-      (selectedSubjects.length === 0 || selectedSubjects.includes(question.subject as SubjectFilter)) &&
+      (selectedSubjects.length === 0 || selectedSubjects.includes(question.subject)) &&
       (selectedYears.length === 0 || (question.rocYear !== undefined && selectedYears.includes(question.rocYear))),
   );
   const selectedOfficialMultipleChoiceCount = selectedOfficialQuestions.filter(
@@ -380,6 +516,7 @@ export default function Home() {
 
   return (
     <main className="app-shell">
+      <OfflineNotice />
       <header className="topbar">
         <button className="brand" onClick={() => startView("practice")}>
           <span className="brand-mark">法</span>
@@ -388,10 +525,21 @@ export default function Home() {
             <small>法院書記官法科考古題練習</small>
           </span>
         </button>
-        <div className="top-progress" aria-label="整體進度">
-          <span>{visibleAnsweredCount} / {visibleQuestions.length} 題已完成</span>
-          <div className="progress-track">
-            <i style={{ width: `${visibleQuestions.length ? (visibleAnsweredCount / visibleQuestions.length) * 100 : 0}%` }} />
+        <div className="topbar-right">
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={cycleTheme}
+            aria-label="切換深淺色主題"
+            title="切換深淺色主題（跟隨系統／深色／淺色）"
+          >
+            {preferences.theme === "dark" ? "🌙 深色" : preferences.theme === "light" ? "☀️ 淺色" : "🌗 系統"}
+          </button>
+          <div className="top-progress" aria-label="整體進度">
+            <span>{visibleAnsweredCount} / {visibleQuestions.length} 題已完成</span>
+            <div className="progress-track">
+              <i style={{ width: `${visibleQuestions.length ? (visibleAnsweredCount / visibleQuestions.length) * 100 : 0}%` }} />
+            </div>
           </div>
         </div>
       </header>
@@ -399,13 +547,13 @@ export default function Home() {
       <div className="workspace">
         <aside className="sidebar">
           <nav aria-label="主要功能">
-            {(Object.keys(viewLabels) as View[]).map((item) => (
+            {(Object.keys(viewLabels) as View[]).map((item, index) => (
               <button
                 key={item}
                 className={view === item ? "nav-item active" : "nav-item"}
                 onClick={() => startView(item)}
               >
-                <span>{item === "practice" ? "01" : item === "wrong" ? "02" : "03"}</span>
+                <span>{String(index + 1).padStart(2, "0")}</span>
                 {viewLabels[item]}
                 {item === "wrong" && wrongIds.length > 0 && <b>{wrongIds.length}</b>}
               </button>
@@ -422,6 +570,39 @@ export default function Home() {
             </div>
           </section>
 
+          <ExamCountdownCard
+            examDate={progress.examDate}
+            remainingQuestions={Math.max(
+              0,
+              officialQuestionCount -
+                answeredIds.filter((id) => !id.startsWith("demo-")).length,
+            )}
+            onSet={(date) => setExamDate(date)}
+            onClear={() => setExamDate(undefined)}
+          />
+
+          <section className="sidebar-card daily-card" aria-label="每日一題">
+            <p className="eyebrow">每日一題</p>
+            <strong>{progress.dailyQuestion?.streak ?? 0} 天</strong>
+            <span>連續完成</span>
+            <button type="button" onClick={openDailyQuestion} disabled={dailyCompletedToday}>
+              {dailyCompletedToday ? "今日已完成" : "作答今日題目"}
+            </button>
+          </section>
+
+          <section className="sidebar-card review-queue" aria-label="間隔複習佇列">
+            <p className="eyebrow">複習佇列</p>
+            <div className="review-queue-actions">
+              <button type="button" onClick={startDueReview} disabled={reviewQueue.dueToday.length === 0}>
+                今日到期 <b>{reviewQueue.dueToday.length}</b>
+              </button>
+              <button type="button" onClick={startDueReview} disabled={reviewQueue.overdue.length === 0}>
+                逾期複習 <b>{reviewQueue.overdue.length}</b>
+              </button>
+            </div>
+            <span className="review-queue-note">答錯隔天複習；連續答對依 3、7、14、30 天延後</span>
+          </section>
+
           <div className="storage-note">
             <span>LOCAL</span>
             紀錄只保存在這台裝置的瀏覽器
@@ -431,14 +612,49 @@ export default function Home() {
         <section className="content">
           {view === "stats" ? (
             <StatsView
+              questions={questions}
               progress={progress}
               accuracy={accuracy}
-              correctCount={correctCount}
+              attemptAccuracy={attemptAccuracy}
               wrongCount={wrongIds.length}
               answeredCount={answeredIds.length}
+              dueIds={dueIds}
               onExport={exportProgress}
               onImport={() => importRef.current?.click()}
               onReset={resetProgress}
+            />
+          ) : view === "mock" ? (
+            <MockExamView
+              mockExam={mock.mockExam}
+              questions={questions}
+              loading={bankLoading}
+              onStart={mock.startExam}
+              onSelect={mock.selectAnswer}
+              onJump={mock.jumpToIndex}
+              onSubmit={submitMockExam}
+              onDismiss={mock.discardExam}
+              onReviewQuestion={openQuestionInPractice}
+            />
+          ) : view === "law" ? (
+            <LawBrowserView
+              questions={questions}
+              statuteCards={progress.statuteCards}
+              onGradeCard={gradeStatuteCard}
+              onOpenQuestion={openQuestionInPractice}
+            />
+          ) : view === "vocab" ? (
+            <VocabView onOpenQuestion={openVocabQuestion} />
+          ) : view === "practice" && practiceSet ? (
+            <PracticeSetSession
+              practiceSet={practiceSet}
+              questions={practiceSetQuestions}
+              progress={progress}
+              loading={bankLoading}
+              shuffleOptions={preferences.shuffleOptions ?? false}
+              onChoose={chooseSetAnswer}
+              onMarkRead={markSetEssayRead}
+              onMove={moveSetQuestion}
+              onLeave={leaveSet}
             />
           ) : (
             <>
@@ -450,101 +666,138 @@ export default function Home() {
                 </div>
                 <div className="result-summary">
                   <span>官方考古題</span>
-                  <strong>{selectedOfficialQuestions.length}</strong>
-                  <small>{selectedOfficialMultipleChoiceCount} 選擇＋{selectedOfficialEssayCount} 申論</small>
+                  <strong>{bankLoading ? "…" : selectedOfficialQuestions.length}</strong>
+                  <small>
+                    {bankLoading
+                      ? "題庫載入中"
+                      : `${selectedOfficialMultipleChoiceCount} 選擇＋${selectedOfficialEssayCount} 申論`}
+                  </small>
                 </div>
               </div>
 
-              <div className="filters" aria-label="題目篩選">
-                <div className="segmented">
-                  {(["all", "unanswered", "wrong"] as Scope[]).map((item) => (
-                    <button
-                      key={item}
-                      className={scope === item ? "selected" : ""}
-                      onClick={() => {
-                        setReviewingId(null);
-                        setScope(item);
-                      }}
-                    >
-                      {item === "all" ? "全部" : item === "unanswered" ? "未作答" : "曾答錯"}
-                    </button>
-                  ))}
+              {resumeOffer && view === "practice" && (
+                <div className="resume-banner" role="status">
+                  <span>已保存上次的練習位置與篩選條件，要接著練嗎？</span>
+                  <div>
+                    <button type="button" onClick={resumeLastSession}>繼續上次練習</button>
+                    <button type="button" onClick={dismissResume}>重新開始</button>
+                  </div>
                 </div>
-                <MultiSelectFilter
-                  ariaLabel="依科目複選篩選"
-                  allLabel="全部科目"
-                  options={subjectOptions}
-                  selected={selectedSubjects}
-                  summary={subjectSummary}
-                  onChange={(values) => {
-                    setReviewingId(null);
-                    setSelectedSubjects(values);
-                  }}
-                />
-                <MultiSelectFilter
-                  ariaLabel="依題庫來源複選篩選"
-                  className="corpus-filter"
-                  allLabel="全部來源"
-                  options={corpusOptions}
-                  selected={selectedCorpora}
-                  summary={corpusSummary}
-                  onChange={(values) => {
-                    setReviewingId(null);
-                    setSelectedCorpora(values);
-                  }}
-                />
-                <label>
-                  <span className="sr-only">依題型篩選</span>
-                  <select value={formatFilter} onChange={(event) => {
-                    setReviewingId(null);
-                    setFormatFilter(event.target.value as FormatFilter);
-                  }}>
-                    <option>選擇題</option>
-                    <option>申論題</option>
-                    <option>全部題型</option>
-                  </select>
-                </label>
-                <MultiSelectFilter
-                  ariaLabel="依年度複選篩選"
-                  className="year-filter"
-                  allLabel="全部年度"
-                  options={years.map((year) => ({ value: year, label: `${year} 年` }))}
-                  selected={selectedYears}
-                  summary={yearSummary}
-                  onChange={(values) => {
-                    setReviewingId(null);
-                    setSelectedYears(values);
-                  }}
-                />
-                <span className="filter-count">符合 {visibleQuestions.length} 題</span>
-                <button
-                  type="button"
-                  className="clear-filters"
-                  onClick={clearFilters}
-                  disabled={!hasActiveFilters}
-                  title="只清除篩選條件，不會刪除作答紀錄"
-                >
-                  清除所有篩選
-                </button>
-              </div>
+              )}
 
-              {currentQuestion ? (
+              <SearchPanel
+                filters={{
+                  view,
+                  scope,
+                  subjects: selectedSubjects,
+                  corpora: selectedCorpora,
+                  format: formatFilter,
+                  years: selectedYears,
+                  categories: selectedCategories,
+                }}
+                onJump={jumpToQuestion}
+                onClearFilters={clearFilters}
+              />
+
+              <FiltersBar
+                scope={scope}
+                subjects={selectedSubjects}
+                corpora={selectedCorpora}
+                format={formatFilter}
+                years={selectedYears}
+                categories={selectedCategories}
+                matchCount={visibleQuestions.length}
+                hasActiveFilters={hasActiveFilters}
+                shuffleOptions={preferences.shuffleOptions ?? false}
+                onScopeChange={(value) => {
+                  resetQuestionCursor();
+                  setScope(value);
+                }}
+                onSubjectsChange={(values) => {
+                  resetQuestionCursor();
+                  setSelectedSubjects(values);
+                  // 章節篩選依附於單一科目，科目一變就重設，避免殘留無效章節。
+                  setSelectedCategories([]);
+                }}
+                onCorporaChange={(values) => {
+                  resetQuestionCursor();
+                  setSelectedCorpora(values);
+                }}
+                onFormatChange={(value) => {
+                  resetQuestionCursor();
+                  setFormatFilter(value);
+                }}
+                onYearsChange={(values) => {
+                  resetQuestionCursor();
+                  setSelectedYears(values);
+                }}
+                onCategoriesChange={(values) => {
+                  resetQuestionCursor();
+                  setSelectedCategories(values);
+                }}
+                onShuffleChange={(enabled) => updatePreferences({ shuffleOptions: enabled })}
+                onClearFilters={clearFilters}
+              />
+
+              {view === "practice" && (
+                <PracticeSetCreator
+                  poolCounts={{
+                    all: practicePoolFor("all").length,
+                    unanswered: practicePoolFor("unanswered").length,
+                    wrong: practicePoolFor("wrong").length,
+                    due: practicePoolFor("due").length,
+                    starred: practicePoolFor("starred").length,
+                  }}
+                  onCreate={createPracticeSet}
+                />
+              )}
+
+              {bankError ? (
+                <div className="empty-state" role="alert">
+                  <span>!</span>
+                  <h2>題庫載入失敗</h2>
+                  <p>請確認網路連線後重試；本機作答紀錄不受影響。</p>
+                  {/* Turbopack 會快取失敗的動態 import，重新整理是可靠的復原方式。 */}
+                  <button onClick={() => window.location.reload()}>重試載入</button>
+                </div>
+              ) : bankLoading ? (
+                <div className="empty-state" aria-live="polite">
+                  <span>…</span>
+                  <h2>題庫載入中</h2>
+                  <p>正在載入所選科目的題目與解析，通常只需要一下子。</p>
+                </div>
+              ) : currentQuestion ? (
                 <QuestionCard
-                  key={currentQuestion.id}
+                  // key 含 view 與 scope：切換錯題本／未作答等畫面時重置作答狀態，
+                  // 讓剛答錯的題目進錯題本後可以立即重新作答。
+                  key={`${view}-${scope}-${currentQuestion.id}`}
                   question={currentQuestion}
                   position={visibleQuestions.findIndex((item) => item.id === currentQuestion.id) + 1}
                   total={visibleQuestions.length}
                   previousAnswer={progress.answers[currentQuestion.id]}
+                  relatedQuestions={currentRelatedQuestions}
+                  shuffleOptions={preferences.shuffleOptions ?? false}
+                  flags={progress.flags[currentQuestion.id]}
                   onChoose={chooseAnswer}
                   onMarkRead={markEssayRead}
                   onMove={moveQuestion}
+                  onOpenRelated={openQuestionInPractice}
+                  onToggleStarred={() => toggleStarred(currentQuestion.id)}
+                  onToggleUncertain={() => toggleUncertain(currentQuestion.id)}
+                  onSaveNote={(note) => saveNote(currentQuestion.id, note)}
+                  onCopyLink={() => copyQuestionLink(currentQuestion.id)}
+                  essay={progress.essays?.[currentQuestion.id]}
+                  onSaveEssay={(draft, seconds) => {
+                    saveEssayDraft(currentQuestion.id, draft, seconds);
+                    setNotice("申論草稿已保存於本機");
+                  }}
                 />
               ) : (
                 <div className="empty-state">
                   <span>✓</span>
                   <h2>{view === "wrong" ? "錯題已全部清空" : "這個篩選目前沒有題目"}</h2>
                   <p>{view === "wrong" ? "答對後會自動離開錯題本，繼續保持。" : "換一個年度、題型或切回全部題目看看。"}</p>
-                  <button onClick={() => { setScope("all"); setSelectedSubjects(["civil-law"]); setSelectedCorpora(["司法特考四等"]); setFormatFilter("選擇題"); setSelectedYears([]); startView("practice"); }}>
+                  <button onClick={() => { setScope("all"); setSelectedSubjects(["civil-law"]); setSelectedCorpora(["司法特考四等"]); setFormatFilter("選擇題"); setSelectedYears([]); setSelectedCategories([]); startView("practice"); }}>
                     回到全部題目
                   </button>
                 </div>
@@ -561,340 +814,5 @@ export default function Home() {
         </button>
       )}
     </main>
-  );
-}
-
-function QuestionCard({
-  question,
-  position,
-  total,
-  previousAnswer,
-  onChoose,
-  onMarkRead,
-  onMove,
-}: {
-  question: Question;
-  position: number;
-  total: number;
-  previousAnswer?: ProgressData["answers"][string];
-  onChoose: (index: number) => void;
-  onMarkRead: () => void;
-  onMove: (direction: 1 | -1) => void;
-}) {
-  const [selected, setSelected] = useState<number | null>(null);
-  const [revealed, setRevealed] = useState(false);
-  const isEssay = question.format === "申論題";
-  const acceptedAnswers = question.acceptedAnswers?.length
-    ? question.acceptedAnswers
-    : question.answer === null ? [] : [question.answer];
-  const answeredCorrect = Boolean(
-    revealed && (question.allCredit || (selected !== null && acceptedAnswers.includes(selected))),
-  );
-  const answerLabel = question.allCredit
-    ? "本題一律給分"
-    : acceptedAnswers.length === 0
-      ? "未公布"
-      : acceptedAnswers.map((index) => String.fromCharCode(65 + index)).join(" 或 ");
-
-  function handleChoose(index: number) {
-    if (revealed || isEssay) return;
-    setSelected(index);
-    setRevealed(true);
-    onChoose(index);
-  }
-
-  const navigation = (
-    <div className="question-quick-nav" aria-label="題目切換">
-      <button onClick={() => onMove(-1)}>← 上一題</button>
-      <button className="next-button" onClick={() => onMove(1)}>下一題 →</button>
-    </div>
-  );
-
-  return (
-    <article className="question-card">
-      <div className="question-meta">
-        <div>
-          <span className="tag category">{question.exam ?? question.category}</span>
-          {question.exam && <span className="tag type">{question.subjectLabel}</span>}
-          {question.rocYear && <span className="tag year">民國 {question.rocYear} 年</span>}
-          <span className="tag difficulty">{question.format ?? "選擇題"}</span>
-          {!question.exam && (
-            <span className={`tag type ${question.type === "個案型" ? "case" : ""}`}>{question.type}</span>
-          )}
-        </div>
-        <span className="question-number">第 {position} / {total} 題</span>
-      </div>
-
-      <div className="source-line">
-        <span>{question.source}</span>
-        {question.applicableCategories && <span>適用類科：{question.applicableCategories.join("、")}</span>}
-        {question.sourceUrl && (
-          <a href={question.sourceUrl} target="_blank" rel="noreferrer">官方試題 PDF ↗</a>
-        )}
-        {previousAnswer && <span>上次作答 {formatDate(previousAnswer.lastAnsweredAt)}</span>}
-      </div>
-
-      {question.passage && (
-        <section className="passage-box" aria-label="共用文章">
-          <p className="eyebrow">PASSAGE｜第 {question.officialQuestionNumber} 題所屬題組</p>
-          <p>{question.passage}</p>
-        </section>
-      )}
-      <h2>{question.prompt}</h2>
-      {isEssay ? (
-        <>
-          <p className="instruction">申論題依原始試卷完整收錄；考選部未提供官方擬答。</p>
-          <div className="essay-callout">
-            <div>
-              <strong>{previousAnswer ? "已標記閱讀" : "讀完後可標記進度"}</strong>
-              <p>目前保留原題與官方試卷連結，不以 AI 擬答冒充官方答案。</p>
-            </div>
-            <button onClick={onMarkRead}>{previousAnswer ? "再次標記" : "標記已閱讀"}</button>
-          </div>
-          {navigation}
-        </>
-      ) : (
-        <>
-          <p className="instruction">請選出最適當的答案。點選選項後立即顯示官方答案。</p>
-          <div className="options">
-            {question.options.map((option, index) => {
-              const isCorrect = revealed && (
-                question.allCredit ? selected === index : acceptedAnswers.includes(index)
-              );
-              const isWrong = revealed && !question.allCredit && selected === index && !acceptedAnswers.includes(index);
-              return (
-                <button
-                  key={`${index}-${option}`}
-                  className={`option ${isCorrect ? "correct" : ""} ${isWrong ? "wrong" : ""}`}
-                  onClick={() => handleChoose(index)}
-                  disabled={revealed}
-                >
-                  <span className="option-letter">{String.fromCharCode(65 + index)}</span>
-                  <span>{option}</span>
-                  {isCorrect && <b>{question.allCredit ? "給分" : "正確"}</b>}
-                  {isWrong && <b>你的答案</b>}
-                </button>
-              );
-            })}
-          </div>
-          {navigation}
-        </>
-      )}
-
-      {!isEssay && !revealed ? (
-        <div className="answer-hint">
-          <span>答題提醒</span>
-          先圈出關鍵事實，確認題目真正問的法律效果，再逐一套用要件。
-        </div>
-      ) : !isEssay ? (
-        <section className={answeredCorrect ? "analysis correct-analysis" : "analysis wrong-analysis"} aria-live="polite">
-          <div className="analysis-result">
-            <span className="result-icon">{answeredCorrect ? "✓" : "!"}</span>
-            <div>
-              <p>{question.allCredit ? "官方更正答案" : answeredCorrect ? "判斷正確" : "本題答錯"}</p>
-              <strong>{question.allCredit ? answerLabel : `答案是 ${answerLabel}`}</strong>
-            </div>
-            {question.confidence && (
-              <span className={`confidence ${question.confidence === "高" ? "high" : "medium"}`}>
-                解析信心 {question.confidence}
-              </span>
-            )}
-          </div>
-
-          {question.englishAnalysis ? (
-            <>
-              <div className="issue-box">
-                <p className="eyebrow">考點</p>
-                <h3>{question.englishAnalysis.skill}</h3>
-              </div>
-              <section className="english-translation-card">
-                <p className="eyebrow">題目繁中翻譯</p>
-                <p>{question.englishAnalysis.promptTranslation}</p>
-                {question.englishAnalysis.passageTranslation && (
-                  <details>
-                    <summary>查看共用文章繁中翻譯</summary>
-                    <p>{question.englishAnalysis.passageTranslation}</p>
-                  </details>
-                )}
-              </section>
-              <section className="option-study-table" aria-label="選項翻譯與詞性">
-                <div className="option-study-heading">
-                  <p className="eyebrow">選項整理</p>
-                  <span>英文｜詞性｜繁中意思</span>
-                </div>
-                {question.englishAnalysis.optionNotes.map((option) => (
-                  <div className={option.correct ? "option-study-row correct" : "option-study-row"} key={option.label}>
-                    <b>{option.label}</b>
-                    <strong>{option.text}</strong>
-                    <span className="part-of-speech">{option.partOfSpeech}</span>
-                    <span>{option.translation}</span>
-                    {option.correct && <em>正解</em>}
-                  </div>
-                ))}
-              </section>
-              <div className="english-analysis-grid">
-                <div><span>01</span><h3>正確答案理由</h3><p>{question.englishAnalysis.answerReason}</p></div>
-                <div><span>02</span><h3>關鍵句或文法結構</h3><p>{question.englishAnalysis.keyPoint}</p></div>
-                {question.englishAnalysis.supportingSentence && (
-                  <div><span>03</span><h3>文章定位</h3><p>{question.englishAnalysis.supportingSentence}</p></div>
-                )}
-              </div>
-              <div className="trap-note">
-                <strong>干擾選項</strong>
-                <p>{question.englishAnalysis.distractors}</p>
-              </div>
-              <div className="statutes">
-                <p className="eyebrow">官方來源</p>
-                {question.references.map((reference) => (
-                  <a key={`${reference.title}-${reference.locator ?? ""}`} href={reference.url} target="_blank" rel="noreferrer">
-                    <span>{reference.title}{reference.locator ? `｜${reference.locator}` : ""}</span>
-                    <b>查看官方資料 ↗</b>
-                  </a>
-                ))}
-              </div>
-              <p className="verification-note">答案以考選部公告為準；英文解析依官方文章、句法與語境自行整理，不轉載坊間題庫詳解。</p>
-            </>
-          ) : question.analysis ? (
-            <>
-              <div className="issue-box">
-                <p className="eyebrow">題目在問什麼</p>
-                <h3>{question.analysis.issue}</h3>
-              </div>
-              <div className="reasoning-grid">
-                <div><span>01</span><h3>{question.subject === "chinese" ? "判讀原則" : "法律規則"}</h3><p>{question.analysis.rule}</p></div>
-                <div><span>02</span><h3>{question.subject === "chinese" ? "解析" : "套入本題"}</h3><p>{question.analysis.application}</p></div>
-                <div><span>03</span><h3>結論</h3><p>{question.analysis.conclusion}</p></div>
-              </div>
-              <div className="trap-note">
-                <strong>{question.subject === "chinese" ? "選項辨析與常見誤區" : "常見誤區"}</strong>
-                <p>{question.analysis.trap}</p>
-              </div>
-              {question.references.length > 0 && (
-                <div className="statutes">
-                  <p className="eyebrow">官方依據</p>
-                  {question.references.map((reference) => (
-                    <a key={`${reference.title}-${reference.locator ?? ""}`} href={reference.url} target="_blank" rel="noreferrer">
-                      <span>{reference.title}{reference.locator ? `｜${reference.locator}` : ""}</span>
-                      {reference.text && <p>{reference.text}</p>}
-                      <b>查看官方資料 ↗</b>
-                    </a>
-                  ))}
-                </div>
-              )}
-              <p className="verification-note">
-                {question.subject === "chinese"
-                  ? "答案以考選部公告為準；解析依題文語境、典故與常用語義自行整理，不轉載坊間題庫詳解。"
-                  : "答案以考選部公告為準；解析由本站依命題時法、官方法條及實務資料自行整理，遇修法題已另行註明。"}
-              </p>
-            </>
-          ) : (
-            <div className="official-answer-note">
-              <p className="eyebrow">OFFICIAL ANSWER</p>
-              <h3>{question.answerSource ?? "考選部官方資料"}</h3>
-              <p>
-                考選部只公布標準答案、不提供解析。為避免 AI 誤判個案或引用錯誤法條，本批先忠實匯入題目與官方答案，解析將待逐題人工複核後再補上。
-              </p>
-              <div>
-                {question.answerUrl && <a href={question.answerUrl} target="_blank" rel="noreferrer">查看官方答案 PDF ↗</a>}
-                {question.sourceUrl && <a href={question.sourceUrl} target="_blank" rel="noreferrer">查看原始試題 PDF ↗</a>}
-              </div>
-            </div>
-          )}
-        </section>
-      ) : null}
-
-      <footer className="question-footer">
-        <button onClick={() => onMove(-1)}>← 上一題</button>
-        <button className="next-button" onClick={() => onMove(1)}>下一題 →</button>
-      </footer>
-    </article>
-  );
-}
-
-function StatsView({
-  progress,
-  accuracy,
-  correctCount,
-  wrongCount,
-  answeredCount,
-  onExport,
-  onImport,
-  onReset,
-}: {
-  progress: ProgressData;
-  accuracy: number;
-  correctCount: number;
-  wrongCount: number;
-  answeredCount: number;
-  onExport: () => void;
-  onImport: () => void;
-  onReset: () => void;
-}) {
-  const groups = [
-    ...Object.entries(subjectLabels).flatMap(([subject, label]) =>
-      Array.from(new Set(questions.flatMap((question) => question.rocYear ?? [])))
-        .sort((a, b) => b - a)
-        .map((year) => ({
-          label: `${label}｜民國 ${year} 年`,
-          questions: questions.filter(
-            (question) => question.subject === subject && question.rocYear === year,
-          ),
-        }))
-        .filter((group) => group.questions.length > 0),
-    ),
-    {
-      label: "自行編寫示範題",
-      questions: questions.filter((question) => !question.rocYear),
-    },
-  ];
-  return (
-    <div className="stats-view">
-      <div className="page-heading">
-        <div>
-          <p className="eyebrow">PROGRESS</p>
-          <h1>看見進度，也保留帶得走的紀錄</h1>
-          <p>第一版資料存在瀏覽器，可隨時匯出備份。</p>
-        </div>
-      </div>
-
-      <div className="stat-grid">
-        <div><span>完成題數</span><strong>{answeredCount}<small> / {questions.length}</small></strong></div>
-        <div><span>目前答對率</span><strong>{accuracy}<small>%</small></strong></div>
-        <div><span>答對題數</span><strong>{correctCount}<small> 題</small></strong></div>
-        <div><span>錯題待複習</span><strong>{wrongCount}<small> 題</small></strong></div>
-      </div>
-
-      <section className="chapter-progress">
-        <div className="section-title">
-          <div><p className="eyebrow">依科目</p><h2>獨立學習進度</h2></div>
-          <span>以每題最後一次作答為準</span>
-        </div>
-        {groups.map((group) => {
-          const answered = group.questions.filter((question) => progress.answers[question.id]).length;
-          const correct = group.questions.filter((question) => progress.answers[question.id]?.lastCorrect).length;
-          return (
-            <div className="chapter-row" key={group.label}>
-              <strong>{group.label}</strong>
-              <div className="chapter-track"><i style={{ width: `${(answered / group.questions.length) * 100}%` }} /></div>
-              <span>{answered}/{group.questions.length} 完成</span>
-              <b>{answered ? Math.round((correct / answered) * 100) : 0}%</b>
-            </div>
-          );
-        })}
-      </section>
-
-      <section className="data-card">
-        <div>
-          <p className="eyebrow">本機資料</p>
-          <h2>備份與搬移學習紀錄</h2>
-          <p>換電腦、換瀏覽器或清除網站資料前，先匯出 JSON。未來接上帳號同步時，這裡可換成雲端資料服務。</p>
-        </div>
-        <div className="data-actions">
-          <button className="primary-action" onClick={onExport}>匯出紀錄</button>
-          <button onClick={onImport}>匯入紀錄</button>
-          <button className="danger-action" onClick={onReset}>清除全部</button>
-        </div>
-      </section>
-    </div>
   );
 }

@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   basePath: isGitHubPages ? `/${repositoryName}` : "",
   assetPrefix: isGitHubPages ? `/${repositoryName}/` : "",
+  env: {
+    // 讓前端 fetch public/data 下的靜態資料時能組出 GitHub Pages 子路徑。
+    NEXT_PUBLIC_BASE_PATH: isGitHubPages ? `/${repositoryName}` : "",
+  },
 };
 
 export default nextConfig;

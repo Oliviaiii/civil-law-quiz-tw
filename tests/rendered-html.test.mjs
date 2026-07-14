@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 
@@ -21,13 +22,34 @@ test("builds the multi-subject clerk exam practice experience as static HTML", a
   assert.match(html, /type="checkbox"[^>]*value="司法特考四等"/);
   assert.match(html, /type="checkbox"[^>]*value="114"/);
   assert.match(html, /清除所有篩選/);
-  assert.match(html, /<strong>201<\/strong>/);
-  assert.match(html, /175[\s\S]*選擇＋[\s\S]*26[\s\S]*申論/);
+  // 題庫改為按需載入：預先渲染的 HTML 只含載入中狀態，不含題目內容
+  assert.match(html, /題庫載入中/);
+  assert.doesNotMatch(html, /關於成年的敘述/);
+  assert.doesNotMatch(html, /民法概要｜第/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
+test("keeps the initial JS payload free of question data and under budget", async () => {
+  const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
+  const scripts = [...html.matchAll(/src="([^"]+\.js)"/g)].map((match) =>
+    match[1].replace(/^\/civil-law-quiz-tw/, ""),
+  );
+  assert.ok(scripts.length > 0);
+  let total = 0;
+  for (const src of scripts) {
+    const file = await readFile(new URL(`../out${src}`, import.meta.url));
+    total += file.byteLength;
+    assert.ok(!file.includes("滿十八歲為成年"), `initial chunk ${src} contains question data`);
+    assert.ok(!file.includes("偽造文書印文罪"), `initial chunk ${src} contains question data`);
+  }
+  assert.ok(
+    total < 900 * 1024,
+    `initial JS payload ${Math.round(total / 1024)}KB exceeds 900KB budget`,
+  );
+});
+
 test("keeps questions and local progress behind replaceable data modules", async () => {
-  const [page, questions, officialData, criminalData, combinedData, remainingData, englishTranslationsData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, chineseAnalysisModule, civilCode, criminalCode, criminalImporter, importer, remainingImporter, englishTranslationImporter] = await Promise.all([
+  const [page, questions, officialData, criminalData, combinedData, remainingData, englishTranslationsData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, chineseAnalysisModule, civilCode, criminalCode, criminalImporter, importer, remainingImporter, englishTranslationImporter, progressHook, quizFilters, questionCard, questionAnalysis, filtersBar, civilBank, criminalBank, bankManifest, questionBankHook, demoJson, searchIndexJson, dataManifestJson, taxonomyJson, civilTagsJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data/questions.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/judicial-fourth-questions.json", import.meta.url), "utf8"),
@@ -51,16 +73,31 @@ test("keeps questions and local progress behind replaceable data modules", async
     readFile(new URL("../scripts/import-moex-legal-knowledge.py", import.meta.url), "utf8"),
     readFile(new URL("../scripts/import-moex-clerk-remaining.py", import.meta.url), "utf8"),
     readFile(new URL("../scripts/import-english-translations.py", import.meta.url), "utf8"),
+    readFile(new URL("../app/hooks/use-progress.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/lib/quiz-filters.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/QuestionCard.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/QuestionAnalysis.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/FiltersBar.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/banks/civil-law.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/banks/criminal-law.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/bank-manifest.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/hooks/use-question-bank.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/demo-questions.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/data/search-index.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/data/manifest.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/taxonomy/taxonomy.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/taxonomy/civil-law-tags.json", import.meta.url), "utf8"),
   ]);
 
-  assert.match(page, /loadProgress\(\)/);
-  assert.match(page, /saveProgress\(progress\)/);
+  // 重構後職責分層：進度存取在 hooks、篩選邏輯在 lib、題卡與解析在 components。
+  assert.match(progressHook, /loadProgress\(\)/);
+  assert.match(progressHook, /saveProgress\(progress\)/);
   assert.match(page, /exportProgress/);
   assert.match(page, /importProgress/);
-  assert.match(page, /question\.analysis\.application/);
-  assert.match(page, /question\.references/);
-  assert.match(page, /acceptedAnswers\.includes/);
-  assert.match(page, /MultiSelectFilter/);
+  assert.match(questionAnalysis, /question\.analysis\.application/);
+  assert.match(questionAnalysis, /question\.references/);
+  assert.match(questionCard, /acceptedAnswers\.includes/);
+  assert.match(filtersBar, /MultiSelectFilter/);
   assert.match(page, /selectedSubjects/);
   assert.match(page, /selectedCorpora/);
   assert.match(page, /selectedYears/);
@@ -68,17 +105,64 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(page, /setSelectedSubjects\(\[\]\)/);
   assert.match(page, /setSelectedCorpora\(\[\]\)/);
   assert.match(page, /setFormatFilter\("全部題型"\)/);
-  assert.match(page, /question-quick-nav/);
+  assert.match(questionCard, /question-quick-nav/);
   assert.match(page, /setReviewingId\(currentQuestion\.id\)/);
-  assert.match(page, /question\.id === reviewingId/);
+  assert.match(quizFilters, /question\.id === reviewingId/);
   assert.match(page, /setReviewingId\(null\)/);
-  assert.match(page, /官方答案 PDF/);
-  assert.match(questions, /export const questions: Question\[\]/);
-  assert.equal((questions.match(/id: "demo-/g) ?? []).length, 10);
-  assert.match(questions, /officialQuestionCount/);
-  assert.match(questions, /officialCountsBySubject/);
-  assert.match(questions, /criminalRecordsJson/);
-  assert.match(questions, /combinedPaperRecordsJson/);
+  assert.match(questionAnalysis, /官方答案 PDF/);
+  // 題庫依科目拆檔按需載入：questions.ts 只保留型別，資料在 banks/* 與產生的 manifest。
+  assert.match(questions, /export type Question = \{/);
+  assert.doesNotMatch(questions, /questions\.json/);
+  const demoRecords = JSON.parse(demoJson);
+  assert.equal(demoRecords.length, 10);
+  assert.ok(demoRecords.every((item) => item.id.startsWith("demo-")));
+  assert.match(civilBank, /demo-questions\.json/);
+  assert.match(civilBank, /buildOfficialAnalysis/);
+  assert.match(criminalBank, /criminalRecordsJson/);
+  assert.match(criminalBank, /buildCriminalAnalysis/);
+  assert.equal((questionBankHook.match(/import\("\.\.\/data\/banks\//g) ?? []).length, 9);
+
+  // 產生的 bank-manifest 統計必須與原始題庫一致；資料 manifest 的 hash 必須可重算。
+  const allOfficialRecords = [
+    ...JSON.parse(officialData),
+    ...JSON.parse(criminalData),
+    ...JSON.parse(combinedData),
+    ...JSON.parse(remainingData),
+  ];
+  assert.equal(Number(bankManifest.match(/officialQuestionCount = (\d+)/)[1]), allOfficialRecords.length);
+  assert.equal(
+    Number(bankManifest.match(/totalQuestionCount = (\d+)/)[1]),
+    allOfficialRecords.length + demoRecords.length,
+  );
+  assert.equal(
+    Number(bankManifest.match(/officialMultipleChoiceCount = (\d+)/)[1]),
+    allOfficialRecords.filter((item) => item.format === "選擇題").length,
+  );
+  assert.equal(
+    Number(bankManifest.match(/officialEssayCount = (\d+)/)[1]),
+    allOfficialRecords.filter((item) => item.format === "申論題").length,
+  );
+  const searchEntries = JSON.parse(searchIndexJson);
+  assert.equal(searchEntries.length, allOfficialRecords.length + demoRecords.length);
+  assert.ok(searchEntries.every((item) =>
+    item.id && item.subject && item.subjectLabel && item.prompt && Array.isArray(item.options) && item.source
+  ));
+  const dataManifest = JSON.parse(dataManifestJson);
+  assert.equal(dataManifest.version, createHash("sha256").update(searchIndexJson).digest("hex").slice(0, 12));
+  assert.match(bankManifest, new RegExp(`dataVersion = "${dataManifest.version}"`));
+  assert.equal(dataManifest.files["search-index.json"].entries, searchEntries.length);
+
+  // PWA：Service Worker cache 名稱帶資料版本 hash、Web App Manifest 完整
+  const serviceWorker = await readFile(new URL("../out/sw.js", import.meta.url), "utf8");
+  assert.match(serviceWorker, new RegExp(`clerk-law-room-${dataManifest.version}`));
+  assert.match(serviceWorker, /caches\.delete/);
+  assert.match(serviceWorker, /url\.origin !== self\.location\.origin/);
+  const webManifest = JSON.parse(
+    await readFile(new URL("../out/manifest.webmanifest", import.meta.url), "utf8"),
+  );
+  assert.equal(webManifest.name, "書記官法科研習室");
+  assert.equal(webManifest.icons.length, 2);
+  assert.equal(webManifest.start_url, ".");
   assert.match(analysisModule, /buildOfficialAnalysis/);
   assert.match(analysisModule, /officialAnalysisCount/);
   assert.match(constitutionAnalysisModule, /buildConstitutionAnalysis/);
@@ -87,12 +171,12 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(englishAnalysisModule, /buildEnglishAnalysis/);
   assert.match(chineseAnalysisModule, /buildChineseAnalysis/);
   assert.equal((chineseAnalysisModule.match(/"clerk-chinese-\d+-mcq-\d+"/g) ?? []).length, 100);
-  assert.match(page, /選項辨析與常見誤區/);
-  assert.match(page, /question\.passage/);
-  assert.match(page, /question\.englishAnalysis/);
-  assert.match(page, /promptTranslation/);
-  assert.match(page, /optionNotes/);
-  assert.match(page, /partOfSpeech/);
+  assert.match(questionAnalysis, /選項辨析與常見誤區/);
+  assert.match(questionCard, /question\.passage/);
+  assert.match(questionAnalysis, /question\.englishAnalysis/);
+  assert.match(questionAnalysis, /promptTranslation/);
+  assert.match(questionAnalysis, /optionNotes/);
+  assert.match(questionAnalysis, /partOfSpeech/);
   assert.match(englishTranslationImporter, /Traditional Chinese study notes/);
   assert.match(importer, /legal-knowledge-and-english/);
   assert.match(importer, /answer_type = "M"/);
@@ -194,6 +278,38 @@ test("keeps questions and local progress behind replaceable data modules", async
     item.issue && item.rule && item.application && item.trap && item.articles.length > 0
   ));
   assert.equal(Object.keys(JSON.parse(civilCode).articles).length, 1439);
+
+  // 民法章節標籤：來源可追查——由每題人工解析引用的首個民法條文依編章區間推導，
+  // 標籤檔必須與由解析重新推導的結果完全一致，且覆蓋所有民法選擇題。
+  const taxonomy = JSON.parse(taxonomyJson);
+  assert.deepEqual(taxonomy["civil-law"].chapters, ["總則", "債編", "物權", "親屬與繼承"]);
+  assert.equal(new Set(taxonomy["civil-law"].chapters).size, taxonomy["civil-law"].chapters.length);
+  const civilTags = JSON.parse(civilTagsJson);
+  const chapterOf = (seed) => {
+    for (const item of seed?.articles ?? []) {
+      const lawName = typeof item === "string" ? "民法" : (item.lawName ?? "民法");
+      if (!lawName.startsWith("民法")) continue;
+      const number = Number.parseInt(typeof item === "string" ? item : item.article, 10);
+      if (!Number.isFinite(number) || number < 1) continue;
+      if (number <= 152) return "總則";
+      if (number <= 756) return "債編";
+      if (number <= 966) return "物權";
+      if (number <= 1225) return "親屬與繼承";
+    }
+    return null;
+  };
+  const expectedTags = {};
+  for (const [id, seed] of Object.entries(analyses)) {
+    const chapter = chapterOf(seed);
+    if (chapter) expectedTags[id] = chapter;
+  }
+  assert.deepEqual(civilTags, expectedTags);
+  assert.equal(
+    Object.keys(civilTags).length,
+    records.filter((item) => item.format === "選擇題").length,
+  );
+  assert.ok(Object.values(civilTags).every((chapter) => taxonomy["civil-law"].chapters.includes(chapter)));
+  assert.match(civilBank, /civil-law-tags\.json/);
   const criminalRecords = JSON.parse(criminalData);
   assert.equal(criminalRecords.length, 201);
   assert.equal(criminalRecords.filter((item) => item.format === "選擇題").length, 175);
@@ -242,9 +358,17 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(criminalImporter, /accepted\[16\] = \[2, 3\]/);
   assert.match(criminalImporter, /accepted\[22\] = \[1, 3\]/);
   assert.match(progress, /localStorage/);
+  // v3 進度格式：一次擴充所有 P3 欄位並保留 v2、v1 舊 key 的讀取與升級
+  assert.match(progress, /PROGRESS_STORAGE_KEY = "civil-law-quiz-tw:progress:v3"/);
   assert.match(progress, /civil-law-quiz-tw:progress:v2/);
-  assert.match(progress, /LEGACY_PROGRESS_STORAGE_KEY = "civil-law-quiz-tw:progress:v1"/);
+  assert.match(progress, /civil-law-quiz-tw:progress:v1/);
   assert.match(progress, /id\.startsWith\("judicial-fourth-"\)/);
+  assert.match(progress, /version: 3/);
+  assert.match(progress, /correctStreak/);
+  assert.match(progress, /dueAt/);
+  assert.match(progress, /starred/);
+  assert.match(progress, /dailyQuestion/);
+  assert.match(progress, /examDate/);
   assert.match(layout, /lang="zh-Hant"/);
   assert.match(css, /position: fixed;[\s\S]*bottom: 0;[\s\S]*env\(safe-area-inset-bottom\)/);
   assert.match(css, /\.multi-select-menu/);
