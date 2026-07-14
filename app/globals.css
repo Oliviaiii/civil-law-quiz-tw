@@ -130,6 +130,8 @@ button { color: inherit; }
   z-index: 20;
 }
 
+.menu-toggle, .menu-backdrop { display: none; }
+
 .brand {
   display: flex;
   align-items: center;
@@ -214,6 +216,35 @@ button { color: inherit; }
 .result-summary span, .result-summary small { display: block; color: var(--muted); font-size: 10px; letter-spacing: .12em; }
 .result-summary strong { display: block; font-family: Georgia, serif; font-size: 36px; line-height: 1.15; }
 
+/* 獨立網站介紹頁 */
+.introduction-view { display: grid; gap: 22px; }
+.introduction-hero {
+  min-height: 330px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 50px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 16px 48px rgba(67, 55, 39, .075);
+}
+.introduction-hero h1 { max-width: 720px; margin: 0; font-family: "Noto Serif TC", "PMingLiU", serif; font-size: clamp(34px, 4vw, 54px); line-height: 1.3; }
+.introduction-hero p:not(.eyebrow) { max-width: 720px; margin: 18px 0 0; color: var(--muted); font-size: 15px; line-height: 2; }
+.introduction-start { margin-top: 28px; padding: 12px 24px; border: 1px solid var(--ink); border-radius: 7px; background: var(--ink); color: var(--surface); cursor: pointer; font-weight: 800; }
+.introduction-mark { width: 150px; height: 150px; display: grid; place-items: center; border-radius: 8px 45px 8px 8px; background: var(--accent); color: white; font-family: "Noto Serif TC", serif; font-size: 72px; font-weight: 900; box-shadow: inset -18px -18px 0 rgba(85, 24, 12, .12); }
+.introduction-stats { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: var(--surface); }
+.introduction-stats > div { min-height: 112px; padding: 22px; display: grid; place-content: center; text-align: center; }
+.introduction-stats > div + div { border-left: 1px solid var(--line); }
+.introduction-stats strong { font-family: Georgia, serif; font-size: 32px; line-height: 1.2; }
+.introduction-stats span { color: var(--muted); font-size: 11px; }
+.introduction-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.introduction-features article { padding: 26px; border: 1px solid var(--line); background: var(--surface); }
+.introduction-features article > span { color: var(--accent); font-family: Georgia, serif; font-size: 12px; }
+.introduction-features h2 { margin: 10px 0 5px; font-family: "Noto Serif TC", serif; font-size: 19px; }
+.introduction-features p { margin: 0; color: var(--muted); font-size: 12px; }
+
+.mobile-filter-toggle { display: none; }
 .filters { min-height: 54px; margin-bottom: 16px; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
 .segmented { display: flex; padding: 3px; border: 1px solid var(--line); background: var(--inset-bg); border-radius: 8px; }
 .segmented button { border: 0; background: transparent; padding: 7px 13px; color: var(--muted); font-size: 12px; border-radius: 5px; cursor: pointer; }
@@ -373,16 +404,92 @@ button { color: inherit; }
 }
 
 @media (max-width: 620px) {
-  .topbar { height: 68px; padding: 0 16px; }
-  .top-progress { width: 110px; }
-  .top-progress span { font-size: 9px; }
+  .topbar { height: 68px; padding: 0 13px; z-index: 60; }
+  .topbar-right { gap: 8px; }
+  .top-progress { display: none; }
   .brand small { display: none; }
-  .sidebar { top: 68px; padding: 6px 8px; }
-  .nav-item { font-size: 12px; }
-  .content { padding: 28px 13px calc(98px + env(safe-area-inset-bottom)); }
+  .brand { gap: 9px; }
+  .brand-mark { width: 38px; height: 38px; font-size: 20px; }
+  .brand strong { max-width: 170px; font-size: 16px; line-height: 1.25; }
+  .theme-toggle { width: 40px; height: 40px; padding: 0; display: grid; place-items: center; }
+  .theme-label { display: none; }
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+    display: grid;
+    align-content: center;
+    gap: 5px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    cursor: pointer;
+  }
+  .menu-toggle i { width: 100%; height: 2px; display: block; border-radius: 2px; background: var(--ink); transition: transform .18s ease, opacity .18s ease; }
+  .menu-toggle.open i:first-child { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle.open i:nth-child(2) { opacity: 0; }
+  .menu-toggle.open i:last-child { transform: translateY(-7px) rotate(-45deg); }
+  .menu-backdrop { position: fixed; inset: 68px 0 0; z-index: 45; display: block; border: 0; background: rgba(18, 16, 13, .46); }
+  .sidebar {
+    position: fixed;
+    top: 68px;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    width: min(82vw, 310px);
+    padding: 18px 14px;
+    overflow-y: auto;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+    background: var(--paper);
+    box-shadow: 18px 0 44px rgba(30, 26, 21, .2);
+    transform: translateX(-105%);
+    transition: transform .2s ease;
+  }
+  .sidebar.menu-open { transform: translateX(0); }
+  .sidebar nav { display: grid; gap: 7px; }
+  .nav-item { width: 100%; flex: none; justify-content: flex-start; padding: 13px 14px; font-size: 14px; }
+  .nav-item > span { display: block; }
+  .content { padding: 15px 13px calc(98px + env(safe-area-inset-bottom)); }
   .page-heading { align-items: start; }
   .page-heading h1 { font-size: 29px; }
   .result-summary { display: none; }
+  .introduction-view { gap: 12px; }
+  .introduction-hero { min-height: 0; padding: 27px 22px; display: block; }
+  .introduction-hero h1 { font-size: 31px; }
+  .introduction-hero p:not(.eyebrow) { font-size: 13px; line-height: 1.85; }
+  .introduction-mark { display: none; }
+  .introduction-start { width: 100%; margin-top: 22px; }
+  .introduction-stats { grid-template-columns: 1fr 1fr; }
+  .introduction-stats > div { min-height: 92px; padding: 15px; }
+  .introduction-stats > div + div { border-left: 0; }
+  .introduction-stats > div:nth-child(even) { border-left: 1px solid var(--line); }
+  .introduction-stats > div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .introduction-features { grid-template-columns: 1fr; gap: 8px; }
+  .introduction-features article { padding: 20px; }
+  .filter-panel { margin-bottom: 14px; }
+  .mobile-filter-toggle {
+    width: 100%;
+    min-height: 56px;
+    padding: 9px 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--surface);
+    cursor: pointer;
+    text-align: left;
+  }
+  .mobile-filter-toggle > span:first-child { display: grid; }
+  .mobile-filter-toggle b { font-size: 13px; }
+  .mobile-filter-toggle small { color: var(--muted); font-size: 10px; }
+  .mobile-filter-summary { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 11px; white-space: nowrap; }
+  .mobile-filter-summary i { width: 8px; height: 8px; display: block; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .18s ease; }
+  .filter-panel.expanded .mobile-filter-summary i { transform: rotate(225deg); }
+  .filter-panel:not(.expanded) .filters { display: none; }
+  .filter-panel.expanded .filters { margin: 10px 0 0; padding: 12px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-alt); }
   .filters { align-items: stretch; flex-wrap: wrap; }
   .segmented { width: 100%; }
   .segmented button { flex: 1; }
@@ -392,9 +499,10 @@ button { color: inherit; }
   .filter-count { align-self: center; }
   .clear-filters { margin-left: auto; }
   .question-meta, .analysis-result { padding-left: 18px; padding-right: 18px; }
+  .question-card { margin-bottom: 180px; }
   .source-line { padding-left: 18px; padding-right: 18px; flex-wrap: wrap; gap: 5px 10px; }
   .source-line span + span { padding-left: 0; border-left: 0; }
-  .question-card > h2 { margin-left: 18px; margin-right: 18px; font-size: 20px; }
+  .question-card > h2 { margin-left: 18px; margin-right: 18px; font-size: 20px; scroll-margin-top: 84px; }
   .passage-box { margin-left: 18px; margin-right: 18px; padding: 18px; }
   .instruction, .verification-note { margin-left: 18px; margin-right: 18px; }
   .options { padding: 0 18px; }

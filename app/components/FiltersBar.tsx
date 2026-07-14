@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { MultiSelectFilter } from "./MultiSelectFilter";
 import taxonomyJson from "../data/taxonomy/taxonomy.json";
 import {
@@ -56,6 +57,7 @@ export function FiltersBar({
   onShuffleChange: (enabled: boolean) => void;
   onClearFilters: () => void;
 }) {
+  const [mobileExpanded, setMobileExpanded] = useState(false);
   // 章節篩選只在單一科目且該科 taxonomy 已完成時顯示。
   const chapterConfig = subjects.length === 1 ? taxonomy[subjects[0]] : undefined;
   const categorySummary = categories.length === 0
@@ -80,7 +82,23 @@ export function FiltersBar({
       : `已選 ${years.length} 年`;
 
   return (
-    <div className="filters" aria-label="題目篩選">
+    <section className={`filter-panel${mobileExpanded ? " expanded" : ""}`} aria-label="題目篩選">
+      <button
+        type="button"
+        className="mobile-filter-toggle"
+        aria-expanded={mobileExpanded}
+        aria-controls="question-filters"
+        onClick={() => setMobileExpanded((expanded) => !expanded)}
+      >
+        <span>
+          <b>篩選題目</b>
+          <small>{hasActiveFilters ? "已套用篩選" : "目前條件"}</small>
+        </span>
+        <span className="mobile-filter-summary">
+          符合 {matchCount} 題 <i aria-hidden="true" />
+        </span>
+      </button>
+      <div id="question-filters" className="filters">
       <div className="segmented">
         {(
           [
@@ -167,6 +185,7 @@ export function FiltersBar({
       >
         清除所有篩選
       </button>
-    </div>
+      </div>
+    </section>
   );
 }

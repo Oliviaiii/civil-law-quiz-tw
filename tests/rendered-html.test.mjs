@@ -7,8 +7,8 @@ test("builds the multi-subject clerk exam practice experience as static HTML", a
   const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
   assert.match(html, /<html lang="zh-Hant">/);
   assert.match(html, /<title>書記官法科研習室｜九科近十年考古題<\/title>/);
-  assert.match(html, /近十年法院書記官民法考古題/);
-  assert.match(html, /民國 105–114 年司法特考四等官方試題/);
+  assert.match(html, /網站介紹/);
+  assert.doesNotMatch(html, /近十年法院書記官民法考古題/);
   assert.match(html, /錯題本/);
   assert.match(html, /學習紀錄/);
   assert.match(html, /type="checkbox"[^>]*value="criminal-law"/);

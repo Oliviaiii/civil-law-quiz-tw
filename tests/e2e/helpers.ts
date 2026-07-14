@@ -18,6 +18,10 @@ export async function openApp(page: Page) {
  * filterLabel 對應 summary 的 aria-label，例如「依科目複選篩選」。
  */
 export async function toggleFilterOptions(page: Page, filterLabel: string, options: string[]) {
+  const mobileToggle = page.locator(".mobile-filter-toggle");
+  if (await mobileToggle.isVisible() && await mobileToggle.getAttribute("aria-expanded") === "false") {
+    await mobileToggle.click();
+  }
   const filter = page.locator("details.multi-select", {
     has: page.locator(`summary[aria-label="${filterLabel}"]`),
   });

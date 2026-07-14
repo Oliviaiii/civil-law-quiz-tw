@@ -4,6 +4,7 @@ import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 import type { Question } from "./data/questions";
 import { ExamCountdownCard } from "./components/ExamCountdownCard";
 import { FiltersBar } from "./components/FiltersBar";
+import { IntroductionView } from "./components/IntroductionView";
 import { LawBrowserView } from "./components/LawBrowserView";
 import { MockExamView } from "./components/MockExamView";
 import { OfflineNotice } from "./components/OfflineNotice";
@@ -57,7 +58,9 @@ export default function Home() {
     { session: SessionSnapshot; questionId?: string } | null
   >(null);
   const [pendingDailyJump, setPendingDailyJump] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const importRef = useRef<HTMLInputElement>(null);
+  const pendingQuestionScrollRef = useRef(false);
 
   const {
     progress,
@@ -86,6 +89,15 @@ export default function Home() {
     const timeout = window.setTimeout(() => setNotice(""), 3_000);
     return () => window.clearTimeout(timeout);
   }, [notice]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setMobileMenuOpen(false);
+    }
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [mobileMenuOpen]);
 
   // 深連結（#q=題目ID）優先；否則若有上次練習快照則顯示「繼續上次練習」。
   useEffect(() => {
@@ -184,6 +196,23 @@ export default function Home() {
     ? practiceSetQuestions[Math.min(practiceSet.cursor, practiceSetQuestions.length - 1)]
     : undefined;
 
+  // 只有在使用者切題時定位；等新題目完成 render 後，精準對齊題幹標題而非題卡頂端。
+  useEffect(() => {
+    if (!pendingQuestionScrollRef.current) return;
+    const frame = window.requestAnimationFrame(() => {
+      pendingQuestionScrollRef.current = false;
+      if (!window.matchMedia("(max-width: 620px)").matches) return;
+      const heading = document.querySelector<HTMLElement>(".question-card > h2");
+      if (!heading) return;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      heading.scrollIntoView({
+        block: "start",
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [currentQuestion?.id, currentSetQuestion?.id, practiceSet?.cursor]);
+
   // 考同一法條的其他題目（只由 statutes 欄位建立關聯）。
   const currentRelatedQuestions = useMemo(
     () => (currentQuestion ? relatedQuestionsFor(questions, currentQuestion) : []),
@@ -265,21 +294,6 @@ export default function Home() {
     recordEssayRead(currentQuestion);
   }
 
-  function scrollCardIntoViewOnMobile() {
-    if (!window.matchMedia("(max-width: 620px)").matches) return;
-    window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        const card = document.querySelector<HTMLElement>(".question-card");
-        if (!card) return;
-        const stickyHeaderOffset = 122;
-        window.scrollTo({
-          top: card.getBoundingClientRect().top + window.scrollY - stickyHeaderOffset,
-          behavior: "smooth",
-        });
-      });
-    });
-  }
-
   function moveQuestion(direction: 1 | -1) {
     if (!currentQuestion || !visibleQuestions.length) return;
     const currentIndex = visibleQuestions.findIndex(
@@ -288,10 +302,10 @@ export default function Home() {
     const nextIndex =
       (currentIndex + direction + visibleQuestions.length) %
       visibleQuestions.length;
+    pendingQuestionScrollRef.current = true;
     setReviewingId(null);
     setCurrentId(visibleQuestions[nextIndex].id);
     setResumeOffer(null);
-    scrollCardIntoViewOnMobile();
   }
 
   // ---- 練習集 ----
@@ -335,8 +349,8 @@ export default function Home() {
   }
 
   function moveSetQuestion(direction: 1 | -1) {
+    pendingQuestionScrollRef.current = true;
     moveCursor(direction);
-    scrollCardIntoViewOnMobile();
   }
 
   // ---- 模擬考 ----
@@ -371,6 +385,7 @@ export default function Home() {
   function startView(nextView: View) {
     resetQuestionCursor();
     setView(nextView);
+    setMobileMenuOpen(false);
     if (nextView === "wrong") setScope("wrong");
     if (nextView === "practice" && scope === "wrong") setScope("all");
   }
@@ -493,25 +508,11 @@ export default function Home() {
     formatFilter !== "全部題型" ||
     selectedYears.length > 0 ||
     selectedCategories.length > 0;
-  const selectedOfficialQuestions = questions.filter(
-    (question) =>
-      question.exam &&
-      (selectedCorpora.length === 0 || selectedCorpora.includes("司法特考四等")) &&
-      (selectedSubjects.length === 0 || selectedSubjects.includes(question.subject)) &&
-      (selectedYears.length === 0 || (question.rocYear !== undefined && selectedYears.includes(question.rocYear))),
-  );
-  const selectedOfficialMultipleChoiceCount = selectedOfficialQuestions.filter(
-    (question) => question.format === "選擇題",
-  ).length;
-  const selectedOfficialEssayCount = selectedOfficialQuestions.filter(
-    (question) => question.format === "申論題",
-  ).length;
-
   return (
     <main className="app-shell">
       <OfflineNotice />
       <header className="topbar">
-        <button className="brand" onClick={() => startView("practice")}>
+        <button className="brand" onClick={() => startView("about")}>
           <span className="brand-mark">法</span>
           <span>
             <strong>書記官法科研習室</strong>
@@ -526,7 +527,12 @@ export default function Home() {
             aria-label="切換深淺色主題"
             title="切換深淺色主題（跟隨系統／深色／淺色）"
           >
-            {preferences.theme === "dark" ? "🌙 深色" : preferences.theme === "light" ? "☀️ 淺色" : "🌗 系統"}
+            <span aria-hidden="true">
+              {preferences.theme === "dark" ? "🌙" : preferences.theme === "light" ? "☀️" : "🌗"}
+            </span>
+            <span className="theme-label">
+              {preferences.theme === "dark" ? "深色" : preferences.theme === "light" ? "淺色" : "系統"}
+            </span>
           </button>
           <div className="top-progress" aria-label="整體進度">
             <span>{visibleAnsweredCount} / {visibleQuestions.length} 題已完成</span>
@@ -534,12 +540,31 @@ export default function Home() {
               <i style={{ width: `${visibleQuestions.length ? (visibleAnsweredCount / visibleQuestions.length) * 100 : 0}%` }} />
             </div>
           </div>
+          <button
+            type="button"
+            className={`menu-toggle${mobileMenuOpen ? " open" : ""}`}
+            aria-label={mobileMenuOpen ? "關閉主要功能選單" : "開啟主要功能選單"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+          >
+            <i /><i /><i />
+          </button>
         </div>
       </header>
 
+      {mobileMenuOpen && (
+        <button
+          type="button"
+          className="menu-backdrop"
+          aria-label="關閉主要功能選單"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
       <div className="workspace">
-        <aside className="sidebar">
-          <nav aria-label="主要功能">
+        <aside className={`sidebar${mobileMenuOpen ? " menu-open" : ""}`}>
+          <nav id="primary-navigation" aria-label="主要功能">
             {(Object.keys(viewLabels) as View[]).map((item, index) => (
               <button
                 key={item}
@@ -603,7 +628,14 @@ export default function Home() {
         </aside>
 
         <section className="content">
-          {view === "stats" ? (
+          {view === "about" ? (
+            <IntroductionView
+              officialQuestionCount={officialQuestionCount}
+              answeredCount={answeredIds.length}
+              wrongCount={wrongIds.length}
+              onStartPractice={() => startView("practice")}
+            />
+          ) : view === "stats" ? (
             <StatsView
               questions={questions}
               progress={progress}
@@ -649,23 +681,6 @@ export default function Home() {
             />
           ) : (
             <>
-              <div className="page-heading">
-                <div>
-                  <p className="eyebrow">{view === "wrong" ? "REVIEW" : "PRACTICE"}</p>
-                  <h1>{view === "wrong" ? `把${subjectName}易錯題目集中重練` : `近十年法院書記官${subjectName}考古題`}</h1>
-                  <p>民國 105–114 年司法特考四等官方試題；九個科目分科保存進度，選擇題依考選部答案判定，作文、公文與法科申論題保留原題供閱讀與標記。</p>
-                </div>
-                <div className="result-summary">
-                  <span>官方考古題</span>
-                  <strong>{bankLoading ? "…" : selectedOfficialQuestions.length}</strong>
-                  <small>
-                    {bankLoading
-                      ? "題庫載入中"
-                      : `${selectedOfficialMultipleChoiceCount} 選擇＋${selectedOfficialEssayCount} 申論`}
-                  </small>
-                </div>
-              </div>
-
               {resumeOffer && view === "practice" && (
                 <div className="resume-banner" role="status">
                   <span>已保存上次的練習位置與篩選條件，要接著練嗎？</span>
