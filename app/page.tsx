@@ -15,7 +15,7 @@ import {
 
 type View = "practice" | "wrong" | "stats";
 type Scope = "all" | "unanswered" | "wrong";
-type Corpus = "司法特考四等" | "全部來源" | "示範題";
+type Corpus = "司法特考四等" | "示範題";
 type FormatFilter = "選擇題" | "申論題" | "全部題型";
 type SubjectFilter =
   | "civil-law"
@@ -26,10 +26,9 @@ type SubjectFilter =
   | "chinese"
   | "administrative-law"
   | "civil-procedure"
-  | "criminal-procedure"
-  | "all";
+  | "criminal-procedure";
 
-const subjectLabels: Record<Exclude<SubjectFilter, "all">, string> = {
+const subjectLabels: Record<SubjectFilter, string> = {
   "civil-law": "民法",
   "criminal-law": "刑法",
   constitution: "憲法",
@@ -40,6 +39,23 @@ const subjectLabels: Record<Exclude<SubjectFilter, "all">, string> = {
   "civil-procedure": "民事訴訟法概要",
   "criminal-procedure": "刑事訴訟法概要",
 };
+
+const subjectOptions: { value: SubjectFilter; label: string }[] = [
+  { value: "chinese", label: "國文" },
+  { value: "civil-law", label: "民法" },
+  { value: "criminal-law", label: "刑法" },
+  { value: "administrative-law", label: "行政法概要" },
+  { value: "civil-procedure", label: "民事訴訟法概要" },
+  { value: "criminal-procedure", label: "刑事訴訟法概要" },
+  { value: "constitution", label: "憲法" },
+  { value: "legal-introduction", label: "法學緒論" },
+  { value: "english", label: "英文" },
+];
+
+const corpusOptions: { value: Corpus; label: string }[] = [
+  { value: "司法特考四等", label: "司法特考四等" },
+  { value: "示範題", label: "示範題" },
+];
 
 const viewLabels: Record<View, string> = {
   practice: "開始練習",
@@ -57,13 +73,77 @@ function formatDate(value?: string) {
   }).format(new Date(value));
 }
 
+function MultiSelectFilter<T extends string | number>({
+  ariaLabel,
+  className = "",
+  allLabel,
+  options,
+  selected,
+  summary,
+  onChange,
+}: {
+  ariaLabel: string;
+  className?: string;
+  allLabel: string;
+  options: { value: T; label: string }[];
+  selected: T[];
+  summary: string;
+  onChange: (values: T[]) => void;
+}) {
+  function toggle(value: T) {
+    const next = selected.includes(value)
+      ? selected.filter((item) => item !== value)
+      : [...selected, value];
+    onChange(next.length === options.length ? [] : next);
+  }
+
+  return (
+    <details className={`multi-select ${className}`}>
+      <summary aria-label={ariaLabel}>{summary}</summary>
+      <div className="multi-select-menu">
+        <button
+          type="button"
+          className={selected.length === 0 ? "all-option selected" : "all-option"}
+          onClick={() => onChange([])}
+        >
+          {allLabel}
+          {selected.length === 0 && <span>✓</span>}
+        </button>
+        <div className="multi-select-options">
+          {options.map((option) => (
+            <label key={String(option.value)}>
+              <input
+                type="checkbox"
+                value={option.value}
+                checked={selected.includes(option.value)}
+                onChange={() => toggle(option.value)}
+              />
+              <span>{option.label}</span>
+            </label>
+          ))}
+        </div>
+        <button
+          type="button"
+          className="multi-select-done"
+          onClick={(event) => {
+            const details = event.currentTarget.closest("details");
+            if (details) details.open = false;
+          }}
+        >
+          完成
+        </button>
+      </div>
+    </details>
+  );
+}
+
 export default function Home() {
   const [view, setView] = useState<View>("practice");
   const [scope, setScope] = useState<Scope>("all");
-  const [subjectFilter, setSubjectFilter] = useState<SubjectFilter>("civil-law");
-  const [corpus, setCorpus] = useState<Corpus>("司法特考四等");
+  const [selectedSubjects, setSelectedSubjects] = useState<SubjectFilter[]>(["civil-law"]);
+  const [selectedCorpora, setSelectedCorpora] = useState<Corpus[]>(["司法特考四等"]);
   const [formatFilter, setFormatFilter] = useState<FormatFilter>("選擇題");
-  const [yearFilter, setYearFilter] = useState("全部年度");
+  const [selectedYears, setSelectedYears] = useState<number[]>([]);
   const [currentId, setCurrentId] = useState(questions[0].id);
   const [reviewingId, setReviewingId] = useState<string | null>(null);
   const [progress, setProgress] = useState<ProgressData>(createEmptyProgress());
@@ -106,14 +186,13 @@ export default function Home() {
   const visibleQuestions = useMemo(() => {
     return questions.filter((question) => {
       const corpusMatch =
-        corpus === "全部來源" ||
-        (corpus === "司法特考四等" && question.exam === "司法特考四等") ||
-        (corpus === "示範題" && !question.exam);
-      const subjectMatch = subjectFilter === "all" || question.subject === subjectFilter;
+        selectedCorpora.length === 0 ||
+        (selectedCorpora.includes("司法特考四等") && question.exam === "司法特考四等") ||
+        (selectedCorpora.includes("示範題") && !question.exam);
+      const subjectMatch = selectedSubjects.length === 0 || selectedSubjects.includes(question.subject as SubjectFilter);
       const formatMatch =
         formatFilter === "全部題型" || question.format === formatFilter;
-      const yearMatch =
-        yearFilter === "全部年度" || question.rocYear === Number(yearFilter);
+      const yearMatch = selectedYears.length === 0 || (question.rocYear !== undefined && selectedYears.includes(question.rocYear));
       const scopeMatch =
         scope === "all" ||
         (scope === "unanswered" &&
@@ -126,7 +205,7 @@ export default function Home() {
         question.id === reviewingId;
       return subjectMatch && corpusMatch && formatMatch && yearMatch && scopeMatch && viewMatch;
     });
-  }, [answeredIds, corpus, formatFilter, reviewingId, scope, subjectFilter, view, wrongIds, yearFilter]);
+  }, [answeredIds, formatFilter, reviewingId, scope, selectedCorpora, selectedSubjects, selectedYears, view, wrongIds]);
 
   const currentQuestion =
     visibleQuestions.find((question) => question.id === currentId) ??
@@ -249,9 +328,32 @@ export default function Home() {
   const years = Array.from(
     new Set(questions.flatMap((question) => question.rocYear ?? [])),
   ).sort((a, b) => b - a);
-  const subjectName = subjectFilter === "all" ? "全科" : subjectLabels[subjectFilter];
+  const subjectName = selectedSubjects.length === 0
+    ? "全科"
+    : selectedSubjects.length <= 2
+      ? selectedSubjects.map((subject) => subjectLabels[subject]).join("＋")
+      : `${selectedSubjects.length}科`;
+  const subjectSummary = selectedSubjects.length === 0
+    ? "全部科目"
+    : selectedSubjects.length <= 2
+      ? selectedSubjects.map((subject) => subjectLabels[subject]).join("＋")
+      : `已選 ${selectedSubjects.length} 科`;
+  const yearSummary = selectedYears.length === 0
+    ? "全部年度"
+    : selectedYears.length === 1
+      ? `${selectedYears[0]} 年`
+      : `已選 ${selectedYears.length} 年`;
+  const corpusSummary = selectedCorpora.length === 0
+    ? "全部來源"
+    : selectedCorpora.length === 1
+      ? selectedCorpora[0]
+      : `已選 ${selectedCorpora.length} 個來源`;
   const selectedOfficialQuestions = questions.filter(
-    (question) => question.exam && (subjectFilter === "all" || question.subject === subjectFilter),
+    (question) =>
+      question.exam &&
+      (selectedCorpora.length === 0 || selectedCorpora.includes("司法特考四等")) &&
+      (selectedSubjects.length === 0 || selectedSubjects.includes(question.subject as SubjectFilter)) &&
+      (selectedYears.length === 0 || (question.rocYear !== undefined && selectedYears.includes(question.rocYear))),
   );
   const selectedOfficialMultipleChoiceCount = selectedOfficialQuestions.filter(
     (question) => question.format === "選擇題",
@@ -352,46 +454,29 @@ export default function Home() {
                     </button>
                   ))}
                 </div>
-                <label>
-                  <span className="sr-only">依科目篩選</span>
-                  <select value={subjectFilter} onChange={(event) => {
-                    const nextSubject = event.target.value as SubjectFilter;
+                <MultiSelectFilter
+                  ariaLabel="依科目複選篩選"
+                  allLabel="全部科目"
+                  options={subjectOptions}
+                  selected={selectedSubjects}
+                  summary={subjectSummary}
+                  onChange={(values) => {
                     setReviewingId(null);
-                    setSubjectFilter(nextSubject);
-                    if (nextSubject === "constitution" || nextSubject === "legal-introduction" || nextSubject === "english") {
-                      setCorpus("司法特考四等");
-                      setFormatFilter("選擇題");
-                    } else if (nextSubject === "chinese") {
-                      setCorpus("司法特考四等");
-                      setFormatFilter("全部題型");
-                    } else if (nextSubject === "administrative-law" || nextSubject === "civil-procedure" || nextSubject === "criminal-procedure") {
-                      setCorpus("司法特考四等");
-                      setFormatFilter("申論題");
-                    }
-                  }}>
-                    <option value="chinese">國文</option>
-                    <option value="civil-law">民法</option>
-                    <option value="criminal-law">刑法</option>
-                    <option value="administrative-law">行政法概要</option>
-                    <option value="civil-procedure">民事訴訟法概要</option>
-                    <option value="criminal-procedure">刑事訴訟法概要</option>
-                    <option value="constitution">憲法</option>
-                    <option value="legal-introduction">法學緒論</option>
-                    <option value="english">英文</option>
-                    <option value="all">全部科目</option>
-                  </select>
-                </label>
-                <label>
-                  <span className="sr-only">依題庫來源篩選</span>
-                  <select value={corpus} onChange={(event) => {
+                    setSelectedSubjects(values);
+                  }}
+                />
+                <MultiSelectFilter
+                  ariaLabel="依題庫來源複選篩選"
+                  className="corpus-filter"
+                  allLabel="全部來源"
+                  options={corpusOptions}
+                  selected={selectedCorpora}
+                  summary={corpusSummary}
+                  onChange={(values) => {
                     setReviewingId(null);
-                    setCorpus(event.target.value as Corpus);
-                  }}>
-                    <option>司法特考四等</option>
-                    <option>全部來源</option>
-                    <option>示範題</option>
-                  </select>
-                </label>
+                    setSelectedCorpora(values);
+                  }}
+                />
                 <label>
                   <span className="sr-only">依題型篩選</span>
                   <select value={formatFilter} onChange={(event) => {
@@ -403,16 +488,18 @@ export default function Home() {
                     <option>全部題型</option>
                   </select>
                 </label>
-                <label>
-                  <span className="sr-only">依年度篩選</span>
-                  <select value={yearFilter} onChange={(event) => {
+                <MultiSelectFilter
+                  ariaLabel="依年度複選篩選"
+                  className="year-filter"
+                  allLabel="全部年度"
+                  options={years.map((year) => ({ value: year, label: `${year} 年` }))}
+                  selected={selectedYears}
+                  summary={yearSummary}
+                  onChange={(values) => {
                     setReviewingId(null);
-                    setYearFilter(event.target.value);
-                  }}>
-                    <option>全部年度</option>
-                    {years.map((year) => <option key={year} value={year}>{year} 年</option>)}
-                  </select>
-                </label>
+                    setSelectedYears(values);
+                  }}
+                />
                 <span className="filter-count">符合 {visibleQuestions.length} 題</span>
               </div>
 
@@ -432,7 +519,7 @@ export default function Home() {
                   <span>✓</span>
                   <h2>{view === "wrong" ? "錯題已全部清空" : "這個篩選目前沒有題目"}</h2>
                   <p>{view === "wrong" ? "答對後會自動離開錯題本，繼續保持。" : "換一個年度、題型或切回全部題目看看。"}</p>
-                  <button onClick={() => { setScope("all"); setSubjectFilter("civil-law"); setCorpus("司法特考四等"); setFormatFilter("選擇題"); setYearFilter("全部年度"); startView("practice"); }}>
+                  <button onClick={() => { setScope("all"); setSelectedSubjects(["civil-law"]); setSelectedCorpora(["司法特考四等"]); setFormatFilter("選擇題"); setSelectedYears([]); startView("practice"); }}>
                     回到全部題目
                   </button>
                 </div>
