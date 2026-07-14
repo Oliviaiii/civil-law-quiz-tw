@@ -517,7 +517,7 @@ test("題目報錯：預填 GitHub Issue 連結正確編碼", async ({ page }) =
   expect(href).toBeTruthy();
   const url = new URL(href!);
   expect(url.origin + url.pathname).toBe(
-    "https://github.com/oliviaiii1224/civil-law-quiz-tw/issues/new",
+    "https://github.com/Oliviaiii/civil-law-quiz-tw/issues/new",
   );
   // 中文與特殊字元經 URL 編碼後可正確還原
   expect(url.searchParams.get("title")).toBe("【題庫勘誤】demo-001｜民法");

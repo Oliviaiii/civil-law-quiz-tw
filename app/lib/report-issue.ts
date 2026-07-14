@@ -1,7 +1,7 @@
 import type { Question } from "../data/questions";
 
 // 純靜態做法：以 GitHub Issue 預填 URL 收集題庫勘誤，前端只組字串、不用任何 API 或金鑰。
-const REPO_URL = "https://github.com/oliviaiii1224/civil-law-quiz-tw";
+const REPO_URL = "https://github.com/Oliviaiii/civil-law-quiz-tw";
 
 /** 產生預填題號、科目、年度與題目資訊的 GitHub Issue 連結。 */
 export function buildIssueUrl(question: Question): string {

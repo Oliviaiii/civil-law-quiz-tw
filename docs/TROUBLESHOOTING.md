@@ -164,7 +164,7 @@ GitHub API error 403: Resource not accessible by integration
 
 ```powershell
 gh auth status
-gh issue comment 2 --repo oliviaiii1224/civil-law-quiz-tw --body-file .temp/comment.md
+gh issue comment 2 --repo Oliviaiii/civil-law-quiz-tw --body-file .temp/comment.md
 ```
 
 寫入後應保存 CLI 回傳的 issue comment URL，並刪除只為本次操作建立的暫存 body file。若 `gh auth status` 也失敗，停止寫入並回報權限問題，不要重複轟炸 connector。

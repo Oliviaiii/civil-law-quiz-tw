@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://oliviaiii1224.github.io/civil-law-quiz-tw/"),
+  metadataBase: new URL("https://oliviaiii.github.io/civil-law-quiz-tw/"),
   manifest: `${basePath}/manifest.webmanifest`,
   icons: {
     icon: `${basePath}/icon-192.png`,
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "書記官法科研習室｜九科近十年考古題",
     description: "民國 105–114 年司法特考四等法院書記官九科，共 1,090 題官方試題。",
-    images: [{ url: "https://oliviaiii1224.github.io/civil-law-quiz-tw/og-multisubject.png", width: 1200, height: 630, alt: "書記官法科研習室" }],
+    images: [{ url: "https://oliviaiii.github.io/civil-law-quiz-tw/og-multisubject.png", width: 1200, height: 630, alt: "書記官法科研習室" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "書記官法科研習室｜九科近十年考古題",
     description: "民國 105–114 年司法特考四等法院書記官九科，共 1,090 題官方試題。",
-    images: ["https://oliviaiii1224.github.io/civil-law-quiz-tw/og-multisubject.png"],
+    images: ["https://oliviaiii.github.io/civil-law-quiz-tw/og-multisubject.png"],
   },
 };
 

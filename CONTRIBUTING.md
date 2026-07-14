@@ -362,7 +362,7 @@ GITHUB_ACTIONS=true npm run build:pages
 
 ## 12. GitHub Pages 部署
 
-正式網址：<https://oliviaiii1224.github.io/civil-law-quiz-tw/>
+正式網址：<https://oliviaiii.github.io/civil-law-quiz-tw/>
 
 部署設定：
 
