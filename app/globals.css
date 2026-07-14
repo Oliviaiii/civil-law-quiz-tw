@@ -434,16 +434,17 @@ button { color: inherit; }
     position: fixed;
     top: 68px;
     bottom: 0;
-    left: 0;
+    right: 0;
     z-index: 50;
     width: min(82vw, 310px);
     padding: 18px 14px;
     overflow-y: auto;
-    border-right: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    border-right: 0;
     border-bottom: 0;
     background: var(--paper);
-    box-shadow: 18px 0 44px rgba(30, 26, 21, .2);
-    transform: translateX(-105%);
+    box-shadow: -18px 0 44px rgba(30, 26, 21, .2);
+    transform: translateX(105%);
     transition: transform .2s ease;
   }
   .sidebar.menu-open { transform: translateX(0); }
