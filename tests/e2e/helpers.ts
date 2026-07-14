@@ -1,8 +1,14 @@
 import { expect, type Page } from "@playwright/test";
 
+const appBasePath = process.env.GITHUB_ACTIONS === "true" ? "/civil-law-quiz-tw" : "";
+
+export function appUrl(hash = "") {
+  return `${appBasePath}/${hash}`;
+}
+
 /** 開啟首頁並等待 hydration 與預設題庫（民法）載入完成。 */
 export async function openApp(page: Page) {
-  await page.goto("/");
+  await page.goto(appUrl());
   await page.waitForSelector('html[data-app-ready="true"]');
   await expect(page.locator("article.question-card")).toBeVisible();
 }

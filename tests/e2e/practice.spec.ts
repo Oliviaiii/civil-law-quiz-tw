@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import {
+  appUrl,
   clickNav,
   gotoQuestionByPrompt,
   openApp,
@@ -451,14 +452,14 @@ test("繼續上次練習與重新開始", async ({ page }) => {
 });
 
 test("題目深連結：hash 開啟指定題目", async ({ page }) => {
-  await page.goto("/#q=judicial-fourth-112-criminal-law-mcq-16");
+  await page.goto(appUrl("#q=judicial-fourth-112-criminal-law-mcq-16"));
   await page.waitForSelector('html[data-app-ready="true"]');
   await expect(page.locator("article.question-card h2")).toContainText("偽造文書印文罪");
   await expect(page.locator(".question-card .tag.type")).toHaveText("刑法概要");
 });
 
 test("題目深連結：無效 ID 安全回到預設畫面", async ({ page }) => {
-  await page.goto("/#q=not-a-real-question-id");
+  await page.goto(appUrl("#q=not-a-real-question-id"));
   await page.waitForSelector('html[data-app-ready="true"]');
   await expect(page.locator("article.question-card")).toBeVisible();
   expect((await readPosition(page)).position).toBe(1);
