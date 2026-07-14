@@ -20,6 +20,7 @@ test("builds the multi-subject clerk exam practice experience as static HTML", a
   assert.match(html, /type="checkbox"[^>]*value="criminal-procedure"/);
   assert.match(html, /type="checkbox"[^>]*value="司法特考四等"/);
   assert.match(html, /type="checkbox"[^>]*value="114"/);
+  assert.match(html, /清除所有篩選/);
   assert.match(html, /<strong>201<\/strong>/);
   assert.match(html, /175[\s\S]*選擇＋[\s\S]*26[\s\S]*申論/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
@@ -63,6 +64,10 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(page, /selectedSubjects/);
   assert.match(page, /selectedCorpora/);
   assert.match(page, /selectedYears/);
+  assert.match(page, /function clearFilters\(\)/);
+  assert.match(page, /setSelectedSubjects\(\[\]\)/);
+  assert.match(page, /setSelectedCorpora\(\[\]\)/);
+  assert.match(page, /setFormatFilter\("全部題型"\)/);
   assert.match(page, /question-quick-nav/);
   assert.match(page, /setReviewingId\(currentQuestion\.id\)/);
   assert.match(page, /question\.id === reviewingId/);

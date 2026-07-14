@@ -292,6 +292,16 @@ export default function Home() {
     if (nextView === "practice" && scope === "wrong") setScope("all");
   }
 
+  function clearFilters() {
+    setReviewingId(null);
+    setScope("all");
+    setSelectedSubjects([]);
+    setSelectedCorpora([]);
+    setFormatFilter("全部題型");
+    setSelectedYears([]);
+    setView("practice");
+  }
+
   function exportProgress() {
     const blob = new Blob([JSON.stringify(progress, null, 2)], {
       type: "application/json",
@@ -348,6 +358,12 @@ export default function Home() {
     : selectedCorpora.length === 1
       ? selectedCorpora[0]
       : `已選 ${selectedCorpora.length} 個來源`;
+  const hasActiveFilters =
+    scope !== "all" ||
+    selectedSubjects.length > 0 ||
+    selectedCorpora.length > 0 ||
+    formatFilter !== "全部題型" ||
+    selectedYears.length > 0;
   const selectedOfficialQuestions = questions.filter(
     (question) =>
       question.exam &&
@@ -501,6 +517,15 @@ export default function Home() {
                   }}
                 />
                 <span className="filter-count">符合 {visibleQuestions.length} 題</span>
+                <button
+                  type="button"
+                  className="clear-filters"
+                  onClick={clearFilters}
+                  disabled={!hasActiveFilters}
+                  title="只清除篩選條件，不會刪除作答紀錄"
+                >
+                  清除所有篩選
+                </button>
               </div>
 
               {currentQuestion ? (
