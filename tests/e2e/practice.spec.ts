@@ -24,8 +24,8 @@ test("科目、來源、年度複選與一鍵清除", async ({ page }) => {
 
   // 加選刑法（民法＋刑法）
   await toggleFilterOptions(page, "依科目複選篩選", ["刑法"]);
+  await expect.poll(() => readMatchCount(page)).toBeGreaterThan(initialCount);
   const twoSubjectCount = await readMatchCount(page);
-  expect(twoSubjectCount).toBeGreaterThan(initialCount);
 
   // 年度只留 112
   await toggleFilterOptions(page, "依年度複選篩選", ["112 年"]);
