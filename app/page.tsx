@@ -17,7 +17,17 @@ type View = "practice" | "wrong" | "stats";
 type Scope = "all" | "unanswered" | "wrong";
 type Corpus = "司法特考四等" | "全部來源" | "示範題";
 type FormatFilter = "選擇題" | "申論題" | "全部題型";
-type SubjectFilter = "civil-law" | "criminal-law" | "constitution" | "legal-introduction" | "english" | "all";
+type SubjectFilter =
+  | "civil-law"
+  | "criminal-law"
+  | "constitution"
+  | "legal-introduction"
+  | "english"
+  | "chinese"
+  | "administrative-law"
+  | "civil-procedure"
+  | "criminal-procedure"
+  | "all";
 
 const subjectLabels: Record<Exclude<SubjectFilter, "all">, string> = {
   "civil-law": "民法",
@@ -25,6 +35,10 @@ const subjectLabels: Record<Exclude<SubjectFilter, "all">, string> = {
   constitution: "憲法",
   "legal-introduction": "法學緒論",
   english: "英文",
+  chinese: "國文",
+  "administrative-law": "行政法概要",
+  "civil-procedure": "民事訴訟法概要",
+  "criminal-procedure": "刑事訴訟法概要",
 };
 
 const viewLabels: Record<View, string> = {
@@ -314,7 +328,7 @@ export default function Home() {
                 <div>
                   <p className="eyebrow">{view === "wrong" ? "REVIEW" : "PRACTICE"}</p>
                   <h1>{view === "wrong" ? `把${subjectName}易錯題目集中重練` : `近十年法院書記官${subjectName}考古題`}</h1>
-                  <p>民國 105–114 年司法特考四等官方試題；民法、刑法、憲法、法學緒論與英文分科保存進度，選擇題依考選部答案判定，申論題保留原題供閱讀與標記。</p>
+                  <p>民國 105–114 年司法特考四等官方試題；九個科目分科保存進度，選擇題依考選部答案判定，作文、公文與法科申論題保留原題供閱讀與標記。</p>
                 </div>
                 <div className="result-summary">
                   <span>官方考古題</span>
@@ -347,10 +361,20 @@ export default function Home() {
                     if (nextSubject === "constitution" || nextSubject === "legal-introduction" || nextSubject === "english") {
                       setCorpus("司法特考四等");
                       setFormatFilter("選擇題");
+                    } else if (nextSubject === "chinese") {
+                      setCorpus("司法特考四等");
+                      setFormatFilter("全部題型");
+                    } else if (nextSubject === "administrative-law" || nextSubject === "civil-procedure" || nextSubject === "criminal-procedure") {
+                      setCorpus("司法特考四等");
+                      setFormatFilter("申論題");
                     }
                   }}>
+                    <option value="chinese">國文</option>
                     <option value="civil-law">民法</option>
                     <option value="criminal-law">刑法</option>
+                    <option value="administrative-law">行政法概要</option>
+                    <option value="civil-procedure">民事訴訟法概要</option>
+                    <option value="criminal-procedure">刑事訴訟法概要</option>
                     <option value="constitution">憲法</option>
                     <option value="legal-introduction">法學緒論</option>
                     <option value="english">英文</option>
@@ -699,7 +723,8 @@ function StatsView({
           questions: questions.filter(
             (question) => question.subject === subject && question.rocYear === year,
           ),
-        })),
+        }))
+        .filter((group) => group.questions.length > 0),
     ),
     {
       label: "自行編寫示範題",

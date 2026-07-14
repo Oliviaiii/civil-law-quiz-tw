@@ -5,7 +5,7 @@ import test from "node:test";
 test("builds the multi-subject clerk exam practice experience as static HTML", async () => {
   const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
   assert.match(html, /<html lang="zh-Hant">/);
-  assert.match(html, /<title>書記官法科研習室｜五科近十年考古題<\/title>/);
+  assert.match(html, /<title>書記官法科研習室｜九科近十年考古題<\/title>/);
   assert.match(html, /近十年法院書記官民法考古題/);
   assert.match(html, /民國 105–114 年司法特考四等官方試題/);
   assert.match(html, /錯題本/);
@@ -14,18 +14,23 @@ test("builds the multi-subject clerk exam practice experience as static HTML", a
   assert.match(html, /<option value="constitution">憲法<\/option>/);
   assert.match(html, /<option value="legal-introduction">法學緒論<\/option>/);
   assert.match(html, /<option value="english">英文<\/option>/);
+  assert.match(html, /<option value="chinese">國文<\/option>/);
+  assert.match(html, /<option value="administrative-law">行政法概要<\/option>/);
+  assert.match(html, /<option value="civil-procedure">民事訴訟法概要<\/option>/);
+  assert.match(html, /<option value="criminal-procedure">刑事訴訟法概要<\/option>/);
   assert.match(html, /<strong>201<\/strong>/);
   assert.match(html, /175[\s\S]*選擇＋[\s\S]*26[\s\S]*申論/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
 test("keeps questions and local progress behind replaceable data modules", async () => {
-  const [page, questions, officialData, criminalData, combinedData, englishTranslationsData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, civilCode, criminalCode, criminalImporter, importer, englishTranslationImporter] = await Promise.all([
+  const [page, questions, officialData, criminalData, combinedData, remainingData, englishTranslationsData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, civilCode, criminalCode, criminalImporter, importer, remainingImporter, englishTranslationImporter] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data/questions.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/judicial-fourth-questions.json", import.meta.url), "utf8"),
     readFile(new URL("../app/data/criminal-law-questions.json", import.meta.url), "utf8"),
     readFile(new URL("../app/data/legal-knowledge-and-english-questions.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/clerk-remaining-questions.json", import.meta.url), "utf8"),
     readFile(new URL("../app/data/english-translations.json", import.meta.url), "utf8"),
     readFile(new URL("../app/lib/progress-store.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
@@ -40,6 +45,7 @@ test("keeps questions and local progress behind replaceable data modules", async
     readFile(new URL("../app/data/criminal-code-articles.json", import.meta.url), "utf8"),
     readFile(new URL("../scripts/import-moex-criminal-law.py", import.meta.url), "utf8"),
     readFile(new URL("../scripts/import-moex-legal-knowledge.py", import.meta.url), "utf8"),
+    readFile(new URL("../scripts/import-moex-clerk-remaining.py", import.meta.url), "utf8"),
     readFile(new URL("../scripts/import-english-translations.py", import.meta.url), "utf8"),
   ]);
 
@@ -76,6 +82,7 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(englishTranslationImporter, /Traditional Chinese study notes/);
   assert.match(importer, /legal-knowledge-and-english/);
   assert.match(importer, /answer_type = "M"/);
+  assert.match(remainingImporter, /行政法概要自/);
 
   const records = JSON.parse(officialData);
   assert.equal(records.length, 201);
@@ -133,6 +140,21 @@ test("keeps questions and local progress behind replaceable data modules", async
     combinedRecords.find((item) => item.id === "judicial-fourth-114-legal-knowledge-18").answerSource,
     "考選部更正答案",
   );
+  const remainingRecords = JSON.parse(remainingData);
+  assert.equal(remainingRecords.length, 188);
+  assert.equal(new Set(remainingRecords.map((item) => item.id)).size, 188);
+  assert.equal(remainingRecords.filter((item) => item.studySubject === "chinese").length, 120);
+  assert.equal(remainingRecords.filter((item) => item.studySubject === "chinese" && item.format === "選擇題").length, 100);
+  assert.equal(remainingRecords.filter((item) => item.studySubject === "administrative-law").length, 28);
+  assert.equal(remainingRecords.filter((item) => item.studySubject === "civil-procedure").length, 20);
+  assert.equal(remainingRecords.filter((item) => item.studySubject === "criminal-procedure").length, 20);
+  assert.ok(remainingRecords.every((item) => item.sourceUrl.includes("wwwq.moex.gov.tw")));
+  assert.ok(remainingRecords.filter((item) => item.format === "申論題").every((item) => item.answer === null && item.options.length === 0));
+  for (let year = 105; year <= 114; year += 1) {
+    assert.equal(remainingRecords.filter((item) => item.studySubject === "chinese" && item.rocYear === year && item.format === "選擇題").length, 10);
+    assert.equal(remainingRecords.filter((item) => item.studySubject === "civil-procedure" && item.rocYear === year).length, 2);
+    assert.equal(remainingRecords.filter((item) => item.studySubject === "criminal-procedure" && item.rocYear === year).length, 2);
+  }
   const analysisFiles = await readdir(new URL("../app/data/analyses/", import.meta.url));
   const civilAnalysisFiles = analysisFiles.filter((file) => file.startsWith("judicial-fourth-"));
   const analyses = Object.assign(

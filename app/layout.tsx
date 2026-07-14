@@ -3,17 +3,17 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://oliviaiii1224.github.io/civil-law-quiz-tw/"),
-  title: "書記官法科研習室｜五科近十年考古題",
-  description: "收錄近十年司法特考四等法院書記官民法、刑法、憲法、法學緒論與英文官方考古題、標準答案及解析，並分科保存錯題與學習進度。",
+  title: "書記官法科研習室｜九科近十年考古題",
+  description: "收錄近十年司法特考四等法院書記官九科官方考古題、標準答案及解析，並分科保存錯題、閱讀與學習進度。",
   openGraph: {
-    title: "書記官法科研習室｜五科近十年考古題",
-    description: "民國 105–114 年司法特考四等民法、刑法、憲法、法學緒論與英文，共 902 題官方試題。",
+    title: "書記官法科研習室｜九科近十年考古題",
+    description: "民國 105–114 年司法特考四等法院書記官九科，共 1,090 題官方試題。",
     images: [{ url: "https://oliviaiii1224.github.io/civil-law-quiz-tw/og-multisubject.png", width: 1200, height: 630, alt: "書記官法科研習室" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "書記官法科研習室｜五科近十年考古題",
-    description: "民國 105–114 年司法特考四等民法、刑法、憲法、法學緒論與英文，共 902 題官方試題。",
+    title: "書記官法科研習室｜九科近十年考古題",
+    description: "民國 105–114 年司法特考四等法院書記官九科，共 1,090 題官方試題。",
     images: ["https://oliviaiii1224.github.io/civil-law-quiz-tw/og-multisubject.png"],
   },
 };

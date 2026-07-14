@@ -44,6 +44,7 @@ next-env.d.ts
 /tmp/
 /.playwright-cli/
 /work/
+/.temp/
 
 # python tooling
 __pycache__/

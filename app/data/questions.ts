@@ -1,6 +1,7 @@
 import officialRecordsJson from "./judicial-fourth-questions.json";
 import criminalRecordsJson from "./criminal-law-questions.json";
 import combinedPaperRecordsJson from "./legal-knowledge-and-english-questions.json";
+import remainingClerkRecordsJson from "./clerk-remaining-questions.json";
 import { buildOfficialAnalysis } from "./judicial-fourth-analyses";
 import { buildCriminalAnalysis } from "./criminal-law-analyses";
 import { buildConstitutionAnalysis } from "./constitution-analyses";
@@ -13,12 +14,19 @@ export type Subject =
   | "criminal-law"
   | "constitution"
   | "legal-introduction"
-  | "english";
+  | "english"
+  | "chinese"
+  | "administrative-law"
+  | "civil-procedure"
+  | "criminal-procedure";
 
 export type Paper =
   | "civil-law-summary"
   | "criminal-law-summary"
-  | "legal-knowledge-and-english";
+  | "legal-knowledge-and-english"
+  | "chinese"
+  | "administrative-law-summary"
+  | "civil-criminal-procedure-summary";
 
 export type Question = {
   id: string;
@@ -331,6 +339,28 @@ type CombinedPaperRecord = {
   passage?: string;
 };
 
+type RemainingClerkRecord = {
+  id: string;
+  exam: "司法特考四等";
+  rocYear: number;
+  gregorianYear: number;
+  subject: string;
+  studySubject: "chinese" | "administrative-law" | "civil-procedure" | "criminal-procedure";
+  paper: "chinese" | "administrative-law-summary" | "civil-criminal-procedure-summary";
+  applicableCategories: string[];
+  sourceUrl: string;
+  format: "選擇題" | "申論題";
+  officialQuestionNumber: number;
+  questionKind: string;
+  prompt: string;
+  options: string[];
+  answer: number | null;
+  acceptedAnswers: number[];
+  allCredit: boolean;
+  answerSource: string | null;
+  answerUrl: string | null;
+};
+
 const criminalOfficialQuestions: Question[] = (
   criminalRecordsJson as OfficialQuestionRecord[]
 ).map((record) => {
@@ -456,11 +486,47 @@ const englishQuestions: Question[] = (
       left.officialQuestionNumber - right.officialQuestionNumber,
   );
 
+const remainingClerkQuestions: Question[] = (
+  remainingClerkRecordsJson as RemainingClerkRecord[]
+).map((record) => ({
+  ...record,
+  subject: record.studySubject,
+  subjectLabel: record.subject,
+  category: "待分類" as const,
+  type: (record.format === "申論題" ? "個案型" : "概念型") as Question["type"],
+  difficulty: "進階" as const,
+  source: `${record.rocYear} 年司法特考四等｜${record.subject}｜${record.questionKind}第 ${record.officialQuestionNumber} 題`,
+  confidence: undefined,
+  statutes: [],
+  references: [
+    {
+      type: "official-material" as const,
+      title: "考選部官方試題",
+      locator: `第 ${record.officialQuestionNumber} 題`,
+      url: record.sourceUrl,
+    },
+    ...(record.answerUrl && record.answerSource
+      ? [{
+          type: "official-material" as const,
+          title: record.answerSource,
+          locator: `第 ${record.officialQuestionNumber} 題`,
+          url: record.answerUrl,
+        }]
+      : []),
+  ],
+})).sort(
+  (left, right) =>
+    (right.rocYear ?? 0) - (left.rocYear ?? 0) ||
+    left.subjectLabel.localeCompare(right.subjectLabel, "zh-Hant") ||
+    (left.officialQuestionNumber ?? 0) - (right.officialQuestionNumber ?? 0),
+);
+
 export const questions: Question[] = [
   ...officialQuestions,
   ...constitutionQuestions,
   ...legalIntroductionQuestions,
   ...englishQuestions,
+  ...remainingClerkQuestions,
   ...demoQuestions.map((question) => ({
     ...question,
     subject: "civil-law" as const,
@@ -477,7 +543,7 @@ export const questions: Question[] = [
   })),
 ];
 
-const allOfficialQuestions = [...officialQuestions, ...constitutionQuestions, ...legalIntroductionQuestions, ...englishQuestions];
+const allOfficialQuestions = [...officialQuestions, ...constitutionQuestions, ...legalIntroductionQuestions, ...englishQuestions, ...remainingClerkQuestions];
 
 export const officialQuestionCount = allOfficialQuestions.length;
 export const officialMultipleChoiceCount = allOfficialQuestions.filter(
@@ -493,4 +559,8 @@ export const officialCountsBySubject = {
   constitution: constitutionQuestions.length,
   "legal-introduction": legalIntroductionQuestions.length,
   english: englishQuestions.length,
+  chinese: remainingClerkQuestions.filter((question) => question.subject === "chinese").length,
+  "administrative-law": remainingClerkQuestions.filter((question) => question.subject === "administrative-law").length,
+  "civil-procedure": remainingClerkQuestions.filter((question) => question.subject === "civil-procedure").length,
+  "criminal-procedure": remainingClerkQuestions.filter((question) => question.subject === "criminal-procedure").length,
 } as const;

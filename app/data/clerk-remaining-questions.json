@@ -1,0 +1,5026 @@
+[
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "作文",
+    "prompt": "涵養一詞，指的是身心修養。身心的修養植基於端正的態度、有恆的修持、學養的充實、品格的提升。有涵養的人，嚴以律己，和以處眾；有涵養的人，明辨是非，通情達理。涵養深厚，則待人接物，必然和善可親，使人有如沐春風的感覺；涵養深厚，則處理公務，必然周到圓融，表現出敬業樂群的精神。涵養之於人實在是太重要了。請以「論公務員的涵養」為題，撰寫一篇結構完整的文章。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "公文",
+    "prompt": "我國各地寺廟、書院、傳統建築等古蹟，歷史悠久，文化深厚，若能探討研究其歷史文化，必能提升人文素養，陶冶審美情操，了解先民開墾經營的歷程，激發國人熱愛鄉土的情懷。試擬文化部致各縣市政府文化局函，要求擬具周詳計畫，籌辦「古蹟研習營」，以加強民眾對古蹟的認知與關懷。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "下列各組成語，意思相近的是：",
+    "options": [
+      "集腋成裘／杯水車薪",
+      "舊調重彈／改弦易轍",
+      "呶呶不休／瞠目結舌",
+      "頭童齒豁／老態龍鍾"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "下列成語，何者可用來比喻「所學雜多便不易專精」？",
+    "options": [
+      "亡羊補牢",
+      "多歧亡羊",
+      "羚羊掛角",
+      "羝羊觸藩"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "漢世有人，年老無子，家富，性儉嗇。惡衣蔬食，侵晨而起，侵夜而息，營理產業，聚斂無厭，而不敢自用。「侵晨而起，侵夜而息」意謂老人：",
+    "options": [
+      "日夜顛倒",
+      "夙興夜寐",
+      "日薄西山",
+      "侵人財物"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "「□□於民國一○五年三月三日（星期四）下午六時□天下第一樓為長男大德與王小菲小姐訂婚敬備□□ 恭候台光」，上文空格處，宜依序填入的字詞為：",
+    "options": [
+      "謹訂／借／湯餅",
+      "謹詹／假／菲酌",
+      "謹訂／借／桃樽",
+      "謹詹／假／桃觴 105年公務人員特種考試司法人員、法務部 20120-20720 全一張調查局調查人員、國家安全局國家安全情報代號：50120-50320 （背面）人員、海岸巡防人員及移民行政人員考試試題考試別 ：司法人員、調查人員、移民行政人員等別 ：四等考試類科組 ：各類科組科目 ：國文（作文、公文與測驗）"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "「落托劉郎作帝歸，樽前感慨大風詩。淮陰反接英彭族，更欲多求猛士為。」（張方平〈過沛題歌風臺〉）詩中「淮陰反接英彭族，更欲多求猛士為」有何意涵？",
+    "options": [
+      "意謂劉邦底定江山",
+      "意謂劉邦人才濟濟",
+      "意謂劉邦斬殺功臣",
+      "意謂劉邦衣錦還鄉"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "下列詩句中，何者具有因果關係？",
+    "options": [
+      "草枯鷹眼疾",
+      "清泉石上流",
+      "野徑雲俱黑",
+      "魂返關塞黑"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "下列關於節日的詩詞，依照「元宵、端午、中秋、重陽」的順序排列，何者正確？ ①青煙冪處，碧海飛金鏡。永夜閒階臥桂影。露涼時，零亂多少寒螿。 ②試尋高處，攜手躡屐上崔嵬。放目蒼崖萬仞，雲護曉霜成陣，知我與君來。 ③東風夜放花千樹，更吹落，星如雨。寶馬雕車香滿路，鳳簫聲動，玉壺光轉，一夜魚龍舞。 ④五月榴花妖艷烘。綠楊帶雨垂垂重。五色新絲纏角粽。金盤送。生綃畫扇盤雙鳳。",
+    "options": [
+      "①④③②",
+      "③④②①",
+      "①③④②",
+      "③④①②"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "「一切快樂的享受都屬於精神的，儘管快樂的原因是肉體上的物質刺激。……發現了快樂由精神來決定……從此痛苦失掉它們的可怕，肉體減少了專制。」根據上文，下列敘述何者正確？",
+    "options": [
+      "感官之享受與快樂無關",
+      "肉體與精神實不分軒輊",
+      "快樂的根源深植於精神",
+      "肉體痛苦就不可能快樂"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "「世人總在意自己的付出，也在意自己的辛勞，能讓付出與辛勞過了就過了、不反過來成為心中負擔的，鮮矣！本來，回報容易，不矜難；唯有不矜不伐，生命才能有種不卑不亢的強大，也才能形成一種厚度，才能抗拒得了外來的種種機心。」根據上文，作者以為有生命厚度的是下列那一種人？",
+    "options": [
+      "無伐善、無施勞",
+      "受人點滴，湧泉以報",
+      "車馬衣輕裘與朋友共",
+      "毛遂自薦，身先士卒"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-105-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "劉基：「故孟子曰：『天之將降大任於是人也，必先苦其心志，勞其筋骨，餓其體膚。』趙子曰：『良藥苦口利於病，忠言逆耳利於行。』彼之苦，吾之樂；而彼之樂，吾之苦也。吾聞井以甘□，李以苦□，夫差以酣酒□，而句踐以嘗膽□，無亦猶是也夫？」上文中空格依序應填入：",
+    "options": [
+      "竭／存／興／亡",
+      "存／竭／亡／興",
+      "竭／存／亡／興",
+      "存／竭／興／亡"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=105120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0505&q=1",
+    "id": "clerk-civil-procedure-105-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "甲為工程款之給付提起訴訟，於第一審委任有特別代理權之訴訟代理人乙，第一審法院判決甲敗訴，判決於民國 105 年 6 月 1 日送達甲，並於同年 6 月 3 日送達乙，甲於同年 6 月 22 日提起上訴，其上訴是否已逾期？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0505&q=1",
+    "id": "clerk-civil-procedure-105-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "原告主張當事人間有消費借貸之法律關係，現已屆清償期，起訴請求被告給付借款新臺幣（下同）100 萬元。被告於訴訟程序中抗辯稱其基於贈與之法律關係收受 100 萬元，當事人間並無借款關係。原告為此具狀表示，倘法院認為兩造間消費借貸之法律關係不成立，其追加不當得利之法律關係，請求被告返還如備位聲明所示 100 萬元與其法定遲延利息。而被告當庭表示，其不同意原告所為之訴之追加。試問：對於原告追加備位聲明與主張不當得利之法律關係，法院應如何審理？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0505&q=1",
+    "id": "clerk-criminal-procedure-105-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "警察接獲線民甲密報查獲涉嫌販毒成員 A，另經比對相關蒐證資料後認 A 犯罪嫌疑重大，且仍有共犯尚未到案，乃移送地檢署進行複訊以及聲押程序。法院羈押訊問過程中，A 矢口否認並認遭人誣陷，因而請求開示線民甲之身分，惟檢察官恐被告 A 對甲尋仇，影響甲人身安全。試問：依據正當法律程序的論理，法院應如何裁定？並舉例說明之。（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 105,
+    "gregorianYear": 2016,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=105120&c=201&s=0505&q=1",
+    "id": "clerk-criminal-procedure-105-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "甲偷騎隔壁鄰居之機車，被檢察官依涉犯竊盜罪嫌提起公訴。法官於準備程序終結時，當庭面告甲下次開言詞辯論庭期日，不另行通知，請務必於審判期日自行到庭，如不到庭得命拘提，經載明於準備程序筆錄。詎審判期日前，甲因另案遭檢察官拘提入監服刑，法院以甲經合法傳喚不到場，行一造辯論判決，並如期宣判，以甲犯竊盜罪，判處拘役五十日，並諭知易科罰金之折算標準，書記官依甲的住所送達判決書。試問：第一審法院之判決是否合法？甲的配偶 A 代甲收受第一審判決，隔一個月，前往監獄探監時，告知甲，其竊盜罪已被判處拘役五十日，甲得知後非常生氣，希望上訴。A 立即以配偶身分，以甲並無不法所有意圖為由，原審認事用法均有違誤，判決違法，向原審法院提出上訴狀。A 之上訴是否合法？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "作文",
+    "prompt": "讀萬卷書、行萬里路，是人們增長知識、拓展見聞的最佳方式。「開澎進士」蔡廷蘭於清道光十五年（1835）被颱風連人帶船吹到越南中南部的廣義省，堅持由陸返閩，走路回家，並且將沿途所見所聞結合所閱覽的歷史文獻撰成《海南雜著》一書，因而名留青史，便是一例。請以「閱讀與旅行」為題，作文一篇，陳述自己的相關經驗與心得。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "公文",
+    "prompt": "臺南市政府文化局響應政府推動之新南向政策，並有意向東南亞國家推廣臺灣文學，經委託專家學者執行，即將完成《葉石濤短篇小說》越南文本的翻譯出版工作，訂於民國 106 年 12 月 2 日上午 10 時，於該市中西區友愛街 8-3 號 「 葉石濤文學紀念館」舉辦新書發表會，函請市內各中小學選派越南新住民之子女一名為代表，在師長陪同下出席該新書發表會，試擬此函。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "下列題辭正確的用法是：",
+    "options": [
+      "瓜瓞綿綿：祝賀農會開幕",
+      "玉燕投懷：祝賀生子得男",
+      "弄瓦徵祥：祝賀陶藝開展",
+      "喜聽英聲：祝賀音樂展演 2."
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "「顧曲有閒情，不礙破曹真事業；飲醇原雅量，偏嫌生亮並英雄。」此副對聯歌頌的人物是：",
+    "options": [
+      "關羽",
+      "孔明",
+      "孫權",
+      "周瑜 3."
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "柳宗元〈永州龍興寺西軒記〉：「余所庇之屋甚隱蔽，其戶北向，居昧昧也，寺之居，於是州為高，西序之西，屬當大江之流，江之外，山谷林麓甚眾，於是鑿西墉以為戶，戶之外為軒，以臨群木之杪，無所不矚焉。」文中之「昧昧」為何意？",
+    "options": [
+      "光線忽明忽滅",
+      "光線遮蔽幽暗",
+      "門戶面向樹林",
+      "窗戶面向江河 4."
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "十五從軍征，八十始得歸。道逢鄉里人：家中有阿誰？遙望是君家，松柏冢纍纍。兔從狗竇入，雉從梁上飛。中庭生旅穀，井上生旅葵。烹穀持作飯，采葵持作羹。羹飯一時熟，不知貽阿誰？出門東向看，淚落沾我衣。〈無名氏·十五從軍征〉下列選項最能契合本詩旨意的是：",
+    "options": [
+      "反戰",
+      "恤貧",
+      "思鄉",
+      "憫農 5."
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "昔者楚丘先生，行年七十，披裘帶索，往見孟嘗君，欲趨，不能進。孟嘗君曰：「先生老矣，春秋高矣，何以教文？」楚丘先生曰：「噫！將我而老乎？噫！將使我追車而赴馬乎？投石而超距乎？逐麋鹿而搏豹虎乎？吾已死矣！何暇老哉！噫！將使我出正辭而當諸侯乎？決嫌疑而定猶豫乎？吾始壯矣，何老之有！」孟嘗君逡巡避席，面有愧色。（《新序·雜事五》）依據上文，下列敘述何者正確？",
+    "options": [
+      "孟嘗君認為人老而無用，遭楚丘當面駁斥，憤而離席",
+      "孟嘗君禮賢下士，楚丘教以治國之道，不知老之將至",
+      "楚丘年事已高卻倚老賣老，強詞奪理，毫無自知之明",
+      "知人善任，適才而用，老人亦可發揮所長，有所貢獻 106年公務人員特種考試司法人員、法務部全一張調查局調查人員、國家安全局國家安全情報代號： 74110-74210 （背面）人員、海岸巡防人員及移民行政人員考試試題 94110 考試別：司法人員、調查人員、海岸巡防人員、移民行政人員等別：四等考試類科組：各類科組科目：國文（作文、公文與測驗） 6."
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "「現代新詩沒有字距長短的限制，也沒有篇幅大小的要求，甚至不講求平仄押韻，種種自由的形式，使得作者只要具備基本的語文能力，有參與的意願，就可以自在的創作。其中雖然陽春白雪，村俚謳歌，倒也雅俗共賞，吸引較多文藝青年」。文中「陽春白雪」的意思，與下列敘述何者相同？",
+    "options": [
+      "青少年的文藝心靈，陽春白雪，稍事文學訓練，教授作品賞析，當可漸入佳境，進入創作的領域",
+      "現代網路發達，稍具點學力，就可在網路上找到自己的文學空間，自由自在的創作，然而大多陽春白雪，看不出這些作品有何內涵與功力",
+      "文學創作不是我筆寫我口，而還須有理論基礎。在青少年階段寫作，自不必達到陽春白雪，然若欲使創作心靈豐富，從精神境界來潤澤作品，則不能不講求理論",
+      "現代文學作品早已商業化，閱讀市場所在即是創作方向，一時陽春白雪，讀者品味多元，也就造成文學出版爭奇鬥豔與琳瑯滿目，但也顯得作者、讀者、業者三方面的心靈枯萎，社會的文化氣氛不過金玉其外罷了 7."
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "〈出師表〉：「攘除姦凶，興復漢室。」句中「除」字，與下列各「除」字，意思相同的是：",
+    "options": [
+      "「除」吾死外，當無見期",
+      "然則將軍之仇報而燕見陵之愧「除」矣",
+      "趙王埽「除」自迎，執主人之禮，引公子就西階",
+      "郡之賢士大夫請於當道，即「除」魏閹廢祠之址以葬之 8."
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "「謊言已走了半個世界，真話才在動身。」馬克吐溫曾這麼說道。在這個眾說紛紜的時代，從主流媒體到網路平台，從政客財團到一般大眾，話語權的爭奪戰無時不在進行。然而，發言者所處的社會位置，即階級的高低，與其掌握的社會資源與權力成正比。在《木偶奇遇記》 裡，小木偶皮諾丘的錢被偷了，向猩猩法官求助，卻被認為「太笨」而被關入獄。作者卡洛· 科洛迪（Carlo Collodi）藉此點出，在成人世界裡，「□□」說的話才會被聽見，至於說的是真是假，無關緊要。根據上文，空格處最適合填入的詞語是：",
+    "options": [
+      "學歷",
+      "財團",
+      "身分",
+      "長相 9."
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "「晨間聽蟬，想其高潔。蟬該是有翅族中的隱士吧！高據樹梢，餐風飲露，不食人間煙火。那蟬聲在晨光朦朧之中分外輕逸，似遠似近，又似有似無。一段蟬唱之後，自己的心靈也跟著透明澄淨起來，有一種『何處惹塵埃』的了悟。蟬亦是禪。」根據上文，下列選項最接近文旨的是：",
+    "options": [
+      "蟬是高潔隱士，不與世俗爭名奪利",
+      "蟬聲悠遠飄渺，讓人感受生命虛無",
+      "蟬聲使人心靈感到澄澈，體悟人生",
+      "蟬的吟唱似有似無，令人難以捉摸 10."
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-106-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "每個人今天都比明天年輕，但是所有的人都忽略這一點。今天就是明天的昨天，所有的人也都忽略這一點。許多人最喜歡說「要是十年前的話」這種話，其實，今天不就是十年後你所說的那個「十年前」嗎？我很清楚「每個人今天都比明天年輕」這個事實，所以我所遇到的任何一個人，在我的心目中都是年輕人。我用對待「年輕人」的態度對待所有的朋友，因為我的朋友確實比「明天的他」年輕。明天的他又比後天的他年輕。一想到十年後，我就覺得今天的他實在太年輕，太年輕，太年輕了。我一向把自己看成「年輕人」。我的意思並不指我比十八歲的小朋友年輕。我指的是我比十年後的自己實在年輕得「太多」了，所以我應該享受我自己生命中的「年輕人」的權利。每回，我一想到我今天比明天年輕，我就振奮起來，快樂起來。我覺得我應該趁著「年輕的時候」多賣點兒力氣，多讀點兒書，多為將來打算。（子敏《和諧人生· 今天和明天》）下列敘述，何者最合乎本文的勵志觀念？",
+    "options": [
+      "年輕不是實際年齡，而是從心理上將每一天當作今天，積極從事建設工作",
+      "年輕就是不要想到明天，生命只剩今天，這樣才能把每一天的自己看成年輕人",
+      "年輕是由昨天、今天、明天聯繫而成，把握當下需將這三部分合為一體來努力",
+      "生命只有年輕時才有意義，等到老年時再來談年輕時該怎麼做，已經沒有可以努力的時候了"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=106130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0507&q=1",
+    "id": "clerk-civil-procedure-106-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "乙無權占有甲所有之 A 屋，甲依據民法第 767 條第 1 項之所有物返還請求權，訴請乙返還 A 屋；亦一併依據民法第 179 條，訴請乙給付相當於租金之不當得利新臺幣（下同）50 萬元。甲起訴時 A 屋之交易價額為 300 萬元，訴訟進行中A屋之交易價額飆漲為 400 萬元。試問：（一）A屋之訴訟標的價額應如何核定？（10 分）（二）甲於同一訴訟程序中，對乙主張之民法第 767 條第 1 項、第 179 條等兩項請求權，其訴訟標的價額是否應合併計算？（15 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0507&q=1",
+    "id": "clerk-civil-procedure-106-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲為 A 地之所有人，於民國（下同）104 年間與乙通謀為虛偽之意思表示，將 A 地登記於乙之名下。105 年間甲向乙購買 B 屋，買賣契約生效而乙尚未給付。其後甲向乙請求移轉登記 A 地與 B 屋之所有權與甲，遭乙拒絕。甲乃於 106 年 7 月 10 日向第一審管轄法院起訴，請求被告乙將 A 地與 B 屋之所有權移轉登記與原告甲，並聲請為訴訟繫屬事實之登記。試問：（一）甲聲請訴訟繫屬登記之要件為何？（15 分）（二）法院應如何處理？（10 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0507&q=1",
+    "id": "clerk-criminal-procedure-106-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "審判筆錄是由書記官所製作，具有一定刑事訴訟法效力的文書。設有被告某甲認為其在第一審審判期日中，所為之重要陳述，漏未記載在審判筆錄，在審理的審判期日進行中與審判期日結束後，也允許甲有一定請求權利。試從刑事訴訟法規定，詳述審判筆錄的效力。又就審判筆錄漏未記載一事，甲可向法院為如何之請求？法院對甲之請求，應如何處理？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 106,
+    "gregorianYear": 2017,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=106130&c=201&s=0507&q=1",
+    "id": "clerk-criminal-procedure-106-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "司法警察甲，報經檢察官許可聲請法院核發搜索票，載明案由與標的為「毒品案件之相關物證」，地點為乙的住家，經法院准許，持核發之搜索票，搜索乙住家，卻發現乙家中藏有非法制式手槍一把，未向法院聲請許可，即加以扣押並送交檢察官處理，試問此扣押是否合乎現行刑事訴訟法規定，請詳述之。（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "作文",
+    "prompt": "機會對於每個人來說都是平等的，只是有的人善於抓住機會，從而獲得了成功；有的人眼看著機會在自己的手中溜走，卻始終都沒有發覺。有些挫折是在考驗一個人的意志，有些錯誤是在考驗一個人的判斷力，所以不要輕視那些逆境，機會就在其中。歐陽脩〈讀書詩〉：「是非自相攻，去取在勇斷。」是非可以互相轉化，逆順當然也能互相轉化，是去是取在勇於決斷。請以「逆境與機會」為題，作文一篇，敘述自己的生命體驗或一己之見。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "公文",
+    "prompt": "國內砂石業者長期濫墾濫倒，環境破壞嚴重，全民頗多怨言。有鑒於此，內政部曾行文各縣市政府，要求研訂有效管理辦法，回應國人期待已久之環境正義。試擬某縣市政府函復其管理辦法。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "陳琳〈飲馬長城窟行〉：「生男慎莫舉，生女哺用脯。」下列選項各「舉」字，何者用法與此相同？",
+    "options": [
+      "其母竊「舉」生之",
+      "莫不欲求忠以自為，「舉」賢以自佐",
+      "「舉」風后、力牧、常先、大鴻以治民",
+      "今亡亦死，「舉」大計亦死，等死，死國可乎"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "下列與年齡相關的語詞，由小至大排列的次序，何者正確？",
+    "options": [
+      "耄耋之年／始齔之年／花甲之年／懸車之年",
+      "始齔之年／花甲之年／懸車之年／耄耋之年",
+      "花甲之年／始齔之年／耄耋之年／懸車之年",
+      "始齔之年／懸車之年／花甲之年／耄耋之年"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "下列對聯懸掛場合正確的是：",
+    "options": [
+      "相留燕趙齊梁客／借寓東西南北人：茶館",
+      "存心為補先天缺／有技能開後世矇：木工",
+      "參芎同功回造化／葫蘆品貴辨君臣：當鋪",
+      "九穀惟修恆自足／六陳咸備不居奇：雜貨店"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "《論語‧衛靈公》：「子貢問為仁。子曰：『工欲善其事，必先利其器。居是邦也，事其大夫之賢者，友其士之仁者。』」 下列選項最符合本文章旨的是：",
+    "options": [
+      "指出工匠善用利器",
+      "指出邦國無賢大夫",
+      "治國應禮遇士大夫",
+      "說明行仁具體作法"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "《韓詩外傳》：「臣里母相善，婦見疑盜肉，其姑去之，恨而告于里母，里母曰： 『安行，今令姑呼汝。』即束蘊請火，去婦之家，曰：『吾犬爭肉相殺，請火治之。』 姑乃直使人追去婦，還之。」 依據上文，下列選項敘述正確的是：",
+    "options": [
+      "婆婆趕走媳婦因她出言頂撞",
+      "媳婦憑自己的智慧排除困難",
+      "婆婆後悔便叫小姑追回嫂嫂",
+      "里母是位善良且機智的長者"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "下列三段描寫場景相同，依據甲乙段文字，丙段文字的□□□所指地點應為：甲、蒐羅萬有待而沽，予取予求應所需。笑解腰纏付牙儈，馮驩不用嘆魚無。乙、春韭秋菘各一區，客來論價擲青蚨。箇中壟斷常登者，罔利由譏賤丈夫。丙、我也喜歡，站在這樣的□□□中央，無事地茫茫四顧，看著熙攘往來的人群，聆聽著撒野而放肆的叫賣聲。那熱烈生活的迸發力量，彷彿大河的滾滾奔騰。很高興自己也隨波捲進，加入了某一個早上的盛宴。",
+    "options": [
+      "快炒店",
+      "拍賣場",
+      "百貨行",
+      "菜市場"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "暮投石壕村，有吏夜捉人。老翁踰牆走，老婦出看門。吏呼一何怒，婦啼一何苦。聽婦前致詞：「三男鄴城戍，一男附書至，二男新戰死。存者且偷生，死者長已矣！室中更無人，唯有乳下孫。有孫母未去，出入無完裙。老嫗力雖衰，請從吏夜歸。急應河陽役，猶得備晨炊。」夜久語聲絕，如聞泣幽咽。天明登前途，獨與老翁別。（杜甫〈石壕吏〉）下列敘述，何者錯誤？",
+    "options": [
+      "「老翁踰牆走」，因翁是有罪之人，故躲避官吏而越牆逃走",
+      "「有吏夜捉人」，「夜」字傳達即使到了深夜，仍寢席不安",
+      "「吏呼一何怒，婦啼一何苦」。呼、啼、怒、苦，形成「吏」與「婦」的強烈對照",
+      "詩人不直寫縣吏的蠻橫，卻從老婦應對致詞的十三句詩，暗示縣吏不斷的怒呼逼迫"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "《孟子‧告子》：「人恆過，然後能改；困於心，衡於慮，而後作；徵於色，發於聲，而後喻。」文中「徵於色，發於聲，而後喻」意謂：",
+    "options": [
+      "君子或小人可以從臉色與聲音來分辨",
+      "見人臉色不悅或聽到勸戒才明白過失",
+      "說話要特別注意臉部表情和聲調技巧",
+      "要明白接近聲色犬馬會使人身敗名裂"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "朱光潛《談美》：「『移情作用』是把自己的情感移到外物身上去，彷彿覺得外物也有同樣的情感。」 下列詩詞沒有「移情作用」的選項是：",
+    "options": [
+      "感時花濺淚，恨別鳥驚心",
+      "蠟燭有心還惜別，替人垂淚到天明",
+      "日日花前常病酒，不辭鏡裡朱顏瘦",
+      "昔我往矣，楊柳依依；今我來思，雨雪霏霏"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-107-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "「在臺灣，有活躍的一群／為需要幫助者指點迷津／他們都具有相當專業／在安排就醫中充滿溫馨／對患者悉心噓寒問暖／不求報酬和賞金／像春風拂過大地／如春雨滋潤人心」 根據上文，其所描述的人物最適當的是：",
+    "options": [
+      "專業看護",
+      "專科醫師",
+      "醫院志工",
+      "白衣天使"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=107130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0507&q=1",
+    "id": "clerk-civil-procedure-107-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "原告甲委任丙律師為訴訟代理人，以乙為被告，向某地方法院起訴請求判決乙給付甲買賣價金，並同時提出委任狀。委任狀除記載：甲就本訴訟事件，委任丙為訴訟代理人，有為一切訴訟行為之權等語外，別無其他代理權限之約定。試問：（一）丙律師於言詞辯論期日到場，經法官試行和解，可否代理甲與乙成立訴訟上和解？（10 分）（二）甲於第一審言詞辯論終結前死亡，訴訟程序可否繼續進行？若訴訟程序仍可續行，法院可否於言詞辯論終結後宣示判決？若訴訟程序停止，法院應如何處理？（15 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0507&q=1",
+    "id": "clerk-civil-procedure-107-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲（住桃園市）以乙（住臺中市）為被告，向臺灣桃園地方法院（下稱桃園地院）起訴主張：乙於 107 年 6 月 1 日駕駛 A 車，行經新竹市某路口，闖紅燈撞傷甲，致甲受損害，求為判決乙給付甲 100 萬元等語。兩造就前開紛爭事件，未以合意定第一審管轄法院。試問﹕ （一）乙在為本案之言詞辯論前，提出桃園地院無管轄權之抗辯，是否有理由﹖ （10 分）（二）若桃園地院認該院有管轄權，惟言詞辯論期日未合法通知乙，即依甲之聲請，由甲一造辯論而判決乙敗訴。乙提起上訴，主張：桃園地院無管轄權，且其未經合法通知，法院逕為一造辯論判決，原判決違背管轄及一造辯論判決之要件，訴訟程序有重大瑕疵，請求發回等語。第二審法院應如何處理﹖（15 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0507&q=1",
+    "id": "clerk-criminal-procedure-107-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "居住在臺北之甲與我國某邦交國大使乙因故爭吵，心生怨恨，某日甲於該國大使館前燒燬該國國旗以示抗議。經該國大使向臺北地方檢察署請求追懲。甲於檢察官傳喚時，無正當理由未到庭後，司法警察丙持檢察官所簽發之拘票進行拘提，甲當場對丙辱罵三字經及吐口水。試論甲成立上述二罪，是否得合併審理？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 107,
+    "gregorianYear": 2018,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=107130&c=201&s=0507&q=1",
+    "id": "clerk-criminal-procedure-107-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "檢察官於偵查某贓物罪時，依線索追蹤該贓物乃甲竊取其父親乙之財物所取得，遂對甲以竊取其父乙財物之竊盜罪向管轄法院提起公訴，法院依法審理時，發現甲所竊取之財物非其父乙之財物，乃他人丙之財物。試論法院應如何裁判？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "作文",
+    "prompt": "人們多半不喜歡吃苦，然而，像茶和咖啡這類初嘗帶著苦味的食物，在苦味漸散後，會在舌間留下淡淡的清甜。人生也是如此，往往歷經種種苦澀之後，才能嘗到真正的甘甜。請以「回甘」為題，寫一篇完整的文章，敘寫自己親歷的經驗和體悟。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "公文",
+    "prompt": "行政院鑑於法務部矯正署統計資料，目前全國收容的女煙毒犯已達三千多人，懷孕生育的染毒媽媽超過四百人，胎內即已染毒而出生的毒寶寶至少在三百人以上。根據研究顯示，毒寶寶專注力差，學習遲緩，智商、情商偏低，甚至有自閉、精神分裂、暴力攻擊等問題。如果不予預防、遏止，恐會形成社會問題。專家表示：解決毒寶寶問題必須自源頭防堵，建議在不妨礙人權下立法強制，凡孕婦於產檢時必多加一道毒癮篩檢，以期及早防護。此外列管並持續追蹤毒寶寶，設置安置中心；女性毒癮者願裝置避孕器、人工流產、結紮者給予補助，凡此措施，於立法時宜周全考量，完整配套。試擬行政院函法務部，請就上述事項儘速擬訂法案，俾交付立法院完成立法程序，以期及早防護，有效解決毒寶寶問題。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "下列成語的解釋與說明，何者錯誤？",
+    "options": [
+      "「不辨菽麥」原意指人愚昧無知，難當大任。後世多指人缺乏常識，連豆子跟麥粒都分不清楚",
+      "「斷髮文身」原意指犯罪的人必須髠髮、刺青以示隔絕。後多指涉及不法、犯罪而遭受刑罰的人",
+      "「大義滅親」：原意指為保全國家、民族大義，只好犧牲自己的至親。後世沿用，但不宜用在晚輩對長輩",
+      "「自求多福」：原本帶有勸勉之意，謂凡事自己努力，可以得到更多福氣。後世應用，則意謂事態變化時，只能依靠自己"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "下列文句「」中的成語，用法完全正確的選項是：",
+    "options": [
+      "王老闆做生意向來「買櫝還珠」，信譽極佳，難怪分店能愈開愈多",
+      "網路所登載的選舉消息，幾乎都是「不刊之論」，真令人不敢恭維",
+      "張總裁能夠「懲前毖後」，在同事眼中，是位自我要求嚴格的主管",
+      "單位主管多數「尾大不掉」，使優秀部屬毫無升遷機會，紛紛跳槽"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "「凡敵無事而自補者，有侵絕之意；棄小而不救者，有圖大之心；隨手而下者，無謀之人；不思而應者，取敗之道。」（《棋經》）其棋道觀念與若干詞語相通，下列選項中兩者意義最接近的是：",
+    "options": [
+      "敵無事而自補者，有侵絕之意／亡羊補牢",
+      "棄小而不救者，有圖大之心／明哲保身",
+      "隨手而下者，無謀之人／打草驚蛇",
+      "不思而應者，取敗之道／急躁冒進"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "嵇中散臨刑東市，神氣不變。索琴彈之，奏廣陵散。曲終曰：「袁孝尼嘗請學此散，吾靳固不與，廣陵散於今絕矣！」 後世常以「廣陵散」為喻，下列選項中的「廣陵散」，何者與上文寓意相同？",
+    "options": [
+      "良藥苦口，忠言逆耳。他一席話如一劑「廣陵散」，令人豁然開朗",
+      "近年來勾心鬥角的宮廷劇輪番上映，叫好又叫座，堪稱最經典的「廣陵散」",
+      "他常自吹自擂年輕時是暢銷作曲家，實際上只是「廣陵散」，作品乏人問津",
+      "由於擔心傳統歌仔戲成為「廣陵散」，她雖年過七十，仍大力推廣此一表演藝術"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "蘇子美豪放不羈，好飲酒。在外舅杜祁公家，每夕讀書，以一斗為率。公深以為疑，使子弟密覘之。聞子美讀《漢書‧張良傳》，至良與客狙擊秦始皇，誤中副車，遽撫掌曰：「惜乎，擊之不中！」遂滿引一大白。又讀至良曰：「始臣起下邳，與上會於留，此天以授陛下。」又撫案曰：「君臣相遇，其難如此。」復舉一大白。公聞之，大笑曰：「有此下酒，加一斗不為多也。」（陸友仁《研北雜志》）根據上文，對蘇子美飲酒最適當的形容是：",
+    "options": [
+      "藉酒裝瘋，故作風雅",
+      "以書佐酒，至為風雅",
+      "獨酌無聊，苦中作樂",
+      "酒量驚人，不知節制"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "相見甚有奇緣，似恨其晚。然使前十年相見，恐識力各有未堅透處，心目不能如是之相發也。朋友相見，極是難事。鄙意又以為不患不相見，患相見之無益耳。有益矣，豈猶恨其晚哉！（鍾惺〈與陳眉公〉）下列選項的敘述，何者最符合本文意旨？",
+    "options": [
+      "朋友相見即是有緣，交淺言深，不必恨晚",
+      "朋友貴在遇合得時，心性相契，才情相得",
+      "知己可遇而不可求，得之我幸，不得我命",
+      "知己彼此心目相發，總是有相見恨晚之感"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "「有一種多情，是愛的對象很單純專一，可說是愛得既真且深，又癡又迷，但卻不知道要考慮對方的立場，或其他因素，而一味的往牛角尖鑽，既不懂如何表達情感，也不懂得迴旋的道理；一旦受到挫折，常常由愛生恨、牽連糾纏，甚至做出難以置信的行為。敢愛、敢恨的人，雖然很有性格，但終非正常的愛情，應把那深深的情感化成無限的關懷與成全。」 下列選項，何者最能呼應引文的意旨？",
+    "options": [
+      "放情者危，節欲者安",
+      "發乎於情，止乎於禮",
+      "永結無情遊，相期邈雲漢",
+      "無情不似多情苦，一寸還成千萬縷"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "「文學經典將文本和生命內容化簡為繁，作為讀者，我們有必要從細讀裡體會想像的或存在的人生經驗，而且我們的詮釋絕不『從一而終』。……閱讀、批判社會、政治現象所肇生的各種『文本』又何嘗不是如此？我更要說，越是因為名嘴現象、博客文化、口號政治將我們的溝通、判斷能力簡化為順口溜或冷笑話，接觸經典越應該成為一種自覺的訓練，或是雖不能至、心嚮往之的目標。唯有掌握語言的有機性和綿密的衍生、想像特質，我們才能理解權威、知識和符號之間合縱連橫的關係，閱讀才能成為一種批判性的創造過程。明乎此，文學經典可以成為公民教育基礎的一課。」 依據本文，閱讀文學經典的正確態度是：",
+    "options": [
+      "將文學文本和生命內容去蕪存菁",
+      "閱讀必須成為批判性的創造過程",
+      "閱讀文學經典必須依據權威的詮釋",
+      "單一化詮釋文學、政治與知識之關聯性"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "「資本主義的管理學裡，有一條『彼得原則』，意思是在層級組織裡鼓勵大家往上爬，如果有個修車工彼得很會修車，不久他就會升去當工頭。但他很可能不擅長管理其他修車工，因此表現不好，那麼他就不再有晉升機會。如果他工頭也當得很好，則又會被提升去當經理，一直升到一項他實在做不來的位置上，就不升了。」 根據本文，下列選項何者符合「彼得原則」？",
+    "options": [
+      "工作晉升代表自己的能力超越同層的其他人",
+      "升到最高位置方可證明自己最好的工作能力",
+      "努力表現就會晉升到最適合自己的工作位置",
+      "每個留在位置上的人都剛好是最適合的人選"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-108-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "「醜陋面不是不可以寫，因為人生不如意事十常八九，若故意報喜不報憂，一味歌頌美好，是有違寫作良知的。正為這點良知，著筆之際，必是滿心的同情悲憫，務求喚起世人關懷，以求改進，則其作品必不至產生負面作用。若是有意對暴力色情繪聲繪色，以滿足讀者好奇心與某方面的欲望，而引誘心智未成熟青少年讀者誤入歧途，認為文學的真面貌原當如此。這樣的作者，縱能譁眾取寵於一時，而在真正文學的國度裡，是沒有地位的。」 根據上文，下列選項敘述正確的是：",
+    "options": [
+      "暢銷書的作者其實沒有真正的文學地位",
+      "寫作良知是滿足讀者的好奇心與求知欲",
+      "具暴力色情與人性寫實的作品不值一顧",
+      "有使命感的作者會懷抱善意書寫醜陋面"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0507&q=1",
+    "id": "clerk-civil-procedure-108-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "甲以乙為被告，向約定債務履行地的 A 地方法院起訴，請求清償借款新臺幣（以下同）60 萬元。當事人經 A 地方法院合法送達言詞辯論通知書後，於指定的言詞辯論期日卻均無故未到場。於其後六個月期間內，當事人未曾再向 A 地方法院為任何訴訟行為，直至甲再度以乙為被告，向乙的住所地所在之 B 地方法院起訴，請求清償同一筆的 60 萬元借款。被告乙得否以甲重複起訴為有效抗辯？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0507&q=1",
+    "id": "clerk-civil-procedure-108-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲向 A 地方法院起訴乙，請求給付買賣價金新臺幣（以下同）100 萬元。言詞辯論中，乙主張對甲有 60 萬元的借款債權，並預為抵銷抗辯。A 地方法院以乙未能證明其對甲的債權，判決乙應給付甲 100 萬元，乙對此判決提起的第二審上訴，因逾越上訴期間而受裁定駁回確定。數個月後，乙以甲為被告，向甲住所地所在的 B 地方法院起訴，請求清償該筆在前訴主張的 60 萬元借款，並主張有證人丙得證明該債權。對於乙的起訴，B 地方法院應如何裁判？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0507&q=1",
+    "id": "clerk-criminal-procedure-108-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "甲於臺中犯竊盜罪，又於臺南犯重傷罪。臺南地方檢察署的檢察官乙偵查後，發現竊盜罪及重傷罪皆為甲所犯。檢察官乙認所蒐集到的證據雖然不足以證明重傷罪之成立，但已經可以說服法院就竊盜罪作成有罪判決，於是就重傷罪作成不起訴處分，並向臺南地方法院提起竊盜罪的公訴。請問，臺南地方法院應如何判決？請附詳細理由說明之。（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0507&q=1",
+    "id": "clerk-criminal-procedure-108-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "甲聽信乙銀行的廣告，購入大量乙銀行推出之金融商品，不料因經濟情勢巨變，慘賠收場。甲認為當初為乙銀行所詐欺，於是對乙銀行提出詐欺罪的自訴。試問，法院應如何判決？請附詳細理由說明之。（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0406&q=1",
+    "id": "clerk-administrative-law-108-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "交通裁決機關針對吊扣駕駛執照（以下簡稱駕照）或汽車牌照之裁處，於裁決書之處罰主文欄內載明吊扣駕照時間，並記載應繳送期日；逾期不繳送者，吊扣期間加倍，另記載應於第二次繳送期日前繳送；其次復記載若未於二次繳送期日前繳送者，自吊銷日起吊銷駕照，並逕行註銷駕照，及駕照吊（註）銷後一定時間內不得重新考領或請領之意旨。於繳送期日屆至後，裁決機關並未另為處分並送達與受處分人，逕行吊銷並註銷駕照。試問，裁決機關逕行吊銷並註銷駕照之效力為何？（25 分）參考法條：道路交通管理處罰條例第 65 條：「（第 1 項）汽車所有人、駕駛人違反本條例，經主管機關裁決書送達後逾三十日之不變期間未向管轄之地方法院行政訴訟庭提起撤銷訴訟，或其訴訟經法院裁判確定，而不繳納罰鍰或不繳送汽車牌照、駕駛執照者，依下列規定處理之：一、經處分吊銷汽車牌照或駕駛執照者，由公路主管機關逕行註銷。二、經處分吊扣汽車牌照或駕駛執照者，按其吊扣期間加倍處分；仍不依限期繳送汽車牌照或駕駛執照者，吊銷其汽車牌照或駕駛執照。三、罰鍰不繳納者，依法移送強制執行。」",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0406&q=1",
+    "id": "clerk-administrative-law-108-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲為警專學生，依據入學時招生簡章規定，須於畢業後兩年內通過警察特考而任職分發，否則應賠償在校所有費用。甲於畢業後第三年始通過警察特考，爾後分發任職。請附具理由回答下列問題：（一）甲與警專所為「應於畢業兩年內通過警察特考並分發任職，否則應賠償在校所有費用」之約定，法律性質為何？（5 分）（二）甲於第三年通過警察特考，其應如何主張始能縮減賠償範圍？（10 分）法院對賠償範圍應如何認定？（10 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0406&q=1",
+    "id": "clerk-administrative-law-108-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "A 軍校因其軍校生退學所衍生之公費返還事件，於民國 100 年間與軍校生家長甲簽訂退學賠償金協議，並經由法院公證處公證，且約定得為強制執行之執行名義。A 軍校遲至民國 101 年 2 月始持上開公證書向地方法院民事執行處聲請強制執行。而法院民事執行處亦誤為民事強制執行事件而予以執行，並核發債權憑證。嗣於民國 107 年 11 月間 A 軍校再持上開民事執行處所核發之債權憑證，向地方法院行政訴訟庭聲請強制執行。試問：（一）A 軍校持民事執行處所核發之債權憑證聲請強制執行，地方法院行政訴訟庭應如何處理？（8 分）（二）地方法院行政訴訟庭應以何者作為執行名義，續行執行程序？（10 分）（三）地方法院行政訴訟庭調取相關卷證後發現，執行名義已逾 5 年請求權時效，應如何處理？（7 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 108,
+    "gregorianYear": 2019,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108130&c=201&s=0406&q=1",
+    "id": "clerk-administrative-law-108-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "訴願人依訴願法第 2 條規定提起訴願，受理訴願機關未為決定前，應作為之機關已作成行政處分，但訴願人仍不服處分決定，受理訴願機關得否逕依訴願法第 82 條第 2 項規定駁回訴願？試申論之。（25 分）參考法條：訴願法第 2 條：「人民因中央或地方機關對其依法申請之案件，於法定期間內應作為而不作為，認為損害其權利或利益者，亦得提起訴願。前項期間，法令未規定者，自機關受理申請之日起為二個月。」 第 82 條：「對於依第二條第一項提起之訴願，受理訴願機關認為有理由者，應指定相當期間，命應作為之機關速為一定之處分。受理訴願機關未為前項決定前，應作為之機關已為行政處分者，受理訴願機關應認訴願為無理由，以決定駁回之。」",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "作文",
+    "prompt": "網路上曾流傳一部短片，有隻夜鶯撿拾人類扔棄的麵包，牠本來大可一口吞食，但夜鶯選擇以此為餌捕魚。看著魚群過來爭食，牠靜靜的等待。魚兒太大太小牠都不要，耐心的等待最肥美的一尾。人的一生，是否也要學習夜鶯的等待？但是，俗話又說：「捷足先登」，似乎意味著等待也可能坐失良機。然則究竟等待為宜？抑或不等待為宜？抑或因時因事而採不同的作為？請以「等待」為題，作文一篇，依據自己的經驗與體會加以論述。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "公文",
+    "prompt": "（一）據屏東縣警察局統計，截至今年 7 月中旬，小琉球已有 5 起遊客因觸摸海龜而函送法辦之情事。綠蠵龜為行政院農業委員會公告之瀕臨絕種保育類動物，依野生動物保育法第 3 條第 4 項定義「騷擾：係指以藥品、器物或其他方法，干擾野生動物之行為。」若有上述違反公告管制之行為者，依罰則第 50 條規定，處新臺幣 5 萬元以上 25 萬元以下罰鍰。（二）有「綠蠵龜樂園」之稱的屏東縣小琉球，位於臺灣西南方海域，擁有瑰麗的珊瑚礁群、生態系豐富的潮間帶，及數量眾多的海龜，每年吸引大批遊客，為當地觀光帶來極為可觀的收益。試擬海洋委員會致各直轄市、縣（市）政府函，行銷地方觀光之際，請加強對所屬海洋風景區宣導工作，落實海洋環境教育推廣，以保護海洋生態與海洋生物的安全。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "清朝康熙帝晚年，發生江南鄉試科場舞弊案：副主考官趙晉受賄十萬兩銀子，主考官左必藩知情不報。舉子群情激憤，將考場匾額上的「貢院」二字，塗改成「賣完」。市井更流傳一副對聯：「左丘明雙目無珠，趙子龍一身是膽。」《左傳》的作者左丘明是個瞽者，上聯就是諷刺「左」必藩對副考官受賄□□□□；下聯則是諷刺「趙」 晉□□□□。依據文意，□□□□最適合填入的詞分別是：",
+    "options": [
+      "視若無睹／神通廣大",
+      "魚目混珠／斗膽包天",
+      "短視近利／鋌而走險",
+      "視而不見／膽大妄為"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "同事結婚，下列選項何者是合適的對聯？",
+    "options": [
+      "盟書早訂三生石，綵筆新開五色花",
+      "麻姑酒滿杯中綠，王母桃分天上紅",
+      "江山秀色歸新宇，奎璧清輝映畫堂",
+      "室有芝蘭春自永，人如松柏歲長新"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "甲、不效艾符趨習俗，但祈蒲酒話昇平乙、東風夜放花千樹。更吹落、星如雨丙、未必素娥無悵恨，玉蟾清冷桂花孤以上詩詞所寫節日，對應的飲食風俗依序是：",
+    "options": [
+      "湯圓／粽子／月餅",
+      "粽子／湯圓／月餅",
+      "湯圓／月餅／粽子",
+      "粽子／月餅／湯圓"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "上醫醫未病之病，中醫醫欲病之病，下醫醫已病之病。思以謂知病於未病之前者，此上智之所能也。知病於欲病之初者，此中智之所及也。若夫已病而求醫，則常情同然，不必論其智不智也。（孫思邈《千金寶要》）下列敘述，合乎本文旨意的是：",
+    "options": [
+      "對症下藥為下智",
+      "勇於抗病乃上智",
+      "同情病患是中醫",
+      "未雨綢繆屬上醫"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "國多財，則遠者來；地辟舉，則民留處；倉廩實，則知禮節；衣食足，則知榮辱。（《管子．牧民》）下列選項，與上文旨意最接近的是：",
+    "options": [
+      "先求經濟繁榮，再談道德禮法",
+      "先求擴大疆土，再求造福百姓",
+      "衣食自給自足，經濟自然繁榮",
+      "經濟繁榮、道德禮法難以兼顧"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "居家之道，可少有餘財，多財則終為患害。又不可過於安逸偷惰。如由新宅至老宅，必宜常常走路，不可坐轎騎馬。又常常登山，亦可以練習筋骸。仕宦之家，不蓄積銀錢，使子弟自覺一無可恃，一日不勤，則將有饑寒之急，則子弟漸漸勤勞，知謀所以自立矣。（《曾文正公家書》）下列選項，最合乎本文意旨的是：",
+    "options": [
+      "淡泊名利，運動強身",
+      "為人廉潔，自立自強",
+      "勞動筋骨，勤儉持家",
+      "儉以養廉，直而能忍"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "有客至，主人具蔬食，客不悅。主人謝曰：「家貧市遠，不能得肉耳。」客曰：「請殺我所乘之騾而食之。」主人曰：「君何以歸？」客指階前之雞曰：「我借君之雞乘之而歸。」（俞樾《俞樓雜纂》）根據上文，「我借君之雞乘之而歸」一語的含意，下列何者詮釋最為適切？",
+    "options": [
+      "客人討好主人，阿諛奉承",
+      "客人有所請求，強人所難",
+      "客人諷刺主人吝嗇而且虛偽",
+      "客人謙恭有禮，不斤斤計較"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "「大仲馬和一位年輕的政客發生齟齬，兩人爭吵不斷，最後吵得實在太兇了，竟相約決鬥來解決問題。這兩個槍法神準的人，連決鬥的方式也各執己見，最後中間人實在覺得煩了，決定要兩人抽籤，輸的人要向自己開槍。抽籤的結果是大仲馬輸了。只見他手裡拿著槍，嚴肅地走進另一間房關上房門。片刻之後，槍聲真的響起，原本期待和不期待的人全衝向房門。一開門，只見大仲馬手裡拿著槍，槍口還冒著煙，表情失望地說：『各位，最遺憾的事情發生了，我沒有打中目標。』」 依據上文，下列選項何者最符合文意？",
+    "options": [
+      "事事如棋局局新",
+      "輸贏乃兵家常事",
+      "不是冤家不聚頭",
+      "用幽默面對失敗"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "「我覺得月亮美，無論掛在什麼地方都美。我享受月亮的美，其實也就是享受二十四萬英里的『距離』的美。我們也應該用這個距離來看人生。我應該解釋什麼叫『二十四萬英里的距離』。那個『距離』，就是只看得見柔和的光輝，只看得見脂肪光澤，全然看不見『坑坑窪窪』的『距離』。懂得選取這樣的距離，那麼，你就能看出來月亮雖然也有醜陋的『坑坑窪窪』的一面，但是它也有晶瑩皎潔的一面；坑坑窪窪是真的，晶瑩皎潔也是真的。我們沒有理由拿那個真來『否定』這個真。」 根據上文，下列選項何者不符合文意？",
+    "options": [
+      "距離的遠近產生不同美感",
+      "缺陷的人生也可以很美麗",
+      "美麗的底下是無比的醜陋",
+      "真實的世界會有很多面向"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-109-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "「我大清早起，站在人家屋角上啞啞的啼。人家討嫌我，說我不吉利；我不能呢呢喃喃討人家的歡喜！天寒風緊，無枝可棲。我整日裡飛去飛回，整日裡又寒又饑。我不能帶著鞘兒，翁翁央央的替人家飛；不能叫人家繫在竹竿頭，賺一把小米！」 根據上文，下列選項最符合其意旨的是：",
+    "options": [
+      "不求有功，但求無過",
+      "尺有所短，寸有所長",
+      "冰炭不言，冷暖自明",
+      "寧鳴而死，不默而生"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=109130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0506&q=1",
+    "id": "clerk-civil-procedure-109-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "甲以乙為被告，向管轄法院起訴，主張：A 地為甲所有，乙未經甲之同意，擅自於 A 地上興建 B 屋，爰依所有權所生之物上請求權，請求判命乙拆除 B 屋並返還 A 地等語。乙則提起反訴，主張：A 地及 B 屋均為乙所有，甲無權訴請拆屋還地，爰請求判決確認 A 地及 B 屋均為乙所有等語。試問：（一）乙之反訴有無違反重複起訴禁止原則？（10分）（二）甲抗辯乙之反訴欠缺確認利益，有無理由？（15分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0506&q=1",
+    "id": "clerk-civil-procedure-109-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲以乙、丙為被告，主張：甲持有由乙簽發、丙背書、面額為新臺幣（下同）300萬元之支票1紙（下稱系爭支票），屆期提示未獲付款，爰依票據法律關係，請求判命乙、丙連帶給付300萬元等語。乙抗辯：系爭支票上發票人印文雖為真正，惟非伊所蓋用，伊不負發票人責任等語。丙則抗辯：伊未於系爭支票背書，該背書印文亦非真正，甲不得請求伊給付票款等語。試問：（一）關於甲所主張系爭支票係由乙簽發及丙背書之事實，法院應如何分配舉證責任？（15分）（二）第一審法院為甲全部勝訴之判決，僅丙提起上訴，仍抗辯其未於系爭支票背書，不負票據責任等語，則第二審法院應否就甲對乙之請求部分為審判？（10分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0506&q=1",
+    "id": "clerk-criminal-procedure-109-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "甲住臺北市，於臺北市犯強盜罪後，由家住高雄市之友人乙，將甲藏匿於其高雄之別墅中，不久為警查獲。甲被臺北地方檢察署檢察官，以犯刑法第328條強盜罪向臺北地方法院提起公訴；乙被高雄地方檢察署檢察官，以犯刑法第164條藏匿人犯罪向高雄地方法院提起公訴。請詳附理由說明高雄地方法院是否得合併審理甲之強盜罪？（25分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0506&q=1",
+    "id": "clerk-criminal-procedure-109-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "甲男、乙女為男女朋友，某日因故爭吵，甲將乙推倒，致乙受傷，乙遂至醫院診斷結束後，請醫師開具診斷證明書。乙合法告訴，經檢察官偵查終結，向管轄法院提起公訴。法院審理時，檢察官提出該診斷證明書，欲證明甲之傷害行為。惟甲之辯護人主張，該診斷證明書是傳聞證據，並無證據能力。請詳附理由說明辯護人之主張是否有理由？（25分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0406&q=1",
+    "id": "clerk-administrative-law-109-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "某甲係臺北地檢署委任第四職等至第五職等三等書記官，其前應106年公務人員薦任升官等考試及格，自107年1月起取得薦任第六職等之任用資格。依法務部實施人事責任制度要點第3點及第5點規定，臺灣高等法院以下各級法院及其分院檢察署書記官之任免案，係由高檢署檢察長決定。107、108年臺北地檢署考量某甲考績（等次）仍有改善空間，故未建請高檢署陞任其為該署薦任第六職等至第七職等二等書記官。嗣109 年5月臺北地檢署審認某甲工作表現呈穩定進步趨勢，以派免建議函 A，建請高檢署核派其為二等書記官，同年6月高檢署以 B 函函復予以緩議並會請某甲知悉。某甲另於109年6月以申請書向高檢署請求自107年陞任為二等書記官，經該署於109年7月以 C 函函復重申上開該署 B 函之意旨予以緩議。某甲不服上開高檢署 B 函及 C 函，認 B 函未於109年陞任其為二等書記官，C 函否准其請求自107年陞任為二等書記官之申請，於 109年7月25日向公務人員保障暨培訓委員會提起復審，主張 B、C 二函均違法侵害其陞任之權利，請求撤銷該二函。試問：B、C 二函之法律性質與效力為何？某甲之主張是否有理由？（25分） 【參考法條】 司法人員人事條例第1條：「司法人員人事事項，依本條例之規定；本條例未規定者，適用其他有關法律之規定。」 公務人員陞遷法第7條第1項：「各機關辦理本機關人員之陞任，應注意其品德及對國家之忠誠，並依擬陞任職務所需知能，就考試、學歷、職務歷練、訓練、進修、年資、考績（成）、獎懲及發展潛能等項目，訂定標準，評定分數，並得視職缺之職責程度及業務性質，對具有基層服務年資或持有職業證照者酌予加分。必要時，得舉行面試或測驗。如係主管職務，並應評核其領導能力。」",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0406&q=1",
+    "id": "clerk-administrative-law-109-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "某甲為臺灣臺南地方法院候補法官，其於108年間，數次前往臺南市某海產店 A，排隊領取未限定領取資格之便當，並曾於 A 遇見某乙，某乙上前與某甲攀談其承辦案件之內容且發生爭執，某甲未慎思某乙何以至 A 並與其接觸，嗣後仍再次前往 A 排隊領取便當，同年11、12月間某乙檢附某甲於 A 領取便當之照片8張等相關資料，向臺南地方法院檢舉某甲有不當排隊領取愛心便當行為，案經臺南地院政風室奉示調查屬實，並經該院法官自律委員會審議後，認某甲所為前開行為易損及司法形象，未謹言慎行，廉潔自持，有違法官倫理規範，乃依法官法第21條第1項第 1款及法官法施行細則第17條第1項規定，由臺南地院院長於109年7月於院長室以口頭命令促其注意。某甲不服，認該口頭命令違法且不當，主張其無違反法官倫理規範規定而有自律之必要情事，擬提起救濟請求撤銷臺南地院對其作成之職務監督處分。試問：依我國現制及實務，某甲應如何提起救濟？其主張是否有理由？（25分） 【參考法條】 法官法第1條第2項：「法官與國家之關係為法官特別任用關係。」 第20條：「法官之職務監督，依下列規定：……十、地方法院院長監督該法院及其分院法官。……」 第21條第1項第1款：「前條所定職務監督權人，對於被監督之法官得為下列處分：一、關於職務上之事項，得發命令促其注意。……」 各級法院法官自律實施辦法第2條第1項：「各級法院及其分院應設法官自律委員會……，辦理本院法官之自律事件，以維護法官優良之品德操守及敬業精神，提升司法形象。」 第6條第1項：「各級法院院長或法官三人以上，於本院法官有下列情形之一者，得檢具相關資料，送交自律會審議：……十、其他違反法官倫理規範而有自律之必要。」 第12條第1項：「自律會經審議認為法官有第六條第一項各款所列情形者，得為下列決議：一、建議職務監督權人依本法第二十一條第一項第一款發命令促其注意。……」 法官倫理規範第5條：「法官應保有高尚品格，謹言慎行，廉潔自持，避免有不當或易被認為損及司法形象之行為。」 法官法施行細則第17條第1項：「本法第二十一條第一項第一款所稱發命令促其注意，指職務監督權人對於被監督法官以口頭或書面給予指示、糾正、飭令注意或以其他適當方式為之。」",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0406&q=1",
+    "id": "clerk-administrative-law-109-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "衛生福利部依個人資料保護法第27條第3項規定訂定之「護理機構個人資料檔案安全維護計畫實施辦法」，請說明本辦法之法律性質、意涵及效力。（25分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 109,
+    "gregorianYear": 2020,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=109130&c=201&s=0406&q=1",
+    "id": "clerk-administrative-law-109-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "銓敘部108年5月1日部法一字第1084812105號函：「公務員服務法（以下簡稱服務法）第14條第1項規定：『公務員除法令所規定外，不得兼任他項公職或業務。其依法令兼職者，不得兼薪及兼領公費。』本部87年4月 16 日台法二字第 1611027 號書函 、本部 99 年 3 月 31 日部法一字第 0993185240號書函意旨，公務員無論係奉派或應邀至傳播媒體參加節目或專訪，倘與本職業務有關，且經服務機關認屬執行其本職業務之一部分，即與服務法第14條兼職規定無涉，又既屬執行本職業務，公務員本不得另為支薪。上開所稱不得支薪，當係指不得支領具週期性質、經常性性質（如以週薪、月薪等核計方式給與）之金錢給付。」請說明本號函之法律性質、意涵及效力。（25分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "作文",
+    "prompt": "生而為人，在不同的時間、地方、工作上，總會扮演一種以上的不同角色。早上醒來被孩子叫「爸爸早」的父親，轉過身是孩子的媽的丈夫；手機來電時是上司的下屬，傳訊交辦事情時又是下屬的上司。這樣的身分轉換和角色扮演，有時讓我們左右為難，無以應對；有時則讓我們哭笑不得，難以適應。請以「我在生活中扮演的角色」為題，寫出你印象最深的經驗和感悟。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "公文",
+    "prompt": "因應嚴重特殊傳染性肺炎（COVID-19）疫情，衛生福利部針對國內直轄市、縣（市）政府辦理防疫工作，頒布相關防疫須知，要點如下： (一) 為落實社區防疫工作，請輔導各據點參照「因應嚴重特殊傳染性肺炎（COVID-19）社區防疫人力工作指引」，辦理各項防疫措施，提供服務對象所需防疫資訊、衛教宣導及心理支持關懷。 (二) 為防杜嚴重特殊傳染性肺炎（COVID-19）擴散，請依據「有確定病例之應變處置建議」，輔導轄內據點加強志工、服務對象體溫量 測及健康狀況管理，並落實呼吸道衛生與咳嗽禮節相關宣導。請根據以上資料，試擬衛生福利部致各直轄市、縣（市）政府函。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "下列為志明寫給同班同學春嬌的問候信件：春嬌同學 ① ：畢業以來一直沒有機會再見面，不知妳最近過得如何？甚為想念！聽其他同學說妳計畫參加國家考試，現正為考公職作準備，每天利用下班時間讀書，一方面還得照顧生病父親，非常辛苦。知道妳能一步步往目標踏實邁進，我也替妳感到高興。希望妳能克服困難，金榜題名，我會在背後支持妳，幫妳加油！紙短情長，莫盡萬一。 ② ，敬請 ③ 志明 ④ 八月十五日下列填入的語句，何者正確？",
+    "options": [
+      "①可填「惠啓」",
+      "②可填「肅此」",
+      "③可填「禮安」",
+      "④可填「謹啟」"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "「世人對某些戰爭慘況的知覺其實是建構出來的，而建構的工具主要是攝影機記錄的照片。它於黑暗中亮起，經由許多人分享，然後從眼前消失。與文字紀錄相反— —文章是以其思想、典故和辭藻的複雜性去吸引小眾或大眾——照片只有一種語言，而且是說給所有人聽。」 根據上文，下列關於照片和文章的敘述何者正確？",
+    "options": [
+      "照片和文章都能建構戰爭慘況，並且告訴世人和平的重要性",
+      "世人皆透過攝影機瞭解戰爭慘況，因文章難以達到相同效果",
+      "照片用單一語言記錄戰爭慘況，而文章可表現戰爭不同面向",
+      "世人藉不同媒體認識戰爭慘況，攝影和文章是最主要的管道"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "「人生之旅，也會面臨幾處峭壁。能攀登，就別有一番事業。否則，這片峭壁之下就是你所能到達的最高點，你可以在此逍遙一番，聆聽天籟，觀賞景物，然後離去。如果你記得東坡居士那首著名的〈水調歌頭〉，離去時還可對著此生未能攀登的峭壁之頂朗吟幾句：『我欲乘風歸去，惟恐瓊樓玉宇，高處不勝寒。起舞弄清影，何似在人間！』」 請問朗吟東坡詞的用意何在？",
+    "options": [
+      "自我鼓勵，再接再厲",
+      "既以告別，亦以自慰",
+      "表達未能登頂的遺憾",
+      "人生要放下心中執念"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "「仇英最著名的〈漢宮春曉〉，我讓我的機器人展圖細覽：『裝束華麗的美婦，各自像一二三木頭人，靜止在她們可能覺得仍在流動的時間裡，她們或蒔花、或折桂、或梳妝、或演奏樂器、或娉婷旋轉著跳舞、或正在刺繡、或餵食著屋外的孔雀、或正端坐讓畫師替自己畫像、或對弈下棋、或正在管束著小嬰孩』……我問我的機器人： 『你覺得她們美嗎？』……我的機器人猶豫地說：『不美吧。』我心裡偷偷噔了一聲。它是否又在我無所知之際，又進化了？這樣的提問，通常會造成 AI 它們的癱瘓： 『請提示：美的參數數據。』」 上文中關於人工智能（AI）的敘述，最不適合的是：",
+    "options": [
+      "對仇英的〈漢宮春曉〉評價不佳",
+      "評賞現代畫較評賞明代畫派準確",
+      "能運算數據，卻無法評斷人類藝術",
+      "須參考數據資料方能給出美的定義"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "「有位年輕人從算命先生那兒，聽說自己近日將會大禍臨頭，於是整天失魂落魄，四處奔走，終於找到一位可靠的智者。他向智者求教脫困之道。智者了解了年輕人的憂慮，就告訴他一個簡單消災的方法：要他到山裡去，找到一塊能發出溫熱的石頭，便可免掉自身的困厄。年輕人向大師道謝過後，立刻趕路上山。到了山中，他才發現遍地石頭都是冷冰冰的，一塊一塊石頭摸過去，心中頓感無比的絕望。摸過數千塊石頭後，年輕人終於頹然坐下，再也鼓不起勇氣去摸下一塊石頭是否能發出溫熱。坐了很久，懊惱又懊惱，年輕人突然發現自己所坐的地方，似乎不如起初坐下時的冰冷難耐。他馬上跳起身來，用冰涼的手去撿拾座位下的石頭，果然多數都能產生溫熱。這時，年輕人豁然開朗，終於知道怎麼改變自己的命運了。」 上文所表達的道理，與下列何者最接近？",
+    "options": [
+      "有志者事竟成",
+      "自助而後天助",
+      "真積力久則入",
+      "禍兮福之所倚"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "「但賣冰的走販，則不可能揹著冰箱在街上移動，於是會在木箱裡放一塊對摺的白布，將一根枝仔冰堆疊在摺布之間，以延緩融化的速度。有的小販還有帶上小板凳，成為街頭巷尾的移動餐廳。」 下列選項，何者最貼近文中的旨意？",
+    "options": [
+      "物質匱乏時，冰棒即是美食",
+      "有充沛體力，才能四處叫賣",
+      "即便很困頓，也得逆境求生",
+      "發揮小巧思，有效運用資源"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "「世間有形形色色的人，從事形形色色的工作，產生了形形色色的結果。有人羨慕明星的風采，但掌聲後面有多少辛酸？有人羨慕首長的地位，但權位後面有多少犧牲？有人羨慕文學家的才華，但傳世之作後面又有多少掙扎？有人羨慕企業家的財富，但投資後面又有多少風險？」 根據上文，下列選項最切合主旨的是：",
+    "options": [
+      "一將功成萬骨枯",
+      "成功總須付出代價",
+      "樂在工作是成功的原動力",
+      "功成名就背後都有不安的壓力"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "「滿山都沒有光，若是我提著燈走，也不過是照得三兩步遠；且要累得滿山的昆蟲都不安。若湊巧遇見長蛇也衝著火光走來，可又怎辦呢？再說，這一點的光可以把那照不著的地方越顯得危險，越能使我害怕。在半途中，燈一熄滅，那就更不好辦了。不如我空著手走，初時雖覺得有些妨礙，不多一會，什麼都可以在幽暗中辨別一點。」 下列選項，何者不符合上文文意？",
+    "options": [
+      "人當與自然環境冥合，關注萬物的需要",
+      "長期處於黑暗，會懼怕光明，十分危險",
+      "刻意人為，反會騷擾大自然，招致傷害",
+      "坦然面對困境，終能適應並且克服難關"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "「生乳形成的是一個多元環境，各種不同菌類在這裡複雜互動，彼此影響也彼此牽制，如此一來，任何一種單項細菌要大量繁殖到對人體有害的地步，機會微乎其微。多元而混亂的環境，保證了每一種細菌、元素都在擁擠的自然情況下被中和緩解了，多元不只帶來多層次的口感，同時也取消了單一因素的破壞力。相對的，將所有細菌一網打盡的『乾淨』牛奶，雖然讓細菌很難進入，然而只要幾株細菌成功存活，就會快速繁殖。所以生乳製造的乳酪可能會比消毒牛奶做的乳酪更安全。」 根據上文，下列敘述何者最貼近旨意？",
+    "options": [
+      "適者生存，心思複雜者比單純的人更容易生存",
+      "少數服從多數，多數牽制少數，才能達到完美",
+      "多元文化的社會，比單一價值體系更穩定安全",
+      "安全之地最不安全，不安全之地才是最安全的"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-110-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "「情緒的產生是人對生活經驗的一種自然反應。若情緒過於劇烈，當下的認知／理性會完全失去作用，只能衝動地在『戰／逃／僵住不動（Fight／Flight／Freeze）』的反應中三選一，我稱之『情緒短路徑』。『短路徑』是情緒迅速反應的功能，無所謂好壞，適用一般生活選擇。而所謂的『情緒調適能力』則是『情緒－認知－情緒覺察 －後設認知－合適或想要的行為』的過程，這是『長路徑』。『長路徑』不符現實利益，但遇到重大事件卻很需要它——停下來，重新調整，再出發。」 關於情緒，下列敘述符合本文文意的是：",
+    "options": [
+      "情緒有害無益，情緒管理的目標在避免情緒產生",
+      "當情緒爆發時，迅速抽身離開現場是唯一的選擇",
+      "「短路徑」是人類先於認知與意識的本能反應，適用於任何狀況",
+      "「長路徑」需要長期自覺地自我監控，並藉觀察反思產生新認知"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=110130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0407&q=1",
+    "id": "clerk-civil-procedure-110-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "甲以乙為被告，向管轄法院起訴，主張：兩造共有 A 地，並已協議分割 A 地（下稱系爭分割協議），惟乙拒不履行該協議，爰依系爭分割協議之法律關係，請求判決命乙依系爭分割協議之內容辦理 A 地之分割登記。乙則提起反訴，主張：兩造就 A 地並未達成任何分割協議，惟兩造均不願繼續維持共有關係，爰請求法院判決將 A 地變價分割。試問：法院就 A 地之分割方法，應否受甲、乙所為訴之聲明之拘束？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0407&q=1",
+    "id": "clerk-civil-procedure-110-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲以乙為被告，向管轄法院起訴，主張：兩造簽訂買賣契約（下稱系爭契約），由甲以新臺幣（下同）100 萬元向乙購買 A 車，甲已合法解除系爭契約，爰依契約解除後之回復原狀請求權，請求判命乙給付 100 萬元予甲（先位之訴）；如法院認系爭契約未經合法解除，則依買賣之法律關係，請求判命乙交付 A 車（備位之訴）。第一審法院審理結果，認甲先位之訴為無理由，備位之訴為有理由，因而判命乙應交付 A 車予甲，並駁回甲之先位之訴。試問：（一）僅甲就第一審判決關於先位之訴部分提起第二審上訴時，第二審法院如認甲之上訴為有理由，應否就備位之訴為審判？（13 分）（二）僅乙就第一審判決關於備位之訴部分提起第二審上訴時，第二審法院如認乙之上訴為有理由，應否就先位之訴為審判？（12 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0407&q=1",
+    "id": "clerk-criminal-procedure-110-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "某銀樓之數金條遭竊，店家火速報警。警察認為甲涉有嫌疑，立刻前往甲宅，欲入內搜索。警察抵達甲宅時，因甲不在家，與甲同住之老母 A 前來應門，警察出示證件，並向 A 說明來意之後，詢問 A 是否願意讓警察入內搜索，A 允許警察搜索。（一）警察在甲宅客廳沙發下，發現一包黑色塑膠袋，裝有許多金條。試問：該包金條得否為證據？（15 分）（二）偵查中，檢察官獲知甲為原住民，且未選任辯護人，乃通知法律扶助機構指派律師為甲辯護。爾後，檢察官以竊盜罪起訴甲，向法院聲請簡易判決處刑。甲表示，自己沒有選任辯護人，審判長應依法指定律師為自己辯護。試問：甲之主張，有無理由？（10 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0407&q=1",
+    "id": "clerk-criminal-procedure-110-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "臺北地方檢察署檢察官對甲以組織犯罪防制條例之罪，向臺北地方法院提起公訴；案經臺北地方法院依通常程序審理，判決甲有罪，處 2 年 6 月有期徒刑，並宣告強制工作。甲對於臺北地方法院之有罪科刑判決，心服口服；但強制工作之部分，相當不以為然。（一）甲欲上訴，其上訴書狀應向何法院提出？甲之上訴書狀明示就強制工作部分不服，上訴審法院之審理範圍為何？（15 分）（二）甲收到上訴審法院審判程序之傳票後，卻後悔上訴，欲撤回之。甲得如何為之？（10 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0306&q=1",
+    "id": "clerk-administrative-law-110-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "甲於民國（以下略）108 年 10 月分發至某地方法院擔任四等書記官，工作態度良好，平日工作表現也受到同仁與主管之肯定，因此自許此一肯定也能反映在其年終考績中。惟甲之 109 年年終考績仍被考列為乙等，甲於收到考績通知書後，忿忿不平。試問：此一考績通知書之法律性質為何？甲若不服，應如何提起救濟？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0306&q=1",
+    "id": "clerk-administrative-law-110-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲為 A 市市民，107 年至 109 年被核定為第一類低收入戶，每月領取生活扶助金 1 萬 2800 元。惟 B 主管機關（以下稱 B 機關）於 110 年時發現甲所提供之財產資料有誤，經重新計算後 107 年至 109 年應核定為第二類低收入戶，每月生活扶助金 6800 元，遂發函撤銷甲 107 年至 109 年之第一類低收入戶之核定，改核定為第二類低收入戶。請問：依行政程序法之規定，B 機關應如何請求甲返還 107 年至 109 年所溢領之生活扶助金？經追繳後，甲若置之不理，拒絕返還溢領之金額，B 機關又應循如何之途徑進行追繳？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0306&q=1",
+    "id": "clerk-administrative-law-110-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "甲就某筆土地向乙機關申請建築執照，於取得建築執照後即進行施工。惟乙機關於甲施工後 6 個月始發現該申請建築之地點，有地震斷層帶穿越，該地點為禁止建築區域，遂撤銷甲之建築執照，並通知甲停止施工興建。試問：乙機關撤銷甲建築執照之行政行為的法律性質為何？乙機關要如何合法撤銷甲之建築執照？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 110,
+    "gregorianYear": 2021,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=110130&c=201&s=0306&q=1",
+    "id": "clerk-administrative-law-110-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "請依司法院釋字第 443 號解釋，說明「層級化法律保留體系」之內涵。並據此回答以下兩個行政行為是否有法律保留原則之適用？⑴為防治新冠肺炎（COVID-19），中央流行疫情指揮中心要求民眾外出時需要全程佩戴口罩。⑵在新冠肺炎（COVID-19）時期，政府為振興景氣與紓困，對經濟弱勢民眾由政府補助 1000 元發放三倍券。（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "作文",
+    "prompt": "人生不如意事，十常八九，現實生活充滿了各種誘惑與干擾，雖然會給我們增添許多困難，但也為我們提供了絕佳的磨練機會，轉個念，如果能善加利用，反而會促使我們更加進步。人生沒有過不了的坎，只有過不去的自己。英文諺語有「當上帝關了一扇門，同時會幫你開一扇窗」，機遇與挑戰並存，壓力與動力共生，所以危機就是轉機。請以「轉念」為題，作文一篇，闡述己見，文長不拘。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "公文",
+    "prompt": "近日發生多起國道夜間追撞車禍，在行車紀錄器曝光後，不少人都認為是因為少了路燈照明，才會不慎發生追撞。高公局對此表示，國道不普設路燈是出於安全性、經費、生態影響、用電量等綜合考量。依據《交通工程規範》僅在交流道、隧道、橋涵下、服務區、休息站、易肇事路段及其他經評估有必要設置處等地點設置路燈。路燈的設計主要不是為了汽車，是為沒有照明能力的非機動車和行人設計的，高速公路不是普通道路，它完全禁止行人、非機動車進入，所以汽車自帶的大燈在夜間行駛時，已經具備很好的照明效果，安裝路燈反而造成夜間行車安全的隱憂。高速公路的路燈因為有間隔，導致燈光的不連續性產生明暗相間的固定節奏，這節奏不僅會給人一種眩暈感，產生視覺疲勞，對用路人的視線是極大的干擾，增加了發生交通事故的機率。加上夜間行車的數量相對較少，如果去安裝路燈，鋪線路，安裝燈座，再加上人工費，後期損壞的維修費等等，將花費國家大量的財政收入。其實，汽車行駛在夜間的高速公路上只要利用車輛本身之車燈來作照明，並配合路面反光標記標鈕及相關交通工程設施，導引行車方向，已經提供符合安全之行車環境。用路人真正要留意的是行車保持安全距離，這樣才可以在緊急狀況下應變。而根據《道路交通安全規則》第 109 條第 1 項第 6 款規定，同向前方 100 公尺內沒有車輛時用路人可以開啟遠光燈，延長視線所及的距離，也同樣可以避免車輛追撞的意外。試擬交通部致高公局函：請加強宣導國道夜間行車正確的駕駛觀念，以避免車輛追撞意外事故的發生。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "永明收到一封書信的開頭提稱語為「膝前」，結尾敬語為「敬請福安」。按照永明與對方的關係，他回覆這封信時的末啟詞，下列何者最為妥適？",
+    "options": [
+      "手書",
+      "叩上",
+      "敬上",
+      "謹啟"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "下列選項中「」內的成語，何者使用不當？",
+    "options": [
+      "這位作家散文格調高雅，但詩歌則不甚精彩，可說「相形見絀」",
+      "他工作經驗豐富，可以獨當一面，真不愧有「吳下阿蒙」的美譽",
+      "林先生個性強悍，說話又十分急躁，常給人「咄咄逼人」的印象",
+      "我們面臨困境的時候千萬別氣餒，相信總有「否極泰來」的一天"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "關於下列報導標題，說明最恰當的是：",
+    "options": [
+      "一怒為紅顏，八拜之交反目成仇——親兄弟為了女子而鬧僵，關係破裂",
+      "不要怕吵架，衝突可以很美麗——找到適當的溝通方式，即可避免衝突",
+      "被迫中輟，自學多年終遇伯樂——中輟生浪子回頭，創業有成回饋鄉里",
+      "交通最優先，石虎閃一邊——縣市開闢產業道路，石虎生存空間被擠壓"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "「你能想像一群小男生小女生，書包擱在路邊，也不怕掉到河裡，也不怕鉤破衣服，更不怕破皮流血，就一腳上一腳下地直往樹的懷裡鑽的那副猛勁嗎？只因為樹上有蟬。蟬聲是一陣襲人的浪，不小心掉進小孩子的心湖，於是湖心拋出千萬圈漣漪如千萬條繩子，要逮捕那陣浪。」 根據上文，下列敘述最符合文意的是：",
+    "options": [
+      "爬樹捕蟬展現本事，所以孩子樂於冒險",
+      "蟬聲強烈吸引孩子，因此迫切想要捉住蟬",
+      "蟬聲觸動孩子回憶，捉住蟬彷彿便捕捉了過去",
+      "童年物質生活匱乏，爬樹捕蟬是孩子的玩樂天堂"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "「事實上，一個人的缺點正像猴子的尾巴，猴子蹲在地面的時候，尾巴是看不見的，直到他向樹上爬，就把後部供大眾瞻仰，可是這紅臀長尾巴本來就有，並非地位爬高了的新標識。」 根據上文，下列敘述最符合文意的是：",
+    "options": [
+      "沐猴而冠，虛有其表",
+      "爬得愈高，視野愈好",
+      "處高位者，尤貴自重",
+      "登高自卑，行遠自邇"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "「在路人與車陣的視線裡，茄冬的綠色印象很快就會薄淡了。但是在土地與年代的記憶裡，茄冬的根系已經糾纏那樣深密。老屋的壁角、小鎮的雜貨店前、農會的門口、大水溝的旁邊……，有人煙的地方就有茄冬，有茄冬就有四時的綠蔭，遮護著屋宇和過日子的人群。它一貫是那麼好性子，不挑不撿、素樸、容忍，悠悠生落著歲月。時代的巨輪輾過茄冬，輾過我們，生命也許碎裂了，回憶卻拓印下來。」 根據上文，下列敘述何者最切合作者對茄冬樹的情感？",
+    "options": [
+      "茄冬樹的生命況味，在回憶裡永遠鮮活",
+      "對現代人冷淡的對待茄冬樹，感到無奈",
+      "唯有土地與年代才能恆久的保存茄冬的生命",
+      "茄冬樹堅韌的生命力，觸發更多的生活情趣"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "「很長一段時間，貝多芬同時創作交響樂和鋼琴奏鳴曲。貝多芬在交響樂中將多種不同的器樂聲音，經由樂句、曲調、節奏、結構的安排，整合在一起，讓人聽不到個別的樂器，只領受到完整的交響聽覺經驗。他一試再試，甚至成功將人聲與器樂完美結合，天衣無縫。而貝多芬的鋼琴奏鳴曲卻試驗著要讓剛改良過的現代鋼琴，發出最多最豐富最複雜的聲音。明明只有一種樂器，卻讓它吟唱、怒吼、低誦、尖叫……。貝多芬這兩項超越人類日常經驗的極端試驗，獲致了驚人成果，使他進入 『偉大』的殿堂。」 下列選項，最接近文意的是：",
+    "options": [
+      "偉大的交響樂能化繁為簡，鋼琴奏鳴曲則以簡馭繁",
+      "特立獨行、標新立異，是進入音樂偉大殿堂的關鍵",
+      "貝多芬的偉大在於創作不懈，超越身體障礙的意志力",
+      "卓越偉大的貢獻，來自於不拘侷限而探向極致的嘗試"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "「蘇格拉底曾說，真正的哲學家歡迎死亡。死亡不是終結，而是轉折。人類既有情感也有理智。身為情感動物，我們會感動，會因失去親人而感傷，因為人死了就不可再生，永遠不復相見。因此，在面臨失去親人的痛苦時，我們會尋求慰藉。身為理智的個體，我們同時也明白虛幻、混沌、妄想並不能讓我們找到真正的安慰。我們應當站在一個清晰、理性的角度去追求真理，這樣才能獲得真正的安慰，這也是我們人類作為唯一理性的生物能夠獲得的。」 根據上文，下列選項何者最符合文意？",
+    "options": [
+      "死亡不是終結，火傳不知其盡",
+      "追求真理，方是人類的解脫之道",
+      "面對痛苦，適當的宣洩情緒有益身心",
+      "人類超乎萬物，是世上唯一理性的生物"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "「我始終認為我們這種接待朋友的方法是不正確的，我們似乎只應合了人心淺層的要求，而未曾應合深層的要求。生命的深層要求便是以生命相對，而不是只以言語相對。把人與人的交接只落在語言層面，或只以語言層面來表達，或認為必須以語言層面來表達，是世人的膚淺，是這個時代的膚淺，也更是現代的住宅格局所造成的膚淺：客人來了就是要在『客』廳，而『主』人必須在『客』廳陪著他，既然陪著，就不能枯坐，於是便搜遍枯腸找話題，結果是弄得主客都累，實際上變成了一種逐客的最好方法。」 下列選項，何者最符合作者理想中的「待客之道」：",
+    "options": [
+      "有一套正規的招待模式可供依循",
+      "主人與客人共同在廳堂聊天休憩",
+      "準備各式話題避免朋友感到冷落",
+      "心裡心外隨時騰出空間容納別人"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-111-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "「以人類為受試者的研究，涉及許多倫理與法律問題，而獲得受試者的『知情同意』 則為一關鍵的過程。『知情同意』的倫理基礎在於『尊重人格』原則，其所包含的兩種倫理意涵為：『人應該被視為自主的個體』來對待；以及『自主性較低的個人（如未成年者、精神病患等）應該受到保護。』依據此原則，研究中的知情同意要求讓有決定能力的受試者，在充分獲得並了解研究相關資訊的前提下，不受脅迫或他人影響而做出是否參與研究的決定。」 下列選項，何者最符合「知情同意」的倫理基礎？",
+    "options": [
+      "為原住民抽血檢驗，在獲得部落族長同意下，可將抽血樣本做為基因遺傳研究",
+      "受試者自願參與試驗與研究，中途可隨時拒絕參與或退出試驗，不必受到處罰",
+      "對受治者參與的試驗，須充分告知其所罹患的疾病，可獲得治癒與相關權益保障",
+      "對精神病患進行輔導與研究，為顧及患者情緒及自我傷害風險，故僅能告知家屬"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=111130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0407&q=1",
+    "id": "clerk-civil-procedure-111-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "甲被乙詐騙而交付新臺幣（以下同）80 萬元，在發現被詐欺後向乙表示撤銷付款之意思表示並要求返還 80 萬元，乙則不作回應。甲遂向管轄法院起訴，依侵權行為及不當得利規定，聲明請求被告乙給付原告甲 80 萬元。第一審法院僅依侵權行為規定判決被告應給付原告 80 萬元，並於判決理由表示其餘請求於結果無影響而不論。此判決因無人上訴確定，經過數月乙仍未償還甲分文。甲再次向管轄法院起訴，依不當得利規定，聲明請求被告乙給付原告甲 80 萬元。對此起訴，受訴法院應如何裁判？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0407&q=1",
+    "id": "clerk-civil-procedure-111-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲以乙為被告，起訴請求乙給付買賣價金新臺幣 100 萬元，被第一審臺灣臺中地方法院（下稱臺中地院）以無理由判決駁回。該判決書原採郵政送達方式，因甲的住處無人在家可收受郵差丙要送達的判決書，丙於今年 7 月 1 日（週五）將該應送達給甲的判決書寄存於附近 P 警局，並依法作成送達通知書，通知甲前往 P 警局領取。甲於 7 月 2 日始仔細閱讀該通知書，原打算週末去領取判決書，嗣後卻忘記此事。直到 7 月 23 日再看到通知書，才去領回判決書。甲於 8 月 3 日（週三）向臺中地院提出上訴狀，對此上訴，臺中地院應如何裁判或處置？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0407&q=1",
+    "id": "clerk-criminal-procedure-111-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "警察甲偵辦殺人案時，在現場發現可疑指紋，經比對發現是有多次詐欺前科的乙之指紋。甲遂逮捕乙帶回警察局問案。由於乙因詐欺案件曾數度進出同一警局，熟知刑事被告權利，甲於詢問乙之前未再行告知刑事訴訟法第 95 條之相關權利。由於乙面對甲的詢問均答稱「忘記了」、「沒印象」。甲不耐，大聲斥責乙「不要再說謊」，否則「後果會很嚴重」，乙因此自白承認殺人，後被以殺人罪起訴。審判中，乙主張其於警詢中自白並無證據能力。請分析乙之主張有無理由？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0407&q=1",
+    "id": "clerk-criminal-procedure-111-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "被告甲因涉嫌吸食毒品、竊盜、持有槍枝、詐欺等行為遭起訴，第一審法院審理後判決：甲吸食第一級毒品、竊盜之行為乃分別起意之行為，均有罪，其餘部分均無罪。經被告上訴後，第二審法院亦認為甲僅就吸食毒品、竊盜之行為有罪，惟第二審法院僅在判決主文記載甲吸食毒品部分有罪，對於竊盜部分，主文並未記載，但於判決之事實及理由欄中有論及法院認定甲竊盜有罪之事實與理由。試問：甲若欲對於法院判決請求救濟，應如何為之？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0306&q=1",
+    "id": "clerk-administrative-law-111-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "某機關派遣承辦人員自行送達應送達之行政文書，依該機關資料顯示，應受送達人甲之應受送達處所 A 為其住居所，承辦人員到達 A 處後按鈴，應門者為乙女，承辦人員表示送達行政文書給甲男之意，乙女表示理解，惟她不知甲男是誰，此 A 處所住居者並無甲男，請問承辦人員應如何送達？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0306&q=1",
+    "id": "clerk-administrative-law-111-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "道路交通主管機關將甲所居住的巷道設立成單行道，其方向正好與甲慣行車輛方向相反，造成其困擾。甲認為沒此必要，因為交通量不大，大家會車時小心一點即可。請問甲是否能依法提出行政救濟，請求撤銷主管機關將此巷道設立成單行道之決定（請附理由）？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0306&q=1",
+    "id": "clerk-administrative-law-111-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "甲機關將其對民眾機車排放廢氣之檢驗權限，依法委由私人經營之機車行乙，由其負責，丙將其機車送去乙機車行檢驗，不料乙之員工在檢驗過程中，不愼造成丙之機車損害，但乙表示沒賺多少錢，只願象徵性給予 500 元。丙對此甚為不滿，對其車損打算請求賠償，朋友告知，此為私人間之侵權行為，應依民法向乙請求賠償。丙則認為跟乙難說理，況此損害為政府要求之廢氣檢驗所生，故打算請求國家賠償。請問：丙對於乙於廢氣檢驗過程中不慎造成其車損，是否得請求國家賠償（請附理由）？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 111,
+    "gregorianYear": 2022,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=111130&c=201&s=0306&q=1",
+    "id": "clerk-administrative-law-111-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "假設公務人員考績法規定：「公務人員一次記兩大過免職，免職要件由主管機關定之。」主管機關依公務人員考績法之授權發布法規命令：「公務人員如有符合下列情形之一者，一次記兩大過：一、連續三次上班遲到者；二、……」。公務人員甲連續 3 次上班遲到，因此被所屬單位依上述法規命令記兩大過，再依公務人員考績法予以免職，甲不服此免職處分。經向法律專業人士諮詢，告知甲得尋求法律途徑救濟，理由為一、「免職處分應受嚴格法律保留之拘束」二、「若所依據之法律，就相關要件以抽象概念表示者，亦須符合一定要件，方符合法律明確性原則」請就此二理由，適度闡明之。（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "短文寫作",
+    "prompt": "人總是傾向於幫助自己認同的人。雖然說生命無分貴賤，然而無論是捐款還是當志工，總是因為某些人的處境打動了自己、跟自己涉足的領域有關，或出於某種自己做不到的補償心理。想想，為什麼當你有餘力的時候，會選擇捐款給流浪動物而非飢餓的孩子？為什麼去老人中心當志工而不想去假日淨灘？為什麼更願意去了解受暴婦女而非底層勞工？許多時候，助人並非出於嘉惠天下蒼生的道德情操，而是個人生命經驗的折射或偏好。我們心中自有一把尺，用來衡量那些人想幫，那些人「下次再說」。於是總有一群「不討喜」的人。不過，「討喜」其實也是一種社會資本。能夠成為一個討喜的人，通常是因為我們有機會不斷透過人際互動自我修正，同時有資源連上世界網絡，完成一種社會化的過程――我們知道做什麼會被討厭、如何打扮才能被接受、該怎麼說話別人才聽得進去、選擇什麼樣的職業叫做體面、發什麼樣的貼文可以偽裝成功，不過許多人並沒有這些條件。 ——改寫自葉靜倫，博客來 OKAPI 閱讀生活誌 2019 年 7 月 11 日依據上文，一般人幫助人的原因為何？你曾有幫助人的經驗嗎？是以何種標準選擇（討喜或不討喜）的呢？請以 350 字為限，說明你對上文助人標準的看法和自己的經歷。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "作文",
+    "prompt": "國際名廚江振誠接受訪問時表示：「很多人不知道我做菜的時候，雖然創作了無數的菜，但我沒有用過三色甜椒。原因很簡單，因為我不會用。我不知道這東西要怎麼煮才好吃。人生不是就像一道菜一樣，你不需要把所有食材都用上，也不需要用你不拿手的食材。我覺得每個人都有拿手和不拿手的，我們就專心把拿手的那件事情做好就行了。……我覺得身為一個料理人的 DNA，就是具備靈活度。因為廚師每天收到的食材都是不一樣的……，做出來的東西也會是不一樣的。」 每個人都有擅長和不擅長之處，若能專注在擅長的事情上，再適當地運用自身的優點，就有可能發展出獨特且具有特色的人生。請以 「炒一盤人生的好菜」為題，作文一篇，文長不拘。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "下列引號中的成語，使用不當的是：",
+    "options": [
+      "小明對公司的服務熱忱是「眾口鑠金」的",
+      "希望上級對此事秉公處理，「毋枉毋縱」",
+      "「泥古非今」，不通時變，究非處世之道",
+      "經過一番「旁徵博引」，使論點更具說服力"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "「單憑第一印象就評斷別人，有很多時候只是為了證明自己比對方優秀，但輕易的評斷別人，是一種傲慢，會拉開你和對方的距離，讓人們失去進一步了解對方其他面向的機會，無論事實是否如你所觀察的，都已經傷害到對方，也傷害了你自己。面對人際關係，具備同理心，是讓自己的內在可以慢慢熟成的第一步，體認世間沒有完美的人，何必以『追求完美』對自己和別人苦苦相逼。任由身邊的人在你面前原形畢露，你能看到他們最值得珍惜的一面，也不會因為現出了醜態就把他們封鎖。這樣，他們好過，你也好過！」 下列選項，何者為本文強調的重點？",
+    "options": [
+      "看透而不說破，容許人們在我眼中做自己，即使看到缺點，也能為對方著想",
+      "天生我材必有用，人各有所長，要跳脫他人的評價，盡情揮灑出自己的生命",
+      "經營人際關係，需要洞察細膩、判斷精準，才能在複雜的人事中，運轉自如",
+      "在人生舞台上，要成為傳遞快樂溫情的掌聲，不要成為烙印苦痛傷害的噓聲"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "「自己有才華、學識、德行、能力，這是個人的事，不見得需要別人了解；別人不了解我，不但不會減損我的才學與品德，還會促使我更努力於進德修業。重要的反而是需擔心自己不了解別人。年輕時，要尋找志同道合的朋友，怕錯過益友；年長時，要提拔正直有為的後輩；若不了解人，難免造成許多錯誤，悔之莫及。」 下列選項，何者與上文意旨最相近？",
+    "options": [
+      "人不知而不慍，不亦君子乎",
+      "不患人之不己知，患不知人也",
+      "不知命，無以為君子也。不知言，無以知人也",
+      "君子不可小知，而可大受也；小人不可大受，而可小知也"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "「把一株溫室的花朵，突然搬到大自然中去，讓它接受驕陽或狂風的考驗，假若它還是依戀過去的一套生活習慣，結果便只有快速枯萎下來；否則就必須放棄之前的嬌弱，另產生能適應新環境的生存能力，才能欣欣向榮。」 根據上文，下列選項不符合文意的是：",
+    "options": [
+      "轉境不轉心，才能適應一切",
+      "隨境遇改變，才有機會生存",
+      "隨遇而安，既來之，則安之",
+      "環境不會改變，但可調整自己"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "「事實上，所有生命理應都存在著界線。一片足夠面積的草原，只能提供一個獅子家族的獵捕；一株豐美的山刈葉，也只能給予相當數量的大琉璃紋鳳蝶庇護。偶爾，生命會以改變基因來挑戰生命之界。我想：只有人類以能力以『智慧』拆除、崩解這種生命界線吧！我們以工具超越了大地所擬定的契約，當印度宣示第六十億人口出現時，亦暗喻了這種能力的驕傲與可怖。大地有限，但擁有更高手段、更先進工具的人類族群，還能夠用各種方式擠壓出維持他們高品質生活的利基。於是，即使你是那個『幸運』的第六十億人，出生於印度的子民，仍然極難與加拿大、歐洲的子民享有同等的資源。問題是，為何其他人或生命，就必須選擇退縮自己的生命界線？當多數人認為電力不可或缺時，少數人就被迫收下一筆『回饋金』，承擔核電廠的夢魘；當多數人認為一條快速道路可以十五分鐘到淡水，少數人就必須失去午後在河道旁漫步的悠閒。何況，我們開一條道路、建一座電廠、築一堵水壩，從來沒有問過蛙、蛇、麋鹿、大琉璃紋鳳蝶的意見。道路、水壩、電廠，並不提供其他生命生活上的便利，但卻帶給他們生命基因中從未教導過如何躲避的災難。生命的界限，被抓緊利益的人群扭曲成一柄殺人自裁的利劍。」 依據上文，下列選項不符合作者所謂「生命界線」的是：",
+    "options": [
+      "活動空間",
+      "天然資源",
+      "生存權利",
+      "存活比例"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "承上題，作者認為「生命界線」漸漸消逝的主要原因是：",
+    "options": [
+      "基因改造",
+      "自然失衡",
+      "人為干預",
+      "物種突變"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "「在瑞士日內瓦，一個少年因遭逢家變，被送到一個雕刻師那裏當學徒，師傅對待他有如奴隸，使他心靈受到創傷，開始偷竊，並把懲罰視為抵銷罪行的方式。在這樣的處境中，讀書成了他唯一的慰藉。神遊於書中所描繪的理想或夢幻世界裡，喚起他內心更高尚的情操……他就是哲學家盧梭。他說：『兒童第一步走向邪惡，大抵是善良的本性被人引入歧途的緣故。』引入歧途的不只是他人的誘惑，還有成人的不義對待與不當懲罰。他曾設想：如果當初遇到的是好師傅，又會如何？那他很可能終生只是普通的雕刻師，而不是因對環境與自己人生的不滿，一再地反抗與突破，終至成為影響整個歐洲，乃至全人類的巨人。」 根據上文，下列選項何者最符合文意？",
+    "options": [
+      "蓬生麻中，不扶而直",
+      "人性本惡，其善者偽也",
+      "困於心，衡於慮，而後作",
+      "入鮑魚之肆，久而不聞其臭"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "生而眇者不識日，問之有目者，或告之曰：「日之狀如銅盤」，扣盤而得其聲，他日聞鐘，以為日也。或告之曰：「日之光如燭」，捫燭而得其形，他日揣籥，以為日也。日之與鐘籥亦遠矣，而眇者不知其異，以其未嘗見而求之人也。道之難見也甚於日，而人之未達也，無以異於眇。達者告之，雖有巧譬善導，亦無以過於盤與燭也。自盤而之鐘，自燭而之籥，轉而相之，豈有既乎？故世之言道者，或即其所見而名之，或莫之見而意之，皆求道之過也。（蘇軾〈日喻〉）下列選項，何者最接近眇者的行為？",
+    "options": [
+      "直情徑行",
+      "涉世未深",
+      "善自取譬",
+      "管窺蠡測"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "人當意氣相得時，以身相許，若無難事；至事變勢窮，不能蹈其所言而背去者多矣！（《說苑‧政理》）本文的寓意是：",
+    "options": [
+      "交友之道難矣",
+      "世事滄桑多變",
+      "輕諾者必寡信",
+      "意氣用事失和"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0103&q=1",
+    "id": "clerk-chinese-112-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "君子之教喻也，道而弗牽，強而弗抑，開而弗達。（《禮記‧學記》）此段文字旨在闡述教學應：",
+    "options": [
+      "持之以恆",
+      "學以致用",
+      "啟發教學",
+      "設定目標"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=112130&c=201&s=0103&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0407&q=1",
+    "id": "clerk-civil-procedure-112-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "甲列乙為被告，訴請乙給付甲新臺幣（以下同）100 萬元。甲主張乙於五年前向甲借款 100 萬元，約定返還期間為五年而乙逾期未還。對此，乙主張兩造原為好友，乙與甲協商後甲已同意「乙得延期半年清償」之請求。對此合意延期清償之事實，甲於準備程序中未為否認，亦未為明確之陳述。於歷經數次準備程序期日與言詞辯論期日後，甲於第一審之程序後階段（準備程序終結後）復爭執此合意延期清償之事實，並主張僅同意乙延期半個月清償。試問：如何評價甲之相關程序行為之效力？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0407&q=1",
+    "id": "clerk-civil-procedure-112-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲列乙為被告，向管轄法院起訴，先位聲明請求撤銷兩造之婚姻，後位聲明請求判決兩造離婚。甲起訴主張之事實與依據略為：「兩造結婚時，乙故意隱瞞其有重大精神病之事實致甲受詐欺而允婚，甲擬先依民法第 997 條之規定撤銷婚姻；若先位之訴無理由，則以乙之精神病已重大影響婚後兩造之生活，一年來已無共同生活之事實，而於後位聲明請求判准離婚。」第一審法院認為甲先位之訴為無理由，而後位之訴為有理由，判決兩造離婚，並駁回甲先位之訴。試附理由說明：（一）若甲對先位之訴提起上訴，乙未提起上訴，而第二審法院認為甲先位之訴為有理由時，應如何判決？（13 分）（二）若第一審之判決書於民國（以下同）112 年 7 月 3 日合法送達予兩造，甲於同年 7 月 20 日提起上訴，復又於同年 7 月 26 日撤回上訴，乙則未提起上訴。試問：本件之判決何時確定？（12 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0407&q=1",
+    "id": "clerk-criminal-procedure-112-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "被告甲涉犯貪污罪嫌（屬強制辯護案件），被檢察官依法聲請羈押，經辯護人與檢察官進行攻防程序，法官訊問後，認有羈押原因及必要性，裁定羈押。嗣後被告之辯護人具保，向法院聲請停止羈押，法院依法審查後，認為雖有羈押之原因但無羈押之必要，許可具保而停止羈押並命被告甲定期向檢察官報到。惟被告甲無正當理由未定期向檢察官報到，檢察官向法院聲請撤銷「原停止羈押之裁定」，再執行羈押，法官行再執行羈押審查庭時，僅被告及檢察官到庭進行攻防程序，法官訊問後，認有再執行羈押理由及必要性，裁定再執行羈押。試論法院行「再執行羈押」 之程序是否合法？理由安在？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0407&q=1",
+    "id": "clerk-criminal-procedure-112-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "檢察官以甲涉犯刑法第 320 條普通竊盜罪嫌提起公訴，審判期日時，到庭實行公訴檢察官更正法條為刑法第 321 條第 1 項第 1 款「侵入住宅竊盜罪」，法院審理結果，認為起訴書記載之犯罪事實，與審理結果認定之犯罪事實之間，具有同一性，對甲為刑法第 321 條第 1 項 1 款有罪判決，然未在判決理由書引用刑事訴訟法第 300 條。試論法院之判決是否合法？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0305&q=1",
+    "id": "clerk-administrative-law-112-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "A 國立大學教師甲於民國 111 年 8 月 1 日提出升等副教授之申請，經系教評委員會、院教評委員會、校教評委員會審議後，均決議該升等案不通過。在該評議程序中，系教評委員會及院教評委員會均僅通知甲師決議結果為不通過，得於一定期間內對決議結果提出申覆，但未有任何說明及理由，亦未附上會議紀錄。甲師主張系、院教評委員會應提出評議理由及會議紀錄，供其閱覽，否則無法提出對自己實質有利的申覆內容。該系、院教評委員會則認為其決議為行政內部擬稿，非行政處分，不必提供給甲師閱覽。試問：甲師之主張是否有理由？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0305&q=1",
+    "id": "clerk-administrative-law-112-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲為 A 大學之專任教師。A 大學於民國 105 年 9 月接獲乙學生通報甲師疑似性騷擾行為後，組成調查小組進行調查，作成調查報告，經該校性平會調查後於 105 年 12 月 20 日作成決議：甲師多次碰觸乙生隱私部位並寄發色情圖片予乙生，該行為已達性騷擾情節重大，依教師法第 14 條第 1 項第 5 款及第 4 項規定，予以解聘，於甲師解聘尚未生效前，移送該校教師評審委員會（下稱學校教評會）予以停聘。A 大學於 106 年 1 月 20 日以 B 函通知甲師並報請教育部同意。教育部以 106 年 6 月 13 日 C 函（下稱原處分）回復 A 大學，同意照辦。A 大學以 106 年 6 月 16 日函通知甲師，自該函送達之次日起生效。甲師不服原處分，提起訴願遭到駁回。甲師仍不服，提起行政訴訟。試問：行政法院得否推翻 A 大學性平會調查報告中對事實部分的認定？（25 分）附錄教師法條文：第 14 條教師有下列各款情形之一者，應予解聘，且終身不得聘任為教師：",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0305&q=1",
+    "id": "clerk-administrative-law-112-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "動員戡亂時期終止後，犯內亂、外患罪，經有罪判決確定。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 112,
+    "gregorianYear": 2023,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=112130&c=201&s=0305&q=1",
+    "id": "clerk-administrative-law-112-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "服公務，因貪污行為經有罪判決確定。三、犯性侵害犯罪防治法第二條第一項所定之罪，經有罪判決確定。四、經學校性別平等教育委員會或依法組成之相關委員會調查確認有性侵害行為屬實。五、經學校性別平等教育委員會或依法組成之相關委員會調查確認有性騷擾或性霸凌行為，有解聘及終身不得聘任為教師之必要。六、受兒童及少年性剝削防制條例規定處罰，或受性騷擾防治法第二十條或第二十五條規定處罰，經學校性別平等教育委員會確認，有解聘及終身不得聘任為教師之必要。七、經各級社政主管機關依兒童及少年福利與權益保障法第九十七條規定處罰，並經學校教師評審委員會確認，有解聘及終身不得聘任為教師之必要。八、知悉服務學校發生疑似校園性侵害事件，未依性別平等教育法規定通報，致再度發生校園性侵害事件；或偽造、變造、湮滅或隱匿他人所犯校園性侵害事件之證據，經學校或有關機關查證屬實。九、偽造、變造或湮滅他人所犯校園毒品危害事件之證據，經學校或有關機關查證屬實。十、體罰或霸凌學生，造成其身心嚴重侵害。十一、行為違反相關法規，經學校或有關機關查證屬實，有解聘及終身不得聘任為教師之必要。教師有前項第一款至第三款規定情形之一者，免經教師評審委員會審議，並免報主管機關核准，予以解聘，不受大學法第二十條第一項及專科學校法第二十七條第一項規定之限制。教師有第一項第四款至第六款規定情形之一者，免經教師評審委員會審議，由學校逕報主管機關核准後，予以解聘，不受大學法第二十條第一項及專科學校法第二十七條第一項規定之限制。教師有第一項第七款或第十款規定情形之一者，應經教師評審委員會委員三分之二以上出席及出席委員二分之一以上之審議通過，並報主管機關核准後，予以解聘；有第八款、第九款或第十一款規定情形之一者，應經教師評審委員會委員三分之二以上出席及出席委員三分之二以上之審議通過，並報主管機關核准後，予以解聘。三、甲為 A 警察局轄下某分局之警員。甲擬報考中央警察大學（下稱警大） 110 學年度某研究所碩士班在職全時生，填具「報考在職全時生申請表」，請求 A 警察局審查其報考資格並選送其應試，經 A 警察局以民國 110 年 2 月 5 日 B 函（下稱系爭函）回復略以：A 警察局援例採一致性限制報考在職全時進修碩士班，並退還甲上開申請表，不予個案審核。甲提起申訴，經 A 警察局作成申訴決定略以：「考量治安維護警力需求、員警身心照護及勤務合理正常化，A 警察局採限制報考在職全時進修之行政管理措施，並依規定於 110 年 1 月 29 日函告周知，未有違誤。」甲不服提起再申訴，經公務人員保障暨培訓委員會再申訴決定駁回，甲繼而提起行政訴訟，聲明：確認系爭函違法。試問：行政法院應如何決定？（25 分）附錄公務人員保障法條文：第 77 條公務人員對於服務機關所為之管理措施或有關工作條件之處置認為不當，致影響其權益者，得依本法提起申訴、再申訴。公務人員離職後，接獲原服務機關之管理措施或處置者，亦得依前項規定提起申訴、再申訴。第 78 條申訴之提起，應於管理措施或有關工作條件之處置達到之次日起三十日內，向服務機關為之。不服服務機關函復者，得於復函送達之次日起三十日內，向保訓會提起再申訴。前項之服務機關，以管理措施或有關工作條件之處置之權責處理機關為準。第 79 條應提起復審之事件，公務人員誤提申訴者，申訴受理機關應移由原處分機關依復審程序處理，並通知該公務人員。應提起復審之事件，公務人員誤向保訓會逕提再申訴者，保訓會應函請原處分機關依復審程序處理，並通知該公務人員。四、甲為私立高級商業職業學校，係於民國 84 年間經改制前臺灣省政府教育廳（改制後為教育部國民及學前教育署，下稱國教署）准予籌設創校。國教署於 107 年 2 月 23 日向甲學校發出 A 函，依私立學校法第 70 條第 2 項規定命甲學校停辦。嗣後甲學校未能依高級中等以下學校及其分校分部設立變更停辦辦法（下稱停辦辦法）所定期限，於 111 年 1 月 16 日前完成恢復辦理、新設私立學校，或與其他學校法人合併，而且未依規定主動陳報國教署核定解散，經國教署於 111 年 6 月 8 日以 B 函（下稱原處分）依私立學校法第 72 條第 2 項規定令甲學校即日起辦理解散。甲學校不服，對原處分提起訴願，並為本件停止執行之聲請，經行政法院以 C 裁定駁回。甲學校對 C 裁定不服，遂提起抗告。試問：本案有無停止執行之必要？（25 分）附錄私立學校法條文：第 70 條私立學校有下列情形之一者，其學校法人應報經學校主管機關核定後停辦：一、辦學目的有窒礙難行，或遭遇重大困難不能繼續辦理。二、經學校主管機關依本法規定限期命其為適法之處置，或整頓改善，屆期未處置、改善，或處置、改善無效果。前項情形，學校法人未自行申請學校主管機關核定停辦者，學校主管機關於必要時徵詢私立學校諮詢會意見後，得命其停辦。第 71 條學校法人因情事變更，致不能達到捐助章程所定目的，已依前條規定停辦所設各私立學校後，經董事會決議及法人主管機關許可，得變更其目的，改辦理其他教育、文化或社會福利事業。法人主管機關應斟酌捐助人之意思，並徵得變更後之目的事業主管機關同意及徵詢私立學校諮詢會意見後，許可其變更，同時轉請該管法院辦理變更登記。學校法人依第一項規定變更為其他教育、文化或社會福利事業之財團法人時，原依土地稅法第二十八條之一受贈土地者，免依該法規定處罰，其應追補之土地增值稅，准予記存，並於該土地下次移轉時，一併繳納之。但下次移轉係因變更後之財團法人解散，且其捐助章程已明定該土地歸屬於法人住所所在地之地方自治團體者，免徵之。前項記存之土地增值稅，於該土地移轉時應優先於一切債權及抵押權受償。第 72 條學校法人有下列情形之一者，得報經法人主管機關核定後解散：一、私立學校依第七十條規定停辦，於停辦期限屆滿後，仍未能恢復辦理，或未能整頓改善。二、符合捐助章程所定解散事由。三、將全部財產捐贈政府或其他學校法人。四、依規定進行合併而須解散。學校法人有下列情形之一者，法人主管機關經徵詢私立學校諮詢會意見後，得命其解散：一、有前項第一款情形而未依規定報法人主管機關核定解散。二、未報經核准，擅自停辦所設私立學校或停止招生。三、經依第七十條第二項規定命所設私立學校停辦而未停辦。學校法人於解散、清算開始前，本於教職員工聘僱契約所積欠應支付之薪資、資遣費，應最優先受清償。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "短文寫作",
+    "prompt": "東坡在〈赤壁賦〉中說：「客亦知夫水與月乎？逝者如斯，而未嘗往也；盈虛者如彼，而卒莫消長也。蓋自其變者而觀之，則天地曾不能以一瞬，自其不變者而觀之，則物與我皆無盡也」。東坡認為天地萬物均有變與不變的兩面，請問在變與不變當中，人應如何自處？（文長不超過350字）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "作文",
+    "prompt": "有一個關於紐約華爾道夫飯店（Waldorf Astoria New York）起源的傳說是這樣的：話說在一個風雨交加的夜晚，一對老夫婦走進一間旅館，想要住宿一晚。但是當天的旅館卻客滿了，毫無空位。服務生喬治．波特（George Boldt）說：「十分抱歉，若是平常，我會送二位到支援的旅館，可是這麼大的風雨，要你們再一次的置身其中，實是不可想像的。你們願不願意暫時住在我的房間呢？它雖然不豪華，但還是蠻乾淨的」。這位年輕人誠懇的提出建議。老夫婦大方地接受了，並對造成服務生的不便致歉。隔天老先生威廉．華爾道夫．阿斯特（William Waldorf Astor）前去結帳時，櫃台仍是昨晚的這位服務生，他親切的說：「昨天您住的房間並不是飯店的客房，所以我們不會收您的錢，也希望您與夫人昨晚睡得安穩！」老先生點頭稱讚：「你是每個旅館老闆夢寐以求的員工，或許改天我可以幫你蓋棟旅館。」幾年後，他真的蓋了紐約華爾道夫飯店，並請此人來任第一任經理。這是一個受恩反饋的故事，但比反饋更積極的是將這盞慈悲的燈火延續下去，你的人生中是否曾接受過他人的恩惠，也曾給與他人幫助？請將這些溫暖串連起來，以「以愛為薪，燈燈相傳」為題作文一篇。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "下列文句，何者敘述最正確？",
+    "options": [
+      "一畦畦黃色的野菊沿著鐵道鋪陳，十分迷人",
+      "黃昏時彩霞在天邊燃燒，投影出瑰麗的景象",
+      "他從信仰中獲得精神上的喜樂，並心懷感恩",
+      "得知他不幸發生意外，留言與追思蕩漾臉書"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "下列文句，「」內成語運用最正確的是：",
+    "options": [
+      "他能「信口雌黃」，隨時上臺發表精采的演說",
+      "這種方法是「揚湯止沸」，無法徹底解決問題",
+      "他的新居，空間大小適中，真是「宜室宜家」",
+      "這次宴會很豐盛，主人準備「酒囊飯袋」招待"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "「當年 iPod 問世時，其他科技公司若介紹它，必然是朗誦硬體規格等等。但蘋果創辦人賈伯斯是這樣說：『iPod，將一千首歌放在口袋裡。』」 根據上文，下列選項最符合文意的是：",
+    "options": [
+      "講述硬體規格，能顯示專業",
+      "容量一千首歌，是精確資訊",
+      "避免專業名詞，是貼心溝通",
+      "其他科技公司，較缺乏創意"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "「我們會以『如切如磋，如琢如磨』來譬喻朋友間的交互影響。一如玉石有瑕疵稜角，用一種器具來切磋琢磨，才能圓融光潤，才能『成器』。人的性格也難免有瑕疵稜角，朋友便是切磋琢磨的利器，與自己愈不同，磨擦愈多，切磋琢磨的影響也就愈大。所以孔子論益友，特重直諒多聞。」 根據上文，下列選項何者最正確？",
+    "options": [
+      "鼓勵大家結交損友砥礪自己的德性",
+      "每個人都應該成為說實話的真小人",
+      "圓融的品格可透過同溫層交友達成",
+      "與正直誠信之友相交可以砥礪品行"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "「一顆顆肥大茂盛的芥菜在冬天收成。吃不完的新鮮芥菜，都曬在牆頭屋瓦上，經發酵後做成酸菜，可以保存比較久。吃不完的酸菜，就塞在甕裡瓶子裡繼續發酵，做成福菜，福菜要塞得很緊實，不受潮，幾乎像真空，可以保存兩年不壞。福菜做完後，剩餘的芥菜葉，就用鹽漬風乾到幾乎沒有水分，綁成一綑一綑，做成梅乾菜。」 根據上文，下列說明最正確的是：",
+    "options": [
+      "酸菜如果受潮可用真空保存",
+      "福菜的發酵時間會比酸菜長",
+      "芥菜採收後會優先日曬風乾保存",
+      "梅乾菜是以芥菜梗鹽漬風乾而成"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "「我們從小被灌輸的觀念，是敬佩以意志力堅持成功，看不起辭職、半途而廢。當然，遇見困難就打退堂鼓的人，絕對無法成功，但有時，堅持不見得是明智的，選擇退場反而更需要勇氣。看我早期的履歷，也許會認為我是個穩定度差、不知道自己要什麼的人。其實正好相反。每次改變都讓我更清楚自己擅長什麼、不喜歡什麼，更勇敢面對內心的聲音，做出選擇。」 根據上文，下列敘述最接近作者觀點的是：",
+    "options": [
+      "如果不知道要什麼，堅持不變的態度其實不明智",
+      "能以意志力堅持成功，自然就知道自己想要什麼",
+      "早期穩定度差的人，後來就很難有變勇敢的時候",
+      "只要遇見困難時就打退堂鼓，勇敢面對個人選擇"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "「感官機制有絕佳的調整適應能力，能辨識出景觀中的特點，感受其中差異，並為所有微小細節賦予意義。即使是身在澳洲一望無際的茂密刺槐林裡，或愛斯基摩一整片白皚皚的雪地，讓人無法分辨陸地跟海洋，或是霧氣深重、詭譎多變的阿留申群島，以及玻里尼西亞附近的茫茫大海，這些外人從表面看起來毫無辨識線索的地方，對當地人而言卻清晰可辨。」 根據上文，下列選項何者最符合文意？",
+    "options": [
+      "環境地貌因人類賦予意義，而具有辨認方向的功能",
+      "人類能否找出移動方向，完全取決於地標是否清晰",
+      "地方環境的線索是否清楚可辨，仰賴精密探測工具",
+      "環境地貌能否成為參照系統，當地氣候是關鍵因素"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "「我在這裡好些年，也知道府上的人那一個不是肥己的。一年一年都往他家裡拿，那自然府上是一年不夠一年了。又添了大老爺、珍大爺那邊兩處的費用，外頭又有些債務，前兒又破了好些財，要想衙門裡緝賊追贓是難事。老世翁若要安頓家事，除非傳那些管事的來，派一個心腹的人各處去清查清查，該去的去，該留的留，有了虧空著在經手的身上賠補，這就有了數兒了。」 上文中「我」向「老世翁」所提最主要的建議是：",
+    "options": [
+      "將不良管事者汰除",
+      "撙節不必要的開銷",
+      "指派心腹清償債務",
+      "委請官府緝賊追贓"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "「馬諦斯的畫作使用大量色塊，分不清何處是牆面、何處是地面。然而無論是多麼平面性或裝飾性的作品，還是利用無人可及的配色引人入勝，以線條構成的人與物從未抽象化，呈現驚人的具體造形，要是畫家缺乏這種造形能力，想必畫不出像一筆畫的優異素描，也做不來那些充滿魅力的剪紙畫。他的作品看似能輕易模仿，實際上卻臻至模仿難以企及的境界。」 根據上文，作者對於馬諦斯作品的分析，敘述最正確的是：",
+    "options": [
+      "對於立體感的掌握能力較弱",
+      "善於以對比色塊繪製抽象畫",
+      "一筆畫素描受到剪紙畫影響",
+      "看似簡單實則藝術境界超凡"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-113-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "「以前強調『專才』，現在則強調『通才』。一個原因是現代社會變遷快速，過去界定的『領域』現在可能已經不適用，或界線已經變得模糊。以近年最夯的電動車為例，以前汽車工業是一個很明確的領域，各高職學校也都設有『汽修科』等科系。然而，電動車牽涉的領域就廣得多，除了機械與材料等固有領域，還有電池（電動車的核心）、自動駕駛、人工智慧等，需要對各領域都有一些了解的人進行整合。近年來，國內外開始有大學採『不分系』的策略，相當受學生歡迎。不分系除了讓學生多一些時間探討未來職涯發展方向，了解自己真正興趣所在，也可讓學生累積各領域的經驗，大幅提升『跨領域整合』能力，也是未來發展的趨勢。」 根據上文，下列選項最符合發展「通才」趨勢的關鍵因素是：",
+    "options": [
+      "各領域團隊合作的概念已經不流行",
+      "新科技所牽涉的領域已越來越寬廣",
+      "科技一日千里專業知識很快就落伍",
+      "電動車將取代燃油車成為未來主流"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=113120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0407&q=1",
+    "id": "clerk-civil-procedure-113-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "X 將其 A 畫借給好友 Y，後 X 死亡，其繼承人為甲、乙、丙。因 Y 拒絕返還 A 畫，甲、乙遂為原告，依民法物上請求權之規定向法院訴請 Y 返還 A 畫。試說明：（一）甲、乙提起之訴訟是否具當事人適格？原告應如何表明「應受判決事項之聲明」？（10 分）（二）若第一審法院判決原告敗訴，僅甲提起第二審上訴。甲合法提起上訴後，於第二審言詞辯論終結前甲復具狀表明撤回上訴，其效力及法院之處理方式為何？（15 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0407&q=1",
+    "id": "clerk-civil-procedure-113-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲列乙為被告，於民國（下同）113 年 3 月 1 日向管轄法院起訴，求為判決命乙給付原告 A 畫。原告甲主張之事實及理由略為：甲於 112 年 8 月 1 日將 A 畫借予乙，約定借貸期間為六個月，於期間屆滿後，乙至今拒不交還 A 畫，為此，依借用物返還請求權提起本訴。第一審法院審理後為甲勝訴之本案判決。乙提起上訴，於第二審程序中，A 畫因乙之保管不當而失火燒毀，甲在第二審遂將原訴變更為請求賠償損害新臺幣（下同）250 萬元。試附理由說明：（一）甲所為之訴之變更有何程序法上之依據？若第二審法院認為甲變更之新訴有理由，可否為「原判決廢棄，並判命被告給付甲 250 萬元」 之判決？（13 分）（二）若第二審法院認為甲變更之新訴有理由，且進行本案審理與言詞辯論，甲又將原給付聲明由請求給付 250 萬元減縮為給付 200 萬元。對此，被告乙表示不同意甲所為 50 萬元之撤回。此減縮或撤回是否適法？（12 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0407&q=1",
+    "id": "clerk-criminal-procedure-113-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "某夜，A 開車見前方員警執行路檢遂急煞減速、臨停路邊紅線，員警見狀前去盤查要求其搖下車窗，詢問姓名並要求提示身分證明文件（詢問 A）。過程中，員警嗅到 A 所駕車內有類似貓尿的怪味，且見副駕駛座 B 匆忙攜身旁手提包即欲下車離去。員警依其多年執勤經驗認為或有使用安非他命之嫌，故攔阻、壓制 B 並詢問該手提包藏有何物（詢問 B）。稍後，員警從中查獲相關毒品一批。試問員警如何進行詢問 A、詢問 B，方能確保相關不利供述之證據能力？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0407&q=1",
+    "id": "clerk-criminal-procedure-113-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "警察為偵辦毒品犯罪使用 M 化偵查網路系統（簡稱「M 化車」），追查特定人犯 A 手機「國際行動設備識別碼」（International Mobile Equipment Identity）及其 SIM 卡「國際行動用戶識別碼」（International Mobile Subscriber Identity），進而確認 A 住居所在並查獲毒品一批。試問為確保查獲毒品之證據能力，警察應如何實施本項蒐證保全？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0302&q=1",
+    "id": "clerk-administrative-law-113-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "科學園區某甲公司欲申請設立新製程之晶圓廠，因而向 A 市政府申請建照，該管機關之處分如下，其合法性如何？（25 分）（一）申請案核准，但要求甲須於期限內做好污水回收處理設備。（二）甲須捐贈該市文化基金新臺幣 2000 萬元，方允許設立新廠房。",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0302&q=1",
+    "id": "clerk-administrative-law-113-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲公司（以下簡稱甲）係外籍看護工之仲介業者，替乙女士辦理聘僱外籍看護工相關事宜。惟甲在該看護工受僱期間，於其薪資內以「本國所得稅」、「安家費貸款」等名目，超收規定標準以外的其他費用，合計新臺幣（下同）10 萬元。該案經媒體揭露並引發社福團體關注，A 縣政府（以下簡稱 A）遂根據就業服務法第 40 條第 1 項第 5 款之規定，以甲所收受之不正利益 10 萬元為基礎，處以同法第 66 條第 1 項規定（10 至 20 倍）的最高額度罰鍰，即 200 萬元罰鍰。甲以 A 於該處分中，未明白表示其處以最高 20 倍罰鍰之理由，有違「明確性原則」，並主張 A 未曾訂定相關裁罰基準，只為應付輿論壓力，對於初犯者處以最高罰鍰，不符裁量原則。甲之主張是否有理由？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0302&q=1",
+    "id": "clerk-administrative-law-113-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "我國「行政執行法」對於行政法上「行為或不行為之義務」有其直接與間接的強制手段。請就相關規定由輕而重，分析行政執行之執行種類以及機關可採之執行方法。（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 113,
+    "gregorianYear": 2024,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113120&c=201&s=0302&q=1",
+    "id": "clerk-administrative-law-113-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "近年國人熱衷於郊山健走與溯溪等親近大自然的活動，對於自然環境設施之利用頻率增加。但也因山林、水域幅員廣大，加上自然保育之要求，整建不宜加諸過多的人工干預設施。今有甲自行沿野溪旁之步道健走，途中遇午後雷雨溪水上漲，因恐山洪暴發無法通行，遂強行渡過攔砂壩折返。惟甲於半渡之時失足滑落，且頭部撞擊溪石導致昏迷，其後又因溪水暴漲溺水死亡。甲之家屬認為該步道既然開放給公眾使用，即應具有足夠的安全設施，故對步道負有管理權責之鄉公所 A（以下簡稱 A）提出國家賠償請求。A 認為攔砂壩乃水利機關所設，並非步道之附屬設施，鄉公所並非負責機關。且其設置目的在阻擋砂石，平日雖亦有民眾抄捷徑通行，但 A 已在兩端設置警告標誌。又甲於溪水暴漲時仍強行渡河，乃自陷危險，故主張國賠責任不成立。請問本案是否應成立國家賠償？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "短文寫作",
+    "prompt": "史佩爾（Albert Speer，1905～1981）是位優秀的建築師，希特勒任命他為納粹黨的總建築師時，他還不到三十歲。他難以抗拒這個機會，正如他自己說的：「最重要的身分是建築師」。他接下了這個職務，參與了歷史上最惡名昭彰的戰爭罪行，使用奴工，執行大屠殺，設計建造出包括位於紐倫堡的帝國總理府和全國黨代會集會場等宏偉建築。他實現了最大的抱負，同時成為世界的罪人。史佩爾自豪於他在建築的貢獻，並自滿其人生的成就。然而成功大學醫學院創院院長黃崑巖卻不這樣認為。黃院長是國際上研究干擾素與感染免疫的知名學者，也是備受肯定的人文講座的教育家及作家。他所寫的 《醫生不是天使：一位醫生作家的人性關懷》被多所醫學院選為指定教材，而《黃崑巖談教養》一書更引起廣大迴響。他的傳世名言「Before becoming a doctor, become a man.」，成為良醫之前，先學做人，是許多醫師的座右銘。再高明的技術，若缺乏良善、正直、同理心與責任感作為根基，「醫生」的身分可能失去價值，甚至造成危害。要成為好醫生，必須先成為視野開闊、情感豐沛、懂得反思、具備健全價值觀的「人」。唯有先成為一個具備完整人性光輝與社會責任感的「人」，才能讓專業知識與技能發揮最大的正向價值，成為真正濟世助人的力量。根據上文，請就下列兩個問題作答： 的生命體驗和貢獻。你認為最有價值的人生成就是什麼？文長不超過 300字。（20分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "作文",
+    "prompt": "史佩爾（Albert Speer，1905～1981）是位優秀的建築師，希特勒任命他為納粹黨的總建築師時，他還不到三十歲。他難以抗拒這個機會，正如他自己說的：「最重要的身分是建築師」。他接下了這個職務，參與了歷史上最惡名昭彰的戰爭罪行，使用奴工，執行大屠殺，設計建造出包括位於紐倫堡的帝國總理府和全國黨代會集會場等宏偉建築。他實現了最大的抱負，同時成為世界的罪人。史佩爾自豪於他在建築的貢獻，並自滿其人生的成就。然而成功大學醫學院創院院長黃崑巖卻不這樣認為。黃院長是國際上研究干擾素與感染免疫的知名學者，也是備受肯定的人文講座的教育家及作家。他所寫的 《醫生不是天使：一位醫生作家的人性關懷》被多所醫學院選為指定教材，而《黃崑巖談教養》一書更引起廣大迴響。他的傳世名言「Before becoming a doctor, become a man.」，成為良醫之前，先學做人，是許多醫師的座右銘。再高明的技術，若缺乏良善、正直、同理心與責任感作為根基，「醫生」的身分可能失去價值，甚至造成危害。要成為好醫生，必須先成為視野開闊、情感豐沛、懂得反思、具備健全價值觀的「人」。唯有先成為一個具備完整人性光輝與社會責任感的「人」，才能讓專業知識與技能發揮最大的正向價值，成為真正濟世助人的力量。根據上文，請就下列兩個問題作答： man.」，核心精神在於強調人文素養、品格修為、同理心與社會責任四者是醫學專業的基石。這句話不僅適用於醫界，更可擴展至所有專業領域。請以「先學做人再做事」為題，作文一篇。（60分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-01",
+    "format": "選擇題",
+    "officialQuestionNumber": 1,
+    "questionKind": "測驗",
+    "prompt": "下列選項「」中的詞語，何者運用錯誤？",
+    "options": [
+      "這件事撲朔迷離，彷彿「羅生門」",
+      "他厭惡那個同事，視為「眼中釘」",
+      "我決定獨自反省，吃了「閉門羹」",
+      "他雖然蟄居一隅，終非「池中物」"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-02",
+    "format": "選擇題",
+    "officialQuestionNumber": 2,
+    "questionKind": "測驗",
+    "prompt": "牛頓說：「知識累積讓我們站在巨人的肩膀上，所以能看得更遠。」但看得更遠有一個重要的前提，前人的肩膀必須「固若金湯」，是實在、堅定且穩固的。如若不然，則將傳播「穿鑿附會」的錯誤知識，尤有甚者，是有違學術倫理「剛正不阿」的論文審議體系，使巨人的肩膀「獨木難支」。上列成語的使用，何者正確？",
+    "options": [
+      "固若金湯",
+      "穿鑿附會",
+      "剛正不阿",
+      "獨木難支"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-03",
+    "format": "選擇題",
+    "officialQuestionNumber": 3,
+    "questionKind": "測驗",
+    "prompt": "「臺灣的過年習俗，家家戶戶須準備長年菜。北部用的是芥菜，象徵長壽，且越煮越甘甜，代表『苦盡甘來』，且芥菜生長期長，人們會一邊看著芥菜生長，一邊期待與家人團圓。而南部長年菜則是帶根的菠菜，象徵『長命百歲』、『延年益壽』。《臺灣通史》曾記載：『菠薐：種出西域頗陵國，誤為菠薐，或稱赤根菜，臺南謂之長年菜，以度歲須食之也。』」 根據上文，關於長年菜的描述，下列何者最符合文意？",
+    "options": [
+      "長年菜有著人們對於生活的冀盼與未來的想望",
+      "長年菜因南北地理環境不同而代表著不同寓意",
+      "長年菜只是一種象徵意涵，不存在於日常生活",
+      "長年菜「度歲須食之」是臺南文化獨有的習俗"
+    ],
+    "answer": 0,
+    "acceptedAnswers": [
+      0
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-04",
+    "format": "選擇題",
+    "officialQuestionNumber": 4,
+    "questionKind": "測驗",
+    "prompt": "「我想在文字的風火爐中，煉出一顆丹來，……我嘗試把中文壓縮、槌扁、拉長、磨利，把它們拆開又併攏，折來又選去。我的理想是讓中文在變化各殊的句法中，交織成一個大樂隊，而作家的筆也應該一揮百應，如交響樂的指揮棒般。」 關於寫作，下列選項何者最符合上文旨意？",
+    "options": [
+      "抒寫必須強調作家真實經歷的融入",
+      "行文應如行雲流水般的灑脫和順暢",
+      "選材需範圍廣，生活瑣事皆可入文",
+      "語言技巧的運用，應不斷求新求變"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-05",
+    "format": "選擇題",
+    "officialQuestionNumber": 5,
+    "questionKind": "測驗",
+    "prompt": "「人類將物品帶入生活，由使用者推波助瀾，自己扮演起貢獻者與製造者的新角色，不再視一切為理所當然。大眾對於自費出版、3D 列印、個人製造的興趣日增，可以看出使用者已經從被動的接受者，轉變為主動的製造者，『客製化』也日益受到關注。」 根據上文，下列何者不切合文意？",
+    "options": [
+      "以「大眾參與」為架構的設計潮流，注重使用者的需求",
+      "個人表現與需求日益受關注，造就了新型態的創意力量",
+      "對商品文化標準化的推崇，可控制社會運動的批判意識",
+      "當代設計實務的環境不斷變遷，使用者已涉入設計流程"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-06",
+    "format": "選擇題",
+    "officialQuestionNumber": 6,
+    "questionKind": "測驗",
+    "prompt": "「衣服既是孤獨的遊戲，也是眾人的遊戲。一個人在人群中跳舞，總希望光打到他身上，至於光是打來的，還是從自己的衣著、打扮散發出來的，那並不重要。衣著的扮演，既在眾目睽睽之下進行，又是極其自我的想像與模擬，但主觀、客觀不斷挪移的結果是，兩者之間有份張力，界線卻是一貫的模糊、曖昧。」 下列選項，何者最符合文意？",
+    "options": [
+      "個人自我往往被衣著打扮所扭曲",
+      "自我打扮與公眾眼光會交互影響",
+      "公開表現與私人生活間並無差別",
+      "個人穿衣打扮必須配合公眾眼光"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-07",
+    "format": "選擇題",
+    "officialQuestionNumber": 7,
+    "questionKind": "測驗",
+    "prompt": "「當你覺得快被周圍的事情吞沒，不妨朝著另一個方向前進——從小處入手。找一件需要積極投入，既需動腦也需運用肢體的活動，一件可讓你暫時感到心滿意足的事，沉浸其中，並原諒自己暫時逃避風暴。胸有大志沒什麼錯，但你偶爾得爭取享受小小的勝利，讓大腦從種種難題和憂慮中喘口氣。因為難題和憂慮一直都在，絕大部分有待完成，答案卻得之不易。」 根據上文，下列敘述最符合文意的是：",
+    "options": [
+      "置之死地而後生",
+      "船到橋頭自然直",
+      "事非經過不知難",
+      "退一步海闊天空"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-08",
+    "format": "選擇題",
+    "officialQuestionNumber": 8,
+    "questionKind": "測驗",
+    "prompt": "「人類自工業革命以來，大量燃燒煤炭、石油等化石燃料產生動力及發電等，使二氧化碳排放量從 1970 年至今增加超過 78%，成為碳排放主要來源。碳中和（Carbon Neutral）是企業、組織或政府在一定時間的二氧化碳排放量，與植樹、使用再生能源等方式所累積的減碳量相互抵換，過程中需透過碳盤查掌握碳排放量／碳足跡，接著採取減量措施或抵換行動，使大氣的碳排放量維持現狀、無增無減，達成『碳中和』的狀態。然而全球必須在 2030 年減少溫室氣體排放至少 43%（相較工業革命前水準）、2050 年達成淨零排放，才能夠避免不可逆的大規模氣候災難。」 根據上文，下列那個方式對地球環境並不友善？",
+    "options": [
+      "交通工具電動化，達到淨零排放",
+      "使用燃煤發電，減少 50%的碳排放",
+      "企業植樹造林，抵換化石燃料的碳排",
+      "使用太陽能、水力或風力發電，減少碳排"
+    ],
+    "answer": 1,
+    "acceptedAnswers": [
+      1
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-09",
+    "format": "選擇題",
+    "officialQuestionNumber": 9,
+    "questionKind": "測驗",
+    "prompt": "「在婚姻能否繼續維持的判斷上，法院認為夫妻來自不同的原生家庭，價值觀各方面難免有差異，雙方藉由溝通與相互退讓，彼此尊重協調均可接受的生活模式，則雙方婚姻就還有繼續維持的希望。」 下列選項，何者最符合文意？",
+    "options": [
+      "婚姻關係不必考量雙方原生家庭的差異",
+      "婚姻能否繼續維持不應由法院介入判斷",
+      "婚姻關係的維持應由雙方溝通相互包容",
+      "婚姻關係的維持應由法院引導雙方溝通"
+    ],
+    "answer": 2,
+    "acceptedAnswers": [
+      2
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "國文",
+    "studySubject": "chinese",
+    "paper": "chinese",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0102&q=1",
+    "id": "clerk-chinese-114-mcq-10",
+    "format": "選擇題",
+    "officialQuestionNumber": 10,
+    "questionKind": "測驗",
+    "prompt": "「『世界博覽會』這個名稱用於後來的展覽，強調產品來自世界各處，每個國家有自己的展示攤位。被殖民的民族與其產品，布置成許多可以購買的商品，位於商店與窺視秀的奇特交界之間。文化與貨品的蒐集並置，讓每塊土地與人民成為商品—— 同時其『異國風味』也移轉到貨品上頭。」 下列選項，何者最符合文意？",
+    "options": [
+      "世界博覽會的名稱是強調產品的品質",
+      "世界博覽會未必展示不同國家的產品",
+      "被殖民的民族及其產品時常遭到遮蔽",
+      "殖民地產品以其異國風味被視為商品"
+    ],
+    "answer": 3,
+    "acceptedAnswers": [
+      3
+    ],
+    "allCredit": false,
+    "answerSource": "考選部標準答案",
+    "answerUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=114120&c=201&s=0102&q=1"
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0408&q=1",
+    "id": "clerk-civil-procedure-114-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "甲與乙為丙之繼承人，設籍於桃園市的丙死亡時，留有桃園市郵局帳戶一筆（存款新臺幣 3,000 萬元）與汽車一輛（價值新臺幣 300 萬元），另有位於高雄市之土地一筆（價值新臺幣 5,000 萬元）。甲欲先就該筆不動產進行遺產分割，惟乙表示不同意，甲遂向高雄地方法院起訴，並主張該不動產為民事訴訟法第 10 條所稱之專屬管轄事件。高雄地方法院受理後，作成變賣該不動產並依應繼分比例分配價金之判決。試問：本案判決是否有程序上之違誤？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "民事訴訟法概要",
+    "studySubject": "civil-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0408&q=1",
+    "id": "clerk-civil-procedure-114-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "甲與乙因金錢借貸發生爭議，乙提起給付訴訟，第一審法院判決乙勝訴，命甲應給付新臺幣 100 萬元。該判決送達後，甲不服，於法定期間內向原第一審法院提出上訴狀，但該上訴狀內容僅載明下列事項：當事人及其法定代理人、第一審判決及對該判決上訴之陳述、對第一審判決不服之範圍及應如何廢棄或變更之聲明。試問：第二審法院應如何進行後續審理？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0408&q=1",
+    "id": "clerk-criminal-procedure-114-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "甲涉犯刑法第 336 條第 2 項業務侵占罪嫌，經檢察官向管轄法院提起公訴，法院審理後形成刑法第 342 條背信罪之心證。試論法院得否依刑事訴訟法第 300 條規定變更起訴法條？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "刑事訴訟法概要",
+    "studySubject": "criminal-procedure",
+    "paper": "civil-criminal-procedure-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0408&q=1",
+    "id": "clerk-criminal-procedure-114-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "甲涉犯刑法第 328 條第 3 項強盜致重傷罪嫌，檢察官乙偵查終結後向管轄法院提起強盜罪之公訴，嗣後，檢察官丙亦向同一管轄法院，對甲提起過失重傷罪之公訴；惟檢察官丙發覺同一案件已提起公訴後，依照刑事訴訟法第 269 條第 1 項規定，於第一審辯論終結前，以「雙重起訴」 為由，撤回過失重傷罪之公訴。試論管轄法院應如何裁判？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0302&q=1",
+    "id": "clerk-administrative-law-114-essay-01",
+    "format": "申論題",
+    "officialQuestionNumber": 1,
+    "questionKind": "申論",
+    "prompt": "A 為某大學學生認受教師 B 性霸凌，除在臉書發動公審外，並向學校申請調查，後經學校所設之性別平等教育委員會調查完成，決議成立性霸凌，並建議應解聘 B，管制 4 年。校教評會最後決議停聘 2 年，以儆效尤。B 對此結果不服，向教育部中央教師申訴評議委員會提起申訴，經維持學校原處分後，B 再向行政法院提起撤銷訴訟。於法院審理中，學校援引性別平等教育法第 41 條第 2 項：「法院對於前項事實之認定，應審酌各級性別平等教育委員會之調查報告」，認法院對於系爭性霸凌之認定，應受學校性別平等教育委員會決議之拘束，至多只能審查學校處分之輕重。針對學校性別平等教育委員會決議、教評會決議、行政法院審理裁判之不同階段，是否存有判斷餘地、裁量餘地等一定拘束關係？請分析之。（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0302&q=1",
+    "id": "clerk-administrative-law-114-essay-02",
+    "format": "申論題",
+    "officialQuestionNumber": 2,
+    "questionKind": "申論",
+    "prompt": "某股份有限公司進入破產程序中，其董事 A 以損害債權人為目的，故意捏造債務、承認不真實之債務，涉有詐欺破產罪，其被害人數逾百人，被害金額約新臺幣二千餘萬元。內政部移民署依「國民涉嫌重大經濟犯罪重大刑事案件或有犯罪習慣不予許可或禁止入出國認定標準」第 2 條：「國民涉及下列各款罪嫌，且被害人數在三十人以上或被害金額或所獲利益在新臺幣三千萬元以上者，應認定其涉嫌重大經濟犯罪」，於接獲相關檢警機關通知後，應即禁止 A 出國。惟移民署錯看法條，誤以為相對人須同時滿足「被害人數與被害金額」兩項要件，認不應禁止其出國，是並未據以執行。A 經探詢移民署承辦人員後，閱讀相關規定，獲知竟未遭限制出境，大喜過望，遂即快馬加鞭，在機場航空公司櫃檯以現金購買頭等艙機票前往美國，但於辦理出境手續時，因相關人員查詢資料而存疑，後於現場決定不准 A 出境，致其蒙受機票與美國數日住宿費之損失，A 遂向移民署請求國家賠償。請問 A 之請求是否有理由？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0302&q=1",
+    "id": "clerk-administrative-law-114-essay-03",
+    "format": "申論題",
+    "officialQuestionNumber": 3,
+    "questionKind": "申論",
+    "prompt": "臺北市立圖書館推廣活動委員會審議通過，訂定實施臺北市立圖書館影視拍攝須知，該須知第 5 點第 4 款明定，如有未依申請範圍拍攝之情形，該館得要求申請人立即停止使用。現有民眾 A 向臺北市立圖書館 B 分館，申請非商業影片拍攝，經核准後即進行拍攝作業，惟過程中發生是否有逾原申請範圍之爭執，B 分館即援引前開拍攝須知相關規定，立即要求 A 停止拍攝工作，並即刻離開該館，A 則以系爭須知無法律依據，不符法律保留原則，圖書館乃公共空間、渠等並無干擾環境安寧及衛生等情事，拒絕離開，並認 B 分館違法。請分析之。（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  },
+  {
+    "exam": "司法特考四等",
+    "rocYear": 114,
+    "gregorianYear": 2025,
+    "subject": "行政法概要",
+    "studySubject": "administrative-law",
+    "paper": "administrative-law-summary",
+    "applicableCategories": [
+      "法院書記官"
+    ],
+    "sourceUrl": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114120&c=201&s=0302&q=1",
+    "id": "clerk-administrative-law-114-essay-04",
+    "format": "申論題",
+    "officialQuestionNumber": 4,
+    "questionKind": "申論",
+    "prompt": "政治受難者 A 數十年前因涉入政治案件而遭法院判處 6 個月有期徒刑，但得易科罰金，A 當時亦如實繳納罰金在案。現 A 之案件，經認定確屬促進轉型正義條例第 6 條之 1 所稱國家之司法不法行為，A 已死亡，其家屬遂依威權統治時期國家不法行為被害者權利回復條例第 10 條規定： 「因國家不法行為致財產所有權被剝奪之被害者，得檢附具體資料，以書面向權利回復基金會申請權利回復；被害者死亡，得由其家屬申請之」，請求財團法人威權統治時期國家不法行為被害者權利回復基金會，賠償其「與罰金數額相當」之被剝奪的財產。請分析 A 之家屬的主張是否有理由？如遭基金會駁回，應如何提起救濟？（25 分）",
+    "options": [],
+    "answer": null,
+    "acceptedAnswers": [],
+    "allCredit": false,
+    "answerSource": null,
+    "answerUrl": null
+  }
+]
