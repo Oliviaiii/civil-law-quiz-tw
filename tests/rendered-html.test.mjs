@@ -248,5 +248,7 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(layout, /lang="zh-Hant"/);
   assert.match(css, /position: fixed;[\s\S]*bottom: 0;[\s\S]*env\(safe-area-inset-bottom\)/);
   assert.match(css, /\.multi-select-menu/);
+  assert.match(css, /border-right: 2px solid currentColor/);
+  assert.doesNotMatch(css, /content: "⌄"|content: "⌃"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
