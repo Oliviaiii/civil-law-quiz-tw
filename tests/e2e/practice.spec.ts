@@ -715,31 +715,6 @@ test("法條閃卡：翻面、評分、狀態保存與共用到期規則", async
   await expect(page.locator(".flashcard-progress")).toContainText(`新卡 ${freshBefore - 1}`);
 });
 
-test("英文單字本：瀏覽、遮義自測與連回原題", async ({ page }) => {
-  await openApp(page);
-  await page.locator(".nav-item", { hasText: "單字本" }).click();
-
-  const firstRow = page.locator(".vocab-list li").first();
-  await expect(firstRow).toBeVisible();
-  await expect(firstRow.locator(".vocab-word strong")).toHaveText(/\w/);
-
-  // 搜尋
-  await page.getByRole("searchbox", { name: "搜尋單字" }).fill("abolished");
-  await expect(page.locator(".vocab-list li")).toHaveCount(1);
-  await expect(page.locator(".vocab-list li")).toContainText("廢除");
-
-  // 遮義自測：中文隱藏，點擊才顯示
-  await page.getByRole("checkbox", { name: "遮住中文自測" }).check();
-  await expect(page.locator(".vocab-meaning.is-hidden")).toHaveText("顯示意思");
-  await page.locator(".vocab-meaning.is-hidden").click();
-  await expect(page.locator(".vocab-list li")).toContainText("廢除");
-
-  // 連回原題（英文科題目）
-  await page.locator(".vocab-source").click();
-  await expect(page.locator("article.question-card")).toBeVisible();
-  await expect(page.locator(".question-card .tag.type")).toHaveText("英文");
-});
-
 test("深色模式：手動切換、保存與首次載入即套用", async ({ page }) => {
   await openApp(page);
   const html = page.locator("html");

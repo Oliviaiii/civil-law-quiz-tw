@@ -12,7 +12,6 @@ import { PracticeSetSession } from "./components/PracticeSetSession";
 import { QuestionCard } from "./components/QuestionCard";
 import { SearchPanel } from "./components/SearchPanel";
 import { StatsView } from "./components/StatsView";
-import { VocabView } from "./components/VocabView";
 import { useMockExam } from "./hooks/use-mock-exam";
 import { usePracticeSet } from "./hooks/use-practice-set";
 import { usePreferences } from "./hooks/use-preferences";
@@ -425,19 +424,6 @@ export default function Home() {
     setScope("due");
   }
 
-  // 單字本連回原題：以題目 ID 直接定位（英文題庫載入後即顯示該題）。
-  function openVocabQuestion(questionId: string) {
-    setView("practice");
-    setScope("all");
-    setSelectedSubjects(["english"]);
-    setSelectedCorpora([]);
-    setFormatFilter("全部題型");
-    setSelectedYears([]);
-    setSelectedCategories([]);
-    setReviewingId(null);
-    setCurrentId(questionId);
-  }
-
   // 每日一題入口：切到該科練習並跳到今日題目（題庫載入完成後定位）。
   function openDailyQuestion() {
     resetQuestionCursor();
@@ -649,8 +635,6 @@ export default function Home() {
               onGradeCard={gradeStatuteCard}
               onOpenQuestion={openQuestionInPractice}
             />
-          ) : view === "vocab" ? (
-            <VocabView onOpenQuestion={openVocabQuestion} />
           ) : view === "practice" && practiceSet ? (
             <PracticeSetSession
               practiceSet={practiceSet}

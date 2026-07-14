@@ -16,7 +16,6 @@ const criminalRecords = require("../app/data/criminal-law-questions.json");
 const combinedRecords = require("../app/data/legal-knowledge-and-english-questions.json");
 const remainingRecords = require("../app/data/clerk-remaining-questions.json");
 const demoRecords = require("../app/data/demo-questions.json");
-const englishTranslations = require("../app/data/english-translations.json");
 
 const analysisYears = [108, 109, 110, 111, 112, 113, 114];
 const civilAnalyses = Object.assign(
@@ -179,40 +178,6 @@ await writeFile(
   ) + "\n",
 );
 console.log(`civil chapter tags: ${Object.keys(civilTags).length}/${civilMcqCount} mcq tagged`);
-
-// 英文單字本：由人工複核的英文翻譯資料整理單字、詞性與中譯（可回溯出處題目）。
-const combinedById = new Map(combinedRecords.map((record) => [record.id, record]));
-const vocabByKey = new Map();
-for (const [questionId, entry] of Object.entries(englishTranslations.questions)) {
-  const record = combinedById.get(questionId);
-  if (!record) continue;
-  entry.options.forEach((option, index) => {
-    const word = String(record.options[index] ?? "").trim();
-    if (!word || word.length > 30 || word.split(/\s+/).length > 3) return;
-    if (!option.partOfSpeech || !option.translation) return;
-    const key = `${word.toLowerCase()}|${option.partOfSpeech}`;
-    const existing = vocabByKey.get(key);
-    if (existing) {
-      if (!existing.questionIds.includes(questionId)) existing.questionIds.push(questionId);
-      return;
-    }
-    vocabByKey.set(key, {
-      word,
-      partOfSpeech: option.partOfSpeech,
-      translation: option.translation,
-      questionIds: [questionId],
-    });
-  });
-}
-const vocabulary = [...vocabByKey.values()].sort((left, right) =>
-  left.word.toLowerCase().localeCompare(right.word.toLowerCase()),
-);
-await mkdir(new URL("../public/data", import.meta.url), { recursive: true });
-await writeFile(
-  new URL("../public/data/vocabulary.json", import.meta.url),
-  JSON.stringify(vocabulary),
-);
-console.log(`vocabulary: ${vocabulary.length} entries`);
 
 const searchIndexJson = JSON.stringify(searchIndex);
 const dataVersion = createHash("sha256").update(searchIndexJson).digest("hex").slice(0, 12);

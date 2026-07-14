@@ -652,60 +652,6 @@ button { color: inherit; }
 .grade-forgot { background: var(--accent); }
 .grade-remembered { background: var(--green); }
 
-/* 英文單字本 */
-.vocab-toolbar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
-.vocab-toolbar input[type="search"] {
-  flex: 1;
-  min-width: 200px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 9px 14px;
-  background: var(--surface);
-}
-.vocab-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--surface);
-  overflow: hidden;
-}
-.vocab-list li {
-  display: grid;
-  grid-template-columns: minmax(150px, 1fr) minmax(120px, 1.2fr) auto;
-  gap: 12px;
-  align-items: center;
-  padding: 10px 16px;
-}
-.vocab-list li + li { border-top: 1px solid var(--line-soft); }
-.vocab-word strong { font-size: 15px; }
-.vocab-word .part-of-speech { margin-left: 8px; color: var(--muted); font-size: 12px; }
-.vocab-meaning { font-size: 14px; }
-.vocab-meaning.is-hidden {
-  border: 1px dashed var(--border-strong);
-  border-radius: 6px;
-  background: var(--hover-bg);
-  color: var(--muted);
-  padding: 4px 12px;
-  cursor: pointer;
-  justify-self: start;
-}
-.vocab-source {
-  border: 0;
-  background: transparent;
-  color: var(--accent-dark);
-  cursor: pointer;
-  font-size: 12px;
-  white-space: nowrap;
-}
-.vocab-source:hover { text-decoration: underline; }
-
-@media (max-width: 620px) {
-  .vocab-list li { grid-template-columns: 1fr auto; }
-  .vocab-list li .vocab-meaning { grid-column: 1 / -1; }
-}
-
 /* 主題切換 */
 .topbar-right { display: flex; align-items: center; gap: 16px; }
 .theme-toggle {

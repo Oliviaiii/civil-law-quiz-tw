@@ -40,7 +40,6 @@
 工具與體驗：
 
 - 法條速查（民法、刑法站內條文＋出題頻率排行＋相關題目）與法條閃卡自測
-- 英文單字本（643 個考過的單字：詞性、中譯、遮義自測、連回原題）
 - 申論題自我練習（本機草稿、計時器、自我檢核清單；不提供 AI 擬答）
 - 深色模式（跟隨系統或手動切換）、PWA 離線練習（已載入題目離線可作答）
 - 每題「回報問題」一鍵開啟預填的 GitHub Issue（題庫勘誤）
@@ -73,7 +72,7 @@ npm run lint
 ## 資料設計
 
 - 題目型別：`app/data/questions.ts`（僅型別；題庫依科目拆在 `app/data/banks/`，按需載入）
-- 產生的統計、搜尋索引、單字本與 Service Worker：`scripts/generate-question-data.mjs`（build 前自動執行）
+- 產生的統計、搜尋索引與 Service Worker：`scripts/generate-question-data.mjs`（build 前自動執行）
 - 司法四等官方題庫：`app/data/judicial-fourth-questions.json`
 - 法學知識與英文共用原始題庫：`app/data/legal-knowledge-and-english-questions.json`
 - 逐年選擇題解析：`app/data/analyses/`
