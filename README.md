@@ -62,6 +62,7 @@ npm run lint
 - 憲法解析與官方依據：`app/data/constitution-analyses.ts`
 - 法學緒論解析與跨法規依據：`app/data/legal-introduction-analyses.ts`
 - 英文解析：`app/data/english-analyses.ts`
+- 英文題幹、文章與選項繁中翻譯／詞性：`app/data/english-translations.json`
 - 共用參考來源型別：`app/data/references.ts`
 - 民法完整條文索引：`app/data/civil-code-articles.json`
 - 刑法官方題庫：`app/data/criminal-law-questions.json`
@@ -70,6 +71,7 @@ npm run lint
 - 考選部 PDF 匯入器：`scripts/import-moex-judicial-fourth.py`
 - 刑法 PDF 匯入器：`scripts/import-moex-criminal-law.py`
 - 法學知識與英文共用匯入器：`scripts/import-moex-legal-knowledge.py`
+- 英文學習翻譯更新工具：`scripts/import-english-translations.py`
 - 民法條文更新工具：`scripts/import-civil-code.py`
 - 刑法條文更新工具：`scripts/import-criminal-code.py`
 - 本機進度介面：`app/lib/progress-store.ts`

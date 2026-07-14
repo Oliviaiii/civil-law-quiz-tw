@@ -1,0 +1,4226 @@
+{
+  "questions": {
+    "judicial-fourth-105-legal-knowledge-31": {
+      "prompt": "我的病使我的一隻耳朵_____；這使我無法進入任何需要良好聽力的職業。",
+      "options": [
+        {
+          "translation": "盲目",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "害怕",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "聾了",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "累了",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-32": {
+      "prompt": "像大多數外國人一樣，我問了很多問題，其中一些問題非常愚蠢。但我_____的每個人都耐心且誠實地回答了這些問題。",
+      "options": [
+        {
+          "translation": "遇到",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "取自",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "過來",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "進入",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-33": {
+      "prompt": "吠叫是狗狗的正常行為；然而，當它們吠叫時，它們就會對其主人和鄰居造成滋擾。",
+      "options": [
+        {
+          "translation": "真誠地",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "明確",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "過度",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "明確地",
+          "partOfSpeech": "adv."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-34": {
+      "prompt": "退休後，羅傑斯_____畫了一段時間，但很快就失去了興趣。",
+      "options": [
+        {
+          "translation": "佔據了",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "已儲存",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "保持",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "制定了",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-35": {
+      "prompt": "儘管經濟不景氣，這家著名的火鍋連鎖餐廳去年仍_____獲得巨額利潤。",
+      "options": [
+        {
+          "translation": "導致",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "擴展",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "產生",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "發明",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-36": {
+      "prompt": "大學畢業後，羅伯特決定前往巴黎並 _____ 踏上成為糕點師的旅程。",
+      "options": [
+        {
+          "translation": "忍受",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "通知",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "出發",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "涉及",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-37": {
+      "prompt": "請依官方試卷的共用文章作答第 37 題。",
+      "options": [
+        {
+          "translation": "已放置",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "位於",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "有人居住",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "駐留",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-38": {
+      "prompt": "請依官方試卷的共用文章作答第 38 題。",
+      "options": [
+        {
+          "translation": "其中",
+          "partOfSpeech": "adj./pron."
+        },
+        {
+          "translation": "那個",
+          "partOfSpeech": "pron./conj."
+        },
+        {
+          "translation": "什麼",
+          "partOfSpeech": "pron./adj."
+        },
+        {
+          "translation": "其中",
+          "partOfSpeech": "adv."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-39": {
+      "prompt": "請依官方試卷的共用文章作答第 39 題。",
+      "options": [
+        {
+          "translation": "她的",
+          "partOfSpeech": "pron."
+        },
+        {
+          "translation": "它的",
+          "partOfSpeech": "pron."
+        },
+        {
+          "translation": "他們的",
+          "partOfSpeech": "pron."
+        },
+        {
+          "translation": "他的",
+          "partOfSpeech": "pron."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-40": {
+      "prompt": "請依官方試卷的共用文章作答第 40 題。",
+      "options": [
+        {
+          "translation": "故障",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "結果",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "探索",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "火山爆發",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-41": {
+      "prompt": "請依官方試卷的共用文章作答第 41 題。",
+      "options": [
+        {
+          "translation": "首選",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "發生",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "發生了",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "傾向於",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-42": {
+      "prompt": "請依官方試卷的共用文章作答第 42 題。",
+      "options": [
+        {
+          "translation": "屈服於",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "解決了",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "放下",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "已註冊",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-43": {
+      "prompt": "請依官方試卷的共用文章作答第 43 題。",
+      "options": [
+        {
+          "translation": "試試看",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "用",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "放手吧",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "把它收起來",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-44": {
+      "prompt": "請依官方試卷的共用文章作答第 44 題。",
+      "options": [
+        {
+          "translation": "資產",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "正方",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "情節",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "塊",
+          "partOfSpeech": "v./n."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-45": {
+      "prompt": "請依官方試卷的共用文章作答第 45 題。",
+      "options": [
+        {
+          "translation": "接近",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "施肥",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "碰撞",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "哀悼",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-46": {
+      "prompt": "第一段的「系列」指的是什麼？",
+      "options": [
+        {
+          "translation": "米老鼠系列。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "奧斯瓦爾德系列。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "Iwerks 系列。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "明茨系列。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-47": {
+      "prompt": "華特迪士尼為何創造卡通人物米老鼠？",
+      "options": [
+        {
+          "translation": "他想為華特迪士尼公司製作一個官方吉祥物。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "Charles Mintz 要求他在一個新的卡通系列中創建一個角色。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "環球影城需要一個新角色來取代幸運兔奧斯瓦爾德。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "他失去了對一個古老的流行卡通人物的權利，不得不創造一個新的。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-48": {
+      "prompt": "第一段的「他有一桶迪士尼」是什麼意思？",
+      "options": [
+        {
+          "translation": "迪士尼在他的控制之下。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "他讓迪士尼鬆了一口氣。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "他啟發了迪士尼。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "他激怒了迪士尼。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-49": {
+      "prompt": "老鼠角色的「米老鼠」這個名字是從誰那裡得來的？",
+      "options": [
+        {
+          "translation": "華特迪士尼",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "烏布‧伊沃克斯",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "莉蓮迪士尼",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "華納兄弟",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-105-legal-knowledge-50": {
+      "prompt": "關於米老鼠作為卡通人物的創作，下列哪一項是正確的？",
+      "options": [
+        {
+          "translation": "迪士尼的妻子說服他用老鼠角色取代其他動物。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "老鼠角色的想法來自迪士尼農場裡的老寵物鼠。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "伊沃克斯在想到老鼠這個角色之前畫過許多其他動物。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "迪士尼的靈感來自演員米基·魯尼，他是在華納兄弟工作室認識的。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-31": {
+      "prompt": "約翰扭傷了腳踝。因此，他只能行走_____。",
+      "options": [
+        {
+          "translation": "跛行",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "塊",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "蹩腳",
+          "partOfSpeech": "n./adj."
+        },
+        {
+          "translation": "肢體",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-32": {
+      "prompt": "許多人相信，數位學習是自印刷機以來教育中最重要的 _____。",
+      "options": [
+        {
+          "translation": "創新",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "繁殖",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "進化",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "解析度",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-33": {
+      "prompt": "當嬰兒_____的母親撓他的腋窩和腹部。",
+      "options": [
+        {
+          "translation": "咯咯地笑",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已刪除",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "勒死",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "抱怨",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-34": {
+      "prompt": "由於內戰的 _____ 局勢，數百萬人越境逃亡。",
+      "options": [
+        {
+          "translation": "恢復活力",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "繁盛",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "惡化",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "改進",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-35": {
+      "prompt": "傑克說他的鄰居昨天咬了一隻狗。這對我們來說絕對是_____。",
+      "options": [
+        {
+          "translation": "無法銷售",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "難以置信",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "互動",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "介紹性",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-36": {
+      "prompt": "直到最近，反式脂肪 _____ 幾乎是快餐店使用的所有食用油。",
+      "options": [
+        {
+          "translation": "佔",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "由",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "取決於",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "回覆了",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-37": {
+      "prompt": "他真是個粗心的司機。看來_____他隨時都可能發生一些悲慘的事故。",
+      "options": [
+        {
+          "translation": "靈活",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "不可避免的",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "便攜式",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "可訓練",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-38": {
+      "prompt": "自 1902 年出版《彼得兔的故事》以來，比阿特麗斯·波特的故事一直受到成人和兒童的 _____ 歡迎。",
+      "options": [
+        {
+          "translation": "部分",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "偶爾",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "始終如一",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "不小心",
+          "partOfSpeech": "adv."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-39": {
+      "prompt": "人們幾乎可以在線上購買任何東西，這已經成為數位時代的趨勢。",
+      "options": [
+        {
+          "translation": "指南",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "原則",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "現實",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "幻覺",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-40": {
+      "prompt": "20 世紀 50 年代的搖滾 _____。貓王是最早著名的搖滾歌手之一。",
+      "options": [
+        {
+          "translation": "面向",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "源自",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "組織了",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "ordered 代號：2201 頁次：4－4",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-41": {
+      "prompt": "根據本文，以下關於氣候變遷的敘述哪一項才是正確的？",
+      "options": [
+        {
+          "translation": "只會為人類帶來災難。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "它將減少煤炭和石油的使用。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "它會對人類帶來破壞性和有益性的影響。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "它將迫使中國和印度減少溫室氣體排放。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-42": {
+      "prompt": "根據文中的說法，煤炭和石油的使用何時可以被風能和太陽能取代？",
+      "options": [
+        {
+          "translation": "立即",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "在一段時間內",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "很久以後",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "從不",
+          "partOfSpeech": "adv."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-43": {
+      "prompt": "這段話中帶下劃線的「thisˮ」指的是什麼？",
+      "options": [
+        {
+          "translation": "種植更多森林",
+          "partOfSpeech": "不定詞片語"
+        },
+        {
+          "translation": "阻止全球暖化",
+          "partOfSpeech": "不定詞片語"
+        },
+        {
+          "translation": "減少煤炭和石油的使用",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "減少二氧化碳",
+          "partOfSpeech": "不定詞片語"
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-44": {
+      "prompt": "根據這篇文章，為什麼植物對於減緩氣候變遷很重要？",
+      "options": [
+        {
+          "translation": "它們有助於減少煤炭和石油的使用。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "它們有助於減少二氧化碳的影響。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "它們有助於增加溫室氣體排放。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "它們有助於阻止傳染病的傳播。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-45": {
+      "prompt": "依文中所述，下列哪一個國家近年來產生的溫室氣體最多？",
+      "options": [
+        {
+          "translation": "法國",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "美國",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "印度",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "中國",
+          "partOfSpeech": "n./adj."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-46": {
+      "prompt": "請依官方試卷的共用文章作答第 46 題。",
+      "options": [
+        {
+          "translation": "同事",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "家庭",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "鄰居",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "學生",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-47": {
+      "prompt": "請依官方試卷的共用文章作答第 47 題。",
+      "options": [
+        {
+          "translation": "飛行",
+          "partOfSpeech": "n./adj."
+        },
+        {
+          "translation": "覆蓋",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "移動",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "捨去",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-48": {
+      "prompt": "請依官方試卷的共用文章作答第 48 題。",
+      "options": [
+        {
+          "translation": "業務",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "合作",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "分佈",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "集合",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-49": {
+      "prompt": "請依官方試卷的共用文章作答第 49 題。",
+      "options": [
+        {
+          "translation": "任務",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "犧牲",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "貢獻",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "條件",
+          "partOfSpeech": "n./v."
+        }
+      ]
+    },
+    "judicial-fourth-106-legal-knowledge-50": {
+      "prompt": "請依官方試卷的共用文章作答第 50 題。",
+      "options": [
+        {
+          "translation": "金額",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "效果",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "原因",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "期間",
+          "partOfSpeech": "adj./n."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-31": {
+      "prompt": "母親幾乎每天晚上都讓孩子睡覺。",
+      "options": [
+        {
+          "translation": "跛行",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已感染",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "平靜",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "造成",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-32": {
+      "prompt": "羅斯抵達奧蘭多參加會議，她設法搭乘計程車前往她的住所並_____。",
+      "options": [
+        {
+          "translation": "挖",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "休息",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "居住",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "解決",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-33": {
+      "prompt": "如果弗萊明沒有發現青黴素，很多人都會因為細菌感染而_____。",
+      "options": [
+        {
+          "translation": "會死",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "會死",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "將會存活",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "將會被儲存",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-34": {
+      "prompt": "憑藉著高度_____的反導系統，我們可以有效地保衛我們的國家免受任何入侵。",
+      "options": [
+        {
+          "translation": "複雜",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "迷信",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "非正式",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "有意識",
+          "partOfSpeech": "adj./n."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-35": {
+      "prompt": "醫生說，食用各種蔬菜和水果對我們的健康有利。",
+      "options": [
+        {
+          "translation": "人工",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "膚淺的",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "有益",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "商業廣告",
+          "partOfSpeech": "n./adj."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-36": {
+      "prompt": "化妝品 _____ 可以透過改變一個人的臉或身體的形狀來使他/她看起來不同。",
+      "options": [
+        {
+          "translation": "陶器",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "手術",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "賄賂",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "奉承",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-37": {
+      "prompt": "我們去商場為我們的新公寓買了一些 _____，包括冰箱、爐灶和洗碗機。",
+      "options": [
+        {
+          "translation": "設施",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "餐具",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "電器",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "補充",
+          "partOfSpeech": "v./n."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-38": {
+      "prompt": "吃健康食品並進行運動的人 _____ 比不吃健康食品和運動的人更少出現健康問題。",
+      "options": [
+        {
+          "translation": "出色地",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "立即",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "歷史上",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "統計",
+          "partOfSpeech": "adv."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-39": {
+      "prompt": "水手的淺藍色襯衫 _____ 在陽光下與他深褐色的皮膚相得益彰。",
+      "options": [
+        {
+          "translation": "已確認",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "包含",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "貢獻了",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "對比",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-40": {
+      "prompt": "夏威夷是一個多元文化社會，是一個由不同_____群體組成的社區，其中沒有一個群體佔多數。",
+      "options": [
+        {
+          "translation": "道德",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "種族",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "道德",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "凡人",
+          "partOfSpeech": "n./adj."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-41": {
+      "prompt": "請依官方試卷的共用文章作答第 41 題。",
+      "options": [
+        {
+          "translation": "提升",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "影響",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "可能性",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "啟動",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-42": {
+      "prompt": "請依官方試卷的共用文章作答第 42 題。",
+      "options": [
+        {
+          "translation": "新興",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "結果",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "要求",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "令人驚嘆的",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-43": {
+      "prompt": "請依官方試卷的共用文章作答第 43 題。",
+      "options": [
+        {
+          "translation": "導出",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "隔離",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "交通",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "人口",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-44": {
+      "prompt": "請依官方試卷的共用文章作答第 44 題。",
+      "options": [
+        {
+          "translation": "數字",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "手指",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "時尚",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "片段",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-45": {
+      "prompt": "請依官方試卷的共用文章作答第 45 題。",
+      "options": [
+        {
+          "translation": "投票了",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "違反了",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "冒險",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "自願",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-46": {
+      "prompt": "這段話主要講了什麼？",
+      "options": [
+        {
+          "translation": "介紹一種新的智力理論。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "解釋為什麼聰明很重要。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "討論不同智力的重要性。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "評估培養智力的方法。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-47": {
+      "prompt": "下列何者不是本文中提到的情報？",
+      "options": [
+        {
+          "translation": "空間。",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "語言。",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "互動。",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "自然主義。",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-48": {
+      "prompt": "下列哪一種情報受到的批評最多？",
+      "options": [
+        {
+          "translation": "空間。",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "自然主義。",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "語言。",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "邏輯數學。",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-49": {
+      "prompt": "批評者對多元智能理論提出了哪些批評？",
+      "options": [
+        {
+          "translation": "它被錯誤地應用於教育。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "從未被科學研究證實過。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "它沒有告訴我們任何關於智力本質的資訊。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "判斷智力的標準太多了。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-107-legal-knowledge-50": {
+      "prompt": "根據這段文字，下列哪一項敘述是不正確的？",
+      "options": [
+        {
+          "translation": "藝術家最有可能依賴自然主義智慧。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "科學家傾向於認為邏輯數學智力是最重要的。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "空間智慧較好的人可能對影像有更清晰的視覺化。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "語言智能程度高的人更可能擅長解釋想法。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-31": {
+      "prompt": "喬治給我發了電子郵件，我回覆了。我們開始 _____，一開始我們兩個都很謹慎。",
+      "options": [
+        {
+          "translation": "對應",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "提交",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "遵守",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "壓縮",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-32": {
+      "prompt": "如果我對醫生提出投訴，我的身分是否會被保留 _____ 以免我的名字被洩露？",
+      "options": [
+        {
+          "translation": "明確",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "無意識",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "全面",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "機密",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-33": {
+      "prompt": "每個人都應該是平等的，但我聽到很多男人發表不利的言論來讓女人難堪或_____。",
+      "options": [
+        {
+          "translation": "容納",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "下屬",
+          "partOfSpeech": "n./adj."
+        },
+        {
+          "translation": "恐嚇",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "消除",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-34": {
+      "prompt": "巴斯德在巴黎的一所著名學校就讀，很快就開始了他的研究。",
+      "options": [
+        {
+          "translation": "失去了自己的視線",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "為自己贏得了名聲",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "追上自己了",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "利用了自己",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-35": {
+      "prompt": "計程車司機顯然是_____闖紅燈，造成事故。",
+      "options": [
+        {
+          "translation": "繫上安全帶",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "在風中",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "準備好",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "匆忙",
+          "partOfSpeech": "介系詞片語"
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-36": {
+      "prompt": "提姆不懂英語，所以他在美國旅行時必須依靠妻子為他_____一切。",
+      "options": [
+        {
+          "translation": "傳輸",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "變換",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "譯",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "運輸",
+          "partOfSpeech": "v./n."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-37": {
+      "prompt": "父親整晚都在外面工作，凜冽的寒風吹得他的手又紅又____。",
+      "options": [
+        {
+          "translation": "破裂",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "被寵壞了",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "被污染",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "失事",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-38": {
+      "prompt": "大多數失業家庭依靠地方政府提供的財政_____生存。",
+      "options": [
+        {
+          "translation": "短缺",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "紀念品",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "補助",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "附加費",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-39": {
+      "prompt": "儘管傑森正在抱怨他目前的工作，但他還是_____辭職，直到他找到新的工作。",
+      "options": [
+        {
+          "translation": "不情願",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "崇敬",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "回憶",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "倒數",
+          "partOfSpeech": "adj./n."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-40": {
+      "prompt": "和人類一樣，恆星也有完整的生命週期。恆星誕生於星際雲層，成年後繼續過著平靜的生活，然後靜靜地死去。",
+      "options": [
+        {
+          "translation": "陡峭",
+          "partOfSpeech": "adj./v."
+        },
+        {
+          "translation": "穩定",
+          "partOfSpeech": "adj./v."
+        },
+        {
+          "translation": "奇怪",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "staring 代號：3201 頁次：4－4",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-41": {
+      "prompt": "請依官方試卷的共用文章作答第 41 題。",
+      "options": [
+        {
+          "translation": "累積",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "通勤",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "驚人的",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "正在通訊",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-42": {
+      "prompt": "請依官方試卷的共用文章作答第 42 題。",
+      "options": [
+        {
+          "translation": "保留",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "保留",
+          "partOfSpeech": "v./adj."
+        },
+        {
+          "translation": "觀察",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "儲存",
+          "partOfSpeech": "v./n."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-43": {
+      "prompt": "請依官方試卷的共用文章作答第 43 題。",
+      "options": [
+        {
+          "translation": "收起",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "建立",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "向下",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "起飛",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-44": {
+      "prompt": "請依官方試卷的共用文章作答第 44 題。",
+      "options": [
+        {
+          "translation": "繼續",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "進行",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已消耗",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "濃縮",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-45": {
+      "prompt": "請依官方試卷的共用文章作答第 45 題。",
+      "options": [
+        {
+          "translation": "影響了",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "透過",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "估計",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "消除了",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-46": {
+      "prompt": "下列哪一個片語的意思與「物種」一詞最接近？",
+      "options": [
+        {
+          "translation": "各種食物。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "各種食者。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "各種動物。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "各種腦力。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-47": {
+      "prompt": "這段話的主要想法是什麼？",
+      "options": [
+        {
+          "translation": "動物的大腦大小相對於身體大小的比率是衡量智力的一個很好的指標。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "神經元的數量是動物智力的絕對衡量標準，無論是植物性動物或肉食性動物。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "神經元的數量表明，植物性動物通常比肉食性動物更聰明。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "神經元數量與動物身體大小的比率可以顯示動物的聰明程度。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-48": {
+      "prompt": "根據最新研究，下列哪一項敘述是正確的？",
+      "options": [
+        {
+          "translation": "狗比大多數肉食動物（包括貓）聰明得多。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "貓的大腦中比其他肉食動物（包括狗）有更多的神經元。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "貓的神經元數量可以是狗的兩倍，這使得貓成為人類更好的寵物。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "狗非常聰明，它們的神經元數量與人類一樣多。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-49": {
+      "prompt": "根據文中的說法，為什麼植食者需要有強大的腦力？",
+      "options": [
+        {
+          "translation": "尋找足夠的食物來維持自己的腦力。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "預測可能出現的危險，防止自己被吃掉。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "預測可能的食物來源以支持其相對較大的體型。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "尋找安全的地方休息以保存體力。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-108-legal-knowledge-50": {
+      "prompt": "從這段話中可以推論出下列哪一項敘述？",
+      "options": [
+        {
+          "translation": "貓比狗聰明。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "大型肉食動物往往會睡很多。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "植物性動物的大腦往往較大。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "建議狗狗和貓吃素。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-31": {
+      "prompt": "根據您在暑期與學生相處的小時數，您的額外報酬為 _____。",
+      "options": [
+        {
+          "translation": "癱瘓",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "收費過高",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "計算為",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "對等",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-32": {
+      "prompt": "壓力團體敦促公眾_____使用童工的公司所生產的商品。",
+      "options": [
+        {
+          "translation": "抵制",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "分離",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "包含",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "retreat 代號：3201 頁次：4－4",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-33": {
+      "prompt": "水是_____；您可以輕鬆地透過它清楚地看到一切。",
+      "options": [
+        {
+          "translation": "額外",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "實惠",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "被污染",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "透明",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-34": {
+      "prompt": "1800年代的法國____越南，這解釋了為什麼法國菜對越南飲食文化有很大的影響。",
+      "options": [
+        {
+          "translation": "殖民",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "減少",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已遷移",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "訂閱了",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-35": {
+      "prompt": "兒童 _____ 均衡飲食與充足運動。",
+      "options": [
+        {
+          "translation": "剝奪",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "蓬勃發展",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "拋出",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "出發",
+          "partOfSpeech": "n./v."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-36": {
+      "prompt": "柑橘類水果、_____ 柳橙、檸檬和葡萄柚富含維生素 C。",
+      "options": [
+        {
+          "translation": "至",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "事實上",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "簡而言之",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "例如",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-37": {
+      "prompt": "有氧運動是力量與美麗的完美結合，可以幫助您減肥並促進新陳代謝。",
+      "options": [
+        {
+          "translation": "組合",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "憂鬱症",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "檢查",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "擁有",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-38": {
+      "prompt": "銀杏葉據說可以有效增強記憶力，但也有 _____ 可能會增加中風的風險。",
+      "options": [
+        {
+          "translation": "隱私",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "關注",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "謙卑",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "規定",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-39": {
+      "prompt": "颶風過後兩週，這個偏遠村莊仍需要 _____ 水、食物和醫療用品。",
+      "options": [
+        {
+          "translation": "拒絕",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "不情願",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "絕望",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "所有格",
+          "partOfSpeech": "adj./n."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-40": {
+      "prompt": "人的血液中過多的 _____ 可能會導致心臟病。",
+      "options": [
+        {
+          "translation": "膽固醇",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "糖尿病",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "診斷",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "氣氛",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-41": {
+      "prompt": "成為 _____ 成功人士是人之常情，但您可以學會欣賞自己獨特的才能。",
+      "options": [
+        {
+          "translation": "謹慎",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "數字",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "一般",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "嫉妒",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-42": {
+      "prompt": "偉大的_____往往透過跳脫框架思考而獲得成功。",
+      "options": [
+        {
+          "translation": "通勤者",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "發明家",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "電梯",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "暫存器",
+          "partOfSpeech": "n./v."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-43": {
+      "prompt": "老年人最容易受到寒冷天氣和流感病毒的影響，因此他們在冬季應該得到更多的照顧。",
+      "options": [
+        {
+          "translation": "有價值的",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "體貼",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "易受攻擊",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "可抵抗",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-44": {
+      "prompt": "隨著選舉的到來，兩位候選人都需要_____他們的支持才能獲勝。",
+      "options": [
+        {
+          "translation": "鞏固",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "貢獻",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "剝奪",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "欺騙",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-45": {
+      "prompt": "預算已獲得董事會批准，其中包括增加 _____ 的研發費用。",
+      "options": [
+        {
+          "translation": "耐力",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "疏散",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "支出",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "擴展",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-46": {
+      "prompt": "請依官方試卷的共用文章作答第 46 題。",
+      "options": [
+        {
+          "translation": "而非",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "而非",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "被剝奪了",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "由於",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-47": {
+      "prompt": "請依官方試卷的共用文章作答第 47 題。",
+      "options": [
+        {
+          "translation": "增加",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "厭惡",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "除",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "比率",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-48": {
+      "prompt": "請依官方試卷的共用文章作答第 48 題。",
+      "options": [
+        {
+          "translation": "因此",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "同樣",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "雖然",
+          "partOfSpeech": "adv./conj."
+        },
+        {
+          "translation": "一次",
+          "partOfSpeech": "adv./n."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-49": {
+      "prompt": "請依官方試卷的共用文章作答第 49 題。",
+      "options": [
+        {
+          "translation": "晉升",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "投訴",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "提醒",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "規定",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-109-legal-knowledge-50": {
+      "prompt": "請依官方試卷的共用文章作答第 50 題。",
+      "options": [
+        {
+          "translation": "解",
+          "partOfSpeech": "不定詞片語"
+        },
+        {
+          "translation": "解決後",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "描繪",
+          "partOfSpeech": "不定詞片語"
+        },
+        {
+          "translation": "描繪",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-31": {
+      "prompt": "這是一個保守的社會，重視毫無疑問的傳統和文化規範。",
+      "options": [
+        {
+          "translation": "接受",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "威脅",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "爭議",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "外交",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-32": {
+      "prompt": "為了避免競爭對手的模仿，我們的新產品需求 _____ 涵蓋設計和功能。",
+      "options": [
+        {
+          "translation": "變更",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "已修復",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "裝飾品",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "準備",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-33": {
+      "prompt": "當護士移動他的斷腿時，病人忍不住發出了_____聲。",
+      "options": [
+        {
+          "translation": "呻吟",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "授予",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "補救",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "救濟",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-34": {
+      "prompt": "幸運的是，這座歷史建築在可怕的地震後仍然存在。",
+      "options": [
+        {
+          "translation": "聯絡人",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "意圖",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "合約",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "完好無損",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-35": {
+      "prompt": "墮胎是一個極度 _____ 的問題，因為它涉及結束母親子宮內嬰兒的生命。",
+      "options": [
+        {
+          "translation": "複雜",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "優雅",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "懷孕了",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "典型",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-36": {
+      "prompt": "了解蒼蠅對健康的影響對於幫助預防危險疾病和細菌的傳播非常重要。",
+      "options": [
+        {
+          "translation": "保險",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "趨勢",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "期望",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "威脅",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-37": {
+      "prompt": "在首映式參觀期間，失業抗議者_____，關閉了公共交通。",
+      "options": [
+        {
+          "translation": "繞過街區",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "不遺餘力",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "走上街頭",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "held the ground 代號：3201 頁次：4－4",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-38": {
+      "prompt": "在台北搭乘捷運既快速又方便，但尖峰時段的火車可能非常_____。",
+      "options": [
+        {
+          "translation": "加冕",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "小丑",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "陰雲",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "擁擠",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-39": {
+      "prompt": "我媽花了新台幣一萬元買了一款號稱能消除眼部皺紋的眼霜。",
+      "options": [
+        {
+          "translation": "佔據",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "施肥",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "刷新",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "減少",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-40": {
+      "prompt": "我需要一位可靠且_____的秘書，而不是像你這樣懶惰、健忘的秘書！",
+      "options": [
+        {
+          "translation": "高效能",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "相當大",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "狂熱者",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "同時",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-41": {
+      "prompt": "麥克斯傾向於 _____ 事物的程度。如果他感冒了，他可能會說他快要死了。",
+      "options": [
+        {
+          "translation": "激怒",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "演示",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "誇大",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "評估",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-42": {
+      "prompt": "請依官方試卷的共用文章作答第 42 題。",
+      "options": [
+        {
+          "translation": "來烹飪",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "開始烹飪",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "烹飪",
+          "partOfSpeech": "不定詞片語"
+        },
+        {
+          "translation": "烹飪",
+          "partOfSpeech": "不定詞片語"
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-43": {
+      "prompt": "請依官方試卷的共用文章作答第 43 題。",
+      "options": [
+        {
+          "translation": "吹噓[",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "擁有",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "吹噓",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "會誇口",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-44": {
+      "prompt": "請依官方試卷的共用文章作答第 44 題。",
+      "options": [
+        {
+          "translation": "無論如何",
+          "partOfSpeech": "conj./adj."
+        },
+        {
+          "translation": "前",
+          "partOfSpeech": "adv./prep."
+        },
+        {
+          "translation": "後",
+          "partOfSpeech": "adv./conj."
+        },
+        {
+          "translation": "儘管",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-45": {
+      "prompt": "請依官方試卷的共用文章作答第 45 題。",
+      "options": [
+        {
+          "translation": "包括",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "獨家",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "外部",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "內部",
+          "partOfSpeech": "adv."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-46": {
+      "prompt": "本文的主題是下列哪一項？",
+      "options": [
+        {
+          "translation": "拉斯維加斯的蝗蟲入侵規模如此之大，你可以在氣象雷達上看到它。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "蝗蟲導致拉斯維加斯降雨增加。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "拉斯維加斯的蚱蜢比平常更早開始遷徙。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "由於大量降雨，拉斯維加斯的沙漠很快就會消失。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-47": {
+      "prompt": "什麼可能導致蚱蜢體型過大？",
+      "options": [
+        {
+          "translation": "流星雨。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "暴露於雷達系統。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "異常的降雨量。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "陽光變化。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-48": {
+      "prompt": "文章中的「這些東西」指的是什麼？",
+      "options": [
+        {
+          "translation": "暴風雨。",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "沙漠。",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "流星。",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "蚱蜢。",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-49": {
+      "prompt": "根據本文，以下關於蚱蜢的敘述哪一項是不正確的？",
+      "options": [
+        {
+          "translation": "它們可以在雷達系統上輕鬆看到。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "他們經常遷移到亞利桑那州。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "他們喜歡下大雨。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "成群結隊的蚱蜢是亞利桑那州的常見景象。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-110-legal-knowledge-50": {
+      "prompt": "下列哪一個字可以代替第一句中的「hordes」？",
+      "options": [
+        {
+          "translation": "雞蛋。",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "孩子們。",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "成群結隊。",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "狀態。",
+          "partOfSpeech": "n./v."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-31": {
+      "prompt": "政府希望建立一個 _____ 來捍衛自由、安全、人權和民主。",
+      "options": [
+        {
+          "translation": "適應",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "分配",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "聯盟",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "設備",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-32": {
+      "prompt": "提姆已經預訂了一張飛往芝加哥的機票並在飯店_____一間單人房。",
+      "options": [
+        {
+          "translation": "應得的",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "保守",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "保留",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "reserved 代號：3201 頁次：4－4",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-33": {
+      "prompt": "明年大學畢業後，她將_____擔任小學老師。",
+      "options": [
+        {
+          "translation": "連線",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "拒絕",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "資格",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "反映",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-34": {
+      "prompt": "一件古老的文物經過數千年的磨損，是_____。",
+      "options": [
+        {
+          "translation": "輕率",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "不可避免",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "慷慨",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "感激",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-35": {
+      "prompt": "榴槤有一種 _____ 氣味，在大多數情況下，人們喜歡它或討厭它。",
+      "options": [
+        {
+          "translation": "慷慨",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "頻繁",
+          "partOfSpeech": "v./adj."
+        },
+        {
+          "translation": "不同的",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "廣告素材",
+          "partOfSpeech": "n./adj."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-36": {
+      "prompt": "約翰昨晚喝了很多啤酒和威士忌，喝得酩酊大醉，因為飯店房間裡的酒精飲料都是_____。",
+      "options": [
+        {
+          "translation": "免費",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "實質",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "仁慈",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "額外",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-37": {
+      "prompt": "黃太太非常喜歡她剛出生的寶寶，所以她已經為寶寶的未來做了很多計劃。",
+      "options": [
+        {
+          "translation": "喜歡",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "忽略了",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "感知",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "發現",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-38": {
+      "prompt": "這座神社是為了紀念在保衛國家時犧牲的士兵。",
+      "options": [
+        {
+          "translation": "專用",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "延遲",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "被玷污",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "變形",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-39": {
+      "prompt": "具有 _____ 態度的人在真正嘗試之前常常會覺得某項任務太難完成。",
+      "options": [
+        {
+          "translation": "靈活",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "好奇",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "悲觀",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "侵略性",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-40": {
+      "prompt": "一些遭受 _____ 暴力的婦女因為孩子而選擇保持沉默。",
+      "options": [
+        {
+          "translation": "國內",
+          "partOfSpeech": "adj./n."
+        },
+        {
+          "translation": "戲劇性的",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "精力充沛",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "自動",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-41": {
+      "prompt": "請依官方試卷的共用文章作答第 41 題。",
+      "options": [
+        {
+          "translation": "識別",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "導出",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "交換",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "合併",
+          "partOfSpeech": "v./n."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-42": {
+      "prompt": "請依官方試卷的共用文章作答第 42 題。",
+      "options": [
+        {
+          "translation": "聽到",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "計劃",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "讀取",
+          "partOfSpeech": "v./adj."
+        },
+        {
+          "translation": "告訴",
+          "partOfSpeech": "n./v."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-43": {
+      "prompt": "請依官方試卷的共用文章作答第 43 題。",
+      "options": [
+        {
+          "translation": "其中",
+          "partOfSpeech": "adj./pron."
+        },
+        {
+          "translation": "什麼",
+          "partOfSpeech": "pron./adj."
+        },
+        {
+          "translation": "其中",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "那個",
+          "partOfSpeech": "pron./conj."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-44": {
+      "prompt": "請依官方試卷的共用文章作答第 44 題。",
+      "options": [
+        {
+          "translation": "前",
+          "partOfSpeech": "adv./prep."
+        },
+        {
+          "translation": "以免",
+          "partOfSpeech": "conj."
+        },
+        {
+          "translation": "很快",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "一次",
+          "partOfSpeech": "adv./n."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-45": {
+      "prompt": "請依官方試卷的共用文章作答第 45 題。",
+      "options": [
+        {
+          "translation": "估計",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "展示位置",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "反對",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "治療",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-46": {
+      "prompt": "下列哪一個是該段落的最佳標題？",
+      "options": [
+        {
+          "translation": "乳酪文化。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "乳酪的營養。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "乳酪的誕生。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "起司的優點。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-47": {
+      "prompt": "下列何者與「耗盡」的意思最接近？",
+      "options": [
+        {
+          "translation": "拿出來。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "加到。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "已執行。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "被擺脫了。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-48": {
+      "prompt": "根據本文，下列哪一項對於「發酵」過程是必要的？",
+      "options": [
+        {
+          "translation": "文化。",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "紋理。",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "口味。",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "育種。",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-49": {
+      "prompt": "根據本文，巴斯德消毒需要下列哪一項？",
+      "options": [
+        {
+          "translation": "新增文化。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "冷凍牛奶。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "瀝乾凝乳。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "清除所有細菌。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-111-legal-knowledge-50": {
+      "prompt": "根據本文，下列何者是正確的？",
+      "options": [
+        {
+          "translation": "成熟的牛奶形成凝乳，可以食用。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "帕瑪森起司比布里起司含有更多的水。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "數千年前，人們以巴斯德消毒法加工牛奶。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "釋放的二氧化碳氣泡在瑞士起司上形成孔洞。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-31": {
+      "prompt": "「零號病人」是一個術語，用來描述第一個爆發中病毒或細菌性疾病的人類 _____。",
+      "options": [
+        {
+          "translation": "已恢復",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已聯絡",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已感染",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "偵測到",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-32": {
+      "prompt": "銀行對傑克提起訴訟，因為他拖欠 _____ 付款超過 6 個月。",
+      "options": [
+        {
+          "translation": "抵押貸款",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "管理",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "放大倍率",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "屈辱",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-33": {
+      "prompt": "當我們昨晚探索舊城區時，瑪麗和我並沒有享受太多樂趣。",
+      "options": [
+        {
+          "translation": "預計",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "接近",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "允許",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "累積",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-34": {
+      "prompt": "法爾先生 _____ 聽到派翠西亞遲到的藉口，所以他解雇了她。",
+      "options": [
+        {
+          "translation": "由",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "厭倦了",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "尋找",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "忍受",
+          "partOfSpeech": "片語"
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-35": {
+      "prompt": "除非用顯微鏡觀察，否則肉眼看不到 _____ 和病毒。",
+      "options": [
+        {
+          "translation": "細菌",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "截止日期",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "肖像",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "野生動物",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-36": {
+      "prompt": "經理需要 _____ 資料來制定新的行銷計畫。",
+      "options": [
+        {
+          "translation": "體貼",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "準確",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "討厭的",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "已過時",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-37": {
+      "prompt": "酒吧營造出輕鬆的_____，這使其成為聚會的好地方。",
+      "options": [
+        {
+          "translation": "半球",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "氣氛",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "地平線",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "驚訝",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-38": {
+      "prompt": "據說新發明的廚房_____可以用乾熱消毒你的N95口罩。",
+      "options": [
+        {
+          "translation": "設備",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "應用程式",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "欣賞",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "約會",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-39": {
+      "prompt": "在致命的爆炸中，汽車和卡車被拋向空中並 _____ 翻來覆去。",
+      "options": [
+        {
+          "translation": "已更改",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "隱藏",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "擴展",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "翻轉",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-40": {
+      "prompt": "總經理拒絕出售公司 _____ 對我們的計畫造成重大打擊。",
+      "options": [
+        {
+          "translation": "構成",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已分發",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "詳細闡述",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "terminated 代號：3201 頁次：4－4",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-41": {
+      "prompt": "請依官方試卷的共用文章作答第 41 題。",
+      "options": [
+        {
+          "translation": "影響",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "令人不安",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "擊敗",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "減少",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-42": {
+      "prompt": "請依官方試卷的共用文章作答第 42 題。",
+      "options": [
+        {
+          "translation": "相較之下",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "結論",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "例如",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "至少",
+          "partOfSpeech": "介系詞片語"
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-43": {
+      "prompt": "請依官方試卷的共用文章作答第 43 題。",
+      "options": [
+        {
+          "translation": "觀察到",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "違反了",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "誘導",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "提供",
+          "partOfSpeech": "adj./conj."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-44": {
+      "prompt": "請依官方試卷的共用文章作答第 44 題。",
+      "options": [
+        {
+          "translation": "敵意",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "分配",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "接近度",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "突出",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-45": {
+      "prompt": "請依官方試卷的共用文章作答第 45 題。",
+      "options": [
+        {
+          "translation": "具有傳染性",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "無禮",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "好戰",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "叛逆",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-46": {
+      "prompt": "這篇文章主要講了什麼？",
+      "options": [
+        {
+          "translation": "愛迪生與特斯拉之間的戰鬥。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "特斯拉的發明塑造了我們的生活。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "特斯拉對現代科學家的影響。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "特斯拉著名專利與工業革命。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-47": {
+      "prompt": "下列哪一項與第三段「撤銷」一詞的意思最接近？",
+      "options": [
+        {
+          "translation": "已應用。",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "合法化。",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已取消。",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "確定。",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-48": {
+      "prompt": "據文所述，特斯拉為何辭去愛迪生的工作？",
+      "options": [
+        {
+          "translation": "特斯拉看不起愛迪生的系統。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "愛迪生拒絕支付承諾的報酬。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "愛迪生偷了特斯拉的交流電想法。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "特斯拉未能解決直流系統的問題。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-49": {
+      "prompt": "以下關於 Tesla 的敘述哪一項是不正確的？",
+      "options": [
+        {
+          "translation": "他提出了使 X 射線更安全的想法。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "他創造了第一個遙控器。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "他的溝通系統比愛迪生的直流系統應用更廣泛。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "他的專利被應用於第一個水力發電廠的設計。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-112-legal-knowledge-50": {
+      "prompt": "從這段文字可以推論出下列哪一項？",
+      "options": [
+        {
+          "translation": "直到最近，特斯拉才廣為人知。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "愛迪生嘲笑特斯拉不是真正的美國人。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "贏得對馬可尼的官司對特斯拉來說意義重大。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "美國政府已與特斯拉接洽合作。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-31": {
+      "prompt": "疫情剛爆發時，各國之間並沒有就如何應對這一問題達成國際共識。",
+      "options": [
+        {
+          "translation": "目的地",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "共識",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "本質",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "感謝",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-32": {
+      "prompt": "調查中的建議已____納入新法。",
+      "options": [
+        {
+          "translation": "補助",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "廢除",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "合併",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "不知所措",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-33": {
+      "prompt": "約瑟夫在一場致命的車禍中失去了父母，經歷了強烈的_____和創傷。",
+      "options": [
+        {
+          "translation": "光束",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "悲傷",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "勝利",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "虛榮",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-34": {
+      "prompt": "如果您需要在下雪天氣駕駛，必須採取適當的 _____ 以避免發生事故。",
+      "options": [
+        {
+          "translation": "目標",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "銘文",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "興奮劑",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "注意事項",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-35": {
+      "prompt": "市長 _____ 公司重新考慮在幾年內分階段關閉商店的決定。",
+      "options": [
+        {
+          "translation": "裸露",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "烏鴉",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "姿勢",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "敦促",
+          "partOfSpeech": "v./n."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-36": {
+      "prompt": "_____ 外套是戶外活動的理想選擇，因為它可以在下雨時保持身體乾燥。",
+      "options": [
+        {
+          "translation": "後續",
+          "partOfSpeech": "n./adj."
+        },
+        {
+          "translation": "確定",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "有說服力的",
+          "partOfSpeech": "n./adj."
+        },
+        {
+          "translation": "防水",
+          "partOfSpeech": "adj./n."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-37": {
+      "prompt": "研究小組在向董事會提交結論之前進行了詳細分析。",
+      "options": [
+        {
+          "translation": "刪除",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "發現",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "正在安裝",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "呈現",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-38": {
+      "prompt": "她是一位 _____ 主持人。她確保每個人在聚會上都感到舒適。",
+      "options": [
+        {
+          "translation": "憤怒",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "親切的",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "珍貴",
+          "partOfSpeech": "n./adj."
+        },
+        {
+          "translation": "可疑",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-39": {
+      "prompt": "隨著暴風雨的臨近，船長立即決定更換船舶的_____。",
+      "options": [
+        {
+          "translation": "課程",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "手冊",
+          "partOfSpeech": "n./adj."
+        },
+        {
+          "translation": "施工",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "motion 代號：3201 頁次：4－4",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-40": {
+      "prompt": "航空公司提供長途航班上的乘客 _____ 毛巾。",
+      "options": [
+        {
+          "translation": "需要",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "反射",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "刷新",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "重複",
+          "partOfSpeech": "adj."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-41": {
+      "prompt": "請依官方試卷的共用文章作答第 41 題。",
+      "options": [
+        {
+          "translation": "迅速",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "遠端",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "全面",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "區別",
+          "partOfSpeech": "adv."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-42": {
+      "prompt": "請依官方試卷的共用文章作答第 42 題。",
+      "options": [
+        {
+          "translation": "協調",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "奉獻",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "羞辱",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "了解",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-43": {
+      "prompt": "請依官方試卷的共用文章作答第 43 題。",
+      "options": [
+        {
+          "translation": "戳",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "推廣",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "前進",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "讚美",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-44": {
+      "prompt": "請依官方試卷的共用文章作答第 44 題。",
+      "options": [
+        {
+          "translation": "同情",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "同情",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "邊緣化",
+          "partOfSpeech": "單字"
+        },
+        {
+          "translation": "鞏固",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-45": {
+      "prompt": "請依官方試卷的共用文章作答第 45 題。",
+      "options": [
+        {
+          "translation": "聲譽",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "屬性",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "位置",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "耐心",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-46": {
+      "prompt": "根據本文，下列哪一項在美國不被視為迷信？",
+      "options": [
+        {
+          "translation": "在屋內打開雨傘。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "害怕任何一個月的 17 號。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "13 號星期五是個不吉利的日子。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "在人行道上的梯子下行走。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-47": {
+      "prompt": "根據文中的說法，為什麼13被認為是不吉利的呢？",
+      "options": [
+        {
+          "translation": "人們因為12點以後的未知而感到不安。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "它提醒人們猶大在13號星期五出賣了耶穌。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "人們認為這意味著他們的生命結束了。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "13 號星期五在其他國家發生了不幸。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-48": {
+      "prompt": "根據本文，下列哪一項的意思與「triskaidekaphobia」一詞最接近？",
+      "options": [
+        {
+          "translation": "對數字 13 感到恐慌。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "對數字13的詛咒。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "13號的恩惠。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "數字 13 的喜悅。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-49": {
+      "prompt": "13號星期五一年最多出現幾次？",
+      "options": [
+        {
+          "translation": "一次。",
+          "partOfSpeech": "adv./n."
+        },
+        {
+          "translation": "兩次。",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "三次。",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "四次。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-113-legal-knowledge-50": {
+      "prompt": "這段落最有可能出現在雜誌的哪個部分？",
+      "options": [
+        {
+          "translation": "食物。",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "神話。",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "健康。",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "道德。",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-31": {
+      "prompt": "為了逃離喧囂的城市生活，這對夫婦賣掉了大城市的房子，決定永遠住在鄉村_____。",
+      "options": [
+        {
+          "translation": "不小心",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "密集",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "神秘地",
+          "partOfSpeech": "adv."
+        },
+        {
+          "translation": "永久",
+          "partOfSpeech": "adv."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-32": {
+      "prompt": "手部神經修復手術是一項複雜且 _____ 的手術，旨在重新連接任何斷裂的神經。",
+      "options": [
+        {
+          "translation": "精緻",
+          "partOfSpeech": "n./adj."
+        },
+        {
+          "translation": "雄辯",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "無知",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "排練",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-33": {
+      "prompt": "成功的音樂節 _____ 各種音樂風格，以及原住民食品、手工藝品和飲料。",
+      "options": [
+        {
+          "translation": "已被解職",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "縮小了",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已降級",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "精選",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-34": {
+      "prompt": "消防員不顧人身安全，於 _____ 衝進燃燒的大樓營救受困人員。",
+      "options": [
+        {
+          "translation": "本能",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "強度",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "成熟度",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "侮辱",
+          "partOfSpeech": "v./n."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-35": {
+      "prompt": "市長 _____ 問他涉及女演員的醜聞。",
+      "options": [
+        {
+          "translation": "閃了",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "消耗了",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已退回",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "縫合",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-36": {
+      "prompt": "為了快速收集文章的主要思想，她決定在會議之前____通過它。",
+      "options": [
+        {
+          "translation": "邊緣",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "輪圈",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "略讀",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "修剪",
+          "partOfSpeech": "adj./v."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-37": {
+      "prompt": "為了_____國家經濟，政府正在實施新的財政政策。",
+      "options": [
+        {
+          "translation": "惡化",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "回歸",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "降級",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "改進",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-38": {
+      "prompt": "該慈善機構在經濟衰退期間幫助許多貧困家庭維持收支平衡，值得_____。",
+      "options": [
+        {
+          "translation": "傷亡",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "下降",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "信用",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "處罰",
+          "partOfSpeech": "n."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-39": {
+      "prompt": "長期在陽光下_____可能會對我們造成嚴重的傷害，例如老化、皮膚灼傷或皮膚癌。",
+      "options": [
+        {
+          "translation": "好處",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "接近",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "曝光",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "reflection 代號：3201 頁次：4－4",
+          "partOfSpeech": "單字"
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-40": {
+      "prompt": "不要將羊毛衫放入洗衣機中；它可能_____。",
+      "options": [
+        {
+          "translation": "縮小",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "單獨的",
+          "partOfSpeech": "n./adj."
+        },
+        {
+          "translation": "鏟子",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "啟動畫面",
+          "partOfSpeech": "n./v."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-41": {
+      "prompt": "請依官方試卷的共用文章作答第 41 題。",
+      "options": [
+        {
+          "translation": "無聊",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "忽略",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "了解",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "已清空",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-42": {
+      "prompt": "請依官方試卷的共用文章作答第 42 題。",
+      "options": [
+        {
+          "translation": "隱藏",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "表示",
+          "partOfSpeech": "v."
+        },
+        {
+          "translation": "挑戰",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "減少",
+          "partOfSpeech": "v."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-43": {
+      "prompt": "請依官方試卷的共用文章作答第 43 題。",
+      "options": [
+        {
+          "translation": "事實上",
+          "partOfSpeech": "介系詞片語"
+        },
+        {
+          "translation": "因此",
+          "partOfSpeech": "n./adv."
+        },
+        {
+          "translation": "即",
+          "partOfSpeech": "片語"
+        },
+        {
+          "translation": "但是",
+          "partOfSpeech": "conj./adv."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-44": {
+      "prompt": "請依官方試卷的共用文章作答第 44 題。",
+      "options": [
+        {
+          "translation": "在",
+          "partOfSpeech": "prep."
+        },
+        {
+          "translation": "由",
+          "partOfSpeech": "adj./prep."
+        },
+        {
+          "translation": "為",
+          "partOfSpeech": "prep./conj."
+        },
+        {
+          "translation": "至",
+          "partOfSpeech": "prep."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-45": {
+      "prompt": "請依官方試卷的共用文章作答第 45 題。",
+      "options": [
+        {
+          "translation": "路徑",
+          "partOfSpeech": "n."
+        },
+        {
+          "translation": "限制",
+          "partOfSpeech": "n./v."
+        },
+        {
+          "translation": "關注",
+          "partOfSpeech": "v./n."
+        },
+        {
+          "translation": "轉",
+          "partOfSpeech": "n./v."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-46": {
+      "prompt": "這段話的主要想法是什麼？",
+      "options": [
+        {
+          "translation": "動物園的優點和缺點。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "動物園賺錢的方式。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "經營動物園的龐大成本。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "動物保護的重要性。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-47": {
+      "prompt": "根據倡議者的說法，下列哪一項是動物園的好處？",
+      "options": [
+        {
+          "translation": "動物園圈養的動物得到足夠的食物和水。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "動物園有助於維持自然界的物種多樣性。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "動物園可以教育大眾並培養欣賞能力。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "動物園為所有動物提供理想的棲息地。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-48": {
+      "prompt": "為什麼動物權利活動人士反對動物園的存在？",
+      "options": [
+        {
+          "translation": "動物園為動物提供了太多的食物和空間。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "動物園培養對動物的同理心。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "動物園不應幹擾任何物種的生活。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "動物園不應該以犧牲動物為代價來賺錢。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-49": {
+      "prompt": "根據這篇文章，下列哪一項與「異國情調」一詞的意思最接近？",
+      "options": [
+        {
+          "translation": "常见",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "不寻常",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "普通",
+          "partOfSpeech": "adj."
+        },
+        {
+          "translation": "创意",
+          "partOfSpeech": "n./adj."
+        }
+      ]
+    },
+    "judicial-fourth-114-legal-knowledge-50": {
+      "prompt": "從作者對動物園的信念可以推論出什麼？",
+      "options": [
+        {
+          "translation": "动物园将继续存在。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "經營動物園可以賺大錢。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "每個人都應該成為動物園的倡導者。",
+          "partOfSpeech": "句子"
+        },
+        {
+          "translation": "動物權利運動者的需求量很大。",
+          "partOfSpeech": "句子"
+        }
+      ]
+    }
+  },
+  "passages": {
+    "judicial-fourth-105-english-passage-37-40": "最常用來描述卡帕多西亞地區的字是「超凡脫俗」。 _____ 37 卡帕多西亞位於安納托利亞中部，距離土耳其首都安卡拉東南約 290 公里，透過提供不同於地中海沿岸常規旅遊的有趣的附帶旅行而吸引遊客。在卡帕多西亞，您可以找到各個時期的豐富多樣的遺址，從希蒂人（古埃及人的敵人）時代到 38 世紀早期基督教徒時代，再到 13 世紀偉大絲綢之路時代。但這裡的獨特之處大多源自於39段地質歷史。在過去 1000 萬年裡，火山____40 的火山灰覆蓋了該地區，這些火山灰被壓實，形成一種柔軟、多孔的岩石，稱為凝灰岩。",
+    "judicial-fourth-105-english-passage-41-45": "2011年初，前警察林正義開始思考當年3月退休後如何度過空閒時間。正當他沉思時，41歲的他聽說市政府推出了一項公民農民計劃，該計劃允許當地居民在六個月內免租金的土地上種植農產品。參加該計劃後，他很快就 42 歲了，並於 2011 年 7 月開始了自己的城市農民生活。 「我以為我只會 43 歲。」林回憶道。 「但開始之後，我對園藝的興趣與日俱增。看到植物一天天變得更高更大，讓我有很大的成就感。」2011 年 12 月，林的免租農場結束後，他決定直接從地主那裡租用新的 _____ 44，繼續他最喜歡的活動。現在他每天早上花一到兩個小時，每個週末至少花半天時間在農場工作，做該做的事：犁地、播種、澆水、45、除草等等。對他來說，都市農業不僅填補了他退休後的空閒時間，也給了他從未經歷過的精神回報。",
+    "judicial-fourth-105-english-passage-46-50": "米老鼠是華特迪士尼公司的官方吉祥物，也是世界上最知名的卡通人物之一。然而，很少人知道它是為了取代幸運兔奧斯瓦爾德而創建的，幸運兔奧斯瓦爾德是迪士尼工作室為環球影業的查爾斯·明茨創作的早期卡通人物。 1928 年春天，隨著該劇的熱銷，迪士尼要求明茨增加預算。但明茨反而要求華特削減 20% 的預算，作為籌碼，他提醒迪士尼環球擁有這個角色，並透露他已經與迪士尼大部分現有員工簽訂了新合約。明茨擁有奧斯瓦爾德，並認為他擁有迪士尼。迪士尼憤怒地拒絕了這筆交易，並返回製作了他根據合約欠明茨的最後一部奧斯瓦爾德漫畫。迪士尼對員工的背叛感到沮喪，但決心從頭開始。新的迪士尼工作室很快就啟動了。 1928 年春天，迪士尼要求烏布伊沃克斯開始構思新的角色創意。伊沃克斯嘗試了各種動物的草圖，例如狗和貓，但這些都沒有吸引迪士尼。一頭母牛和一匹公馬也被拒絕了。然後，華特迪士尼想到了他農場裡曾經養過的一隻老寵物老鼠。他要求伊沃克斯為迪士尼畫上一個新的老鼠角色。 「莫蒂默老鼠」是迪士尼最初給這個角色的名字，後來他的妻子莉蓮說服他改變了這個名字，最後米老鼠誕生了。演員米基·魯尼聲稱，在米奇·麥奎爾時代，他在華納兄弟工作室遇到了漫畫家沃爾特·迪士尼，迪士尼受到啟發以他的名字命名米老鼠。",
+    "judicial-fourth-106-english-passage-41-45": "氣候變遷將迫使某些鳥類遷徙；水資源會增加或減少；將會有更多的洪水和乾旱。一些沿海地區海平面將會上升。將會出現熱浪和更多的空氣污染，進而導致傳染病傳播。然而，也會有一些好處。適度變暖將有利於一些農民。有些地區會有更多的水和更多的陽光。有幾種方法可以嘗試減緩氣候變化，例如重新種植和增加世界森林面積，因為植物和樹木可以減少二氧化碳的影響，但這本身不足以阻止全球暖化。為此，我們必須減少二氧化碳的產生。實現這一目標的一種方法是減少對煤炭和石油等化石燃料的使用，這是可能的，但必須逐步進行：在一段時間內，風能和太陽能可以取代煤炭和石油。氣候變遷並不是什麼新鮮事。這發生在兩百年前工業革命開始的時候。近年來，美國的溫室氣體排放量佔總排放量的25%。未來，印度和中國產生的溫室氣體將超過美國和歐洲。",
+    "judicial-fourth-106-english-passage-46-50": "如您所知，Rothe 女士將於今年底退休。她為我們公司做出了巨大貢獻，她的 46 歲員工都會懷念她。她已經在公司工作了 15 年，期間從銷售助理晉升為銷售經理 47 年。我們還將贈送她一份小禮物。我已經請瑪麗整理 48 份作為禮物，如果你想做 49 份，她會帶著一個大棕色信封過來。您給的 _____ 50 完全是您的選擇。離職方將於12月20日下班後出發。我期待在那裡見到大家。",
+    "judicial-fourth-107-english-passage-41-45": "伊朗與六個世界大國就其核子計畫達成的協議應該會導致對該國的製裁到明年開始放鬆。伊朗人希望 41 日的旅行限制能促使國際遊客湧入。旅行社已經看到需求的增加。憑藉其古老的建築、42 個風景和熱情的人民，旅遊公司將伊朗描述為中東未開發的寶石之一。但自 1979 年伊斯蘭革命以來，該國的_____ 43 來自西方的遊客數量有所下降。最新的 44 份報告顯示，2013 年來自北美和歐盟的入境人數只有 9 萬人。前外交官 Mehrdad Khonsari 表示，還有很多工作要做。 「我們在伊朗遇到的困難肯定損害了旅遊業，因為人們不敢去。但那些 45 歲的人克服了這些考慮並訪問了伊朗，他們從來沒有後悔過，」孔薩裡說。",
+    "judicial-fourth-107-english-passage-46-50": "專家傳統上認為高水準的智力適用於大多數人類活動，保證其擁有者無論做什麼都能取得成功。然而，在1980年代，霍華德·加德納教授提出了多元智能理論，認為心靈並非只擁有一種智能，而是擁有多種不同的智能，包括語言智能、邏輯數學智能、空間智能、自然智能等。一個具有高語言智能的人擁有大量的詞彙量和良好表達自己的能力。加德納認為詩人是精明的語言運用者的最佳典範。在創作詩歌時，詩人充分利用了意義的複雜性和最廣泛的語言動力。當然，具有高語言智慧的人會擅長與語言相關的活動，例如寫作、教學和說服他人。邏輯數學智力是指通常與科學家和數學家相關的技能。科學家傾向於賦予它比其他智能更重要的作用。加德納當然不同意這個觀點。他認為邏輯數學智能只是一組智能中的一個，並聲稱儘管它在西方社會中可能異常重要，但它在其他社會中發揮的作用則更為溫和。空間智能是指在頭腦中準確、精確地想像事物的能力。因此，這種智力與藝術家有關，他們是視覺化和巧妙利用形式和顏色的專家。具有高水準空間智慧的人也可能具有出色的視覺記憶，甚至可能具有所謂的照相記憶。自然智能一直頗具爭議，批評者普遍將其視為一個令人感興趣的領域。加德納假設，自然智力水平較高的人對自然以及自己與自然的關係更加敏感。一個在種植植物或飼養動物方面取得成功的人可以說具有高水準的自然智力。這樣的人可能是成功的園丁或農民，也可能成為研究自然世界的優秀科學家。多元智能的革命性理論招致了一些批評。有些人質疑某些東西是否具有智力的標準。也有人指出，多元智能的存在從未透過科學研究得到證實。儘管有這些批評，多元智慧理論還是引發了關於智慧價值和本質的精彩辯論。隨著教師尋求獲取和發展學生的多元智能，其在教育領域的應用導致了更多樣化的教育方法。",
+    "judicial-fourth-108-english-passage-41-45": "每年產生超過 3.2 億噸塑料，其中大量塑料最終流入海洋，其中大部分 41 _____ 位於大太平洋垃圾帶等地方。大太平洋垃圾帶是一個面積超過 160 萬平方公里的巨大區域。海洋清理基金會的研究人員對該地區的塑膠進行了調查，使用飛機從天上飛來 42 並使用船隻對水面進行拖網捕撈。他們發現那裡的塑膠數量似乎呈指數級增長，可能是之前認為的 16 倍。世界海洋中的塑膠太多，這個問題仍然存在_____ 43 。被扔進海洋或順流衝入大海的每一點塑膠要么會下沉，要么被水流捲起。其中大部分最終被帶入五個巨大海洋區域之一，那裡的塑膠可能如此 _____ 44 _____ 以至於這些區域獲得了諸如太平洋垃圾帶之類的名稱。據該研究背後的研究人員稱，貼片中的塑膠含量可能是先前研究的 16 倍以上 _____ 45 。大太平洋垃圾帶的鳥瞰圖乍看之下可能像是開闊的水域。但裡面有來自世界各地的碎片——這些碎片會困住海洋動物或被海洋動物吃掉，填滿它們的身體，達到致命的程度，並污染我們的食物供應。",
+    "judicial-fourth-108-english-passage-46-50": "范德比爾特大學的研究人員決定找出各種動物的智力。為了正確比較不同物種的腦力，僅僅稱量腦組織的重量是不夠的。您必須考慮大腦相對於生物體的大小。但這可能無法評估實際的智力。神經科學家 Suzana Herculano-Houzel 說：「我相信動物神經元的絕對數量決定了它們內部精神狀態的豐富程度，以及它們根據過去的經驗預測環境中即將發生的事情的能力。」她和她的同事發現肉食者的神經元數量與植物性動物的神經元數量大致相同。這意味著植食者需要與肉食者捕獲掠食者所需的腦力一樣多的腦力來逃避掠食者。貓和狗的標準如何？先前的研究結果顯示，貓的神經元數量為 3 億，而狗的神經元數量約為 1.6 億。然而，在這項最新研究中，狗的神經元數量最高，為 5.3 億個，貓為 2.5 億個。作為比較，人類大約有 160 億個這樣的神經元。即便如此，狗狗在腦力方面仍遠高於其他肉食動物。研究人員發現，擁有更大的大腦也有一個缺點。 「就能量而言，食肉在很大程度上被認為是解決問題的方法，」赫爾庫拉諾-烏澤爾說，「但回想起來，很明顯，食肉動物必須在一個物種所能承受的大腦和身體之間實現微妙的平衡。」這可能就是為什麼你經常看到獅子和熊等大型掠食者打瞌睡的原因。",
+    "judicial-fourth-109-english-passage-46-50": "珀斯藍船屋 (Perth Blue Boat House) 被認為建於 1930 年代，經過多次重建和維修，用途廣泛。幾十年來，當地人每天多次開車經過這座亮藍色的木屋而沒有註意到。但最近，船庫在 Instagram 上走紅 46，已成為著名的旅遊景點。目前已有47名遊客來到該地區，有旅遊巴士和自駕遊客在此停留拍照。受歡迎程度，_____ 48，可能會帶來問題。最近的公共廁所距離酒店 1.5 英里。遊客去附近的餐廳使用廁所。業主 _____ 49 _____ 認為有些人粗魯、破壞性，甚至辱罵他人。 _____ 50 這個問題，柏斯市議會決定建造第一個太陽能廁所。據報道，安裝費用為 278,000 美元，每年額外費用為 14,000 美元用於維護。",
+    "judicial-fourth-110-english-passage-42-45": "在德州，人們認真對待辣椒。如此認真，以至於從 5 月到 11 月，數百名德克薩斯人在周末都用 42 大鍋辣椒烹飪。這些競賽在全州的城鎮中精心組織，每一項競賽都贊助了最好的競賽。 43 _____ 其他 44 個州也有自己的烹飪比賽版本，德克薩斯州制定了標準。達拉斯國際辣椒鑑賞協會制定了規則和法規以及確定獲勝者的積分制度。甚至還有一份報紙，休士頓的《Goat Gap Gazette》，上面有 45 個辣椒頭，這個名字是給那些熱衷於辣椒製作的人的。它發布了美國比賽的完整列表，並為其訂閱者提供有用的提示和八卦。",
+    "judicial-fourth-110-english-passage-46-50": "拉斯維加斯潮濕的春天催生了成群的蚱蜢，它們的體型如此之大，以至於它們出現在氣象雷達上。 CNN (CNN) 氣象學家艾利森·欽查 (Allison Chinchar) 在查看雷達後表示，拉斯維加斯地區上空似乎出現了兩場風暴：一場位於該市北部（實際上是下雨），另一場就在拉斯維加斯上空。但她說，第二場雨並沒有像平常的雨那樣移動。 「看起來拉斯維加斯應該下起傾盆大雨，」欽查爾說。欽查爾說，透過改變雷達的設置，氣象學家可以看到另一場「風暴」實際上是最近幾天在城市上空定居的大量蝗蟲。 Chinchar 表示，與內華達州其他地區一樣，2019 年拉斯維加斯的降雨量幾乎是正常情況的兩倍。 「從歷史上看，當我們遇到潮濕的冬季或春季時，這些東西經常會在勞克林以下甚至亞利桑那州積聚，」州昆蟲學家傑夫奈特說。 「每年的這個時候，我們都會有蚱蜢遷徙，它們會向北移動。」奈特說，考慮到該州今年的降雨量，這些蝗蟲群並不是很不尋常。 「我們有清晰的記錄，從 60 年代起就發生過這種事，而且我見過這種事……在我 30 多年的時間里至少見過四五次，」他說。 「有一些特殊的天氣條件會引發遷徙。」",
+    "judicial-fourth-111-english-passage-41-45": "溝通 _____ 對於社會物種至關重要，特別是對於長年依賴他人的人類嬰兒。當孩子開始學習語言時，他們首先學習41個單字（以及情緒語氣等），然後才產生單字或手語符號。 42 沒有什麼好的方法可以準確地了解嬰兒所理解的內容，因此幾乎所有的研究都是關於兒童會說出什麼單字。作為產生語言的重要的第一步，孩子必須學會發出她的語言的聲音，_____ 43 她已經可以感知。這些努力被稱為牙牙學語，類似的做法也發生在學習手語的兒童的手部動作中。 _____ 44 孩子可以產生足夠的語言基本音素，開始產生單詞，沒有回頭路。普遍接受的45是指2歲到12歲的孩子平均每天學習10個新單字。一開始學習速度較慢，更像是每週10個單字。透過這些早期的話語，孩子能夠說出她的經歷並與她的照顧者交流。",
+    "judicial-fourth-111-english-passage-46-50": "乳酪是一種乳製品，源自牛奶，具有多種口味、質地和形式。世界各地有數百種不同類型的乳酪，它們主要由牛奶製成，但也由其他哺乳動物製成，包括綿羊、山羊、水牛、馴鹿、駱駝和犛牛。奶酪還含有水。軟乳酪（如布里起司）比硬起司（如帕瑪森起司）含有更多的水。由於起司含有維生素和蛋白質，因此營養豐富，既可以用作食物本身，也可以用於許多不同類型的烹飪。乳酪是透過稱為“發酵”的過程生產的。製作起司的過程可能是偶然發現的。古代人們用動物胃裡的皮來製作袋子。當他們用這些皮袋運送牛奶時，動物皮膚上的細菌會與牛奶發生反應。然後牛奶發酵，結果就是起司。大約 4000 年前，人們開始飼養動物並加工牛奶。如今，起司製作是一個非常科學的過程。首先，對所使用的牛奶進行巴氏殺菌，這意味著將其加熱以去除所有細菌。然後將特殊培養的細菌（稱為「培養物」）加入牛奶中。在此期間，牛奶保持相當溫暖，以幫助培養物生長。隨著它們的生長，培養物有時會釋放二氧化碳氣泡。這些氣泡有助於在瑞士起司上打孔。接下來，隨著牛奶的成熟，它會形成固體物質。這種物質被稱為「凝乳」。取出凝乳，並瀝乾其中的水。凝乳構成了乳酪的基礎，可以透過不同的方式進行處理。最後，一旦成熟並乾燥，起司就準備好了。",
+    "judicial-fourth-112-english-passage-41-45": "開始對話時，請注意您與對面的人站得有多近。在許多文化中，個人空間是一個重要概念，您給人的第一印象通常取決於您的第一印象 41。 42、在大多數西方國家，當地人不喜歡彼此站得很近。在這些國家，人們通常會在感覺自己的空間已達到 43 時後退。另一方面，南美人的排名接近 44 分。當你遇到其中一位時，請記住，在談話中後退一步是 45 分。一個好的經驗法則是與講話夥伴保持至少一臂的距離。",
+    "judicial-fourth-112-english-passage-46-50": "尼古拉·特斯拉 (Nikola Tesla) 是一位塞爾維亞裔美國人，於 1884 年移民到紐約市，是一位科學家和遠見卓識者，他開發了我們今天大多數人使用的交流電 (AC) 的基礎，並開創了許多改善我們日常生活的技術。如果沒有他對交流電力的貢獻，我們在技術上將比今天落後五十年。 1884年，特斯拉離開歐洲，為直流電（DC）發明者托馬斯·愛迪生工作。據說愛迪生承諾給特斯拉 5 萬美元來解決他的直流系統的問題。當特斯拉成功並要求獎勵時，愛迪生聲稱這個提議是一個笑話，並說：「當你成為一個成熟的美國人時，你會欣賞這個美國笑話。」這促使特斯拉退出，並最終與愛迪生展開了一場鬥爭。如今，特斯拉的交流系統主要用於為世界上大部分電力提供電力。一些工業機器仍然使用直流電機，但通常需要更多維護。特斯拉致力於開發的不僅是交流電源。引擎、收音機、X射線、霓虹燈都是由他非凡的頭腦推動的。歷史經常將義大利企業家古列爾莫·馬可尼 (Guglielmo Marconi) 視為無線電的發明者，但實際上他使用的是特斯拉 17 項專利中的技術。兩位發明家捲入了一場專利戰。 1943年，美國最高法院撤銷了馬可尼的無線電專利，有利於特斯拉。不幸的是，當法院做出裁決時，特斯拉和馬可尼已經去世。特斯拉也發明了世界上最早的遙控器之一，並且是X射線技術的先驅。他拍攝了第一批人體 X 光影像，並且是最早假設 X 射線可能有害的科學家之一。這位傑出的發明家也為可重複利用能源做出了貢獻。在紐約尼加拉瀑佈建造的世界上第一座水力發電廠所使用的十二項專利中，有九項屬於特斯拉。他幫助為清潔能源鋪平了道路，因為他了解能源背後的物理學以及未來可能發生的事情。特斯拉經常被稱為“20 世紀的發明者”，他也參與了更多的發現和創造。 1943 年他去世時，人們對他的工作產生了極大的興趣，以至於聯邦調查局 (FBI) 在他去世後數小時內突擊搜查了他的酒店房間。專家表示，特斯拉希望他的發明能改善人們的生活。事實上，他的創新想法是技術的里程碑。這位偉大的先驅相信「發明是人類創造性大腦最重要的產物」。",
+    "judicial-fourth-113-english-passage-41-45": "行銷經理 Eliza 度假回來後，她被要求到老闆的辦公室開會。她得知公司正在重組。其他人會接替她的任務，她被要求不要去辦公室，而是以新的角色工作_____ 41。在接下來的幾周里，伊麗莎的職業生活變得平靜得多。她現在的主要職責只是偶爾發送電子郵件並在家中完成一些日常工作。一個月後，她辭職了。 「當時是 42 歲，」她說。 「我覺得自己一文不值。我寧願當場被解僱，也不願經歷這些。」43 名員工慢慢被解僱的現像被稱為「悄悄解僱」。為了避免一場艱難的談話，雇主選擇了44名工人，讓他們的生活變得困難。但安靜的射擊往往會造成更大的傷害。它未能創造一種包容性的工作場所文化。這可能會影響公司的 45 名離職員工，他們可能會在網路評論中分享他們的經驗。更糟的是，它可能會對一個人的福祉產生負面影響。對於老闆來說，悄悄解僱可能是最簡單的選擇，但對於公司或工人來說，這並不是一個好的解決方案。",
+    "judicial-fourth-113-english-passage-46-50": "也許您拒絕在屋內打開雨傘或在人行道上的梯子下行走。這些都是迷信，或是相信壞事會發生，即使沒有理由認為它會發生。美國有一個很大的迷信，那就是 13 號星期五是一個不吉利的日子。根據日曆，這一天每年最多發生三次，這一天似乎會讓人們更加小心或避免他們通常不敢做的事情。當然，沒有人能證明13號星期五發生了更多的不幸。如果那天發生不好的事情，我們往往會更注意到它。但如果 13 號星期五隻是一個迷信，為什麼人們真的相信它呢？很難確切知道 13 號星期五是什麼時候被認為是不吉利的，但它很可能來自基督教。例如，在聖經中，猶大——一個據說背叛了耶穌的人——是最後晚餐的第13位客人。同樣在聖經中，星期五發生了許多不幸的事。因此，讀聖經的人在 13 號星期五前後感到緊張也是有道理的。 13也有可能被認為是“被詛咒的”，因為它是12之後的數字，許多人將其視為完成事情的數字。想想看，一年有 12 個月，一英尺有 12 英寸，身體有 12 對肋骨，等等。因此，數字 13 可能會讓人感到不安，因為它會讓他們思考數字 12 之外的未知事物。在其他國家，13 號星期五並不不吉利。例如，在西班牙，13 號星期二被認為是令人恐懼的一天。在義大利，人們害怕每個月的 17 號。為什麼？這是因為羅馬數字XVII（17）可以重新排列為“VIXI”，在拉丁語中意思是“我的生命結束了”。但是，就像在美國一樣，也沒有人能證明那些日子發生了更可怕的事。那些對 13 號星期五超級害怕的人可能患有一種叫做 triskaidekaphobia 的病症，即對數字 13 的恐懼。對大多數人來說，害怕 13 號星期五隻是一種迷信，我們可以假裝害怕，因為我們知道實際上沒有什麼可害怕的。",
+    "judicial-fourth-114-english-passage-41-45": "行為科學家發現，良好的傾聽是我們可以做的最重要的事情之一，可以改善我們的人際關係，發展我們的世界觀，甚至改變人們的想法。在一對一的談話中傾聽是為了對另一個人感興趣並讓他們感到 41 。對於高品質聆聽，目前還沒有普遍認可的定義，但研究人員發現，僅僅在設定的時間間隔微笑和點頭並不太有效。因此，除了積極關注說話者的言語之外，優秀的傾聽者還會使用問題和肢體語言來表達他們的理解和理解的願望。 42一旦談話開始，你能做的最重要的事情之一就是盡量不要打斷。這並不意味著您需要保持完全沉默。如果你確實插話， 43 ，尋找自然的停頓來提出開放式問題，幫助演講者更深入地了解自己的想法。另一個好方法是 44 總結你剛剛聽到的內容並詢問你是否錯過了什麼。這會向說話者表明您確實在努力理解他們，而不是只是等待您的 _____ 45 說話。最後，不要害怕沉默；可以要求花點時間來闡述你的回答並花一點時間思考，這對演講者也有好處。",
+    "judicial-fourth-114-english-passage-46-50": "動物園是展示圈養動物供人類觀賞的地方。大多數現代動物園的重點是保育和教育。儘管動物園倡導者和自然資源保護主義者認為動物園拯救了瀕臨滅絕的物種並教育了公眾，但許多動物權利活動人士認為，限制動物的成本大於收益，侵犯個體動物的權利——即使是為了避免滅絕——也是不合理的。支持者認為，透過將人和動物聚集在一起，動物園可以教育大眾並培養對其他物種的欣賞能力。動物園透過將瀕危物種帶入安全的環境來拯救它們，保護它們免受偷獵者、棲息地喪失、飢餓和掠食者的侵害。此外，與在自然紀錄片中看到動物相比，親自看到動物是一種更個性化、更難忘的體驗，並且更有可能培養對動物的同理心。有些動物園幫助野生動物康復，並收養人們不再想要或不再能夠照顧的外來寵物。但從動物權利的角度來看，人類無權繁殖、捕獲和限制其他動物——即使這些物種瀕臨滅絕。身為瀕危物種的一員並不意味著個別動物應該享有更少的權利。圈養的動物會遭受無聊、壓力和限制。維持圈養繁殖設施內的物種多樣性也是一項挑戰。動物有時會逃離圍欄，危害自己和人類。同樣，人們忽視警告或意外地過於接近動物，導致可怕的後果。在支持或反對動物園時，雙方都認為他們是在拯救動物。無論動物園是否有利於動物界，它們肯定能賺錢。只要有需求，動物園就會繼續存在。"
+  }
+}

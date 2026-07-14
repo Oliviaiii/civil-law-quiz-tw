@@ -20,12 +20,13 @@ test("builds the multi-subject clerk exam practice experience as static HTML", a
 });
 
 test("keeps questions and local progress behind replaceable data modules", async () => {
-  const [page, questions, officialData, criminalData, combinedData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, civilCode, criminalCode, criminalImporter, importer] = await Promise.all([
+  const [page, questions, officialData, criminalData, combinedData, englishTranslationsData, progress, layout, packageJson, css, analysisModule, criminalAnalysisModule, constitutionAnalysisModule, legalIntroductionAnalysisModule, englishAnalysisModule, civilCode, criminalCode, criminalImporter, importer, englishTranslationImporter] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data/questions.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/judicial-fourth-questions.json", import.meta.url), "utf8"),
     readFile(new URL("../app/data/criminal-law-questions.json", import.meta.url), "utf8"),
     readFile(new URL("../app/data/legal-knowledge-and-english-questions.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/english-translations.json", import.meta.url), "utf8"),
     readFile(new URL("../app/lib/progress-store.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
@@ -39,6 +40,7 @@ test("keeps questions and local progress behind replaceable data modules", async
     readFile(new URL("../app/data/criminal-code-articles.json", import.meta.url), "utf8"),
     readFile(new URL("../scripts/import-moex-criminal-law.py", import.meta.url), "utf8"),
     readFile(new URL("../scripts/import-moex-legal-knowledge.py", import.meta.url), "utf8"),
+    readFile(new URL("../scripts/import-english-translations.py", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /loadProgress\(\)/);
@@ -68,6 +70,10 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.match(englishAnalysisModule, /buildEnglishAnalysis/);
   assert.match(page, /question\.passage/);
   assert.match(page, /question\.englishAnalysis/);
+  assert.match(page, /promptTranslation/);
+  assert.match(page, /optionNotes/);
+  assert.match(page, /partOfSpeech/);
+  assert.match(englishTranslationImporter, /Traditional Chinese study notes/);
   assert.match(importer, /legal-knowledge-and-english/);
   assert.match(importer, /answer_type = "M"/);
 
@@ -110,6 +116,14 @@ test("keeps questions and local progress behind replaceable data modules", async
   ));
   assert.ok(combinedRecords.filter((item) => item.subject === "english" && !item.passageId).every((item) =>
     item.prompt.includes("_____")
+  ));
+  const englishTranslations = JSON.parse(englishTranslationsData);
+  assert.equal(Object.keys(englishTranslations.questions).length, 200);
+  assert.equal(Object.keys(englishTranslations.passages).length, 20);
+  assert.ok(Object.values(englishTranslations.questions).every((item) =>
+    item.prompt && item.options.length === 4 && item.options.every((option) =>
+      option.translation && option.partOfSpeech
+    )
   ));
   assert.deepEqual(
     combinedRecords.find((item) => item.id === "judicial-fourth-114-legal-knowledge-18").acceptedAnswers,

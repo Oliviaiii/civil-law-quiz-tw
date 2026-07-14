@@ -1,10 +1,30 @@
+import translationsJson from "./english-translations.json";
+
 export type EnglishQuestionRecord = {
+  id: string;
   officialQuestionNumber: number;
   prompt: string;
   options: string[];
   answer: number;
   acceptedAnswers?: number[] | null;
   passage?: string;
+  passageId?: string;
+};
+
+type TranslationData = {
+  questions: Record<string, {
+    prompt: string;
+    options: Array<{ translation: string; partOfSpeech: string }>;
+  }>;
+  passages: Record<string, string>;
+};
+
+export type EnglishOptionNote = {
+  label: string;
+  text: string;
+  translation: string;
+  partOfSpeech: string;
+  correct: boolean;
 };
 
 export type EnglishAnalysis = {
@@ -13,7 +33,12 @@ export type EnglishAnalysis = {
   keyPoint: string;
   distractors: string;
   supportingSentence?: string;
+  promptTranslation: string;
+  passageTranslation?: string;
+  optionNotes: EnglishOptionNote[];
 };
+
+const translations = translationsJson as TranslationData;
 
 const readingQuestion = /^(what|which|who|whom|whose|when|where|why|how|according|based|from|the passage|it can)/i;
 
@@ -60,6 +85,21 @@ function completedContext(record: EnglishQuestionRecord, answerText: string) {
 export function buildEnglishAnalysis(record: EnglishQuestionRecord): EnglishAnalysis {
   const accepted = record.acceptedAnswers?.length ? record.acceptedAnswers : [record.answer];
   const answerText = accepted.map((index) => record.options[index]).join("／");
+  const translated = translations.questions[record.id];
+  if (!translated || translated.options.length !== record.options.length) {
+    throw new Error(`Missing English study translation for ${record.id}`);
+  }
+  const optionNotes = record.options.map((text, index) => ({
+    label: String.fromCharCode(65 + index),
+    text,
+    translation: translated.options[index].translation,
+    partOfSpeech: translated.options[index].partOfSpeech,
+    correct: accepted.includes(index),
+  }));
+  const correctNotes = optionNotes.filter((option) => option.correct);
+  const answerStudyText = correctNotes
+    .map((option) => `${option.text}（${option.partOfSpeech}，${option.translation}）`)
+    .join("／");
   const otherOptions = record.options
     .map((option, index) => ({ option, index }))
     .filter(({ index }) => !accepted.includes(index))
@@ -80,8 +120,8 @@ export function buildEnglishAnalysis(record: EnglishQuestionRecord): EnglishAnal
   return {
     skill,
     answerReason: isReading
-      ? `依考選部標準答案應選「${answerText}」。將題目關鍵詞與文章明示內容或主旨對照，可得到這個選項。`
-      : `依考選部標準答案，空格應填「${answerText}」。填入後的語境為：${context}`,
+      ? `依考選部標準答案應選 ${answerStudyText}。將題目關鍵詞與文章明示內容或主旨對照，可得到這個選項。`
+      : `依考選部標準答案，空格應填 ${answerStudyText}。填入後的語境為：${context}`,
     keyPoint: isReading
       ? `先判斷題目問的是主旨、細節或推論，再回到文章定位同義改寫；不要只因選項出現文章原字就作答。`
       : skill === "克漏字"
@@ -89,5 +129,8 @@ export function buildEnglishAnalysis(record: EnglishQuestionRecord): EnglishAnal
         : `先由空格位置判斷所需詞性或片語功能，再用全句語意排除不合的選項。`,
     distractors: `${otherOptions || "其餘選項"}未能同時符合本句或文章的語法、搭配與語意。選項字面看似相關時，仍須放回完整上下文核對。`,
     supportingSentence,
+    promptTranslation: translated.prompt,
+    passageTranslation: record.passageId ? translations.passages[record.passageId] : undefined,
+    optionNotes,
   };
 }

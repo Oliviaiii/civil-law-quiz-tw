@@ -571,6 +571,31 @@ function QuestionCard({
                 <p className="eyebrow">考點</p>
                 <h3>{question.englishAnalysis.skill}</h3>
               </div>
+              <section className="english-translation-card">
+                <p className="eyebrow">題目繁中翻譯</p>
+                <p>{question.englishAnalysis.promptTranslation}</p>
+                {question.englishAnalysis.passageTranslation && (
+                  <details>
+                    <summary>查看共用文章繁中翻譯</summary>
+                    <p>{question.englishAnalysis.passageTranslation}</p>
+                  </details>
+                )}
+              </section>
+              <section className="option-study-table" aria-label="選項翻譯與詞性">
+                <div className="option-study-heading">
+                  <p className="eyebrow">選項整理</p>
+                  <span>英文｜詞性｜繁中意思</span>
+                </div>
+                {question.englishAnalysis.optionNotes.map((option) => (
+                  <div className={option.correct ? "option-study-row correct" : "option-study-row"} key={option.label}>
+                    <b>{option.label}</b>
+                    <strong>{option.text}</strong>
+                    <span className="part-of-speech">{option.partOfSpeech}</span>
+                    <span>{option.translation}</span>
+                    {option.correct && <em>正解</em>}
+                  </div>
+                ))}
+              </section>
               <div className="english-analysis-grid">
                 <div><span>01</span><h3>正確答案理由</h3><p>{question.englishAnalysis.answerReason}</p></div>
                 <div><span>02</span><h3>關鍵句或文法結構</h3><p>{question.englishAnalysis.keyPoint}</p></div>
