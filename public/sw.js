@@ -1,5 +1,5 @@
 // 此檔由 scripts/generate-question-data.mjs 自動產生，請勿手動修改。
-const CACHE_NAME = "clerk-law-room-89f825be848a";
+const CACHE_NAME = "clerk-law-room-179e41bd3ad6";
 const BASE = self.registration.scope.replace(/\/$/, "");
 
 async function precacheShell() {

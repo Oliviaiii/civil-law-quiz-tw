@@ -78,11 +78,11 @@
 - `scripts/generate-question-data.mjs`：憲法／法緒的搜尋索引 laws/keywords 改由種子 references 與 issue/trap 產生。
 - `tests/rendered-html.test.mjs`：新增防線——兩科各 150 份種子缺一不可、issue/rule/application/trap 有最低長度、confidence ∈{高,中}、references ≥1、涵攝禁止模板句（`須注意其主體、要件…`／`應再核對其主體…`／`代號：`／`頁次：`）、300 份 application 不得重複。**種子補齊前 `npm test` 會紅，這是刻意的。**
 
-### 種子內容進度（目前：66／300 題完成並通過本批驗證）
+### 種子內容進度（目前：81／300 題完成並通過本批驗證）
 | 批次 | 完成 | 批次 | 完成 |
 |---|---|---|---|
 | 憲法 105 | 15/15 ✅ | 法緒 105 | 15/15 ✅ |
-| 憲法 106 | 15/15 ✅ | 法緒 106 | 0/15 |
+| 憲法 106 | 15/15 ✅ | 法緒 106 | 15/15 ✅ |
 | 憲法 107 | 2/15 | 法緒 107 | 3/15 |
 | 憲法 108 | 0/15 | 法緒 108 | 0/15 |
 | 憲法 109 | 2/15 | 法緒 109 | 4/15 |
@@ -92,9 +92,9 @@
 | 憲法 113 | 2/15 | 法緒 113 | 2/15 |
 | 憲法 114 | 0/15 | 法緒 114 | 0/15 |
 
-已完成的種子**已直接合併**進 `app/data/analyses/{constitution,legal-introduction}-<年度>.json`（key = 題目 id，如 `judicial-fourth-105-legal-knowledge-16`）。每題實際參考的網頁來源另存於 `docs/handover/analysis-sources-map.json`（id → URL 陣列），不隨網站出貨。
+已完成的種子**已直接合併**進 `app/data/analyses/{constitution,legal-introduction}-<年度>.json`（key = 題目 id，如 `judicial-fourth-105-legal-knowledge-16`）。每題實際參考的網頁來源另存於 `docs/handover/analysis-sources-map.json`；自法緒 106 批起改存每批一檔 `docs/handover/sources/<subject>-<year>.json`（id → URL 陣列），不隨網站出貨。
 
-### 精確缺題清單（234 題，官方題號；id 格式 `judicial-fourth-<年>-legal-knowledge-<兩位數題號>`）
+### 精確缺題清單（219 題，官方題號；id 格式 `judicial-fourth-<年>-legal-knowledge-<兩位數題號>`）
 - 憲法 105 年：✅ 全數完成
 - 憲法 106 年：✅ 全數完成
 - 憲法 107 年：缺第 3～15 題
@@ -106,7 +106,7 @@
 - 憲法 113 年：缺第 3～15 題
 - 憲法 114 年：缺第 1～15 題（全缺）
 - 法學緒論 105 年：✅ 全數完成
-- 法學緒論 106 年：缺第 16～30 題（全缺）
+- 法學緒論 106 年：✅ 全數完成
 - 法學緒論 107 年：缺第 19～30 題
 - 法學緒論 108 年：缺第 16～30 題（全缺）
 - 法學緒論 109 年：缺第 20～30 題
@@ -162,7 +162,7 @@ npm test                                   # 含 300 題種子防線，必須全
 然後提交推送。建議 commit 拆法：解析內容一個 commit、（若有）其他修正另拆。
 
 ### 4. Git 推送問題（未解，接手者注意）
-- 本 session 後期 `git push` 一直被 git proxy 拒 403（fetch 正常、GitHub MCP 認證正常，只有寫入被擋）。若新 session 推送正常就沒事；若同樣 403，改用 GitHub MCP `push_files` 或回報使用者。
+- 本 session 後期 `git push` 一直被 git proxy 拒 403（fetch 正常、GitHub MCP 認證正常，只有寫入被擋）。若新 session 推送正常就沒事；若同樣 403：本 session 實測 GitHub MCP `push_files` 也回 403 Resource not accessible by integration——整個 session 對 GitHub 唯讀。解法：持續本地 commit，於每批完成後 `git bundle create <file> origin/<branch>..HEAD` 並以 SendUserFile 交付使用者，由具寫入權的環境 `git fetch <bundle> <branch>:<branch>` 還原後推送（此流程已於 07-15 實際走通一次）。
 - 分支：一切都推 `claude/remote-content-review-1lpzji`（不要開 PR，使用者沒要求）。
 - commit 身分需 `git config user.email noreply@anthropic.com && git config user.name Claude`，否則 stop hook 會擋。
 
