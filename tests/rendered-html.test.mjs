@@ -27,6 +27,19 @@ test("builds the multi-subject clerk exam practice experience as static HTML", a
   assert.doesNotMatch(html, /關於成年的敘述/);
   assert.doesNotMatch(html, /民法概要｜第/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
+  assert.doesNotMatch(html, /static\.cloudflareinsights\.com/);
+});
+
+test("keeps Cloudflare Web Analytics opt-in and injects its token during Pages builds", async () => {
+  const [layout, workflow] = await Promise.all([
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../.github/workflows/deploy-pages.yml", import.meta.url), "utf8"),
+  ]);
+  assert.match(layout, /NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN/);
+  assert.match(layout, /type="module"/);
+  assert.match(layout, /https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js/);
+  assert.match(layout, /data-cf-beacon=\{JSON\.stringify/);
+  assert.match(workflow, /CLOUDFLARE_WEB_ANALYTICS_TOKEN/);
 });
 
 test("keeps the initial JS payload free of question data and under budget", async () => {

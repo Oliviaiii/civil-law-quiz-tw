@@ -3,6 +3,8 @@ import "./globals.css";
 import { ServiceWorkerRegistration } from "./components/ServiceWorkerRegistration";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const cloudflareWebAnalyticsToken =
+  process.env.NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN;
 
 export const viewport: Viewport = {
   themeColor: "#d35432",
@@ -43,6 +45,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <ServiceWorkerRegistration />
         {children}
+        {cloudflareWebAnalyticsToken ? (
+          <script
+            type="module"
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={JSON.stringify({ token: cloudflareWebAnalyticsToken })}
+          />
+        ) : null}
       </body>
     </html>
   );

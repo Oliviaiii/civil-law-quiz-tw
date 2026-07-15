@@ -69,6 +69,15 @@ npm run lint
 
 推送到 `main` 後，GitHub Actions 會執行 `npm run build:pages`，並將 `out/` 的純靜態檔案部署到 GitHub Pages。
 
+### 網站流量分析
+
+正式站可使用 Cloudflare Web Analytics 統計隱私友善的瀏覽量與訪客數。先在 Cloudflare Web Analytics 建立網站並取得 token，再於 GitHub Repository 的 `Settings → Secrets and variables → Actions → Variables` 新增：
+
+- 名稱：`CLOUDFLARE_WEB_ANALYTICS_TOKEN`
+- 值：Cloudflare 提供的網站 token
+
+GitHub Pages 建置會將該值注入 `NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN`。沒有設定時不會載入 Cloudflare beacon，因此本機開發與 fork 不會意外送出分析資料。
+
 ## 資料設計
 
 - 題目型別：`app/data/questions.ts`（僅型別；題庫依科目拆在 `app/data/banks/`，按需載入）

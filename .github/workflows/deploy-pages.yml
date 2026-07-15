@@ -32,6 +32,8 @@ jobs:
 
       - name: 建立靜態網站
         run: npm run build:pages
+        env:
+          NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN: ${{ vars.CLOUDFLARE_WEB_ANALYTICS_TOKEN }}
 
       - name: 設定 Pages
         uses: actions/configure-pages@v6
