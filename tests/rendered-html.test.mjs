@@ -247,6 +247,41 @@ test("keeps questions and local progress behind replaceable data modules", async
     combinedRecords.find((item) => item.id === "judicial-fourth-114-legal-knowledge-18").answerSource,
     "考選部更正答案",
   );
+
+  // 憲法與法緒解析：逐題種子必須齊全、有實質內容，禁止模板空話與跨題重複的涵攝。
+  const combinedSeedYears = [105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
+  const loadSeeds = async (name) =>
+    Object.assign(
+      {},
+      ...(await Promise.all(
+        combinedSeedYears.map(async (year) =>
+          JSON.parse(await readFile(new URL(`../app/data/analyses/${name}-${year}.json`, import.meta.url), "utf8")),
+        ),
+      )),
+    );
+  const constitutionSeeds = await loadSeeds("constitution");
+  const legalIntroductionSeeds = await loadSeeds("legal-introduction");
+  assert.equal(Object.keys(constitutionSeeds).length, 150);
+  assert.equal(Object.keys(legalIntroductionSeeds).length, 150);
+  const seedBoilerplate = /須注意其主體、要件、期限、程序或法律效果|應再核對其主體、要件、程序或法律效果|代號：|頁次：/;
+  for (const record of combinedRecords) {
+    if (record.subject === "english") continue;
+    const seed =
+      record.subject === "constitution" ? constitutionSeeds[record.id] : legalIntroductionSeeds[record.id];
+    assert.ok(seed, `missing analysis seed for ${record.id}`);
+    assert.ok(seed.issue.length >= 8, `${record.id} issue too short`);
+    assert.ok(seed.rule.length >= 40, `${record.id} rule too short`);
+    assert.ok(seed.application.length >= 80, `${record.id} application too short`);
+    assert.ok(seed.trap.length >= 20, `${record.id} trap too short`);
+    assert.ok(["高", "中"].includes(seed.confidence), `${record.id} confidence invalid`);
+    assert.ok(Array.isArray(seed.references) && seed.references.length >= 1, `${record.id} needs references`);
+    assert.doesNotMatch(seed.application, seedBoilerplate, `${record.id} application uses boilerplate`);
+    assert.doesNotMatch(seed.trap, seedBoilerplate, `${record.id} trap uses boilerplate`);
+  }
+  const seedApplications = [...Object.values(constitutionSeeds), ...Object.values(legalIntroductionSeeds)].map(
+    (seed) => seed.application,
+  );
+  assert.equal(new Set(seedApplications).size, seedApplications.length, "duplicated application across seeds");
   const remainingRecords = JSON.parse(remainingData);
   assert.equal(remainingRecords.length, 188);
   assert.equal(new Set(remainingRecords.map((item) => item.id)).size, 188);

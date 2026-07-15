@@ -85,8 +85,8 @@ GitHub Pages 建置會將該值注入 `NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKE
 - 司法四等官方題庫：`app/data/judicial-fourth-questions.json`
 - 法學知識與英文共用原始題庫：`app/data/legal-knowledge-and-english-questions.json`
 - 逐年選擇題解析：`app/data/analyses/`
-- 憲法解析與官方依據：`app/data/constitution-analyses.ts`
-- 法學緒論解析與跨法規依據：`app/data/legal-introduction-analyses.ts`
+- 憲法解析與官方依據：`app/data/constitution-analyses.ts`（逐題種子：`app/data/analyses/constitution-*.json`）
+- 法學緒論解析與跨法規依據：`app/data/legal-introduction-analyses.ts`（逐題種子：`app/data/analyses/legal-introduction-*.json`）
 - 英文解析：`app/data/english-analyses.ts`
 - 英文題幹、文章與選項繁中翻譯／詞性：`app/data/english-translations.json`
 - 共用參考來源型別：`app/data/references.ts`

@@ -25,6 +25,29 @@ const criminalAnalyses = Object.assign(
   {},
   ...analysisYears.map((year) => require(`../app/data/analyses/criminal-law-${year}.json`)),
 );
+const combinedAnalysisYears = [105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
+const constitutionAnalyses = Object.assign(
+  {},
+  ...combinedAnalysisYears.map((year) => require(`../app/data/analyses/constitution-${year}.json`)),
+);
+const legalIntroductionAnalyses = Object.assign(
+  {},
+  ...combinedAnalysisYears.map((year) => require(`../app/data/analyses/legal-introduction-${year}.json`)),
+);
+const combinedSeedOf = (record) =>
+  record.subject === "constitution"
+    ? constitutionAnalyses[record.id]
+    : record.subject === "legal-introduction"
+      ? legalIntroductionAnalyses[record.id]
+      : null;
+
+// 憲法／法緒種子以 references 標註法規名與條號，轉成與民刑法一致的搜尋用格式。
+function lawsFromReferences(seed) {
+  if (!seed?.references) return [];
+  return seed.references
+    .filter((reference) => reference.type === "statute")
+    .map((reference) => `${reference.title}${(reference.locator ?? "").replace(/\s+/g, "")}`);
+}
 
 function lawsFromSeed(seed, defaultLawName) {
   if (!seed?.articles) return [];
@@ -100,8 +123,8 @@ const searchIndex = [
     source: `${record.rocYear} 年司法特考四等｜法學知識與英文｜官方第 ${record.officialQuestionNumber} 題`,
     prompt: record.prompt,
     options: record.options,
-    laws: [],
-    keywords: "",
+    laws: lawsFromReferences(combinedSeedOf(record)),
+    keywords: keywordsFromSeed(combinedSeedOf(record)),
   })),
   ...remainingRecords.map((record) => ({
     id: record.id,
