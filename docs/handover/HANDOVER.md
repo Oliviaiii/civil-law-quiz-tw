@@ -78,12 +78,12 @@
 - `scripts/generate-question-data.mjs`：憲法／法緒的搜尋索引 laws/keywords 改由種子 references 與 issue/trap 產生。
 - `tests/rendered-html.test.mjs`：新增防線——兩科各 150 份種子缺一不可、issue/rule/application/trap 有最低長度、confidence ∈{高,中}、references ≥1、涵攝禁止模板句（`須注意其主體、要件…`／`應再核對其主體…`／`代號：`／`頁次：`）、300 份 application 不得重複。**種子補齊前 `npm test` 會紅，這是刻意的。**
 
-### 種子內容進度（目前：81／300 題完成並通過本批驗證）
+### 種子內容進度（目前：94／300 題完成並通過本批驗證）
 | 批次 | 完成 | 批次 | 完成 |
 |---|---|---|---|
 | 憲法 105 | 15/15 ✅ | 法緒 105 | 15/15 ✅ |
 | 憲法 106 | 15/15 ✅ | 法緒 106 | 15/15 ✅ |
-| 憲法 107 | 2/15 | 法緒 107 | 3/15 |
+| 憲法 107 | 15/15 ✅ | 法緒 107 | 3/15 |
 | 憲法 108 | 0/15 | 法緒 108 | 0/15 |
 | 憲法 109 | 2/15 | 法緒 109 | 4/15 |
 | 憲法 110 | 0/15 | 法緒 110 | 0/15 |
@@ -94,10 +94,10 @@
 
 已完成的種子**已直接合併**進 `app/data/analyses/{constitution,legal-introduction}-<年度>.json`（key = 題目 id，如 `judicial-fourth-105-legal-knowledge-16`）。每題實際參考的網頁來源另存於 `docs/handover/analysis-sources-map.json`；自法緒 106 批起改存每批一檔 `docs/handover/sources/<subject>-<year>.json`（id → URL 陣列），不隨網站出貨。
 
-### 精確缺題清單（219 題，官方題號；id 格式 `judicial-fourth-<年>-legal-knowledge-<兩位數題號>`）
+### 精確缺題清單（206 題，官方題號；id 格式 `judicial-fourth-<年>-legal-knowledge-<兩位數題號>`）
 - 憲法 105 年：✅ 全數完成
 - 憲法 106 年：✅ 全數完成
-- 憲法 107 年：缺第 3～15 題
+- 憲法 107 年：✅ 全數完成
 - 憲法 108 年：缺第 1～15 題（全缺）
 - 憲法 109 年：缺第 3～15 題
 - 憲法 110 年：缺第 1～15 題（全缺）
