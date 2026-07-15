@@ -420,3 +420,14 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.doesNotMatch(css, /content: "⌄"|content: "⌃"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
+
+test("keeps the corrected criminal legality analysis specific and internally consistent", async () => {
+  const analyses = JSON.parse(
+    await readFile(new URL("../app/data/analyses/criminal-law-108.json", import.meta.url), "utf8"),
+  );
+  const analysis = analyses["judicial-fourth-108-criminal-law-mcq-01"];
+  assert.match(analysis.application, /\(A\).*\(B\).*\(C\).*\(D\)/);
+  assert.match(analysis.application, /刑法第 2 條/);
+  assert.doesNotMatch(analysis.application, /最符合命題時法/);
+  assert.deepEqual(analysis.articles, ["1", "2"]);
+});

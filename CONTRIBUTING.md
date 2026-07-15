@@ -66,7 +66,7 @@ scripts/generate-question-data.mjs（build 前自動執行）
 | `scripts/import-civil-code.py` | 更新民法條文索引 |
 | `scripts/import-moex-criminal-law.py` | 匯入法院書記官刑法概要 PDF，並處理更正及複數答案 |
 | `scripts/import-criminal-code.py` | 更新刑法條文索引 |
-| `scripts/generate-criminal-analyses.py` | 產生可逐題審查、修訂的刑法結構化解析初稿 |
+| `app/data/analyses/criminal-law-<年>.json` | 刑法解析須逐題研究、核對官方答案後直接編輯；原 regex 初稿產生器已停用並刪除，不得以模板覆寫 |
 | `tests/rendered-html.test.mjs` | 靜態輸出、題數、解析覆蓋率及重要行為防退化測試 |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages 自動建置與部署 |
 
