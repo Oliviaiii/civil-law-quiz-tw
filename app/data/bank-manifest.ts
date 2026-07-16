@@ -27,4 +27,4 @@ export const officialMcqCountsBySubject = {
   "civil-procedure": 0,
   "criminal-procedure": 0
 } as const;
-export const dataVersion = "de65b9a98d5d";
+export const dataVersion = "2bdcdf6a286d";
