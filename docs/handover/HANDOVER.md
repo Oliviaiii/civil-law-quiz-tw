@@ -88,13 +88,13 @@
 | 憲法 109 | 15/15 ✅ | 法緒 109 | 15/15 ✅ |
 | 憲法 110 | 15/15 ✅ | 法緒 110 | 15/15 ✅ |
 | 憲法 111 | 15/15 ✅ | 法緒 111 | 15/15 ✅ |
-| 憲法 112 | 0/15 | 法緒 112 | 0/15 |
+| 憲法 112 | 15/15 ✅ | 法緒 112 | 0/15 |
 | 憲法 113 | 2/15 | 法緒 113 | 2/15 |
 | 憲法 114 | 0/15 | 法緒 114 | 0/15 |
 
 已完成的種子**已直接合併**進 `app/data/analyses/{constitution,legal-introduction}-<年度>.json`（key = 題目 id，如 `judicial-fourth-105-legal-knowledge-16`）。每題實際參考的網頁來源另存於 `docs/handover/analysis-sources-map.json`；自法緒 106 批起改存每批一檔 `docs/handover/sources/<subject>-<year>.json`（id → URL 陣列），不隨網站出貨。
 
-### 精確缺題清單（86 題，官方題號；id 格式 `judicial-fourth-<年>-legal-knowledge-<兩位數題號>`）
+### 精確缺題清單（71 題，官方題號；id 格式 `judicial-fourth-<年>-legal-knowledge-<兩位數題號>`）
 - 憲法 105 年：✅ 全數完成
 - 憲法 106 年：✅ 全數完成
 - 憲法 107 年：✅ 全數完成
@@ -102,7 +102,7 @@
 - 憲法 109 年：✅ 全數完成
 - 憲法 110 年：✅ 全數完成
 - 憲法 111 年：✅ 全數完成
-- 憲法 112 年：缺第 1～15 題（第 1～13 題研究稿在 pending-seeds/ 待驗證）
+- 憲法 112 年：✅ 全數完成
 - 憲法 113 年：缺第 3～15 題
 - 憲法 114 年：缺第 1～15 題（全缺）
 - 法學緒論 105 年：✅ 全數完成
@@ -134,7 +134,7 @@
 **接手重啟步驟（在能跑 Workflow 的 Claude Code session）：**
 1. `git fetch` 確認拿到最新分支（若遠端落後，請使用者提供最新 bundle 還原）。
 2. 重建題目小檔：`python3 docs/handover/make-question-files.py <questionsDir>`（建議放 scratchpad）。
-3. pending-seeds 有憲法 112 第 1–13 題研究稿（未驗證）：複製到 seedsDir 後用 `verify-by-ids.js` 對這 13 題跑驗證優先流程，14–15 題會自動轉研究（可把 15 題一起丟進同一批，參考第四段做法）。完成後 `integrate-batch.py constitution 112` 合併。若 scratchpad 遺失，`make-question-files.py` 可重建題目小檔。
+3. 目前無 pending-seeds。若 scratchpad 因容器回收遺失，`make-question-files.py` 可重建題目小檔，種子則需重跑。
 4. 照 `docs/handover/remaining-batches.json` 順序，一次一批用 `rewrite-by-ids.js` 跑 Workflow（args：subjectLabel/seedsDir/questionsDir/ids），批次完成 → `integrate-batch.py <subject> <year>` 驗證合併 → `node scripts/generate-question-data.mjs` → lint → 本地 commit。使用者指示：成果暫存本機即可、不逐批交付，大節點以 bundle 留底、一次一批（曾一次兩批一輪）。
 5. 每批的實際參考來源存 `docs/handover/sources/<subject>-<year>.json`（integrate-batch.py 會自動寫）。
 6. 各批 pass/fixed 統計：法緒106=10/5、憲107=4/9、法緒107=6/5(驗證優先)、憲108=8/7、法緒108=13/2、憲109=4/9、法緒109=10/1、憲110=7/8、法緒110=9/6。全數 0 failed。研究批約 25–30 分／90–105 萬 tokens；驗證批約 9 分／33 萬 tokens。
