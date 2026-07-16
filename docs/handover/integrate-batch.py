@@ -57,7 +57,7 @@ for n in range(lo, hi + 1):
         errors.append(f"{qid}: references 為空")
     for ref in seed["references"]:
         host = ref.get("url", "")
-        if not re.match(r"https://(law\.moj\.gov\.tw|cons\.judicial\.gov\.tw|www\.judicial\.gov\.tw|wwwq?\.moex\.gov\.tw|law\.judicial\.gov\.tw)/", host):
+        if not re.match(r"https://[a-z0-9-]+(\.[a-z0-9-]+)*\.gov\.tw/", host):
             errors.append(f"{qid}: reference url 非官方網域 {host}")
     # 簡體字抽查（常見字）
     if re.search(r"[习门时长发达对开关书车东问题条现] ", seed["application"]):
