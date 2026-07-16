@@ -17,10 +17,10 @@ export const bank: Question[] = (
       type: "概念型" as const,
       difficulty: "進階" as const,
       source: `${record.rocYear} 年司法特考四等｜法學知識與英文｜官方第 ${record.officialQuestionNumber} 題`,
-      confidence: explanation.confidence,
-      analysis: explanation.analysis,
+      confidence: explanation?.confidence,
+      analysis: explanation?.analysis,
       statutes: [],
-      references: explanation.references,
+      references: explanation?.references ?? [],
     };
   })
   .sort(

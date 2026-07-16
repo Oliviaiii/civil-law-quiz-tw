@@ -17,9 +17,9 @@ export const bank: Question[] = (
       type: "概念型" as const,
       difficulty: "進階" as const,
       source: `${record.rocYear} 年司法特考四等｜法學知識與英文｜官方第 ${record.officialQuestionNumber} 題`,
-      confidence: explanation.confidence,
-      analysis: explanation.analysis,
-      statutes: explanation.references
+      confidence: explanation?.confidence,
+      analysis: explanation?.analysis,
+      statutes: (explanation?.references ?? [])
         .filter((reference) => reference.type === "statute")
         .map((reference) => ({
           article: reference.locator ?? "相關規定",
@@ -27,7 +27,7 @@ export const bank: Question[] = (
           text: reference.text ?? "請開啟官方來源核對命題時有效規定。",
           url: reference.url,
         })),
-      references: explanation.references,
+      references: explanation?.references ?? [],
     };
   })
   .sort(

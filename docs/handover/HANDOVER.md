@@ -132,6 +132,14 @@
 5. 每批的實際參考來源存 `docs/handover/sources/<subject>-<year>.json`（integrate-batch.py 會自動寫）。
 6. 各批 pass/fixed 統計：法緒106=10/5、憲107=4/9、法緒107=6/5(驗證優先)、憲108=8/7、法緒108=13/2、憲109=4/9、法緒109=10/1、憲110=7/8、法緒110=9/6。全數 0 failed。研究批約 25–30 分／90–105 萬 tokens；驗證批約 9 分／33 萬 tokens。
 
+
+### 2026-07-16 決策：優雅降級 + 合併 main（正式站可用）
+- 使用者決定在 190/300 時先把成果合併 main、讓正式站恢復。
+- 為此把 `buildConstitutionAnalysis`／`buildLegalIntroductionAnalysis` 從「缺種子 throw」改為「缺種子回傳 null」；`banks/constitution.ts`、`banks/legal-introduction.ts` 以 optional chaining 接住，缺種子的題目 `analysis` 為 undefined，前端 `QuestionAnalysis` 自動顯示既有的「官方答案，解析整理中」降級卡片（與申論題同一介面）。
+- 因此**憲法/法緒兩科可正常載入**：已補的年度（105–110 全部＋111–114 零星）顯示完整逐選項解析，未補的顯示官方答案卡片。之後每補一批，該題自動升級為完整解析。
+- 測試 `tests/rendered-html.test.mjs` 的完整性斷言由「各科 =150」放寬為「≤150 且已存在種子全部合格」，缺種子題以 `if (!seed) continue` 略過；**品質防線（禁模板句、禁跨題重複 application、格式/長度/references）對已存在種子仍全部生效**。待 300 題補齊後可將 ≤150 收回 =150。
+- 合併方式：工作分支 c2ce0f3 之後 descend 自 bca1591，合併 main 為乾淨快轉；push main 會觸發 ci.yml（測試）與 deploy-pages.yml（部署）。
+
 ## 四、未完成項目與作法
 
 ### 1. 剩餘 234 題解析（主要工作）

@@ -67,7 +67,8 @@ function decisionReferences(prompt: string): Reference[] {
 
 export function buildLegalIntroductionAnalysis(question: LegalIntroductionQuestion) {
   const seed = seeds[question.id];
-  if (!seed) throw new Error(`缺少法學緒論解析種子：${question.id}`);
+  // 尚未補上逐題種子者回傳 null，由題庫降級為「官方答案，解析整理中」卡片，避免整科載入失敗。
+  if (!seed) return null;
 
   const accepted = question.acceptedAnswers?.length
     ? question.acceptedAnswers
