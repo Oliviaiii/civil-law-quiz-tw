@@ -51,65 +51,6 @@
   ]
  },
  {
-  "subject": "legal-introduction",
-  "label": "法學緒論",
-  "year": 111,
-  "ids": [
-   {
-    "id": "judicial-fourth-111-legal-knowledge-18",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-19",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-20",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-21",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-22",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-23",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-24",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-25",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-26",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-27",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-28",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-29",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-30",
-    "rocYear": 111
-   }
-  ]
- },
- {
   "subject": "constitution",
   "label": "憲法",
   "year": 112,
