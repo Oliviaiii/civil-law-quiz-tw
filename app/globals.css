@@ -515,6 +515,17 @@ button { color: inherit; }
   .multi-select { flex: 1 1 calc(50% - 6px); }
   .multi-select summary { width: 100%; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
   .corpus-filter .multi-select-menu { right: 0; left: auto; }
+  /* 展開篩選面板為可捲動容器，絕對定位的下拉選單會被裁切；
+     手機上改為內嵌展開並佔滿整行，讓選單順著面板捲動而非被切掉。 */
+  .filter-panel.expanded .multi-select[open] { flex-basis: 100%; }
+  .filter-panel.expanded .multi-select-menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin-top: 6px;
+    box-shadow: none;
+  }
   .filter-count { align-self: center; }
   .clear-filters { margin-left: auto; }
   .question-meta, .analysis-result { padding-left: 18px; padding-right: 18px; }

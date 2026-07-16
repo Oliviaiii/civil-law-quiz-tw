@@ -109,3 +109,28 @@ test("手機版底部整合收藏、不確定與題目切換", async ({ page }) 
   await expect(uncertain).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(".question-tools")).toBeHidden();
 });
+
+test("手機版展開篩選：下拉複選選單不被裁切、選項可點", async ({ page }) => {
+  await openApp(page);
+
+  // 展開篩選面板
+  const toggle = page.locator(".mobile-filter-toggle");
+  await toggle.click();
+  await expect(page.locator(".filters")).toBeVisible();
+
+  // 打開年度下拉，選單應內嵌展開而非被 overflow 裁掉
+  const yearFilter = page.locator("details.multi-select", {
+    has: page.locator('summary[aria-label="依年度複選篩選"]'),
+  });
+  await yearFilter.locator("summary").click();
+
+  const menu = yearFilter.locator(".multi-select-menu");
+  await expect(menu).toBeVisible();
+
+  // 選單底部應落在可捲動篩選面板內容範圍中（未被容器裁掉而不可達）
+  const option = yearFilter.locator("label", { has: page.getByText("114 年", { exact: true }) });
+  await expect(option).toBeVisible();
+  await option.scrollIntoViewIfNeeded();
+  await option.click();
+  await expect(option.locator("input[type=checkbox]")).toBeChecked();
+});
