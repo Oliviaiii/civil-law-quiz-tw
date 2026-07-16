@@ -2,57 +2,6 @@
  {
   "subject": "constitution",
   "label": "憲法",
-  "year": 111,
-  "ids": [
-   {
-    "id": "judicial-fourth-111-legal-knowledge-05",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-06",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-07",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-08",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-09",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-10",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-11",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-12",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-13",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-14",
-    "rocYear": 111
-   },
-   {
-    "id": "judicial-fourth-111-legal-knowledge-15",
-    "rocYear": 111
-   }
-  ]
- },
- {
-  "subject": "constitution",
-  "label": "憲法",
   "year": 112,
   "ids": [
    {
