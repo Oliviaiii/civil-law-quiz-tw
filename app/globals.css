@@ -351,7 +351,7 @@ button { color: inherit; }
 .question-quick-nav { display: none; }
 .question-footer { padding: 20px 28px; display: flex; justify-content: space-between; border-top: 1px solid var(--line); }
 .question-footer button, .empty-state button, .data-actions button { padding: 9px 16px; border: 1px solid var(--line); border-radius: 6px; background: transparent; cursor: pointer; font-size: 12px; }
-.question-footer .next-button { background: var(--ink); border-color: var(--ink); color: white; }
+.question-footer .next-button { background: var(--ink); border-color: var(--ink); color: var(--surface); }
 
 .essay-callout, .official-answer-note { margin: 24px 28px 30px; padding: 20px; border: 1px solid var(--line); background: var(--surface-alt); }
 .essay-callout { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
@@ -570,7 +570,7 @@ button { color: inherit; }
   .question-quick-nav .quick-tool { min-width: 0; padding: 3px; display: grid; place-content: center; color: var(--muted); font-size: 16px; line-height: 1.1; }
   .question-quick-nav .quick-tool small { display: block; margin-top: 2px; font-size: 8px; font-weight: 700; }
   .question-quick-nav .quick-tool.active { border-color: var(--accent); background: var(--tag-warm); color: var(--accent-dark); }
-  .question-quick-nav .next-button { border-color: var(--ink); background: var(--ink); color: white; }
+  .question-quick-nav .next-button { border-color: var(--ink); background: var(--ink); color: var(--surface); }
   .question-card .question-tools { display: none; }
   .stat-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .stat-grid > div { min-height: 110px; padding: 17px; }
