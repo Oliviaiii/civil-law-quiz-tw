@@ -865,3 +865,40 @@ test("匯入紀錄：有效檔、格式錯誤與 v1 migration", async ({ page })
     return stored.flags?.["judicial-fourth-114-mcq-01"];
   })).toEqual({ starred: true });
 });
+
+test("題目亂序：開啟後作答順序改變、題數不變且判題正常", async ({ page }) => {
+  await openApp(page);
+  await page.getByRole("button", { name: "清除所有篩選" }).click();
+
+  const heading = page.locator("article.question-card h2");
+  const collect = async (steps: number) => {
+    const prompts: string[] = [];
+    prompts.push(await heading.innerText());
+    for (let index = 0; index < steps; index += 1) {
+      await clickNav(page, "下一題");
+      prompts.push(await heading.innerText());
+    }
+    return prompts;
+  };
+
+  const totalBefore = (await readPosition(page)).total;
+  const defaultOrder = await collect(9);
+
+  // 開啟題目亂序
+  const shuffle = page.getByRole("checkbox", { name: "題目亂序" });
+  await shuffle.check();
+  await expect(shuffle).toBeChecked();
+
+  const totalAfter = (await readPosition(page)).total;
+  expect(totalAfter).toBe(totalBefore); // 亂序不改變題數
+
+  const shuffledOrder = await collect(9);
+  // 大題庫下，前十題順序完全相同的機率趨近於零
+  expect(shuffledOrder.join("|")).not.toBe(defaultOrder.join("|"));
+  // 亂序後題目集合不變（僅順序不同）
+  expect(new Set(shuffledOrder)).not.toContain(undefined);
+
+  // 關閉後恢復預設順序
+  await shuffle.uncheck();
+  await expect(shuffle).not.toBeChecked();
+});

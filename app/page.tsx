@@ -21,6 +21,7 @@ import { useQuestionBank } from "./hooks/use-question-bank";
 import { officialQuestionCount } from "./data/bank-manifest";
 import { dailyPointer, dailyQuestionFrom } from "./lib/daily-question";
 import { loadPreferences, type SessionSnapshot } from "./lib/preferences";
+import { shuffleQuestionOrder } from "./lib/question-shuffle";
 import {
   createEmptyProgress,
   loadProgress,
@@ -50,6 +51,7 @@ export default function Home() {
   const [selectedYears, setSelectedYears] = useState<number[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [currentId, setCurrentId] = useState<string | null>(null);
+  const [questionShuffleSeed, setQuestionShuffleSeed] = useState(1);
   const [reviewingId, setReviewingId] = useState<string | null>(null);
   const [notice, setNotice] = useState("");
   const [resumeOffer, setResumeOffer] = useState<
@@ -169,9 +171,18 @@ export default function Home() {
     [answeredIds, dueIds, formatFilter, questions, reviewingId, scope, selectedCategories, selectedCorpora, selectedSubjects, selectedYears, starredIds, uncertainIds, view, wrongIds],
   );
 
+  // 題目亂序：以種子穩定洗牌，導覽與定位一律以此清單為準；關閉時維持預設排序。
+  const orderedVisibleQuestions = useMemo(
+    () =>
+      preferences.shuffleQuestions
+        ? shuffleQuestionOrder(visibleQuestions, questionShuffleSeed)
+        : visibleQuestions,
+    [visibleQuestions, preferences.shuffleQuestions, questionShuffleSeed],
+  );
+
   const currentQuestion =
-    visibleQuestions.find((question) => question.id === currentId) ??
-    visibleQuestions[0];
+    orderedVisibleQuestions.find((question) => question.id === currentId) ??
+    orderedVisibleQuestions[0];
   const visibleAnsweredCount = visibleQuestions.filter(
     (question) => progress.answers[question.id],
   ).length;
@@ -287,16 +298,16 @@ export default function Home() {
   }
 
   function moveQuestion(direction: 1 | -1) {
-    if (!currentQuestion || !visibleQuestions.length) return;
-    const currentIndex = visibleQuestions.findIndex(
+    if (!currentQuestion || !orderedVisibleQuestions.length) return;
+    const currentIndex = orderedVisibleQuestions.findIndex(
       (question) => question.id === currentQuestion.id,
     );
     const nextIndex =
-      (currentIndex + direction + visibleQuestions.length) %
-      visibleQuestions.length;
+      (currentIndex + direction + orderedVisibleQuestions.length) %
+      orderedVisibleQuestions.length;
     pendingQuestionScrollRef.current = true;
     setReviewingId(null);
-    setCurrentId(visibleQuestions[nextIndex].id);
+    setCurrentId(orderedVisibleQuestions[nextIndex].id);
     setResumeOffer(null);
   }
 
@@ -696,6 +707,7 @@ export default function Home() {
                 matchCount={visibleQuestions.length}
                 hasActiveFilters={hasActiveFilters}
                 shuffleOptions={preferences.shuffleOptions ?? false}
+                shuffleQuestions={preferences.shuffleQuestions ?? false}
                 onScopeChange={(value) => {
                   resetQuestionCursor();
                   setScope(value);
@@ -723,6 +735,14 @@ export default function Home() {
                   setSelectedCategories(values);
                 }}
                 onShuffleChange={(enabled) => updatePreferences({ shuffleOptions: enabled })}
+                onShuffleQuestionsChange={(enabled) => {
+                  updatePreferences({ shuffleQuestions: enabled });
+                  // 開啟時抽一組新順序並回到第一題，讓亂序立即可感知。
+                  if (enabled) {
+                    setQuestionShuffleSeed((seed) => (seed % 2147483647) + 1 + Math.floor(Math.random() * 1000));
+                    resetQuestionCursor();
+                  }
+                }}
                 onClearFilters={clearFilters}
               />
 
@@ -759,7 +779,7 @@ export default function Home() {
                   // 讓剛答錯的題目進錯題本後可以立即重新作答。
                   key={`${view}-${scope}-${currentQuestion.id}`}
                   question={currentQuestion}
-                  position={visibleQuestions.findIndex((item) => item.id === currentQuestion.id) + 1}
+                  position={orderedVisibleQuestions.findIndex((item) => item.id === currentQuestion.id) + 1}
                   total={visibleQuestions.length}
                   previousAnswer={progress.answers[currentQuestion.id]}
                   relatedQuestions={currentRelatedQuestions}

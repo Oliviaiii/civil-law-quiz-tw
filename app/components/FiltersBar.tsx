@@ -30,6 +30,7 @@ export function FiltersBar({
   matchCount,
   hasActiveFilters,
   shuffleOptions,
+  shuffleQuestions,
   onScopeChange,
   onSubjectsChange,
   onCorporaChange,
@@ -37,6 +38,7 @@ export function FiltersBar({
   onYearsChange,
   onCategoriesChange,
   onShuffleChange,
+  onShuffleQuestionsChange,
   onClearFilters,
 }: {
   scope: Scope;
@@ -48,6 +50,7 @@ export function FiltersBar({
   matchCount: number;
   hasActiveFilters: boolean;
   shuffleOptions: boolean;
+  shuffleQuestions: boolean;
   onScopeChange: (scope: Scope) => void;
   onSubjectsChange: (subjects: SubjectFilter[]) => void;
   onCorporaChange: (corpora: Corpus[]) => void;
@@ -55,6 +58,7 @@ export function FiltersBar({
   onYearsChange: (years: number[]) => void;
   onCategoriesChange: (categories: string[]) => void;
   onShuffleChange: (enabled: boolean) => void;
+  onShuffleQuestionsChange: (enabled: boolean) => void;
   onClearFilters: () => void;
 }) {
   const [mobileExpanded, setMobileExpanded] = useState(false);
@@ -167,6 +171,14 @@ export function FiltersBar({
           onChange={onCategoriesChange}
         />
       )}
+      <label className="shuffle-toggle" title="打亂作答的前後順序，不影響判題與題號">
+        <input
+          type="checkbox"
+          checked={shuffleQuestions}
+          onChange={(event) => onShuffleQuestionsChange(event.target.checked)}
+        />
+        <span>題目亂序</span>
+      </label>
       <label className="shuffle-toggle" title="含「以上皆是」等順序敏感選項的題目不會亂序">
         <input
           type="checkbox"

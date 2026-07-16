@@ -16,6 +16,8 @@ export type Preferences = {
   version: 1;
   /** 練習模式選項亂序。 */
   shuffleOptions?: boolean;
+  /** 練習模式題目亂序。 */
+  shuffleQuestions?: boolean;
   /** 深淺色主題；未設定時跟隨系統。 */
   theme?: "dark" | "light";
   /** 最後一次練習的畫面與篩選條件。 */
@@ -57,6 +59,7 @@ export function parsePreferences(value: unknown): Preferences {
   return {
     version: 1,
     shuffleOptions: typeof stored.shuffleOptions === "boolean" ? stored.shuffleOptions : undefined,
+    shuffleQuestions: typeof stored.shuffleQuestions === "boolean" ? stored.shuffleQuestions : undefined,
     theme: stored.theme === "dark" || stored.theme === "light" ? stored.theme : undefined,
     lastSession: sanitizeSession(stored.lastSession),
   };
