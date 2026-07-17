@@ -142,6 +142,53 @@
 5. 全 300 題完成：tests/rendered-html.test.mjs 完整性斷言收回（兩處 `<=150` 改回 `assert.equal(...,150)`、`if (!seed) continue` 移除）→ `npm test` 全綠 → 更新本文件 → 推分支 → **詢問使用者**後合併 main 部署。
 6. 各批 pass/fixed 統計：法緒106=10/5、憲107=4/9、法緒107=6/5、憲108=8/7、法緒108=13/2、憲109=4/9、法緒109=10/1、憲110=7/8、法緒110=9/6、法緒111=10/3、憲111=2/9、憲112=3/12、法緒112=8/7。全數 0 failed。研究批 25–35 分／90–110 萬 tokens；驗證批 9–19 分／33–63 萬 tokens。用量限制每 5 小時重置（歷次：6:10/8:50 UTC 等），撞牆後 resumeFromRunId 續跑即可。
 
+## 三之二、逐選項詳解合規審查（2026-07-17，使用者定案規則）
+
+### 定案規則（所有解析撰寫者必須遵守，違者不得合併）
+1. **每一題**的「套入本題」必須包含 A、B、C、D **四個選項各自**的對錯理由（為何正確／為何錯誤、錯在哪個要件或概念）。
+2. 四個選項的說明必須**分開呈現**（各自獨立區塊／欄位），不得擠成同一大段。資料格式將改為結構化 `application: { intro?, A, B, C, D }`（UI 逐選項分行渲染，舊字串格式僅過渡期相容）；新批次一律直接寫結構化格式。
+
+### 審查結果總表（依內容規則 1 檢查；規則 2 目前「全站皆未達標」——所有 application 仍是整段字串，待格式遷移）
+
+| 科目 | 未完成 | 已做但不合規（內容未逐選項） | 合規 |
+|---|---|---|---|
+| 憲法＋法緒 | 43 題（法緒113×13、憲114×15、法緒114×15） | **22 題**（清單見下） | 235 題 |
+| 民法 | 0 | **175 題全部**（多只解釋答案選項） | 0 |
+| 刑法 | 0 | **174 題**（regex 模板產物） | 1 題（108 年第 1 題） |
+| 國文 | 0 | 待人工複核（辨析多以成語原文而非字母標示，字母偵測不適用；抽樣看多有逐項辨析） | — |
+| 英文 | 0 | **200 題**（有逐選項翻譯＋詞性表，但「為何錯」的理由是共用句型，需逐題補寫） | 0 |
+
+### 憲法/法緒 22 題不合規清單（敘述式帶過或只講答案，需重寫為逐選項）
+  - `judicial-fourth-108-legal-knowledge-11（缺 ABCD）`
+  - `judicial-fourth-109-legal-knowledge-04（缺 ABCD）`
+  - `judicial-fourth-109-legal-knowledge-09（缺 D）`
+  - `judicial-fourth-110-legal-knowledge-06（缺 ABCD）`
+  - `judicial-fourth-110-legal-knowledge-08（缺 AC）`
+  - `judicial-fourth-110-legal-knowledge-15（缺 ABD）`
+  - `judicial-fourth-112-legal-knowledge-08（缺 ABCD）`
+  - `judicial-fourth-112-legal-knowledge-11（缺 ABCD）`
+  - `judicial-fourth-108-legal-knowledge-17（缺 ABC）`
+  - `judicial-fourth-108-legal-knowledge-19（缺 ABCD）`
+  - `judicial-fourth-108-legal-knowledge-21（缺 ABCD）`
+  - `judicial-fourth-108-legal-knowledge-27（缺 C）`
+  - `judicial-fourth-109-legal-knowledge-20（缺 ABCD）`
+  - `judicial-fourth-109-legal-knowledge-21（缺 ABCD）`
+  - `judicial-fourth-109-legal-knowledge-24（缺 D）`
+  - `judicial-fourth-110-legal-knowledge-17（缺 C）`
+  - `judicial-fourth-110-legal-knowledge-19（缺 D）`
+  - `judicial-fourth-110-legal-knowledge-21（缺 ABCD）`
+  - `judicial-fourth-110-legal-knowledge-26（缺 D）`
+  - `judicial-fourth-110-legal-knowledge-27（缺 ABCD）`
+  - `judicial-fourth-110-legal-knowledge-29（缺 ABCD）`
+  - `judicial-fourth-110-legal-knowledge-30（缺 ABCD）`
+
+### 處理順序（審查後定案，尚未執行——使用者指示先記錄不重寫）
+1. 補完 43 題未完成（新批次直接用結構化格式）。
+2. 重寫上列 22 題不合規。
+3. 憲法/法緒 235 題合規內容做「格式遷移」：程式自動把 (A)…(B)…(C)…(D)… 字串拆成結構化欄位（內容不變），拆不動者列入重寫。
+4. 刑法 174 題重寫 → 民法 175 題重寫 → 英文 200 題補寫理由 → 國文 100 題人工複核格式。
+5. 整合工具與測試同步加入「A–D 四欄皆備」的強制檢查。
+
 ## 四、未完成項目與作法
 
 ### 1. 剩餘 234 題解析（主要工作）
