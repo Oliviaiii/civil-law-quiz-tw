@@ -134,3 +134,23 @@ test("手機版展開篩選：下拉複選選單不被裁切、選項可點", as
   await option.click();
   await expect(option.locator("input[type=checkbox]")).toBeChecked();
 });
+
+test("手機版展開篩選：點擊題目卡自動收合面板", async ({ page }) => {
+  await openApp(page);
+
+  const toggle = page.locator(".mobile-filter-toggle");
+  await toggle.click();
+  await expect(page.locator(".filters")).toBeVisible();
+
+  // 點面板內部（打開科目下拉）不應收合
+  const subjectFilter = page.locator("details.multi-select", {
+    has: page.locator('summary[aria-label="依科目複選篩選"]'),
+  });
+  await subjectFilter.locator("summary").click();
+  await expect(page.locator(".filters")).toBeVisible();
+
+  // 點面板外（底部題目工具列）→ 面板自動收合
+  await page.locator(".question-quick-nav").getByRole("button", { name: "收藏" }).click();
+  await expect(page.locator(".filters")).toBeHidden();
+  await expect(toggle).toHaveAttribute("aria-expanded", "false");
+});

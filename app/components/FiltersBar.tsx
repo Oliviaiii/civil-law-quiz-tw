@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MultiSelectFilter } from "./MultiSelectFilter";
 import taxonomyJson from "../data/taxonomy/taxonomy.json";
 import {
@@ -62,6 +62,21 @@ export function FiltersBar({
   onClearFilters: () => void;
 }) {
   const [mobileExpanded, setMobileExpanded] = useState(false);
+  const panelRef = useRef<HTMLElement | null>(null);
+
+  // 行動版展開的篩選面板：點擊面板外（如題目卡）即自動收合，不必再點一次「篩選題目」。
+  useEffect(() => {
+    if (!mobileExpanded) return;
+    function collapseOnOutsidePointer(event: PointerEvent) {
+      const panel = panelRef.current;
+      if (panel && event.target instanceof Node && !panel.contains(event.target)) {
+        setMobileExpanded(false);
+      }
+    }
+    document.addEventListener("pointerdown", collapseOnOutsidePointer);
+    return () => document.removeEventListener("pointerdown", collapseOnOutsidePointer);
+  }, [mobileExpanded]);
+
   // 章節篩選只在單一科目且該科 taxonomy 已完成時顯示。
   const chapterConfig = subjects.length === 1 ? taxonomy[subjects[0]] : undefined;
   const categorySummary = categories.length === 0
@@ -86,7 +101,7 @@ export function FiltersBar({
       : `已選 ${years.length} 年`;
 
   return (
-    <section className={`filter-panel${mobileExpanded ? " expanded" : ""}`} aria-label="題目篩選">
+    <section ref={panelRef} className={`filter-panel${mobileExpanded ? " expanded" : ""}`} aria-label="題目篩選">
       <button
         type="button"
         className="mobile-filter-toggle"
