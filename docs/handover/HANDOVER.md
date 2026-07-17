@@ -89,7 +89,7 @@
 | 憲法 110 | 15/15 ✅ | 法緒 110 | 15/15 ✅ |
 | 憲法 111 | 15/15 ✅ | 法緒 111 | 15/15 ✅ |
 | 憲法 112 | 15/15 ✅ | 法緒 112 | 15/15 ✅ |
-| 憲法 113 | 2/15 | 法緒 113 | 2/15 |
+| 憲法 113 | 2/15（另 8 題研究稿待驗證） | 法緒 113 | 2/15 |
 | 憲法 114 | 0/15 | 法緒 114 | 0/15 |
 
 已完成的種子**已直接合併**進 `app/data/analyses/{constitution,legal-introduction}-<年度>.json`（key = 題目 id，如 `judicial-fourth-105-legal-knowledge-16`）。每題實際參考的網頁來源另存於 `docs/handover/analysis-sources-map.json`；自法緒 106 批起改存每批一檔 `docs/handover/sources/<subject>-<year>.json`（id → URL 陣列），不隨網站出貨。
@@ -103,7 +103,7 @@
 - 憲法 110 年：✅ 全數完成
 - 憲法 111 年：✅ 全數完成
 - 憲法 112 年：✅ 全數完成
-- 憲法 113 年：缺第 3～15 題
+- 憲法 113 年：缺第 3～15 題（第 3～10 題研究稿在 pending-seeds/）
 - 憲法 114 年：缺第 1～15 題（全缺）
 - 法學緒論 105 年：✅ 全數完成
 - 法學緒論 106 年：✅ 全數完成
@@ -118,34 +118,19 @@
 
 （判斷「某題是否已完成」的唯一依據：對應年度種子 JSON 內是否已有該題 id 的 key。接手時請重算一次，以 repo 現況為準。）
 
-## 三之一、2026-07-16 第五段落收尾狀態（本節為最新接手入口）
+## 三之一、2026-07-16 第六段落收尾狀態（本節為最新接手入口）
 
-**本段落由誰做到哪：** 憲法 105–111、法緒 105–111 全部完成並通過驗證（**214/300**）。憲法 112 第 1–13 題研究稿已產出但**未驗證**，存於 `docs/handover/pending-seeds/`（13 檔）；第 14–15 題未開始。剩 86 題（112–114 年，共 6 批），順序見 `remaining-batches.json`。
+**本段落由誰做到哪：** 憲法 105–112、法緒 105–112 全部完成並通過驗證（**244/300**）。憲法 113 第 3–10 題研究稿已產出但**未驗證**，存於 `docs/handover/pending-seeds/`（8 檔）；第 11–15 題未開始。剩 56 題（113–114 年，共 4 批）。
 
-**重要：GitHub 寫入權已開通**（git push 直接可用，不再需要 bundle）。目前正式站 main=462e2b6（190/300＋兩個 UI 修復＋深色按鈕修復皆已部署）。工作分支 tip 含 111 年全部與這批收尾，已推遠端。
+**部署狀態：** 正式站 main=`7f26270`（229/300：105–112 憲法全部＋法緒 105–111）。工作分支 tip=`bc33218` 含法緒 112（244/300），**尚未合併部署**——合併 main 需使用者明確授權。GitHub 寫入權正常，git push 直接可用。
 
-**使用者已下的待執行指示：**
-1. 憲法 112 這批「完成後」要合併 main＋部署並記錄交接文件（授權已給，接手者完成該批整合後可直接執行合併部署；若隔太久建議再確認一次）。
-2. 批次節奏：一次一批（112憲 → 112法緒 → 113憲 → 113法緒 → 114憲 → 114法緒）。
-3. 全部 300 題完成後：測試完整性斷言收回 =150（tests/rendered-html.test.mjs 兩處 `<=150` 改回 `equal(...,150)`、`if (!seed) continue` 移除）→ npm test 全綠 → 合併部署（需再次確認）。
-
-**本 session 對 GitHub 完全唯讀**（git push 與 GitHub API 寫入均 403），所有成果都在本地 commit；使用者已同意暫存本機、大節點以 git bundle 交付。目前最新 bundle 已於收尾時交付使用者（涵蓋遠端 bca1591 之後的全部 commit）。
-
-**接手重啟步驟（在能跑 Workflow 的 Claude Code session）：**
-1. `git fetch` 確認拿到最新分支（若遠端落後，請使用者提供最新 bundle 還原）。
-2. 重建題目小檔：`python3 docs/handover/make-question-files.py <questionsDir>`（建議放 scratchpad）。
-3. 目前無 pending-seeds。若 scratchpad 因容器回收遺失，`make-question-files.py` 可重建題目小檔，種子則需重跑。
-4. 照 `docs/handover/remaining-batches.json` 順序，一次一批用 `rewrite-by-ids.js` 跑 Workflow（args：subjectLabel/seedsDir/questionsDir/ids），批次完成 → `integrate-batch.py <subject> <year>` 驗證合併 → `node scripts/generate-question-data.mjs` → lint → 本地 commit。使用者指示：成果暫存本機即可、不逐批交付，大節點以 bundle 留底、一次一批（曾一次兩批一輪）。
-5. 每批的實際參考來源存 `docs/handover/sources/<subject>-<year>.json`（integrate-batch.py 會自動寫）。
-6. 各批 pass/fixed 統計：法緒106=10/5、憲107=4/9、法緒107=6/5(驗證優先)、憲108=8/7、法緒108=13/2、憲109=4/9、法緒109=10/1、憲110=7/8、法緒110=9/6。全數 0 failed。研究批約 25–30 分／90–105 萬 tokens；驗證批約 9 分／33 萬 tokens。
-
-
-### 2026-07-16 決策：優雅降級 + 合併 main（正式站可用）
-- 使用者決定在 190/300 時先把成果合併 main、讓正式站恢復。
-- 為此把 `buildConstitutionAnalysis`／`buildLegalIntroductionAnalysis` 從「缺種子 throw」改為「缺種子回傳 null」；`banks/constitution.ts`、`banks/legal-introduction.ts` 以 optional chaining 接住，缺種子的題目 `analysis` 為 undefined，前端 `QuestionAnalysis` 自動顯示既有的「官方答案，解析整理中」降級卡片（與申論題同一介面）。
-- 因此**憲法/法緒兩科可正常載入**：已補的年度（105–110 全部＋111–114 零星）顯示完整逐選項解析，未補的顯示官方答案卡片。之後每補一批，該題自動升級為完整解析。
-- 測試 `tests/rendered-html.test.mjs` 的完整性斷言由「各科 =150」放寬為「≤150 且已存在種子全部合格」，缺種子題以 `if (!seed) continue` 略過；**品質防線（禁模板句、禁跨題重複 application、格式/長度/references）對已存在種子仍全部生效**。待 300 題補齊後可將 ≤150 收回 =150。
-- 合併方式：工作分支 c2ce0f3 之後 descend 自 bca1591，合併 main 為乾淨快轉；push main 會觸發 ci.yml（測試）與 deploy-pages.yml（部署）。
+**接手重啟步驟：**
+1. `git fetch origin && git checkout claude/remote-content-review-1lpzji && git pull`。
+2. 重建題目小檔：`python3 docs/handover/make-question-files.py <questionsDir>`（放 scratchpad）。
+3. pending-seeds 有憲法 113 第 3–10 題研究稿：複製到 seedsDir，用 `docs/handover/verify-by-ids.js` 把整批 13 題（03–15）丟進去跑（3–10 走驗證優先、11–15 自動轉研究），完成後 `integrate-batch.py constitution 113` 合併、清 pending-seeds。
+4. 之後單批續跑：法緒 113 → 憲法 114 → 法緒 114（`rewrite-by-ids.js`，ids 見 `remaining-batches.json`）。每批：integrate → generate → lint → commit → 推工作分支。
+5. 全 300 題完成：tests/rendered-html.test.mjs 完整性斷言收回（兩處 `<=150` 改回 `assert.equal(...,150)`、`if (!seed) continue` 移除）→ `npm test` 全綠 → 更新本文件 → 推分支 → **詢問使用者**後合併 main 部署。
+6. 各批 pass/fixed 統計：法緒106=10/5、憲107=4/9、法緒107=6/5、憲108=8/7、法緒108=13/2、憲109=4/9、法緒109=10/1、憲110=7/8、法緒110=9/6、法緒111=10/3、憲111=2/9、憲112=3/12、法緒112=8/7。全數 0 failed。研究批 25–35 分／90–110 萬 tokens；驗證批 9–19 分／33–63 萬 tokens。用量限制每 5 小時重置（歷次：6:10/8:50 UTC 等），撞牆後 resumeFromRunId 續跑即可。
 
 ## 四、未完成項目與作法
 
@@ -213,7 +198,7 @@ npm test                                   # 含 300 題種子防線，必須全
 | `docs/handover/integrate-batch.py` | 批次種子驗證＋合併工具 |
 | `docs/handover/make-question-files.py` | 重建工作流所需題目小檔 |
 | `docs/handover/remaining-batches.json` | 剩餘 205 題的批次順序與 ids |
-| `docs/handover/pending-seeds/` | 憲法 112 第 1–13 題研究稿（未驗證） |
+| `docs/handover/pending-seeds/` | 憲法 113 第 3–10 題研究稿（未驗證） |
 | `docs/handover/analysis-sources-map.json` | 每題實際參考來源 URL |
 | `app/data/legal-knowledge-and-english-questions.json` | 300 題原始題庫（含官方答案，id 規則：憲法=每年 Q1-15、法緒=Q16-30） |
 
