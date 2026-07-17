@@ -1,29 +1,28 @@
 #!/usr/bin/env python3
-"""把一批 scratchpad 種子合併進 repo 年度 JSON，並做格式/品質驗證。
-用法：integrate-batch.py <subject> <year>   （subject: constitution | legal-introduction）
+"""把一批種子合併進 repo 年度 JSON，並做格式/品質驗證。
+用法：integrate-batch.py <subject> <year> [seeds-dir]   （subject: constitution | legal-introduction）
 """
 import json, sys, os, re, glob
+from pathlib import Path
 
-REPO = "/home/user/civil-law-quiz-tw"
-SCRATCH = "/tmp/claude-0/-home-user-civil-law-quiz-tw/01602683-72b5-57b9-9e19-f6747a603341/scratchpad"
-SEEDS = f"{SCRATCH}/seeds"
-SOURCES_MAP = f"{REPO}/docs/handover/sources/{sys.argv[1]}-{sys.argv[2]}.json"
+REPO = Path(__file__).resolve().parents[2]
+SEEDS = Path(sys.argv[3]).resolve() if len(sys.argv) > 3 else REPO / "docs" / "handover" / "pending-seeds"
 
 subject, year = sys.argv[1], int(sys.argv[2])
-SOURCES_MAP = SOURCES_MAP  # noqa
+SOURCES_MAP = REPO / "docs" / "handover" / "sources" / f"{subject}-{year}.json"
 lo, hi = (1, 15) if subject == "constitution" else (16, 30)
-repo_path = f"{REPO}/app/data/analyses/{subject}-{year}.json"
-repo_seeds = json.load(open(repo_path))
-sources_map = json.load(open(SOURCES_MAP)) if os.path.exists(SOURCES_MAP) else {}
-questions = {r["id"]: r for r in json.load(open(f"{REPO}/app/data/legal-knowledge-and-english-questions.json"))}
+repo_path = REPO / "app" / "data" / "analyses" / f"{subject}-{year}.json"
+repo_seeds = json.load(open(repo_path, encoding="utf-8"))
+sources_map = json.load(open(SOURCES_MAP, encoding="utf-8")) if os.path.exists(SOURCES_MAP) else {}
+questions = {r["id"]: r for r in json.load(open(REPO / "app" / "data" / "legal-knowledge-and-english-questions.json", encoding="utf-8"))}
 
 BOILERPLATE = re.compile(r"須注意其主體、要件、期限、程序或法律效果|應再核對其主體、要件、程序或法律效果|代號：|頁次：")
 REQUIRED = ["issue", "rule", "application", "trap", "confidence", "references"]
 
 # 全站既有 application（跨題重複檢查）
 all_apps = {}
-for f in glob.glob(f"{REPO}/app/data/analyses/constitution-*.json") + glob.glob(f"{REPO}/app/data/analyses/legal-introduction-*.json"):
-    for k, v in json.load(open(f)).items():
+for f in glob.glob(str(REPO / "app" / "data" / "analyses" / "constitution-*.json")) + glob.glob(str(REPO / "app" / "data" / "analyses" / "legal-introduction-*.json")):
+    for k, v in json.load(open(f, encoding="utf-8")).items():
         all_apps[v["application"]] = k
 
 errors, merged = [], []
@@ -31,12 +30,12 @@ for n in range(lo, hi + 1):
     qid = f"judicial-fourth-{year}-legal-knowledge-{n:02d}"
     if qid in repo_seeds:
         continue
-    path = f"{SEEDS}/{qid}.json"
+    path = SEEDS / f"{qid}.json"
     if not os.path.exists(path):
         errors.append(f"{qid}: 種子檔不存在")
         continue
     try:
-        seed = json.load(open(path))
+        seed = json.load(open(path, encoding="utf-8"))
     except Exception as e:
         errors.append(f"{qid}: JSON 解析失敗 {e}")
         continue
@@ -76,9 +75,11 @@ if errors:
         print(" -", e)
     sys.exit(1)
 
-json.dump(dict(sorted(repo_seeds.items())), open(repo_path, "w"), ensure_ascii=False, indent=1)
-open(repo_path, "a").write("\n")
-json.dump(dict(sorted(sources_map.items())), open(SOURCES_MAP, "w"), ensure_ascii=False, indent=1)
-open(SOURCES_MAP, "a").write("\n")
-total = sum(len(json.load(open(f))) for f in glob.glob(f"{REPO}/app/data/analyses/constitution-*.json") + glob.glob(f"{REPO}/app/data/analyses/legal-introduction-*.json"))
+with open(repo_path, "w", encoding="utf-8", newline="\n") as handle:
+    json.dump(dict(sorted(repo_seeds.items())), handle, ensure_ascii=False, indent=1)
+    handle.write("\n")
+with open(SOURCES_MAP, "w", encoding="utf-8", newline="\n") as handle:
+    json.dump(dict(sorted(sources_map.items())), handle, ensure_ascii=False, indent=1)
+    handle.write("\n")
+total = sum(len(json.load(open(f, encoding="utf-8"))) for f in glob.glob(str(REPO / "app" / "data" / "analyses" / "constitution-*.json")) + glob.glob(str(REPO / "app" / "data" / "analyses" / "legal-introduction-*.json")))
 print(f"[OK] 合併 {len(merged)} 題進 {subject}-{year}.json；全站進度 {total}/300")
