@@ -317,6 +317,11 @@ button { color: inherit; }
 .reasoning-grid span { color: var(--accent); font-family: Georgia, serif; font-size: 11px; }
 .reasoning-grid h3 { margin: 3px 0 6px; font-size: 13px; }
 .reasoning-grid p { margin: 0; color: var(--text-soft); font-size: 13px; line-height: 1.85; }
+/* 逐選項涵攝：A/B/C/D 各自獨立區塊，避免整段擠在一起難以閱讀。 */
+.option-analysis { margin: 8px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.option-analysis li { display: flex; gap: 10px; align-items: flex-start; }
+.option-analysis li > b { flex: 0 0 auto; min-width: 22px; height: 22px; margin-top: 2px; display: grid; place-items: center; border: 1px solid var(--border-strong); border-radius: 50%; color: var(--accent-dark); font-family: Georgia, serif; font-size: 12px; }
+.option-analysis li > p { margin: 0; }
 .english-analysis-grid { padding: 17px 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .english-analysis-grid > div { min-width: 0; padding: 17px 0; border-top: 1px solid var(--line); }
 .english-analysis-grid span { color: var(--accent); font-family: Georgia, serif; font-size: 11px; }

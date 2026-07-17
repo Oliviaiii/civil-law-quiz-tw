@@ -105,7 +105,25 @@ export function QuestionAnalysis({
           </div>
           <div className="reasoning-grid">
             <div><span>01</span><h3>{question.subject === "chinese" ? "判讀原則" : "法律規則"}</h3><p>{question.analysis.rule}</p></div>
-            <div><span>02</span><h3>{question.subject === "chinese" ? "解析" : "套入本題"}</h3><p>{question.analysis.application}</p></div>
+            <div>
+              <span>02</span>
+              <h3>{question.subject === "chinese" ? "解析" : "套入本題"}</h3>
+              {typeof question.analysis.application === "string" ? (
+                <p>{question.analysis.application}</p>
+              ) : (
+                <>
+                  {question.analysis.application.intro && <p>{question.analysis.application.intro}</p>}
+                  <ul className="option-analysis">
+                    {(["A", "B", "C", "D"] as const).map((letter) => (
+                      <li key={letter}>
+                        <b>{letter}</b>
+                        <p>{(question.analysis!.application as Exclude<typeof question.analysis.application, string>)[letter]}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
             <div><span>03</span><h3>結論</h3><p>{question.analysis.conclusion}</p></div>
           </div>
           <div className="trap-note">

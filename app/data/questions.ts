@@ -22,6 +22,19 @@ export type Paper =
   | "administrative-law-summary"
   | "civil-criminal-procedure-summary";
 
+/**
+ * 逐選項涵攝：A/B/C/D 各自的對錯理由分欄保存、分行呈現。
+ * intro 為題幹判讀（如「本題採否定問法」），可省略。
+ * 舊資料（民法／刑法等）仍為整段文字，UI 對兩種格式皆可渲染。
+ */
+export type OptionBreakdown = {
+  intro?: string;
+  A: string;
+  B: string;
+  C: string;
+  D: string;
+};
+
 export type Question = {
   id: string;
   category: "總則" | "債編" | "物權" | "親屬與繼承" | "待分類";
@@ -49,7 +62,7 @@ export type Question = {
   analysis?: {
     issue: string;
     rule: string;
-    application: string;
+    application: string | OptionBreakdown;
     conclusion: string;
     trap: string;
   };
