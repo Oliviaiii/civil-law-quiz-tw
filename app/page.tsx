@@ -21,7 +21,7 @@ import { useQuestionBank } from "./hooks/use-question-bank";
 import { officialQuestionCount } from "./data/bank-manifest";
 import { dailyPointer, dailyQuestionFrom } from "./lib/daily-question";
 import { loadPreferences, type SessionSnapshot } from "./lib/preferences";
-import { shuffleQuestionOrder } from "./lib/question-shuffle";
+import { randomShuffleSeed, shuffleQuestionOrder, type ShuffleSeed } from "./lib/question-shuffle";
 import {
   createEmptyProgress,
   loadProgress,
@@ -51,7 +51,7 @@ export default function Home() {
   const [selectedYears, setSelectedYears] = useState<number[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [currentId, setCurrentId] = useState<string | null>(null);
-  const [questionShuffleSeed, setQuestionShuffleSeed] = useState(1);
+  const [questionShuffleSeed, setQuestionShuffleSeed] = useState<ShuffleSeed | null>(null);
   const [reviewingId, setReviewingId] = useState<string | null>(null);
   const [notice, setNotice] = useState("");
   const [resumeOffer, setResumeOffer] = useState<
@@ -171,10 +171,11 @@ export default function Home() {
     [answeredIds, dueIds, formatFilter, questions, reviewingId, scope, selectedCategories, selectedCorpora, selectedSubjects, selectedYears, starredIds, uncertainIds, view, wrongIds],
   );
 
-  // 題目亂序：以種子穩定洗牌，導覽與定位一律以此清單為準；關閉時維持預設排序。
+  // 題目亂序：以加密級隨機種子穩定洗牌，導覽與定位一律以此清單為準；關閉或種子未就緒時維持預設排序。
+  // 種子只在瀏覽器端產生（避免靜態網站 hydration 不一致），因此每次載入都是全新順序。
   const orderedVisibleQuestions = useMemo(
     () =>
-      preferences.shuffleQuestions
+      preferences.shuffleQuestions && questionShuffleSeed
         ? shuffleQuestionOrder(visibleQuestions, questionShuffleSeed)
         : visibleQuestions,
     [visibleQuestions, preferences.shuffleQuestions, questionShuffleSeed],
@@ -230,6 +231,16 @@ export default function Home() {
     [questions, todayPointer],
   );
   const dailyCompletedToday = progress.dailyQuestion?.lastCompletedDate === todayKey;
+
+  // 題目亂序偏好可能自 localStorage 記憶為開啟；種子只能在瀏覽器端產生，
+  // 掛載後若缺種子就補一組加密級隨機值，確保每次載入都是全新順序（而非固定序）。
+  // 這是「客戶端才產生隨機值以避免 SSR hydration 不一致」的標準模式，setState 僅於掛載後執行一次。
+  useEffect(() => {
+    if (preferences.shuffleQuestions && !questionShuffleSeed) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setQuestionShuffleSeed(randomShuffleSeed());
+    }
+  }, [preferences.shuffleQuestions, questionShuffleSeed]);
 
   useEffect(() => {
     if (!pendingDailyJump || !dailyQuestion) return;
@@ -737,11 +748,15 @@ export default function Home() {
                 onShuffleChange={(enabled) => updatePreferences({ shuffleOptions: enabled })}
                 onShuffleQuestionsChange={(enabled) => {
                   updatePreferences({ shuffleQuestions: enabled });
-                  // 開啟時抽一組新順序並回到第一題，讓亂序立即可感知。
+                  // 開啟時抽一組全新的加密級隨機順序並回到第一題，讓亂序立即可感知。
                   if (enabled) {
-                    setQuestionShuffleSeed((seed) => (seed % 2147483647) + 1 + Math.floor(Math.random() * 1000));
+                    setQuestionShuffleSeed(randomShuffleSeed());
                     resetQuestionCursor();
                   }
+                }}
+                onReshuffle={() => {
+                  setQuestionShuffleSeed(randomShuffleSeed());
+                  resetQuestionCursor();
                 }}
                 onClearFilters={clearFilters}
               />

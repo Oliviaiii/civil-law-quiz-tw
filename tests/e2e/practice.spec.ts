@@ -902,3 +902,26 @@ test("題目亂序：開啟後作答順序改變、題數不變且判題正常",
   await shuffle.uncheck();
   await expect(shuffle).not.toBeChecked();
 });
+
+test("題目亂序：重新洗牌抽出不同順序", async ({ page }) => {
+  await openApp(page);
+  await page.getByRole("button", { name: "清除所有篩選" }).click();
+
+  const heading = page.locator("article.question-card h2");
+  const collect = async (steps: number) => {
+    const prompts: string[] = [await heading.innerText()];
+    for (let index = 0; index < steps; index += 1) {
+      await clickNav(page, "下一題");
+      prompts.push(await heading.innerText());
+    }
+    return prompts.join("|");
+  };
+
+  await page.getByRole("checkbox", { name: "題目亂序" }).check();
+  const firstOrder = await collect(9);
+
+  // 重新洗牌 → 抽出全新順序
+  await page.getByRole("button", { name: "重新洗牌" }).click();
+  const secondOrder = await collect(9);
+  expect(secondOrder).not.toBe(firstOrder);
+});

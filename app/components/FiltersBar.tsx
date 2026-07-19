@@ -39,6 +39,7 @@ export function FiltersBar({
   onCategoriesChange,
   onShuffleChange,
   onShuffleQuestionsChange,
+  onReshuffle,
   onClearFilters,
 }: {
   scope: Scope;
@@ -59,6 +60,7 @@ export function FiltersBar({
   onCategoriesChange: (categories: string[]) => void;
   onShuffleChange: (enabled: boolean) => void;
   onShuffleQuestionsChange: (enabled: boolean) => void;
+  onReshuffle: () => void;
   onClearFilters: () => void;
 }) {
   const [mobileExpanded, setMobileExpanded] = useState(false);
@@ -194,6 +196,16 @@ export function FiltersBar({
         />
         <span>題目亂序</span>
       </label>
+      {shuffleQuestions && (
+        <button
+          type="button"
+          className="reshuffle-button"
+          onClick={onReshuffle}
+          title="重新抽一組全新的隨機順序"
+        >
+          🔀 重新洗牌
+        </button>
+      )}
       <label className="shuffle-toggle" title="含「以上皆是」等順序敏感選項的題目不會亂序">
         <input
           type="checkbox"
