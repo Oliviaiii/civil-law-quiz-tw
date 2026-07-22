@@ -261,16 +261,15 @@ test("keeps questions and local progress behind replaceable data modules", async
     );
   const constitutionSeeds = await loadSeeds("constitution");
   const legalIntroductionSeeds = await loadSeeds("legal-introduction");
-  // 逐題種子分批補齊中：完整目標為各 150 題，補齊過程中已存在的種子必須全部合格，
-  // 缺種子的題目由題庫降級為「官方答案，解析整理中」卡片（見 banks/constitution.ts、legal-introduction.ts）。
-  assert.ok(Object.keys(constitutionSeeds).length <= 150, "constitution seeds exceed 150");
-  assert.ok(Object.keys(legalIntroductionSeeds).length <= 150, "legal-introduction seeds exceed 150");
+  // 憲法與法學緒論各 150 題都必須有人工整理的逐題解析。
+  assert.equal(Object.keys(constitutionSeeds).length, 150, "constitution seeds incomplete");
+  assert.equal(Object.keys(legalIntroductionSeeds).length, 150, "legal-introduction seeds incomplete");
   const seedBoilerplate = /須注意其主體、要件、期限、程序或法律效果|應再核對其主體、要件、程序或法律效果|代號：|頁次：/;
   for (const record of combinedRecords) {
     if (record.subject === "english") continue;
     const seed =
       record.subject === "constitution" ? constitutionSeeds[record.id] : legalIntroductionSeeds[record.id];
-    if (!seed) continue; // 尚未補上的題目走降級卡片，不在此強制存在
+    assert.ok(seed, `${record.id} needs a curated seed`);
     assert.ok(seed.issue.length >= 8, `${record.id} issue too short`);
     assert.ok(seed.rule.length >= 40, `${record.id} rule too short`);
     assert.ok(seed.application.length >= 80, `${record.id} application too short`);
