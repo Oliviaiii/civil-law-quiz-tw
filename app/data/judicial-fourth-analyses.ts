@@ -6,6 +6,13 @@ import analyses111 from "./analyses/judicial-fourth-111.json";
 import analyses112 from "./analyses/judicial-fourth-112.json";
 import analyses113 from "./analyses/judicial-fourth-113.json";
 import analyses114 from "./analyses/judicial-fourth-114.json";
+import reviews108 from "./analyses/civil-option-reviews-108.json";
+import reviews109 from "./analyses/civil-option-reviews-109.json";
+import reviews110 from "./analyses/civil-option-reviews-110.json";
+import reviews111 from "./analyses/civil-option-reviews-111.json";
+import reviews112 from "./analyses/civil-option-reviews-112.json";
+import reviews113 from "./analyses/civil-option-reviews-113.json";
+import reviews114 from "./analyses/civil-option-reviews-114.json";
 
 type StatuteSeed =
   | string
@@ -23,6 +30,14 @@ type AnalysisSeed = {
   trap: string;
   articles: StatuteSeed[];
   confidence?: "高" | "中";
+};
+
+type OptionReview = {
+  intro?: string;
+  A: string;
+  B: string;
+  C: string;
+  D: string;
 };
 
 type OfficialQuestionForAnalysis = {
@@ -43,6 +58,16 @@ const seeds = {
   ...analyses114,
 } as Record<string, AnalysisSeed>;
 
+const optionReviews = {
+  ...reviews108,
+  ...reviews109,
+  ...reviews110,
+  ...reviews111,
+  ...reviews112,
+  ...reviews113,
+  ...reviews114,
+} as Record<string, OptionReview>;
+
 const civilCode = civilCodeJson as {
   articles: Record<string, string>;
 };
@@ -52,7 +77,8 @@ const civilCodeUrl = (article: string) =>
 
 export function buildOfficialAnalysis(question: OfficialQuestionForAnalysis) {
   const seed = seeds[question.id];
-  if (!seed) return null;
+  const optionReview = optionReviews[question.id];
+  if (!seed || !optionReview) return null;
 
   const answerLabel = question.allCredit
     ? "一律給分"
@@ -67,7 +93,7 @@ export function buildOfficialAnalysis(question: OfficialQuestionForAnalysis) {
     analysis: {
       issue: seed.issue,
       rule: seed.rule,
-      application: seed.application,
+      application: optionReview,
       conclusion: question.allCredit
         ? "考選部更正為一律給分；各選項均不宜作為唯一正解。"
         : `關鍵敘述是「${answerText}」，依官方答案應選 ${answerLabel}。`,
@@ -93,3 +119,4 @@ export function buildOfficialAnalysis(question: OfficialQuestionForAnalysis) {
 }
 
 export const officialAnalysisCount = Object.keys(seeds).length;
+export const officialOptionReviewCount = Object.keys(optionReviews).length;

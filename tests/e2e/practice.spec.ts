@@ -53,6 +53,17 @@ test("正式題作答：立即判題答對與答錯", async ({ page }) => {
   await expect(page.locator(".nav-item", { hasText: "錯題本" }).locator("b")).toHaveText("1");
 });
 
+test("民法解析：A 至 D 逐選項分開呈現", async ({ page }) => {
+  await openApp(page);
+  await page.locator(".options .option").nth(0).click();
+
+  const optionAnalysis = page.locator(".option-analysis");
+  await expect(optionAnalysis.locator("li")).toHaveCount(4);
+  await expect(optionAnalysis.locator("li b")).toHaveText(["A", "B", "C", "D"]);
+  await expect(optionAnalysis).toContainText("各監察人均得單獨行使監察權");
+  await expect(optionAnalysis).toContainText("章程也不是一概不得另作規範");
+});
+
 test("複數答案題：任一官方認可選項都算對", async ({ page }) => {
   await openApp(page);
   await toggleFilterOptions(page, "依科目複選篩選", ["民法", "刑法"]);

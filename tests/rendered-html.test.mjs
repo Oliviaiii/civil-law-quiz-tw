@@ -306,6 +306,7 @@ test("keeps questions and local progress behind replaceable data modules", async
   }
   const analysisFiles = await readdir(new URL("../app/data/analyses/", import.meta.url));
   const civilAnalysisFiles = analysisFiles.filter((file) => file.startsWith("judicial-fourth-"));
+  const civilOptionReviewFiles = analysisFiles.filter((file) => file.startsWith("civil-option-reviews-"));
   const analyses = Object.assign(
     {},
     ...await Promise.all(
@@ -322,6 +323,42 @@ test("keeps questions and local progress behind replaceable data modules", async
   assert.ok(Object.values(analyses).every((item) =>
     item.issue && item.rule && item.application && item.trap && item.articles.length > 0
   ));
+  const civilOptionReviews = Object.assign(
+    {},
+    ...await Promise.all(
+      civilOptionReviewFiles.map(async (file) =>
+        JSON.parse(await readFile(new URL(`../app/data/analyses/${file}`, import.meta.url), "utf8")),
+      ),
+    ),
+  );
+  const civilChoiceIds = records.filter((item) => item.format === "選擇題").map((item) => item.id);
+  assert.equal(Object.keys(civilOptionReviews).length, 175, "civil option reviews incomplete");
+  assert.deepEqual(new Set(Object.keys(civilOptionReviews)), new Set(civilChoiceIds));
+  const optionKeys = ["A", "B", "C", "D"];
+  const optionReviewBoilerplate =
+    /須注意其主體、要件、期限、程序或法律效果|應再核對其主體、要件、程序或法律效果|依題意判斷|其餘選項不正確/;
+  const reviewTexts = [];
+  for (const id of civilChoiceIds) {
+    const record = records.find((item) => item.id === id);
+    assert.ok(record.sourceUrl.includes("wwwq.moex.gov.tw"), `${id} needs an official question source`);
+    assert.ok(record.answerUrl.includes("wwwq.moex.gov.tw"), `${id} needs an official answer source`);
+    const review = civilOptionReviews[id];
+    assert.ok(review, `${id} needs a structured option review`);
+    assert.deepEqual(
+      Object.keys(review).filter((key) => key !== "intro").sort(),
+      optionKeys,
+      `${id} must contain exactly A-D option reviews`,
+    );
+    for (const key of optionKeys) {
+      assert.equal(typeof review[key], "string", `${id}.${key} must be text`);
+      assert.ok(review[key].length >= 20, `${id}.${key} review too short`);
+      assert.doesNotMatch(review[key], optionReviewBoilerplate, `${id}.${key} uses boilerplate`);
+      reviewTexts.push(review[key]);
+    }
+  }
+  assert.equal(new Set(reviewTexts).size, 700, "civil option reviews must be unique");
+  assert.match(analysisModule, /application: optionReview/);
+  assert.match(analysisModule, /officialOptionReviewCount/);
   assert.equal(Object.keys(JSON.parse(civilCode).articles).length, 1439);
 
   // 民法章節標籤：來源可追查——由每題人工解析引用的首個民法條文依編章區間推導，
