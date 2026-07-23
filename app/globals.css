@@ -373,7 +373,7 @@ button { color: inherit; }
 }
 .essay-issues.loading { color: var(--muted); font-size: 12px; }
 .essay-issues.loading p { margin: 0; }
-.essay-issues-heading, .essay-issue-detail-heading {
+.essay-issues-heading {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -439,17 +439,6 @@ button { color: inherit; }
 }
 .essay-issue-detail-heading span { color: var(--accent-dark); font-size: 10px; font-weight: 800; }
 .essay-issue-detail-heading h4 { margin-top: 2px; font-size: 17px; }
-.essay-issue-detail-heading code {
-  max-width: 50%;
-  padding: 4px 7px;
-  overflow: hidden;
-  border-radius: 4px;
-  background: var(--inset-bg);
-  color: var(--muted);
-  font-size: 9px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .essay-issue-detail > p { margin: 10px 0 0; color: var(--muted); font-size: 11px; }
 .essay-issue-detail ul { margin: 13px 0 0; padding: 0; display: grid; gap: 8px; list-style: none; }
 .essay-issue-detail li { padding: 11px 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-alt); }
@@ -659,8 +648,6 @@ button { color: inherit; }
   .answer-hint, .issue-box, .trap-note, .statutes { margin-left: 18px; margin-right: 18px; }
   .essay-issues, .essay-callout, .official-answer-note { margin-left: 18px; margin-right: 18px; }
   .essay-issue-actions { grid-template-columns: 1fr; }
-  .essay-issue-detail-heading { display: grid; }
-  .essay-issue-detail-heading code { max-width: 100%; }
   .essay-callout { align-items: stretch; flex-direction: column; }
   .reasoning-grid { padding-left: 18px; padding-right: 18px; }
   .english-analysis-grid { padding-left: 18px; padding-right: 18px; }

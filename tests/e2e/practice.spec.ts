@@ -774,11 +774,29 @@ test("申論考點：可展開爭點並跳到同爭點歷屆題目", async ({ pa
   await expect(firstIssue).toHaveAttribute("aria-expanded", "true");
 
   const detail = panel.locator(".essay-issue-detail");
-  await expect(detail).toContainText("目前有 2 題使用同一爭點標籤");
-  await expect(detail.getByRole("button", { name: /前往題目.*108 年司法特考四等/ })).toBeVisible();
+  await expect(detail).toContainText("同類「債編｜侵權行為」考點");
+  await expect(detail).not.toContainText("civil.tort.");
+  await expect(detail.getByRole("button", { name: /相同考點・前往題目.*108 年司法特考四等/ })).toBeVisible();
 
-  await detail.getByRole("button", { name: /前往題目.*108 年司法特考四等/ }).click();
+  await detail.getByRole("button", { name: /相同考點・前往題目.*108 年司法特考四等/ }).click();
   await expect(page.locator("article.question-card > h2")).toContainText("某丁騎乘機車欲前往打工場所");
+  await expect(page.locator(".filters select")).toHaveValue("申論題");
+});
+
+test("申論考點：單一細項仍顯示同類題目且不外露內部代碼", async ({ page }) => {
+  await page.goto(appUrl("#q=judicial-fourth-114-essay-02"));
+  await page.waitForSelector('html[data-app-ready="true"]');
+
+  const panel = page.locator(".essay-issues");
+  const platformIssue = panel.getByRole("button", { name: /次要爭點 2.*平台責任/ });
+  await expect(platformIssue).toContainText("同類另有 5 題");
+  await platformIssue.click();
+
+  const detail = panel.locator(".essay-issue-detail");
+  await expect(detail).not.toContainText("civil.tort.vicarious-liability");
+  await expect(detail.getByRole("button", { name: /同類考點・前往題目/ }).first()).toBeVisible();
+  await detail.getByRole("button", { name: /同類考點・前往題目/ }).first().click();
+  await expect(page.locator(".source-line")).toContainText("105 年司法特考四等");
   await expect(page.locator(".filters select")).toHaveValue("申論題");
 });
 

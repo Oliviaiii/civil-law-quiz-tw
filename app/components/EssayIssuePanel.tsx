@@ -24,6 +24,10 @@ function issueIdsOf(annotation: EssayAnnotation) {
   return [...annotation.primaryIssueIds, ...annotation.secondaryIssueIds];
 }
 
+function chapterKeyOf(issueId: string) {
+  return issueId.split(".").slice(0, 2).join(".");
+}
+
 function chapterLabelOf(module: EssayIssueModule, issueId: string) {
   const [subject, chapter] = issueId.split(".");
   return module.essayIssueTaxonomy.chapters[subject]?.[chapter] ?? "其他爭點";
@@ -87,7 +91,18 @@ export function EssayIssuePanel({
     : null;
   const activeIssue = issues.find((issue) => issue.id === activeIssueId);
   const activeRelatedAnnotations = activeIssue
-    ? issueModule.essayAnnotations.filter((item) => issueIdsOf(item).includes(activeIssue.id))
+    ? issueModule.essayAnnotations
+      .filter((item) => item.questionId !== question.id)
+      .filter((item) =>
+        issueIdsOf(item).some(
+          (issueId) => chapterKeyOf(issueId) === chapterKeyOf(activeIssue.id),
+        ),
+      )
+      .sort((left, right) => {
+        const leftIsExact = issueIdsOf(left).includes(activeIssue.id);
+        const rightIsExact = issueIdsOf(right).includes(activeIssue.id);
+        return Number(rightIsExact) - Number(leftIsExact);
+      })
     : [];
 
   return (
@@ -110,9 +125,13 @@ export function EssayIssuePanel({
 
       <div className="essay-issue-actions" aria-label="本題爭點">
         {issues.map((issue) => {
-          const relatedCount = issueModule.essayAnnotations.filter((item) =>
-            issueIdsOf(item).includes(issue.id),
-          ).length;
+          const relatedCount = issueModule.essayAnnotations
+            .filter((item) => item.questionId !== question.id)
+            .filter((item) =>
+              issueIdsOf(item).some(
+                (issueId) => chapterKeyOf(issueId) === chapterKeyOf(issue.id),
+              ),
+            ).length;
           const kindLabel = issue.kind === "primary" ? "主要爭點" : "次要爭點";
           const subparts = subpartLabelsOf(annotation, issue.id);
           return (
@@ -128,7 +147,7 @@ export function EssayIssuePanel({
               <strong>{chapterLabelOf(issueModule, issue.id)}</strong>
               <small>
                 {subparts.length > 0 ? `子題：${subparts.join("、")}・` : ""}
-                相關 {relatedCount} 題
+                {relatedCount > 0 ? `同類另有 ${relatedCount} 題` : "目前無其他同類題目"}
               </small>
             </button>
           );
@@ -146,34 +165,35 @@ export function EssayIssuePanel({
               <span>{activeIssue.kind === "primary" ? "主要爭點" : "次要爭點"}</span>
               <h4>{chapterLabelOf(issueModule, activeIssue.id)}</h4>
             </div>
-            <code title="本站內部使用的穩定爭點代碼">{activeIssue.id}</code>
           </div>
 
-          <p>
-            目前有 {activeRelatedAnnotations.length} 題使用同一爭點標籤；點選其他題目即可直接切換練習。
-          </p>
-          <ul>
-            {activeRelatedAnnotations.map((relatedAnnotation) => {
-              const relatedQuestion = questionById.get(relatedAnnotation.questionId);
-              const isCurrent = relatedAnnotation.questionId === question.id;
-              return (
-                <li key={relatedAnnotation.questionId} className={isCurrent ? "current" : ""}>
-                  {isCurrent || !relatedQuestion ? (
-                    <div>
-                      <strong>{isCurrent ? "目前題目" : relatedAnnotation.questionId}</strong>
-                      <span>{relatedQuestion?.source ?? "題目尚未載入"}</span>
-                    </div>
-                  ) : (
-                    <button type="button" onClick={() => onOpenQuestion?.(relatedQuestion)}>
-                      <strong>前往題目</strong>
-                      <span>{relatedQuestion.source}</span>
-                    </button>
-                  )}
-                  <p>{relatedAnnotation.gist}</p>
-                </li>
-              );
-            })}
-          </ul>
+          {activeRelatedAnnotations.length > 0 ? (
+            <>
+              <p>
+                以下有 {activeRelatedAnnotations.length} 題同類「
+                {chapterLabelOf(issueModule, activeIssue.id)}
+                」考點；點選即可直接切換練習。
+              </p>
+              <ul>
+                {activeRelatedAnnotations.map((relatedAnnotation) => {
+                  const relatedQuestion = questionById.get(relatedAnnotation.questionId);
+                  const isExactIssue = issueIdsOf(relatedAnnotation).includes(activeIssue.id);
+                  if (!relatedQuestion) return null;
+                  return (
+                    <li key={relatedAnnotation.questionId}>
+                      <button type="button" onClick={() => onOpenQuestion?.(relatedQuestion)}>
+                        <strong>{isExactIssue ? "相同考點・前往題目" : "同類考點・前往題目"}</strong>
+                        <span>{relatedQuestion.source}</span>
+                      </button>
+                      <p>{relatedAnnotation.gist}</p>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          ) : (
+            <p>目前尚未整理出其他同類題目；後續擴充歷屆考題時會自動出現在這裡。</p>
+          )}
           <p className="essay-issue-disclaimer">
             此處是歷屆題目的整理標籤，不是官方擬答，也不代表未來命題預測。
           </p>
