@@ -778,7 +778,10 @@ test("申論考點：可展開爭點並跳到同爭點歷屆題目", async ({ pa
   await expect(detail).not.toContainText("civil.tort.");
   await expect(detail.getByRole("button", { name: /相同考點・前往題目.*108 年司法特考四等/ })).toBeVisible();
 
-  await detail.getByRole("button", { name: /相同考點・前往題目.*108 年司法特考四等/ }).click();
+  const relatedCard = detail.getByRole("button", {
+    name: /相同考點・前往題目.*108 年司法特考四等/,
+  });
+  await relatedCard.getByText("考查未成年駕駛人致被害人成為植物人").click();
   await expect(page.locator("article.question-card > h2")).toContainText("某丁騎乘機車欲前往打工場所");
   await expect(page.locator(".filters select")).toHaveValue("申論題");
 });

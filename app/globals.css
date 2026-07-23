@@ -441,20 +441,22 @@ button { color: inherit; }
 .essay-issue-detail-heading h4 { margin-top: 2px; font-size: 17px; }
 .essay-issue-detail > p { margin: 10px 0 0; color: var(--muted); font-size: 11px; }
 .essay-issue-detail ul { margin: 13px 0 0; padding: 0; display: grid; gap: 8px; list-style: none; }
-.essay-issue-detail li { padding: 11px 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-alt); }
+.essay-issue-detail li { overflow: hidden; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-alt); }
 .essay-issue-detail li.current { border-left: 3px solid var(--accent); }
-.essay-issue-detail li > div, .essay-issue-detail li > button {
+.essay-issue-detail li > button {
   width: 100%;
-  padding: 0;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
+  min-height: 100%;
+  padding: 11px 12px;
+  display: block;
   border: 0;
   background: transparent;
   color: var(--ink);
+  cursor: pointer;
   text-align: left;
 }
-.essay-issue-detail li > button { cursor: pointer; }
+.essay-issue-detail li > button:hover { background: var(--hover-bg); }
+.essay-issue-detail li > button:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 42%, transparent); outline-offset: -3px; }
+.essay-related-question-heading { display: flex; align-items: baseline; gap: 8px; }
 .essay-issue-detail li > button strong { color: var(--accent-dark); }
 .essay-issue-detail li span { color: var(--muted); font-size: 10px; }
 .essay-issue-detail li p { margin: 5px 0 0; color: var(--text-soft); font-size: 11px; line-height: 1.7; }

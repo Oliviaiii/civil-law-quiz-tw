@@ -182,10 +182,12 @@ export function EssayIssuePanel({
                   return (
                     <li key={relatedAnnotation.questionId}>
                       <button type="button" onClick={() => onOpenQuestion?.(relatedQuestion)}>
-                        <strong>{isExactIssue ? "相同考點・前往題目" : "同類考點・前往題目"}</strong>
-                        <span>{relatedQuestion.source}</span>
+                        <span className="essay-related-question-heading">
+                          <strong>{isExactIssue ? "相同考點・前往題目" : "同類考點・前往題目"}</strong>
+                          <span>{relatedQuestion.source}</span>
+                        </span>
+                        <p>{relatedAnnotation.gist}</p>
                       </button>
-                      <p>{relatedAnnotation.gist}</p>
                     </li>
                   );
                 })}
