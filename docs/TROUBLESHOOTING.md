@@ -126,6 +126,17 @@ urllib.request.urlopen(request, context=ssl_context)
 
 維護時不得另建第二份英文題庫。修改 `scripts/import-moex-legal-knowledge.py` 後重新產生共用 JSON，並確認：200 題英文、20 個唯一 `passageId`、98 筆題目與文章關聯、每題四個選項且單一選項少於 200 字。若官方未為克漏字另印題幹，前台顯示共用文章及「請依官方試卷的共用文章作答」提示，這是資料忠實呈現，不是漏題。
 
+### 申論題附錄條文不可當成新題號
+
+112 年行政法概要第 2 題後附有教師法條文，其中同樣出現「一、二、三、四」款次。若只對整份 PDF 文字層使用題號正則，會把附錄第一、二款誤切成第 3、4 題，真正的第 3、4 題則被併入錯誤長題。
+
+`scripts/import-moex-clerk-remaining.py` 應優先透過 `pdfplumber.extract_text_lines()` 讀取位置，只接受頁面左側 `x0 < 50` 的正式題號；舊卷文字座標不足時才回退純文字切分，題號為圖片時再使用裁切流程。修改後必須：
+
+- 以 PNG 視覺核對跨頁題目與附錄邊界。
+- 確認 112 年行政法第 3 題以「甲為 A 警察局轄下某分局之警員」起始。
+- 確認第 4 題以「甲為私立高級商業職業學校」起始。
+- 執行 `tests/essay-issues.test.mjs`，防止附錄再次被誤判。
+
 ## 5. UTF-8 與 Windows 主控台
 
 ### PowerShell 顯示 Markdown 亂碼

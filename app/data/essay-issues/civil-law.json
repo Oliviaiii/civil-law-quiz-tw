@@ -1,0 +1,302 @@
+{
+  "judicial-fourth-105-essay-01": {
+    "gist": "考查受脅迫贈與經撤銷後，原所有人能否對善意受讓人主張所有物返還。",
+    "primaryIssueIds": ["civil.declaration.duress-third-party"],
+    "secondaryIssueIds": ["civil.property.separation-principle"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-105-essay-02": {
+    "gist": "考查未成年人侵權、法定代理人責任，以及被害人成為無意識狀態後損害賠償請求權時效的起算與完成。",
+    "primaryIssueIds": ["civil.tort.minor-parent-liability", "civil.tort.limitation-knowledge"],
+    "secondaryIssueIds": ["civil.tort.personal-injury-damages"],
+    "subparts": [
+      {"label": "行為人責任", "issueIds": ["civil.tort.minor-parent-liability"]},
+      {"label": "時效與法定代理人", "issueIds": ["civil.tort.limitation-knowledge"]}
+    ],
+    "lawVersionNote": "侵權行為發生於民國 102 年，應依行為時及請求權行使時的規定核對責任能力、成年與時效。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-105-essay-03": {
+    "gist": "考查分別共有人未經其他共有人同意出租共有物時，少數共有人對承租人及擅自出租共有人之救濟。",
+    "primaryIssueIds": ["civil.coownership.unauthorized-lease"],
+    "secondaryIssueIds": ["civil.coownership.management-majority", "civil.unjust-enrichment.unauthorized-use"],
+    "subparts": [
+      {"label": "對承租人丁", "issueIds": ["civil.coownership.unauthorized-lease"]},
+      {"label": "對出租人甲", "issueIds": ["civil.unjust-enrichment.unauthorized-use"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-105-essay-04": {
+    "gist": "考查婚生推定、否認婚生子女之訴的原告適格與除斥期間，以及生父能否提起否認之訴。",
+    "primaryIssueIds": ["civil.parentage.denial-marital-child"],
+    "secondaryIssueIds": ["civil.parentage.biological-father-standing"],
+    "subparts": [
+      {"label": "夫對妻與子提起否認之訴", "issueIds": ["civil.parentage.denial-marital-child"]},
+      {"label": "生父之原告適格", "issueIds": ["civil.parentage.biological-father-standing"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-106-essay-01": {
+    "gist": "考查以辦妥繼承登記作為履行前提的土地應繼分買賣，其移轉登記請求權何時可行使及消滅時效如何起算。",
+    "primaryIssueIds": ["civil.limitation.claim-exercisable"],
+    "secondaryIssueIds": ["civil.succession.inherited-land-registration"],
+    "subparts": [],
+    "lawVersionNote": "契約成立於民國 83 年，應特別核對舊法時效期間與新舊法過渡規定。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-106-essay-02": {
+    "gist": "考查建商違反消防設備說明及保護義務時，買受人得否解除契約並請求房屋與家具損害。",
+    "primaryIssueIds": ["civil.contract.protective-duty"],
+    "secondaryIssueIds": ["civil.contract.termination-material-breach", "civil.damages.scope-property-loss"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-106-essay-03": {
+    "gist": "考查抵押權設定後土地所有人再設定地上權的效力，以及該地上權妨礙抵押權時法院如何處理。",
+    "primaryIssueIds": ["civil.mortgage.later-superficies"],
+    "secondaryIssueIds": ["civil.mortgage.auction-removal"],
+    "subparts": [
+      {"label": "設定地上權是否須抵押權人同意", "issueIds": ["civil.mortgage.later-superficies"]},
+      {"label": "實行抵押權時之處理", "issueIds": ["civil.mortgage.auction-removal"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-106-essay-04": {
+    "gist": "考查被扶養人已有充足財產與收入時，成年子女死亡所造成的扶養利益損失是否仍可向侵權人請求。",
+    "primaryIssueIds": ["civil.tort.loss-of-support"],
+    "secondaryIssueIds": ["civil.family.support-need"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-107-essay-01": {
+    "gist": "考查配偶權受侵害的損害賠償請求權，何時知悉損害及賠償義務人而開始計算短期時效。",
+    "primaryIssueIds": ["civil.tort.limitation-knowledge"],
+    "secondaryIssueIds": ["civil.tort.spousal-right"],
+    "subparts": [],
+    "lawVersionNote": "題目以民國 101 至 103 年事實為準；通姦罪後續失效不當然改變本題民事時效判斷。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-107-essay-02": {
+    "gist": "考查基地租賃在期限屆滿後繼續收租的法律效果，以及承租人未經同意改建房屋是否使出租人得收回土地。",
+    "primaryIssueIds": ["civil.lease.land-lease-renewal"],
+    "secondaryIssueIds": ["civil.lease.unauthorized-rebuilding"],
+    "subparts": [],
+    "lawVersionNote": "租賃關係始於民國 43 年，須核對基地租賃與租用基地建築房屋規定的歷次修法及過渡適用。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-107-essay-03": {
+    "gist": "考查借名登記人違反返還義務而拋棄土地應有部分的效力，以及借名人能否請求國有機關塗銷登記。",
+    "primaryIssueIds": ["civil.property.abandonment-good-faith"],
+    "secondaryIssueIds": ["civil.property.borrowed-name-registration", "civil.property.registration-correction"],
+    "subparts": [
+      {"label": "拋棄所有權之效力", "issueIds": ["civil.property.abandonment-good-faith"]},
+      {"label": "對國有機關之塗銷請求", "issueIds": ["civil.property.registration-correction"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-107-essay-04": {
+    "gist": "考查夫妻難以維持共同生活、對婚姻義務重大違反時，一方能否聲請法院宣告改用分別財產制。",
+    "primaryIssueIds": ["civil.marital-property.judicial-separation"],
+    "secondaryIssueIds": ["civil.family.marital-duty-breach"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-108-essay-01": {
+    "gist": "考查共有物裁判分割後，原設定於應有部分的抵押權是否移存於各共有人分得部分，以及何時可請求塗銷。",
+    "primaryIssueIds": ["civil.coownership.partition-mortgage"],
+    "secondaryIssueIds": ["civil.mortgage.subrogation-partition"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-108-essay-02": {
+    "gist": "考查未成年駕駛人致被害人成為植物人時，本人與法定代理人的侵權責任，以及被害人母親可否請求精神慰撫金。",
+    "primaryIssueIds": ["civil.tort.minor-parent-liability"],
+    "secondaryIssueIds": ["civil.tort.close-relative-nonpecuniary"],
+    "subparts": [
+      {"label": "對未成年行為人", "issueIds": ["civil.tort.minor-parent-liability"]},
+      {"label": "對法定代理人及母親之精神損害", "issueIds": ["civil.tort.close-relative-nonpecuniary"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-109-essay-01": {
+    "gist": "考查抵押物所有權移轉不影響抵押權、抵押權人得否聲請拍賣，以及數個抵押權依登記先後分配價金。",
+    "primaryIssueIds": ["civil.mortgage.follow-and-auction", "civil.mortgage.priority-distribution"],
+    "secondaryIssueIds": [],
+    "subparts": [
+      {"label": "抵押物贈與後的拍賣", "issueIds": ["civil.mortgage.follow-and-auction"]},
+      {"label": "拍賣價金分配", "issueIds": ["civil.mortgage.priority-distribution"]}
+    ],
+    "lawVersionNote": "題目明示依民國 109 年現行民法作答。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-109-essay-02": {
+    "gist": "考查自然血親、收養與姻親交錯時的親系親等計算，以及表親間是否受禁婚親限制。",
+    "primaryIssueIds": ["civil.kinship.degree-and-line", "civil.marriage.prohibited-relatives"],
+    "secondaryIssueIds": ["civil.adoption.kinship-effect"],
+    "subparts": [
+      {"label": "I 與 E 的親屬關係", "issueIds": ["civil.kinship.degree-and-line", "civil.adoption.kinship-effect"]},
+      {"label": "J 與 G 能否結婚", "issueIds": ["civil.marriage.prohibited-relatives"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-110-essay-01": {
+    "gist": "考查受輔助宣告人作成公證遺囑是否須經輔助人同意，以及公證人能否受理。",
+    "primaryIssueIds": ["civil.capacity.assisted-will-notarization"],
+    "secondaryIssueIds": ["civil.succession.testamentary-capacity"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-110-essay-02": {
+    "gist": "考查經公證的附負擔贈與，在贈與人未先履行時受贈人得否拒絕負擔，以及贈與人能否撤銷。",
+    "primaryIssueIds": ["civil.gift.burden-performance"],
+    "secondaryIssueIds": ["civil.contract.simultaneous-performance"],
+    "subparts": [
+      {"label": "受贈人請求給付與同時履行抗辯", "issueIds": ["civil.contract.simultaneous-performance"]},
+      {"label": "附負擔贈與之撤銷", "issueIds": ["civil.gift.burden-performance"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-111-essay-01": {
+    "gist": "考查被害人受重傷後死亡時，配偶可請求與繼承的財產及非財產損害，包括車損、醫療費、逸失利益、慰撫金與殯葬費。",
+    "primaryIssueIds": ["civil.tort.death-damages-inheritance"],
+    "secondaryIssueIds": ["civil.tort.spousal-consolation", "civil.tort.property-and-medical-loss"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-111-essay-02": {
+    "gist": "考查多數共有人出租共有物的管理決定效力、少數共有人之救濟，以及受讓少數應有部分者能否請求承租人返還。",
+    "primaryIssueIds": ["civil.coownership.management-majority"],
+    "secondaryIssueIds": ["civil.coownership.share-transferee-standing", "civil.coownership.unfair-management-remedy"],
+    "subparts": [
+      {"label": "少數共有人丙的救濟", "issueIds": ["civil.coownership.management-majority", "civil.coownership.unfair-management-remedy"]},
+      {"label": "應有部分受讓人戊的返還請求", "issueIds": ["civil.coownership.share-transferee-standing"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-112-essay-01": {
+    "gist": "考查買賣不存在債權時契約是否因標的不能而無效，以及出賣人的權利瑕疵擔保與買受人價金、利息損害。",
+    "primaryIssueIds": ["civil.sale.nonexistent-claim"],
+    "secondaryIssueIds": ["civil.sale.right-defect-warranty", "civil.damages.price-interest"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-112-essay-02": {
+    "gist": "考查無權占用他人土地興建違章建物的所有權歸屬，以及土地抵押權人能否聲請連同地上建物併付拍賣。",
+    "primaryIssueIds": ["civil.property.unauthorized-building-ownership"],
+    "secondaryIssueIds": ["civil.mortgage.combined-auction"],
+    "subparts": [
+      {"label": "甲對違章房屋的權利", "issueIds": ["civil.property.unauthorized-building-ownership"]},
+      {"label": "抵押權人聲請併付拍賣", "issueIds": ["civil.mortgage.combined-auction"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-113-essay-01": {
+    "gist": "考查使用借貸、無權代理出租與表見代理的法律關係，以及借用人擅自出租所得應否返還出借人。",
+    "primaryIssueIds": ["civil.agency.unauthorized-sublease"],
+    "secondaryIssueIds": ["civil.loan-for-use.expenses", "civil.unjust-enrichment.management-without-mandate"],
+    "subparts": [
+      {"label": "甲乙間使用借貸", "issueIds": ["civil.loan-for-use.expenses"]},
+      {"label": "乙以甲名義出租予丙", "issueIds": ["civil.agency.unauthorized-sublease"]},
+      {"label": "出租所得歸屬", "issueIds": ["civil.unjust-enrichment.management-without-mandate"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-113-essay-02": {
+    "gist": "考查不動產借名登記關係在出名人死亡後的效力，以及繼承人移轉給善意第三人時所有權歸屬與返還救濟。",
+    "primaryIssueIds": ["civil.property.borrowed-name-third-party"],
+    "secondaryIssueIds": ["civil.property.registration-reliance", "civil.contract.borrowed-name-return"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-114-essay-01": {
+    "gist": "考查表意人內心保留、社交客套與玩笑表示的效力，以及代理人善意締約時僱傭契約是否成立。",
+    "primaryIssueIds": ["civil.declaration.mental-reservation"],
+    "secondaryIssueIds": ["civil.agency.knowledge-attribution", "civil.employment.contract-formation"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-114-essay-02": {
+    "gist": "考查網路感情詐騙下意思表示撤銷、侵權與不當得利返還，並分析冒名聊天受僱人及直播平台的責任。",
+    "primaryIssueIds": ["civil.tort.romance-scam"],
+    "secondaryIssueIds": ["civil.declaration.fraud-rescission", "civil.tort.vicarious-liability", "civil.unjust-enrichment.fraud-payment"],
+    "subparts": [
+      {"label": "對乙女之撤銷、返還與侵權請求", "issueIds": ["civil.declaration.fraud-rescission", "civil.tort.romance-scam", "civil.unjust-enrichment.fraud-payment"]},
+      {"label": "丙男及平台責任", "issueIds": ["civil.tort.vicarious-liability"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  }
+}

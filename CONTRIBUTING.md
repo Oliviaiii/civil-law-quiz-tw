@@ -2,7 +2,7 @@
 
 本文件是「書記官研習室」的開發、內容維護與部署準則。接手任何工作前，請先讀完本文件與 [README.md](./README.md)，不要只依畫面推測資料結構或產品方向。
 
-涉及刑法、法學緒論、憲法或英文等新科目時，還必須閱讀 [科目擴充共同規格](./docs/SUBJECT_EXPANSION.md)；需要下載考選部 PDF、操作 GitHub 留言、在 Windows 建置或使用 Sites 部署時，先閱讀[開發與題庫匯入問題排除](./docs/TROUBLESHOOTING.md)。跨科共同規則放在共同規格，單一科目的工作範圍與驗收條件則放在對應 GitHub Issue。
+涉及刑法、法學緒論、憲法或英文等新科目時，還必須閱讀 [科目擴充共同規格](./docs/SUBJECT_EXPANSION.md)；處理申論題命題主旨、爭點分類、出題頻率或跨考試關聯時，必須閱讀[申論題考點地圖與跨考試關聯規格](./docs/ESSAY_ISSUE_MAP.md)；需要下載考選部 PDF、操作 GitHub 留言、在 Windows 建置或使用 Sites 部署時，先閱讀[開發與題庫匯入問題排除](./docs/TROUBLESHOOTING.md)。跨科共同規則放在共同規格，單一科目的工作範圍與驗收條件則放在對應 GitHub Issue。
 
 ## 1. 產品定位與開發原則
 
@@ -61,6 +61,8 @@ scripts/generate-question-data.mjs（build 前自動執行）
 | `app/data/criminal-law-questions.json` | 刑法官方題目、答案、更正答案及來源連結 |
 | `app/data/analyses/criminal-law-*.json` | 刑法各年度測驗題解析 |
 | `app/data/criminal-code-articles.json` | 刑法條文索引及資料版本 |
+| `app/data/essay-issues/*.json` | 120 題法科申論的命題主旨、主次爭點、子題及複核狀態 |
+| `app/data/essay-issues.ts` | 申論標註型別與五科資料合併入口 |
 | `app/lib/progress-store.ts` | localStorage 格式、驗證與舊版本遷移 |
 | `scripts/import-moex-judicial-fourth.py` | 從已下載的考選部 PDF 匯入題目及答案 |
 | `scripts/import-civil-code.py` | 更新民法條文索引 |
@@ -68,6 +70,7 @@ scripts/generate-question-data.mjs（build 前自動執行）
 | `scripts/import-criminal-code.py` | 更新刑法條文索引 |
 | `app/data/analyses/criminal-law-<年>.json` | 刑法解析須逐題研究、核對官方答案後直接編輯；原 regex 初稿產生器已停用並刪除，不得以模板覆寫 |
 | `tests/rendered-html.test.mjs` | 靜態輸出、題數、解析覆蓋率及重要行為防退化測試 |
+| `tests/essay-issues.test.mjs` | 申論 120 題覆蓋、爭點分類、統計去重及 PDF 切題防退化 |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages 自動建置與部署 |
 
 畫面、題庫、解析與進度儲存刻意分離。未來接 Supabase 或其他後端時，應優先替換資料存取層，不要重寫已穩定的作答元件。

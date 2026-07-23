@@ -117,10 +117,60 @@ def split_numbered_questions(text: str, count: int = 4) -> list[str]:
     return results
 
 
+def split_positioned_questions(path: Path, count: int = 4) -> list[str]:
+    """依試卷左側的正式題號切題，排除附錄法條中的「一、二、三、四」款次。"""
+    expected = CHINESE_NUMERALS[:count]
+    lines: list[dict[str, Any]] = []
+    with pdfplumber.open(path) as pdf:
+        for page_number, page in enumerate(pdf.pages):
+            for line in page.extract_text_lines(x_tolerance=2, y_tolerance=3):
+                lines.append({
+                    "page": page_number,
+                    "text": line["text"],
+                    "x0": float(line["x0"]),
+                })
+
+    markers: list[tuple[int, str]] = []
+    for index, line in enumerate(lines):
+        stripped = line["text"].lstrip()
+        if line["x0"] >= 50:
+            continue
+        number = next(
+            (item for item in expected if stripped.startswith(f"{item}、")),
+            None,
+        )
+        if number:
+            markers.append((index, number))
+
+    sequence_start = next(
+        (
+            index
+            for index in range(len(markers) - count + 1)
+            if [number for _, number in markers[index : index + count]] == expected
+        ),
+        None,
+    )
+    if sequence_start is None:
+        raise ValueError("找不到靠左對齊的完整申論題題序")
+
+    selected = markers[sequence_start : sequence_start + count]
+    results = []
+    for index, (line_index, number) in enumerate(selected):
+        end = selected[index + 1][0] if index + 1 < count else len(lines)
+        block = [line["text"] for line in lines[line_index:end]]
+        block[0] = re.sub(rf"^\s*{number}、", "", block[0], count=1)
+        results.append(normalize("\n".join(block)))
+    return results
+
+
 def extract_numbered_essays(path: Path) -> list[str]:
-    text = extract_text(path)
     try:
-        return split_numbered_questions(text)
+        return split_positioned_questions(path)
+    except ValueError:
+        pass
+    try:
+        # 部分舊卷的題號字型沒有可供定位的文字座標，但純文字層仍可辨識題序。
+        return split_numbered_questions(extract_text(path))
     except ValueError:
         # 110 年行政法的題號是嵌入 PDF 的小圖，文字層只留下四段題幹。
         with pdfplumber.open(path) as pdf:
@@ -331,6 +381,15 @@ def validate(records: list[dict[str, Any]]) -> None:
     for record in records:
         if not record["prompt"]:
             raise ValueError(f"空白題目：{record['id']}")
+        if (
+            record["format"] == "申論題"
+            and record["studySubject"] != "chinese"
+            and (
+                len(record["prompt"]) < 60
+                or not re.search(r"\d+\s*分", record["prompt"])
+            )
+        ):
+            raise ValueError(f"申論題缺少完整配分或疑似切題錯誤：{record['id']}")
         if record["format"] == "選擇題" and len(record["options"]) != 4:
             raise ValueError(f"選項數量錯誤：{record['id']}")
 

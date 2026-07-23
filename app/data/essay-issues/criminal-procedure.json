@@ -1,0 +1,214 @@
+{
+  "clerk-criminal-procedure-105-essay-03": {
+    "gist": "考查羈押審查中被告請求揭露秘密證人身分時，防禦權、對質詰問權與線民生命安全如何依正當程序衡量。",
+    "primaryIssueIds": ["criminal-procedure.evidence.confidential-informant"],
+    "secondaryIssueIds": ["criminal-procedure.detention.adversarial-hearing", "criminal-procedure.due-process.proportional-disclosure"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-105-essay-04": {
+    "gist": "考查被告另案在監致審判期日未到場時能否一造判決、判決送達是否合法，以及配偶代為上訴的權限與期間。",
+    "primaryIssueIds": ["criminal-procedure.trial.absent-defendant-in-custody"],
+    "secondaryIssueIds": ["criminal-procedure.appeal.spouse-standing", "criminal-procedure.service.detained-defendant"],
+    "subparts": [
+      {"label": "第一審缺席判決", "issueIds": ["criminal-procedure.trial.absent-defendant-in-custody"]},
+      {"label": "配偶收受與上訴", "issueIds": ["criminal-procedure.appeal.spouse-standing", "criminal-procedure.service.detained-defendant"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-106-essay-03": {
+    "gist": "考查審判筆錄對程序事項的證明力、當庭異議與期後聲請增刪變更，以及法院應如何裁定處理。",
+    "primaryIssueIds": ["criminal-procedure.record.trial-record-proof"],
+    "secondaryIssueIds": ["criminal-procedure.record.correction-request"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-106-essay-04": {
+    "gist": "考查持毒品搜索票搜索住家時意外發現槍枝，能否依另案發現、無票扣押及事後陳報審查程序合法扣押。",
+    "primaryIssueIds": ["criminal-procedure.search.plain-view-seizure"],
+    "secondaryIssueIds": ["criminal-procedure.seizure.exigent-judicial-review"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-107-essay-03": {
+    "gist": "考查侮辱外國國旗與拘提時侮辱公務員兩案，是否因一人數罪、牽連或證據共通而具有相牽連案件關係並得合併審判。",
+    "primaryIssueIds": ["criminal-procedure.joinder.connected-offenses"],
+    "secondaryIssueIds": ["criminal-procedure.jurisdiction.foreign-state-request"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-107-essay-04": {
+    "gist": "考查起訴認定竊取父親財物、審理後發現實為第三人財物時，基本社會事實同一性、告訴乃論障礙及法院裁判方式。",
+    "primaryIssueIds": ["criminal-procedure.charge.fact-identity"],
+    "secondaryIssueIds": ["criminal-procedure.prosecution.complaint-relative-theft", "criminal-procedure.charge.change-of-facts"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-108-essay-03": {
+    "gist": "考查臺南檢察官僅起訴在臺中發生的竊盜、而對臺南重傷不起訴後，臺南地院是否仍有土地管轄及應如何判決。",
+    "primaryIssueIds": ["criminal-procedure.jurisdiction.territorial-connected-case"],
+    "secondaryIssueIds": ["criminal-procedure.judgment.lack-of-jurisdiction"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-108-essay-04": {
+    "gist": "考查自然人以銀行法人為被告提起詐欺自訴時，被告能力、法人刑事責任與自訴不合法的裁判方式。",
+    "primaryIssueIds": ["criminal-procedure.private-prosecution.corporate-defendant"],
+    "secondaryIssueIds": ["criminal-procedure.judgment.dismiss-private-prosecution"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-109-essay-03": {
+    "gist": "考查強盜主犯與藏匿犯分由不同法院起訴時是否屬相牽連案件，以及高雄地院能否合併審理臺北地院案件。",
+    "primaryIssueIds": ["criminal-procedure.joinder.offender-and-harborer"],
+    "secondaryIssueIds": ["criminal-procedure.jurisdiction.transfer-connected-case"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-109-essay-04": {
+    "gist": "考查醫師診斷證明書是否為傳聞證據，以及能否依業務文書、特信性文書或其他傳聞例外取得證據能力。",
+    "primaryIssueIds": ["criminal-procedure.evidence.medical-certificate-hearsay"],
+    "secondaryIssueIds": ["criminal-procedure.evidence.business-record-exception"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-110-essay-03": {
+    "gist": "考查同住母親能否有效同意警察搜索甲宅、違法搜索證據排除，以及原住民被告在簡易程序是否須指定辯護人。",
+    "primaryIssueIds": ["criminal-procedure.search.third-party-consent"],
+    "secondaryIssueIds": ["criminal-procedure.evidence.exclusionary-rule", "criminal-procedure.defense.indigenous-defendant"],
+    "subparts": [
+      {"label": "同意搜索與金條證據能力", "issueIds": ["criminal-procedure.search.third-party-consent", "criminal-procedure.evidence.exclusionary-rule"]},
+      {"label": "簡易程序指定辯護", "issueIds": ["criminal-procedure.defense.indigenous-defendant"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-110-essay-04": {
+    "gist": "考查上訴書狀提出法院、只對強制工作保安處分上訴時的審判範圍，以及被告撤回上訴的方法與時點。",
+    "primaryIssueIds": ["criminal-procedure.appeal.partial-security-measure"],
+    "secondaryIssueIds": ["criminal-procedure.appeal.filing-court", "criminal-procedure.appeal.withdrawal"],
+    "subparts": [
+      {"label": "上訴提出與審理範圍", "issueIds": ["criminal-procedure.appeal.filing-court", "criminal-procedure.appeal.partial-security-measure"]},
+      {"label": "撤回上訴", "issueIds": ["criminal-procedure.appeal.withdrawal"]}
+    ],
+    "lawVersionNote": "強制工作制度後續受憲法判決及修法影響；程序爭點仍應依民國 110 年命題時法制複核。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-111-essay-03": {
+    "gist": "考查警察未再告知緘默權與辯護權、以威嚇語句取得自白時，自白任意性與權利告知違反對證據能力的影響。",
+    "primaryIssueIds": ["criminal-procedure.interrogation.rights-warning"],
+    "secondaryIssueIds": ["criminal-procedure.evidence.coerced-confession", "criminal-procedure.evidence.derivative-confession"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-111-essay-04": {
+    "gist": "考查第二審判決主文漏列竊盜有罪、僅在事實理由記載時，屬裁判脫漏或判決違法，以及應以補充判決、裁定更正或上訴救濟。",
+    "primaryIssueIds": ["criminal-procedure.judgment.omitted-count"],
+    "secondaryIssueIds": ["criminal-procedure.remedy.judgment-correction-vs-appeal"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-112-essay-03": {
+    "gist": "考查強制辯護案件撤銷停止羈押並再執行羈押時，辯護人是否必須到場、法院訊問與攻防程序是否完備。",
+    "primaryIssueIds": ["criminal-procedure.detention.reimprisonment-defense"],
+    "secondaryIssueIds": ["criminal-procedure.detention.mandatory-counsel"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-112-essay-04": {
+    "gist": "考查起訴普通竊盜、審判認定侵入住宅竊盜時，在犯罪事實同一且已保障防禦權下變更法條，未於理由明引第 300 條是否違法。",
+    "primaryIssueIds": ["criminal-procedure.charge.change-statute"],
+    "secondaryIssueIds": ["criminal-procedure.charge.defense-opportunity", "criminal-procedure.judgment.omitted-procedural-citation"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-113-essay-03": {
+    "gist": "考查路檢盤查中 A 與 B 何時由一般受詢問人轉為犯罪嫌疑人，以及何時須告知權利才能確保不利供述證據能力。",
+    "primaryIssueIds": ["criminal-procedure.interrogation.suspect-status"],
+    "secondaryIssueIds": ["criminal-procedure.police-stop.questioning", "criminal-procedure.interrogation.rights-warning"],
+    "subparts": [
+      {"label": "詢問駕駛 A", "issueIds": ["criminal-procedure.police-stop.questioning", "criminal-procedure.interrogation.suspect-status"]},
+      {"label": "攔阻詢問乘客 B", "issueIds": ["criminal-procedure.interrogation.suspect-status", "criminal-procedure.interrogation.rights-warning"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-113-essay-04": {
+    "gist": "考查警察以 M 化車蒐集手機 IMEI、IMSI 並定位住居所，是否構成通訊監察或搜索及所需法官保留、令狀與事後保全。",
+    "primaryIssueIds": ["criminal-procedure.digital.cell-site-simulator"],
+    "secondaryIssueIds": ["criminal-procedure.search.digital-warrant", "criminal-procedure.evidence.digital-exclusion"],
+    "subparts": [],
+    "lawVersionNote": "M 化車法源與科技偵查立法持續變動，應以民國 113 年命題時法制及後續憲法、實務發展複核。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-114-essay-03": {
+    "gist": "考查業務侵占與背信的基本社會事實是否同一，法院能否依第 300 條變更起訴法條及須否保障被告防禦權。",
+    "primaryIssueIds": ["criminal-procedure.charge.fact-identity"],
+    "secondaryIssueIds": ["criminal-procedure.charge.change-statute", "criminal-procedure.charge.defense-opportunity"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-criminal-procedure-114-essay-04": {
+    "gist": "考查強盜致重傷與另案過失重傷是否屬同一案件、後起訴的效力，以及檢察官以雙重起訴撤回後法院應如何裁判。",
+    "primaryIssueIds": ["criminal-procedure.prosecution.double-jeopardy-pending"],
+    "secondaryIssueIds": ["criminal-procedure.prosecution.withdrawal", "criminal-procedure.charge.fact-identity"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  }
+}

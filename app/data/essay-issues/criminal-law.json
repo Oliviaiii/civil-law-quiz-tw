@@ -1,0 +1,274 @@
+{
+  "judicial-fourth-105-criminal-law-essay-01": {
+    "gist": "考查教唆、買兇、共同正犯的殺人未遂責任，以及共同正犯中一人事後呼救能否成立中止未遂。",
+    "primaryIssueIds": ["criminal.participation.hired-killing", "criminal.attempt.voluntary-abandonment"],
+    "secondaryIssueIds": ["criminal.participation.instigation-chain"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-105-criminal-law-essay-02": {
+    "gist": "考查投標行賄中受託評選專家的公務員身分、行賄罪成立，以及犯罪所得與履約成本的沒收計算。",
+    "primaryIssueIds": ["criminal.corruption.bribery-entrusted-expert", "criminal.confiscation.proceeds-costs"],
+    "secondaryIssueIds": ["criminal.public-official.entrusted-authority"],
+    "subparts": [],
+    "lawVersionNote": "題目橫跨民國 104 至 105 年沒收新制施行時點，應核對行為時、裁判時及從新從輕適用。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-105-criminal-law-essay-03": {
+    "gist": "考查里長受公所囑託督導社會勞動時是否屬刑法公務員，及與受執行人共同不實登載的身分犯問題。",
+    "primaryIssueIds": ["criminal.public-official.entrusted-authority"],
+    "secondaryIssueIds": ["criminal.document.false-public-record", "criminal.participation.status-offense"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-105-criminal-law-essay-04": {
+    "gist": "考查債務人陷於急迫、輕率或無經驗時收取顯不相當高息，重利罪的要件與各次收息行為。",
+    "primaryIssueIds": ["criminal.property.usury-exploitation"],
+    "secondaryIssueIds": ["criminal.crime-count.usury-payments"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-106-criminal-law-essay-01": {
+    "gist": "考查外國人在公海對我國籍船舶實施持刀強盜未遂時，我國刑法的適用與著手判斷。",
+    "primaryIssueIds": ["criminal.jurisdiction.flag-vessel", "criminal.attempt.robbery"],
+    "secondaryIssueIds": ["criminal.robbery.aggravated-weapon"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-106-criminal-law-essay-02": {
+    "gist": "考查共同竊盜既遂後，一名共犯單獨返還贓物對共同犯罪責任、自首或刑罰減免的影響。",
+    "primaryIssueIds": ["criminal.theft.co-perpetration"],
+    "secondaryIssueIds": ["criminal.postcrime.return-stolen-property", "criminal.attempt.post-completion-remorse"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-106-criminal-law-essay-03": {
+    "gist": "考查派出所所長塗改筆錄日期、冒用休假警員職章並函送案件所成立的公文書與印章犯罪及競合。",
+    "primaryIssueIds": ["criminal.document.alter-public-document", "criminal.document.unauthorized-official-seal"],
+    "secondaryIssueIds": ["criminal.document.exercise-false-document", "criminal.crime-count.document-offenses"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-106-criminal-law-essay-04": {
+    "gist": "考查以強暴脅迫取得假鈔是否成立強盜既遂或不能未遂，以及不知情出借機車者的刑責。",
+    "primaryIssueIds": ["criminal.robbery.impossible-object"],
+    "secondaryIssueIds": ["criminal.participation.innocent-assistance", "criminal.robbery.force-standard"],
+    "subparts": [
+      {"label": "甲取得假鈔", "issueIds": ["criminal.robbery.impossible-object", "criminal.robbery.force-standard"]},
+      {"label": "不知情友人乙", "issueIds": ["criminal.participation.innocent-assistance"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-107-criminal-law-essay-01": {
+    "gist": "考查義務衝突與法益衝突的概念、成立前提、法律效果及典型案例區分。",
+    "primaryIssueIds": ["criminal.justification.duty-conflict"],
+    "secondaryIssueIds": ["criminal.justification.interest-conflict"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-107-criminal-law-essay-02": {
+    "gist": "考查長時間按住陌生人住處電鈴並拒絕離開，是否以強暴方式妨害他人行使權利或成立其他安寧侵害犯罪。",
+    "primaryIssueIds": ["criminal.coercion.nonphysical-force"],
+    "secondaryIssueIds": ["criminal.liberty.residential-peace"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-107-criminal-law-essay-03": {
+    "gist": "考查母親將新生兒留在醫院離去，是否構成遺棄罪、違背保護義務與具體危險。",
+    "primaryIssueIds": ["criminal.omission.abandonment-infant"],
+    "secondaryIssueIds": ["criminal.omission.guarantor-parent"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-107-criminal-law-essay-04": {
+    "gist": "考查公務護士因職務知悉愛滋病資訊後洩漏，是否成立公務員洩漏國防以外秘密罪及告訴問題。",
+    "primaryIssueIds": ["criminal.secrecy.public-official"],
+    "secondaryIssueIds": ["criminal.privacy.medical-secret"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-108-criminal-law-essay-01": {
+    "gist": "考查為討債剝奪債務人行動自由並造成抓傷時，私行拘禁、傷害及強制等罪的成立與競合。",
+    "primaryIssueIds": ["criminal.liberty.deprivation"],
+    "secondaryIssueIds": ["criminal.injury.during-confinement", "criminal.crime-count.inclusive-offenses"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-108-criminal-law-essay-02": {
+    "gist": "考查住宅失火時打破鄰居窗戶逃生，是否符合緊急避難的現在危難、不得已與利益衡量。",
+    "primaryIssueIds": ["criminal.justification.necessity"],
+    "secondaryIssueIds": ["criminal.property.damage"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-109-criminal-law-essay-01": {
+    "gist": "考查詐騙集團首腦、話務手與車手的共同詐欺責任，並處理偽造公務機關職員證及行使的罪責。",
+    "primaryIssueIds": ["criminal.fraud.organized-group", "criminal.document.forged-public-id"],
+    "secondaryIssueIds": ["criminal.participation.division-of-labor", "criminal.document.exercise-false-document"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-109-criminal-law-essay-02": {
+    "gist": "考查無照但符合醫療常規且經同意拔牙是否成立傷害，以及以告發密醫相脅索取封口費是否成立恐嚇取財。",
+    "primaryIssueIds": ["criminal.injury.medical-consent", "criminal.extortion.report-threat"],
+    "secondaryIssueIds": ["criminal.justification.consent"],
+    "subparts": [
+      {"label": "甲拔牙行為", "issueIds": ["criminal.injury.medical-consent", "criminal.justification.consent"]},
+      {"label": "乙索取封口費", "issueIds": ["criminal.extortion.report-threat"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-110-criminal-law-essay-01": {
+    "gist": "考查攻擊者掉落武器後仍欲撿回繼續攻擊時，防衛情狀是否持續，以及持武器反擊是否過當。",
+    "primaryIssueIds": ["criminal.justification.self-defense-current-attack"],
+    "secondaryIssueIds": ["criminal.justification.excessive-defense"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-110-criminal-law-essay-02": {
+    "gist": "考查竊取手機後為防止失主奪回而施暴逃逸，是否由竊盜轉為準強盜及強暴時點與目的。",
+    "primaryIssueIds": ["criminal.robbery.quasi-robbery"],
+    "secondaryIssueIds": ["criminal.theft.possession-completion", "criminal.injury.robbery-competition"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-111-criminal-law-essay-01": {
+    "gist": "考查伸手進書包尋找實際不存在的鋼筆，竊盜著手與不能未遂、迷信犯的區分。",
+    "primaryIssueIds": ["criminal.attempt.impossible-theft"],
+    "secondaryIssueIds": ["criminal.attempt.commencement-theft"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-111-criminal-law-essay-02": {
+    "gist": "考查未經收件人同意拆閱信件、翻拍並公開上網，可能涉及妨害書信秘密、個資或秘密及誹謗罪。",
+    "primaryIssueIds": ["criminal.privacy.open-sealed-letter", "criminal.reputation.online-publication"],
+    "secondaryIssueIds": ["criminal.secrecy.disclosure-letter-content"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-112-criminal-law-essay-01": {
+    "gist": "考查利用兒童不懂幣值，以日圓萬元鈔換取新臺幣一萬元的行為應評價為詐欺、準詐欺或交易風險。",
+    "primaryIssueIds": ["criminal.fraud.exploit-child-inexperience"],
+    "secondaryIssueIds": ["criminal.fraud.deception-disposition"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-112-criminal-law-essay-02": {
+    "gist": "考查持馬克杯猛擊頭部後逃離，再透過女友叫救護車但被害人先由他人救活，殺人故意、未遂及中止未遂。",
+    "primaryIssueIds": ["criminal.homicide.intent-from-conduct", "criminal.attempt.voluntary-abandonment"],
+    "secondaryIssueIds": ["criminal.attempt.third-party-rescue"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-113-criminal-law-essay-01": {
+    "gist": "考查酒後駕車肇事毀損後離去的罪責，以及警察誤認現行犯而逮捕上銬是否成立違法剝奪自由等公務員犯罪。",
+    "primaryIssueIds": ["criminal.traffic.drunk-driving", "criminal.public-official.unlawful-arrest"],
+    "secondaryIssueIds": ["criminal.property.negligent-damage", "criminal.public-official.legal-error"],
+    "subparts": [
+      {"label": "甲之酒駕與肇事", "issueIds": ["criminal.traffic.drunk-driving", "criminal.property.negligent-damage"]},
+      {"label": "乙之違法逮捕", "issueIds": ["criminal.public-official.unlawful-arrest", "criminal.public-official.legal-error"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-113-criminal-law-essay-02": {
+    "gist": "考查未經同意輸入密碼登入配偶手機、截取轉寄對話，以及以提告相脅迫使第三人公開下跪的刑責。",
+    "primaryIssueIds": ["criminal.computer.unauthorized-access", "criminal.coercion.report-threat"],
+    "secondaryIssueIds": ["criminal.computer.obtain-delete-record", "criminal.privacy.communication-secret"],
+    "subparts": [
+      {"label": "登入、截圖及轉寄對話", "issueIds": ["criminal.computer.unauthorized-access", "criminal.computer.obtain-delete-record", "criminal.privacy.communication-secret"]},
+      {"label": "迫使 B 公開下跪", "issueIds": ["criminal.coercion.report-threat"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-114-criminal-law-essay-01": {
+    "gist": "考查無肇事過失但知悉對方受傷的駕駛人離開事故現場，是否成立駕駛動力交通工具發生事故逃逸罪。",
+    "primaryIssueIds": ["criminal.traffic.hit-and-run"],
+    "secondaryIssueIds": ["criminal.traffic.accident-causation", "criminal.traffic.self-medical-necessity"],
+    "subparts": [],
+    "lawVersionNote": "肇事逃逸構成要件曾經修法並受憲法判決影響，應以民國 114 年命題時規定與最新實務複核。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "judicial-fourth-114-criminal-law-essay-02": {
+    "gist": "考查詐欺車手將原應繳回集團的贓款與友人花用，對犯罪所得是否成立業務侵占、普通侵占或不另論罪。",
+    "primaryIssueIds": ["criminal.property.embezzlement-crime-proceeds"],
+    "secondaryIssueIds": ["criminal.participation.postcrime-assistance", "criminal.crime-count.fraud-and-embezzlement"],
+    "subparts": [],
+    "lawVersionNote": "涉及詐欺共犯對贓款持有關係與後續侵占的近期實務見解，應以民國 114 年命題時裁判脈絡複核。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  }
+}

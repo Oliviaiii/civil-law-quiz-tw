@@ -14,7 +14,7 @@
 
 ## 協作開發
 
-開始修改前，請先閱讀 [CONTRIBUTING.md](./CONTRIBUTING.md) 與[靜態功能優化 Roadmap](./docs/STATIC_FEATURE_ROADMAP.md)；處理考選部 PDF、GitHub 留言、Windows 建置或 Sites 部署時，另先查看[開發與題庫匯入問題排除](./docs/TROUBLESHOOTING.md)。這些文件記錄產品邊界、資料格式、解析標準、功能進度、測試流程、已知環境問題與交接清單；功能或資料結構有變動時，必須同步更新相關文件。
+開始修改前，請先閱讀 [CONTRIBUTING.md](./CONTRIBUTING.md) 與[靜態功能優化 Roadmap](./docs/STATIC_FEATURE_ROADMAP.md)；處理申論題命題主旨、爭點分類或跨考試關聯時，另讀[申論題考點地圖與跨考試關聯規格](./docs/ESSAY_ISSUE_MAP.md)；處理考選部 PDF、GitHub 留言、Windows 建置或 Sites 部署時，另先查看[開發與題庫匯入問題排除](./docs/TROUBLESHOOTING.md)。這些文件記錄產品邊界、資料格式、解析標準、功能進度、測試流程、已知環境問題與交接清單；功能或資料結構有變動時，必須同步更新相關文件。
 
 ## 已有功能
 
@@ -94,6 +94,8 @@ GitHub Pages 建置會將該值注入 `NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKE
 - 刑法官方題庫：`app/data/criminal-law-questions.json`
 - 刑法逐年解析：`app/data/analyses/criminal-law-*.json`
 - 刑法完整條文索引：`app/data/criminal-code-articles.json`
+- 申論題命題主旨、主次爭點與子題標註：`app/data/essay-issues/*.json`
+- 申論題標註型別與合併入口：`app/data/essay-issues.ts`
 - 考選部 PDF 匯入器：`scripts/import-moex-judicial-fourth.py`
 - 刑法 PDF 匯入器：`scripts/import-moex-criminal-law.py`
 - 法學知識與英文共用匯入器：`scripts/import-moex-legal-knowledge.py`
@@ -110,4 +112,5 @@ GitHub Pages 建置會將該值注入 `NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKE
 - 國考題答案以考選部官方公告為準。
 - 解析自行撰寫並附官方法條，不複製補習班或題庫平台詳解。
 - 個案推論題標示信心程度，正式上線前仍應人工複核。
+- 申論題考點資料即使已達 120/120 覆蓋，在真人法律審稿完成前仍標為 `draft`，不得顯示為已複核。
 - 法條連結指向法務部全國法規資料庫；修法後應重新檢查題目與解析。

@@ -1,0 +1,302 @@
+{
+  "clerk-administrative-law-108-essay-01": {
+    "gist": "考查原裁決書預告逾期後加倍吊扣、吊銷與註銷，是否足以取代後續個別行政處分，以及未另作成送達處分時的效力。",
+    "primaryIssueIds": ["administrative.act.future-sanction-and-service"],
+    "secondaryIssueIds": ["administrative.act.validity-without-notification"],
+    "subparts": [],
+    "lawVersionNote": "應依民國 108 年命題時道路交通管理處罰條例第 65 條及其後修法複核。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-108-essay-02": {
+    "gist": "考查警專公費與服務義務約定是否為行政契約，以及延後一年通過特考時違約金或返還公費能否依比例、情事變更等原則酌減。",
+    "primaryIssueIds": ["administrative.contract.public-education-service"],
+    "secondaryIssueIds": ["administrative.contract.liquidated-damages-reduction", "administrative.principle.proportionality"],
+    "subparts": [
+      {"label": "約定的法律性質", "issueIds": ["administrative.contract.public-education-service"]},
+      {"label": "賠償範圍酌減", "issueIds": ["administrative.contract.liquidated-damages-reduction", "administrative.principle.proportionality"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-108-essay-03": {
+    "gist": "考查行政契約公證書誤由民事執行後所發債權憑證的效力、行政執行名義選擇，以及公法請求權時效是否得由執行法院審查。",
+    "primaryIssueIds": ["administrative.enforcement.administrative-contract-title"],
+    "secondaryIssueIds": ["administrative.enforcement.wrong-jurisdiction-certificate", "administrative.claim.limitation-enforcement"],
+    "subparts": [
+      {"label": "民事債權憑證的處理", "issueIds": ["administrative.enforcement.wrong-jurisdiction-certificate"]},
+      {"label": "正確執行名義", "issueIds": ["administrative.enforcement.administrative-contract-title"]},
+      {"label": "時效抗辯與執行法院審查", "issueIds": ["administrative.claim.limitation-enforcement"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-108-essay-04": {
+    "gist": "考查不作為訴願進行中原機關作成處分後，訴願標的如何轉換，以及訴願人仍不服時能否逕以無理由駁回。",
+    "primaryIssueIds": ["administrative.appeal.inaction-later-disposition"],
+    "secondaryIssueIds": ["administrative.appeal.object-conversion"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-109-essay-01": {
+    "gist": "考查機關對陞任建議予以緩議的函文是否為行政處分，以及取得任用資格者有無請求陞任的主觀公權利。",
+    "primaryIssueIds": ["administrative.civil-service.promotion-no-claim"],
+    "secondaryIssueIds": ["administrative.act.internal-preparatory-measure", "administrative.remedy.civil-service-review"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-109-essay-02": {
+    "gist": "考查法官遭口頭命令促其注意之職務監督處分，其法律性質、專屬救濟途徑及法院對法官倫理判斷的審查。",
+    "primaryIssueIds": ["administrative.judge.supervision-remedy"],
+    "secondaryIssueIds": ["administrative.special-status.judicial-office", "administrative.discretion.ethics-review"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-109-essay-03": {
+    "gist": "考查主管機關依個資法授權訂定安全維護計畫辦法的法規命令性質、授權意涵及對外效力。",
+    "primaryIssueIds": ["administrative.rule.delegated-regulation"],
+    "secondaryIssueIds": ["administrative.rule.authorization-scope"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-109-essay-04": {
+    "gist": "考查銓敘部解釋公務員兼職與支薪規定之函釋，屬行政規則或解釋性規定，以及對機關、法院與人民的效力。",
+    "primaryIssueIds": ["administrative.rule.interpretive-rule"],
+    "secondaryIssueIds": ["administrative.rule.court-nonbinding"],
+    "subparts": [],
+    "lawVersionNote": "公務員服務法已於民國 111 年修正，整理時須區分 108 年函釋所依舊法與現行規定。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-110-essay-01": {
+    "gist": "考查公務人員年終考績通知是否為行政處分，以及不服乙等考績應循復審、行政訴訟或申訴再申訴。",
+    "primaryIssueIds": ["administrative.civil-service.performance-rating-remedy"],
+    "secondaryIssueIds": ["administrative.act.performance-rating"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-110-essay-02": {
+    "gist": "考查撤銷低收入戶授益處分後溢領生活扶助金的公法上返還請求，應以書面行政處分確定並如何移送行政執行。",
+    "primaryIssueIds": ["administrative.restitution.unlawful-benefit"],
+    "secondaryIssueIds": ["administrative.enforcement.monetary-obligation", "administrative.act.revoke-benefit"],
+    "subparts": [
+      {"label": "溢領款返還請求", "issueIds": ["administrative.restitution.unlawful-benefit"]},
+      {"label": "拒不返還之執行", "issueIds": ["administrative.enforcement.monetary-obligation"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-110-essay-03": {
+    "gist": "考查違法授益建築執照的撤銷，須衡量信賴保護、公益、撤銷期間與損失補償。",
+    "primaryIssueIds": ["administrative.act.revoke-benefit-legitimate-expectation"],
+    "secondaryIssueIds": ["administrative.act.revocation-period", "administrative.compensation.reliance-loss"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-110-essay-04": {
+    "gist": "考查釋字第 443 號的層級化法律保留，並比較口罩義務的基本權限制與三倍券給付行政是否都須法律依據。",
+    "primaryIssueIds": ["administrative.legality.tiered-reservation"],
+    "secondaryIssueIds": ["administrative.legality.restrictive-vs-benefit"],
+    "subparts": [
+      {"label": "口罩義務", "issueIds": ["administrative.legality.tiered-reservation"]},
+      {"label": "三倍券給付", "issueIds": ["administrative.legality.restrictive-vs-benefit"]}
+    ],
+    "lawVersionNote": "題目以 COVID-19 時期措施及當時法源為背景，後續疫情法制不應回溯替代命題時判斷。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-111-essay-01": {
+    "gist": "考查送達處所實際無應受送達人時，不能向不相識者補充送達，機關應查明處所、改採其他送達方式或退回。",
+    "primaryIssueIds": ["administrative.procedure.service-wrong-address"],
+    "secondaryIssueIds": ["administrative.procedure.supplementary-service"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-111-essay-02": {
+    "gist": "考查設置單行道的交通管制措施是否為一般處分，以及居民是否具權利保護必要、訴訟權能與撤銷救濟。",
+    "primaryIssueIds": ["administrative.act.traffic-general-disposition"],
+    "secondaryIssueIds": ["administrative.litigation.standing-general-disposition"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-111-essay-03": {
+    "gist": "考查受委託行使公權力的私人及其員工造成車損時，是否視為公務員行為而成立國家賠償。",
+    "primaryIssueIds": ["administrative.state-liability.delegated-private-actor"],
+    "secondaryIssueIds": ["administrative.delegation.public-authority"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-111-essay-04": {
+    "gist": "考查公務員免職須受嚴格法律保留，法律授權命令訂定免職要件時的授權明確性與法律明確性要求。",
+    "primaryIssueIds": ["administrative.legality.strict-reservation-dismissal"],
+    "secondaryIssueIds": ["administrative.legality.authorization-clarity", "administrative.legality.norm-clarity"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-112-essay-01": {
+    "gist": "考查大學教師升等不通過程序中，教評會是否負說明理由義務，以及申請人閱覽評議資料與會議紀錄的程序權。",
+    "primaryIssueIds": ["administrative.university.promotion-reasons"],
+    "secondaryIssueIds": ["administrative.procedure.file-access", "administrative.procedure.reason-giving"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-112-essay-02": {
+    "gist": "考查大學性平會調查報告的專業判斷是否具有判斷餘地，以及行政法院能否重新調查並推翻事實認定。",
+    "primaryIssueIds": ["administrative.discretion.expert-factfinding-review"],
+    "secondaryIssueIds": ["administrative.university.gender-equity-decision"],
+    "subparts": [],
+    "lawVersionNote": "題目附錄引用民國 105 至 106 年教師法，應與現行教師法及性別平等教育法分開標示。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-112-essay-03": {
+    "gist": "考查警察機關限制員警報考全時進修，是管理措施或行政處分，以及經申訴再申訴後提確認訴訟是否適法。",
+    "primaryIssueIds": ["administrative.civil-service.management-measure"],
+    "secondaryIssueIds": ["administrative.litigation.confirmation-subsidiarity", "administrative.remedy.complaint-recomplaint"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-112-essay-04": {
+    "gist": "考查私立學校遭命解散後聲請停止執行，如何衡量難以回復損害、急迫情形、公益與本案勝訴可能。",
+    "primaryIssueIds": ["administrative.litigation.stay-of-execution"],
+    "secondaryIssueIds": ["administrative.education.private-school-dissolution"],
+    "subparts": [],
+    "lawVersionNote": "應依題附私立學校法第 70 至 72 條與民國 112 年行政訴訟程序判斷。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-113-essay-01": {
+    "gist": "考查建照附加污水處理設備及捐款要求的附款類型、法律依據、目的關聯與不當聯結禁止。",
+    "primaryIssueIds": ["administrative.act.incidental-provision"],
+    "secondaryIssueIds": ["administrative.principle.improper-connection", "administrative.act.condition-vs-burden"],
+    "subparts": [
+      {"label": "污水設備要求", "issueIds": ["administrative.act.incidental-provision", "administrative.act.condition-vs-burden"]},
+      {"label": "捐贈文化基金要求", "issueIds": ["administrative.principle.improper-connection"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-113-essay-02": {
+    "gist": "考查主管機關對仲介超收費用裁處最高倍數罰鍰時，處分理由明確性、裁罰基準、裁量怠惰與比例原則。",
+    "primaryIssueIds": ["administrative.penalty.discretion-guideline"],
+    "secondaryIssueIds": ["administrative.procedure.reason-giving", "administrative.discretion.abuse-and-proportionality"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-113-essay-03": {
+    "gist": "考查行政法上行為或不行為義務的間接與直接強制手段，包括怠金、代履行、直接強制及即時強制的順序與要件。",
+    "primaryIssueIds": ["administrative.enforcement.nonmonetary-obligation"],
+    "secondaryIssueIds": ["administrative.enforcement.indirect-and-direct-means"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-113-essay-04": {
+    "gist": "考查自然環境步道與攔砂壩是否屬公有公共設施、管理欠缺、主管機關歸屬，以及被害人自陷風險對國賠責任的影響。",
+    "primaryIssueIds": ["administrative.state-liability.public-facility"],
+    "secondaryIssueIds": ["administrative.state-liability.natural-environment", "administrative.state-liability.victim-fault"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-114-essay-01": {
+    "gist": "考查性平會事實認定的判斷餘地、教評會選擇停聘期間的裁量，以及行政法院對事實與法律效果的審查密度。",
+    "primaryIssueIds": ["administrative.discretion.expert-factfinding-review"],
+    "secondaryIssueIds": ["administrative.discretion.sanction-selection", "administrative.university.gender-equity-decision"],
+    "subparts": [
+      {"label": "性平會調查認定", "issueIds": ["administrative.discretion.expert-factfinding-review"]},
+      {"label": "教評會停聘決定", "issueIds": ["administrative.discretion.sanction-selection"]},
+      {"label": "行政法院審查", "issueIds": ["administrative.discretion.expert-factfinding-review", "administrative.discretion.sanction-selection"]}
+    ],
+    "lawVersionNote": "應依民國 114 年性別平等教育法第 41 條及教師法制度複核。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-114-essay-02": {
+    "gist": "考查移民署先誤解禁止出境要件、後於機場依法阻止出境時，違法不作為、人民信賴與國家賠償因果關係。",
+    "primaryIssueIds": ["administrative.state-liability.unlawful-omission"],
+    "secondaryIssueIds": ["administrative.principle.legitimate-expectation-illegal-benefit", "administrative.state-liability.causation"],
+    "subparts": [],
+    "lawVersionNote": "禁止出境的法源與認定標準可能修正，應以民國 114 年命題時規範複核。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-114-essay-03": {
+    "gist": "考查民眾申請使用公共圖書館拍攝的法律關係、館方拍攝須知的性質與法律保留，以及命停止使用的合法性。",
+    "primaryIssueIds": ["administrative.public-property.special-use"],
+    "secondaryIssueIds": ["administrative.rule.facility-use-rule", "administrative.legality.public-facility-restriction"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-administrative-law-114-essay-04": {
+    "gist": "考查政治受難者已繳納罰金是否屬國家不法行為造成的財產所有權剝奪、家屬能否申請回復及駁回後的行政救濟。",
+    "primaryIssueIds": ["administrative.transitional-justice.fine-restitution"],
+    "secondaryIssueIds": ["administrative.remedy.foundation-decision", "administrative.claim.successor-standing"],
+    "subparts": [],
+    "lawVersionNote": "屬轉型正義特別法制，應依民國 114 年命題時促進轉型正義條例與權利回復條例核對。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "clerk-civil-procedure-105-essay-01": {
+    "gist": "考查當事人委任訴訟代理人後判決同時送達本人與代理人時，上訴期間應自何次送達起算。",
+    "primaryIssueIds": ["civil-procedure.service.agent-and-party"],
+    "secondaryIssueIds": ["civil-procedure.appeal.deadline-start"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-105-essay-02": {
+    "gist": "考查原告在借款請求外追加不當得利備位請求，是否屬合法訴之追加、是否須被告同意及法院審理順序。",
+    "primaryIssueIds": ["civil-procedure.claim.amendment-alternative-claim"],
+    "secondaryIssueIds": ["civil-procedure.claim.objective-joinder-alternative"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-106-essay-01": {
+    "gist": "考查不動產返還之訴的訴訟標的價額基準時，以及返還房屋與相當租金不當得利是否合併計算價額。",
+    "primaryIssueIds": ["civil-procedure.costs.value-timepoint"],
+    "secondaryIssueIds": ["civil-procedure.costs.aggregate-claims"],
+    "subparts": [
+      {"label": "A 屋訴訟標的價額", "issueIds": ["civil-procedure.costs.value-timepoint"]},
+      {"label": "返還與不當得利價額合併", "issueIds": ["civil-procedure.costs.aggregate-claims"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-106-essay-02": {
+    "gist": "考查不動產物權訴訟聲請訴訟繫屬事實登記的要件，並區分通謀虛偽登記返還與一般買賣移轉請求是否符合。",
+    "primaryIssueIds": ["civil-procedure.registration.lis-pendens"],
+    "secondaryIssueIds": ["civil-procedure.registration.property-right-claim"],
+    "subparts": [
+      {"label": "聲請要件", "issueIds": ["civil-procedure.registration.lis-pendens"]},
+      {"label": "A 地與 B 屋分別處理", "issueIds": ["civil-procedure.registration.property-right-claim"]}
+    ],
+    "lawVersionNote": "訴訟繫屬事實登記制度於民國 106 年施行，應依題示起訴日期及當時條文判斷。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-107-essay-01": {
+    "gist": "考查訴訟代理人進行訴訟上和解所需特別代理權，以及當事人死亡後程序是否因已有代理人而停止與續行。",
+    "primaryIssueIds": ["civil-procedure.agency.special-authority-settlement"],
+    "secondaryIssueIds": ["civil-procedure.suspension.party-death-with-agent"],
+    "subparts": [
+      {"label": "代理訴訟上和解", "issueIds": ["civil-procedure.agency.special-authority-settlement"]},
+      {"label": "當事人死亡後程序", "issueIds": ["civil-procedure.suspension.party-death-with-agent"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-107-essay-02": {
+    "gist": "考查侵權行為之訴的普通與特別審判籍，以及第一審未合法通知被告即一造辯論時，第二審應自行審理或發回。",
+    "primaryIssueIds": ["civil-procedure.jurisdiction.tort-venue"],
+    "secondaryIssueIds": ["civil-procedure.appeal.remand-major-defect", "civil-procedure.hearing.absent-party"],
+    "subparts": [
+      {"label": "桃園地院管轄權", "issueIds": ["civil-procedure.jurisdiction.tort-venue"]},
+      {"label": "未合法通知的一造辯論", "issueIds": ["civil-procedure.hearing.absent-party", "civil-procedure.appeal.remand-major-defect"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-108-essay-01": {
+    "gist": "考查兩造均不到場後逾法定期間未續行所生的視為撤回效果，以及其後再訴是否構成重複起訴。",
+    "primaryIssueIds": ["civil-procedure.termination.deemed-withdrawal-no-show"],
+    "secondaryIssueIds": ["civil-procedure.claim.duplicate-litigation"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-108-essay-02": {
+    "gist": "考查前訴對抵銷抗辯之債權作成實體判斷後，其既判力是否及於抵銷額度並阻止另行起訴。",
+    "primaryIssueIds": ["civil-procedure.res-judicata.setoff-defense"],
+    "secondaryIssueIds": ["civil-procedure.res-judicata.scope"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-109-essay-01": {
+    "gist": "考查被告就原告主張相反的所有權提起確認反訴，是否違反重複起訴禁止及是否具確認利益。",
+    "primaryIssueIds": ["civil-procedure.counterclaim.duplicate-litigation"],
+    "secondaryIssueIds": ["civil-procedure.declaratory-action.interest"],
+    "subparts": [
+      {"label": "反訴與重複起訴", "issueIds": ["civil-procedure.counterclaim.duplicate-litigation"]},
+      {"label": "確認利益", "issueIds": ["civil-procedure.declaratory-action.interest"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-109-essay-02": {
+    "gist": "考查票據印文及簽章真偽的舉證責任，並分析普通共同訴訟中僅一被告上訴的移審與審判範圍。",
+    "primaryIssueIds": ["civil-procedure.evidence.private-document-authenticity"],
+    "secondaryIssueIds": ["civil-procedure.co-litigation.ordinary-appeal-effect"],
+    "subparts": [
+      {"label": "票據簽章舉證責任", "issueIds": ["civil-procedure.evidence.private-document-authenticity"]},
+      {"label": "僅丙上訴的審判範圍", "issueIds": ["civil-procedure.co-litigation.ordinary-appeal-effect"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-110-essay-01": {
+    "gist": "考查共有物裁判分割屬形式形成訴訟時，法院決定分割方法是否受原告本訴與被告反訴聲明拘束。",
+    "primaryIssueIds": ["civil-procedure.partition.noncontentious-formative"],
+    "secondaryIssueIds": ["civil-procedure.disposition-principle.partition"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-110-essay-02": {
+    "gist": "考查預備合併之訴在一造僅就先位或備位判決上訴時，另一請求是否隨同移審及第二審審判範圍。",
+    "primaryIssueIds": ["civil-procedure.claim.alternative-joinder-appeal"],
+    "secondaryIssueIds": ["civil-procedure.appeal.scope-of-transfer"],
+    "subparts": [
+      {"label": "原告就先位敗訴上訴", "issueIds": ["civil-procedure.claim.alternative-joinder-appeal"]},
+      {"label": "被告就備位敗訴上訴", "issueIds": ["civil-procedure.appeal.scope-of-transfer"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-111-essay-01": {
+    "gist": "考查侵權與不當得利競合而以單一聲明起訴時的訴訟標的關係，以及前訴只依其中一請求權勝訴後再訴的既判力與重複起訴效果。",
+    "primaryIssueIds": ["civil-procedure.claim.concurrent-claims"],
+    "secondaryIssueIds": ["civil-procedure.res-judicata.alternative-grounds"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-111-essay-02": {
+    "gist": "考查寄存送達何時生效、上訴期間如何計算，以及第一審法院對逾期上訴應命補正、駁回或送第二審處理。",
+    "primaryIssueIds": ["civil-procedure.service.deposit-effective-date"],
+    "secondaryIssueIds": ["civil-procedure.appeal.late-filing-disposition"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-112-essay-01": {
+    "gist": "考查當事人對不利事實未明確爭執是否構成視同自認，以及準備程序終結後翻異陳述是否因逾時提出而失權。",
+    "primaryIssueIds": ["civil-procedure.evidence.deemed-admission"],
+    "secondaryIssueIds": ["civil-procedure.concentration.late-attack-defense"],
+    "subparts": [],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-112-essay-02": {
+    "gist": "考查婚姻撤銷與離婚預備合併在第二審的移審及裁判方式，並計算上訴撤回後判決確定時點。",
+    "primaryIssueIds": ["civil-procedure.claim.alternative-joinder-appeal"],
+    "secondaryIssueIds": ["civil-procedure.appeal.withdrawal-finality", "civil-procedure.family.marriage-claims"],
+    "subparts": [
+      {"label": "先位上訴與備位判決", "issueIds": ["civil-procedure.claim.alternative-joinder-appeal", "civil-procedure.family.marriage-claims"]},
+      {"label": "撤回上訴與確定時點", "issueIds": ["civil-procedure.appeal.withdrawal-finality"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-113-essay-01": {
+    "gist": "考查公同共有遺產返還訴訟的當事人適格與給付聲明，以及固有必要共同訴訟中一人上訴及撤回的效力。",
+    "primaryIssueIds": ["civil-procedure.co-litigation.inherited-property-standing"],
+    "secondaryIssueIds": ["civil-procedure.co-litigation.necessary-appeal-withdrawal"],
+    "subparts": [
+      {"label": "當事人適格與聲明", "issueIds": ["civil-procedure.co-litigation.inherited-property-standing"]},
+      {"label": "一人上訴及撤回", "issueIds": ["civil-procedure.co-litigation.necessary-appeal-withdrawal"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-113-essay-02": {
+    "gist": "考查第二審中原物滅失後由返還原物變更為損害賠償的訴之變更，以及減縮給付聲明作為一部撤回是否須被告同意。",
+    "primaryIssueIds": ["civil-procedure.claim.second-instance-amendment"],
+    "secondaryIssueIds": ["civil-procedure.claim.reduction-partial-withdrawal", "civil-procedure.appeal.judgment-after-amendment"],
+    "subparts": [
+      {"label": "第二審訴之變更與裁判", "issueIds": ["civil-procedure.claim.second-instance-amendment", "civil-procedure.appeal.judgment-after-amendment"]},
+      {"label": "減縮聲明", "issueIds": ["civil-procedure.claim.reduction-partial-withdrawal"]}
+    ],
+    "lawVersionNote": null,
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-114-essay-01": {
+    "gist": "考查遺產分割事件的管轄、全部遺產一體分割原則，以及法院僅就高雄土地變價分割是否有程序違誤。",
+    "primaryIssueIds": ["civil-procedure.family.inheritance-partition-jurisdiction"],
+    "secondaryIssueIds": ["civil-procedure.partition.entire-estate-principle", "civil-procedure.partition.noncontentious-formative"],
+    "subparts": [],
+    "lawVersionNote": "家事事件管轄與遺產分割程序應依民國 114 年現行家事事件法及實務複核。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  },
+  "clerk-civil-procedure-114-essay-02": {
+    "gist": "考查第二審上訴狀只具上訴聲明而未記載上訴理由時，法院應命補正、行準備程序並依逾期補正效果處理。",
+    "primaryIssueIds": ["civil-procedure.appeal.statement-of-reasons"],
+    "secondaryIssueIds": ["civil-procedure.appeal.cure-defect"],
+    "subparts": [],
+    "lawVersionNote": "第二審上訴理由強制記載及補正制度曾修法，應依民國 114 年條文與施行日期複核。",
+    "confidence": "medium",
+    "reviewStatus": "draft",
+    "references": []
+  }
+}
