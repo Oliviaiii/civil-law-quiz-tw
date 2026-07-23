@@ -378,7 +378,7 @@ export default function Home() {
   function openQuestionInPractice(question: Question) {
     setSelectedSubjects([question.subject]);
     setSelectedCorpora([]);
-    setFormatFilter("選擇題");
+    setFormatFilter(question.format === "申論題" ? "申論題" : "選擇題");
     setSelectedYears([]);
     setSelectedCategories([]);
     setScope("all");
@@ -798,6 +798,7 @@ export default function Home() {
                   total={visibleQuestions.length}
                   previousAnswer={progress.answers[currentQuestion.id]}
                   relatedQuestions={currentRelatedQuestions}
+                  availableQuestions={questions}
                   shuffleOptions={preferences.shuffleOptions ?? false}
                   flags={progress.flags[currentQuestion.id]}
                   onChoose={chooseAnswer}

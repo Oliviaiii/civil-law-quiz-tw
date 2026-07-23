@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { openApp, readPosition, toggleFilterOptions } from "./helpers";
+import { appUrl, openApp, readPosition, toggleFilterOptions } from "./helpers";
 
 test("手機版主要操作流程：作答、換題、篩選與清除", async ({ page }) => {
   await openApp(page);
@@ -108,6 +108,41 @@ test("手機版底部整合收藏、不確定與題目切換", async ({ page }) 
   await expect(starred).toHaveAttribute("aria-pressed", "true");
   await expect(uncertain).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(".question-tools")).toBeHidden();
+});
+
+test("手機深色模式：申論主要按鈕與考點入口維持足夠對比", async ({ page }) => {
+  await page.goto(appUrl("#q=judicial-fourth-105-essay-02"));
+  await page.waitForSelector('html[data-app-ready="true"]');
+  await page.getByRole("button", { name: "切換深淺色主題" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+
+  const firstIssue = page.locator(".essay-issue-actions button").first();
+  await firstIssue.click();
+  await expect(firstIssue).toHaveClass(/active/);
+
+  const ratios = await page.locator(
+    ".essay-callout button, .essay-save, .essay-issue-actions button.active, .question-quick-nav .next-button",
+  ).evaluateAll((buttons) => {
+    function channel(value: number) {
+      const normalized = value / 255;
+      return normalized <= 0.04045
+        ? normalized / 12.92
+        : ((normalized + 0.055) / 1.055) ** 2.4;
+    }
+    function luminance(color: string) {
+      const values = color.match(/\d+(?:\.\d+)?/g)?.slice(0, 3).map(Number) ?? [0, 0, 0];
+      return 0.2126 * channel(values[0]) + 0.7152 * channel(values[1]) + 0.0722 * channel(values[2]);
+    }
+    return buttons.map((button) => {
+      const style = getComputedStyle(button);
+      const foreground = luminance(style.color);
+      const background = luminance(style.backgroundColor);
+      return (Math.max(foreground, background) + 0.05) / (Math.min(foreground, background) + 0.05);
+    });
+  });
+
+  expect(ratios).toHaveLength(4);
+  for (const ratio of ratios) expect(ratio).toBeGreaterThanOrEqual(4.5);
 });
 
 test("手機版展開篩選：下拉複選選單不被裁切、選項可點", async ({ page }) => {

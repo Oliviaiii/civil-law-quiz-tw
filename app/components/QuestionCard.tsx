@@ -5,6 +5,7 @@ import type { Question } from "../data/questions";
 import { identityOrder, shuffledOptionOrder } from "../lib/option-order";
 import type { EssayPracticeState, ProgressData, QuestionFlags } from "../lib/progress-store";
 import { buildIssueUrl } from "../lib/report-issue";
+import { EssayIssuePanel } from "./EssayIssuePanel";
 import { EssayPracticePanel } from "./EssayPracticePanel";
 import { QuestionAnalysis } from "./QuestionAnalysis";
 
@@ -25,6 +26,7 @@ export function QuestionCard({
   total,
   previousAnswer,
   relatedQuestions,
+  availableQuestions = [],
   shuffleOptions = false,
   flags,
   onChoose,
@@ -41,6 +43,7 @@ export function QuestionCard({
   total: number;
   previousAnswer?: ProgressData["answers"][string];
   relatedQuestions?: Question[];
+  availableQuestions?: Question[];
   shuffleOptions?: boolean;
   flags?: QuestionFlags;
   onChoose: (index: number) => void;
@@ -185,6 +188,11 @@ export function QuestionCard({
       {isEssay ? (
         <>
           <p className="instruction">申論題依原始試卷完整收錄；考選部未提供官方擬答。</p>
+          <EssayIssuePanel
+            question={question}
+            availableQuestions={availableQuestions}
+            onOpenQuestion={onOpenRelated}
+          />
           <div className="essay-callout">
             <div>
               <strong>{previousAnswer ? "已標記閱讀" : "讀完後可標記進度"}</strong>

@@ -29,6 +29,8 @@
   --red-text: #8d301e;
   --warn-bg: #fff1d9;
   --warn-text: #92621f;
+  --action-accent: #c3482d;
+  --action-green: #397060;
 }
 
 /* 深色主題：預設跟隨系統（prefers-color-scheme），
@@ -61,6 +63,8 @@
   --red-text: #f0a894;
   --warn-bg: #3d3117;
   --warn-text: #e3b969;
+  --action-accent: #c3482d;
+  --action-green: #397060;
   color-scheme: dark;
 }
 
@@ -93,6 +97,8 @@
     --red-text: #f0a894;
     --warn-bg: #3d3117;
     --warn-text: #e3b969;
+    --action-accent: #c3482d;
+    --action-green: #397060;
     color-scheme: dark;
   }
 }
@@ -193,7 +199,7 @@ button { color: inherit; }
 }
 .nav-item:hover { background: var(--hover-bg); }
 .nav-item > span { font-family: Georgia, serif; font-size: 11px; color: var(--muted); }
-.nav-item b { margin-left: auto; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 12px; background: var(--accent); color: white; display: grid; place-items: center; font-size: 11px; }
+.nav-item b { margin-left: auto; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 12px; background: var(--action-accent); color: white; display: grid; place-items: center; font-size: 11px; }
 .nav-item.active { background: var(--surface); color: var(--ink); font-weight: 700; box-shadow: 0 7px 24px rgba(64, 54, 40, .06); }
 .nav-item.active > span { color: var(--accent); }
 
@@ -296,7 +302,7 @@ button { color: inherit; }
 .option.correct { opacity: 1; border-color: var(--green); background: var(--green-soft); color: var(--green-text); }
 .option.correct .option-letter { border-color: var(--green); background: var(--green); color: white; }
 .option.wrong { opacity: 1; border-color: var(--accent); background: var(--red-soft); color: var(--red-text); }
-.option.wrong .option-letter { border-color: var(--accent); background: var(--accent); color: white; }
+.option.wrong .option-letter { border-color: var(--action-accent); background: var(--action-accent); color: white; }
 
 .answer-hint { margin: 22px 28px 2px; padding: 13px 15px; border-left: 2px solid var(--border-strong); background: var(--surface-alt); color: var(--muted); font-size: 12px; }
 .answer-hint span { color: var(--ink); font-weight: 800; margin-right: 10px; }
@@ -358,11 +364,118 @@ button { color: inherit; }
 .question-footer button, .empty-state button, .data-actions button { padding: 9px 16px; border: 1px solid var(--line); border-radius: 6px; background: transparent; cursor: pointer; font-size: 12px; }
 .question-footer .next-button { background: var(--ink); border-color: var(--ink); color: var(--surface); }
 
+.essay-issues {
+  margin: 24px 28px 30px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  background: var(--surface-alt);
+}
+.essay-issues.loading { color: var(--muted); font-size: 12px; }
+.essay-issues.loading p { margin: 0; }
+.essay-issues-heading, .essay-issue-detail-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.essay-issues-heading h3, .essay-issue-detail-heading h4 {
+  margin: 0;
+  font-family: "Noto Serif TC", "PMingLiU", serif;
+}
+.essay-issues-heading h3 { font-size: 21px; }
+.essay-review-badge {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--warn-text) 55%, transparent);
+  border-radius: 999px;
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  font-size: 10px;
+  font-weight: 800;
+}
+.essay-gist { margin: 13px 0 0; color: var(--ink); font-size: 14px; line-height: 1.85; }
+.essay-law-version {
+  margin: 14px 0 0;
+  padding: 11px 13px;
+  display: grid;
+  gap: 3px;
+  border: 1px solid color-mix(in srgb, var(--warn-text) 40%, var(--line));
+  border-radius: 7px;
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  font-size: 12px;
+}
+.essay-issue-actions { margin-top: 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.essay-issue-actions button {
+  min-width: 0;
+  padding: 12px 13px;
+  display: grid;
+  gap: 2px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.essay-issue-actions button:hover { border-color: var(--accent); background: var(--hover-bg); }
+.essay-issue-actions button:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 42%, transparent); outline-offset: 2px; }
+.essay-issue-actions button.active {
+  border-color: var(--action-accent);
+  background: var(--action-accent);
+  color: white;
+}
+.essay-issue-actions button > span { font-size: 10px; font-weight: 800; letter-spacing: .06em; }
+.essay-issue-actions button > strong { overflow: hidden; text-overflow: ellipsis; font-size: 13px; white-space: nowrap; }
+.essay-issue-actions button > small { color: var(--muted); font-size: 10px; }
+.essay-issue-actions button.active > small { color: rgba(255, 255, 255, .86); }
+.essay-issue-detail {
+  margin-top: 16px;
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+}
+.essay-issue-detail-heading span { color: var(--accent-dark); font-size: 10px; font-weight: 800; }
+.essay-issue-detail-heading h4 { margin-top: 2px; font-size: 17px; }
+.essay-issue-detail-heading code {
+  max-width: 50%;
+  padding: 4px 7px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--inset-bg);
+  color: var(--muted);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.essay-issue-detail > p { margin: 10px 0 0; color: var(--muted); font-size: 11px; }
+.essay-issue-detail ul { margin: 13px 0 0; padding: 0; display: grid; gap: 8px; list-style: none; }
+.essay-issue-detail li { padding: 11px 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-alt); }
+.essay-issue-detail li.current { border-left: 3px solid var(--accent); }
+.essay-issue-detail li > div, .essay-issue-detail li > button {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+}
+.essay-issue-detail li > button { cursor: pointer; }
+.essay-issue-detail li > button strong { color: var(--accent-dark); }
+.essay-issue-detail li span { color: var(--muted); font-size: 10px; }
+.essay-issue-detail li p { margin: 5px 0 0; color: var(--text-soft); font-size: 11px; line-height: 1.7; }
+.essay-issue-detail .essay-issue-disclaimer { padding-top: 11px; border-top: 1px solid var(--line); }
+
 .essay-callout, .official-answer-note { margin: 24px 28px 30px; padding: 20px; border: 1px solid var(--line); background: var(--surface-alt); }
 .essay-callout { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .essay-callout strong { font-family: "Noto Serif TC", "PMingLiU", serif; }
 .essay-callout p, .official-answer-note > p { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
-.essay-callout button { flex: 0 0 auto; padding: 9px 14px; border: 1px solid var(--ink); border-radius: 6px; background: var(--ink); color: white; cursor: pointer; font-size: 12px; }
+.essay-callout button { flex: 0 0 auto; padding: 9px 14px; border: 1px solid var(--ink); border-radius: 6px; background: var(--ink); color: var(--surface); cursor: pointer; font-size: 12px; font-weight: 800; }
 .official-answer-note h3 { margin: 0; font-family: "Noto Serif TC", "PMingLiU", serif; font-size: 19px; }
 .official-answer-note > div { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
 .official-answer-note a { color: var(--accent-dark); font-size: 12px; font-weight: 800; text-decoration: none; }
@@ -371,7 +484,7 @@ button { color: inherit; }
 .empty-state > span { width: 52px; height: 52px; display: grid; place-items: center; margin: auto; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 24px; }
 .empty-state h2 { margin-bottom: 4px; font-family: "Noto Serif TC", "PMingLiU", serif; }
 .empty-state p { color: var(--muted); font-size: 13px; }
-.empty-state button { margin-top: 12px; background: var(--ink); color: white; }
+.empty-state button { margin-top: 12px; background: var(--ink); color: var(--surface); }
 
 .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
 .stat-grid > div { min-height: 130px; padding: 22px; border: 1px solid var(--line); background: var(--surface); }
@@ -389,7 +502,7 @@ button { color: inherit; }
 .data-card > div:first-child { max-width: 600px; }
 .data-card p:last-child { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
 .data-actions { min-width: 280px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.data-actions .primary-action { background: var(--ink); border-color: var(--ink); color: white; }
+.data-actions .primary-action { background: var(--ink); border-color: var(--ink); color: var(--surface); }
 .data-actions .danger-action { grid-column: 1 / -1; color: #9d3d2a; border-color: #e3c9c2; }
 
 .toast { position: fixed; right: 25px; bottom: 25px; z-index: 30; padding: 13px 16px; border: 0; border-radius: 5px; background: var(--navy); color: white; box-shadow: 0 10px 32px rgba(30, 40, 48, .25); font-size: 12px; cursor: pointer; }
@@ -544,7 +657,10 @@ button { color: inherit; }
   .option { grid-template-columns: 32px 1fr; }
   .option b { grid-column: 2; }
   .answer-hint, .issue-box, .trap-note, .statutes { margin-left: 18px; margin-right: 18px; }
-  .essay-callout, .official-answer-note { margin-left: 18px; margin-right: 18px; }
+  .essay-issues, .essay-callout, .official-answer-note { margin-left: 18px; margin-right: 18px; }
+  .essay-issue-actions { grid-template-columns: 1fr; }
+  .essay-issue-detail-heading { display: grid; }
+  .essay-issue-detail-heading code { max-width: 100%; }
   .essay-callout { align-items: stretch; flex-direction: column; }
   .reasoning-grid { padding-left: 18px; padding-right: 18px; }
   .english-analysis-grid { padding-left: 18px; padding-right: 18px; }
@@ -707,7 +823,7 @@ button { color: inherit; }
 }
 .resume-banner button:first-child {
   border: 0;
-  background: var(--green);
+  background: var(--action-green);
   color: white;
 }
 
@@ -764,7 +880,7 @@ button { color: inherit; }
   margin-top: 8px;
   border: 0;
   border-radius: 8px;
-  background: var(--accent);
+  background: var(--action-accent);
   color: white;
   padding: 7px 16px;
   cursor: pointer;
@@ -797,8 +913,8 @@ button { color: inherit; }
   color: white;
   font-size: 14px;
 }
-.grade-forgot { background: var(--accent); }
-.grade-remembered { background: var(--green); }
+.grade-forgot { background: var(--action-accent); }
+.grade-remembered { background: var(--action-green); }
 
 /* 主題切換 */
 .topbar-right { display: flex; align-items: center; gap: 16px; }
@@ -943,7 +1059,7 @@ button { color: inherit; }
   justify-self: start;
   border: 0;
   border-radius: 8px;
-  background: var(--accent);
+  background: var(--action-accent);
   color: white;
   padding: 9px 22px;
   cursor: pointer;
@@ -1021,7 +1137,7 @@ button { color: inherit; }
 .mock-session-stats button {
   border: 0;
   border-radius: 8px;
-  background: var(--accent);
+  background: var(--action-accent);
   color: white;
   padding: 7px 18px;
   cursor: pointer;
@@ -1114,7 +1230,7 @@ button { color: inherit; }
   font-variant-numeric: tabular-nums;
 }
 .law-article-list li > button:hover { background: var(--green-soft); }
-.law-article-list li > button.selected { background: var(--accent); color: white; }
+.law-article-list li > button.selected { background: var(--action-accent); color: white; }
 .law-note { padding: 10px 12px; color: var(--muted); font-size: 13px; margin: 0; }
 
 .law-detail {

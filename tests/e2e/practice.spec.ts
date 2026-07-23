@@ -760,6 +760,28 @@ test("申論題自我練習：草稿、計時與檢核清單", async ({ page }) 
   );
 });
 
+test("申論考點：可展開爭點並跳到同爭點歷屆題目", async ({ page }) => {
+  await page.goto(appUrl("#q=judicial-fourth-105-essay-02"));
+  await page.waitForSelector('html[data-app-ready="true"]');
+
+  const panel = page.locator(".essay-issues");
+  await expect(panel).toBeVisible();
+  await expect(panel).toContainText("考查未成年人侵權、法定代理人責任");
+  await expect(panel).toContainText("尚未人工複核");
+
+  const firstIssue = panel.getByRole("button", { name: /主要爭點 1/ });
+  await firstIssue.click();
+  await expect(firstIssue).toHaveAttribute("aria-expanded", "true");
+
+  const detail = panel.locator(".essay-issue-detail");
+  await expect(detail).toContainText("目前有 2 題使用同一爭點標籤");
+  await expect(detail.getByRole("button", { name: /前往題目.*108 年司法特考四等/ })).toBeVisible();
+
+  await detail.getByRole("button", { name: /前往題目.*108 年司法特考四等/ }).click();
+  await expect(page.locator("article.question-card > h2")).toContainText("某丁騎乘機車欲前往打工場所");
+  await expect(page.locator(".filters select")).toHaveValue("申論題");
+});
+
 test("PWA 離線：已載入內容離線仍可作答", async ({ page, context }) => {
   await openApp(page);
 
