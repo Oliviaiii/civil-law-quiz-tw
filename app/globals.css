@@ -1307,10 +1307,129 @@ button { color: inherit; }
 .law-ranking li > button span { color: var(--accent-dark); font-weight: 700; font-size: 13px; }
 .law-ranking li > button small { color: var(--muted); font-size: 12px; }
 
+/* ---- 申論考點總覽 ---- */
+.essay-overview-note { margin: 0; color: var(--muted); font-size: 13px; }
+.essay-overview .page-heading > div > p:not(.eyebrow) strong { color: var(--accent-dark); }
+.essay-overview-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 26px;
+  margin-bottom: 20px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-alt);
+}
+.essay-overview-field { display: flex; flex-direction: column; gap: 7px; }
+.essay-overview-field-label { color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+.essay-overview-field .segmented { flex-wrap: wrap; }
+.essay-overview-years { display: flex; align-items: center; gap: 8px; }
+.essay-overview-years select {
+  padding: 8px 30px 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--input-bg);
+  color: var(--text-soft);
+  font-size: 13px;
+}
+.essay-overview-years span { color: var(--muted); }
+
+.essay-overview-scope {
+  margin-bottom: 22px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.essay-overview-scope p { margin: 0 0 8px; color: var(--text-soft); font-size: 12px; line-height: 1.8; }
+.essay-overview-scope p:last-child { margin-bottom: 0; }
+.essay-overview-scope strong { color: var(--ink); }
+.essay-overview-scope .essay-overview-disclaimer {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  font-weight: 700;
+}
+
+.essay-ranking {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.essay-ranking > li + li { border-top: 1px solid var(--line); }
+.essay-ranking > li.expanded { background: var(--surface-alt); }
+.essay-ranking-row {
+  display: grid;
+  grid-template-columns: 34px 1fr auto 20px;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 18px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.essay-ranking-row:hover { background: var(--hover-bg); }
+.essay-ranking-row:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 42%, transparent); outline-offset: -3px; }
+.essay-ranking-index { color: var(--muted); font-family: Georgia, serif; font-size: 14px; font-variant-numeric: tabular-nums; }
+.essay-ranking-main { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.essay-ranking-main strong { font-family: "Noto Serif TC", "PMingLiU", serif; font-size: 16px; }
+.essay-ranking-main small { color: var(--muted); font-size: 11px; }
+.essay-ranking-metric { display: flex; flex-direction: column; gap: 2px; text-align: right; }
+.essay-ranking-metric b { color: var(--accent-dark); font-size: 15px; font-variant-numeric: tabular-nums; }
+.essay-ranking-metric small { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.essay-ranking-caret { color: var(--muted); font-size: 12px; }
+
+.essay-ranking-detail { padding: 0 18px 18px; }
+.essay-ranking-detail-summary { margin: 0 0 12px; color: var(--text-soft); font-size: 12px; line-height: 1.8; }
+.essay-ranking-years { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.essay-ranking-year { margin: 0 0 8px; color: var(--accent-dark); font-size: 12px; font-weight: 800; }
+.essay-ranking-years > li > ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.essay-ranking-years li > ul > li {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+}
+.essay-ranking-years li > ul > li > button {
+  width: 100%;
+  padding: 11px 12px;
+  display: block;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.essay-ranking-years li > ul > li > button:hover { background: var(--hover-bg); }
+.essay-ranking-years li > ul > li > button:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 42%, transparent); outline-offset: -3px; }
+.essay-ranking-question-heading { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.essay-ranking-question-heading strong { color: var(--accent-dark); font-size: 12px; }
+.essay-ranking-question-heading span { color: var(--muted); font-size: 10px; }
+.essay-ranking-years li > ul > li p { margin: 5px 0 0; color: var(--text-soft); font-size: 11px; line-height: 1.7; }
+.essay-ranking-detail-note { margin: 14px 0 0; padding-top: 11px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+
 @media (max-width: 620px) {
   .law-layout { grid-template-columns: 1fr; }
   .law-article-list { max-height: 220px; }
   .law-ranking li > button { grid-template-columns: 20px 100px 52px 1fr; }
+  .essay-overview-toolbar { gap: 14px 18px; }
+  .essay-ranking-row {
+    grid-template-columns: 26px 1fr 18px;
+    gap: 8px 10px;
+    align-items: start;
+  }
+  .essay-ranking-metric { grid-column: 2 / 4; text-align: left; }
+  .essay-ranking-metric b { font-size: 14px; }
+  .essay-ranking-caret { grid-row: 1; grid-column: 3; }
 }
 
 @media (prefers-reduced-motion: reduce) {

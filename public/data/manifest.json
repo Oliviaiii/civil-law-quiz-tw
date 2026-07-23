@@ -1,9 +1,13 @@
 {
-  "version": "86d18e9d3082",
+  "version": "26a603b1ba1d",
   "files": {
     "search-index.json": {
       "bytes": 920340,
       "entries": 1090
+    },
+    "essay-issue-stats.json": {
+      "bytes": 107615,
+      "subjects": 5
     }
   }
 }

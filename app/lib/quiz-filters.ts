@@ -2,7 +2,7 @@ import type { Question, Subject } from "../data/questions";
 
 export { questionYears } from "../data/bank-manifest";
 
-export type View = "about" | "practice" | "wrong" | "mock" | "law" | "stats";
+export type View = "about" | "practice" | "wrong" | "mock" | "law" | "essay-map" | "stats";
 export type Scope = "all" | "unanswered" | "wrong" | "due" | "starred" | "uncertain";
 export type Corpus = "司法特考四等";
 export type FormatFilter = "選擇題" | "申論題" | "全部題型";
@@ -42,6 +42,7 @@ export const viewLabels: Record<View, string> = {
   wrong: "錯題本",
   mock: "模擬考",
   law: "法條速查",
+  "essay-map": "申論考點",
   stats: "學習紀錄",
 };
 

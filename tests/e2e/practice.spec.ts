@@ -979,3 +979,42 @@ test("題目亂序：重新洗牌抽出不同順序", async ({ page }) => {
   const secondOrder = await collect(9);
   expect(secondOrder).not.toBe(firstOrder);
 });
+
+test("申論考點總覽：行政法歷屆出題率排行、年度範圍與跳題", async ({ page }) => {
+  await openApp(page);
+  await page.locator(".nav-item", { hasText: "申論考點" }).click();
+  await expect(page.getByRole("heading", { name: "申論考點總覽" })).toBeVisible();
+
+  // 切換到行政法（草稿統計、非預測聲明皆須揭露）
+  await page.getByRole("group", { name: "依科目切換" }).getByRole("button", { name: "行政法", exact: true }).click();
+  await expect(page.getByText("歷屆統計不代表未來命題預測", { exact: false })).toBeVisible();
+  await expect(page.getByText("尚未人工複核", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText(/108–114 年，共 7 個收錄年度、28 題/)).toBeVisible();
+
+  // 行政處分：5／7 年、7／28 題（25%），且揭露分子／分母
+  const actRow = page.locator(".essay-ranking > li", { hasText: "行政處分" });
+  await expect(actRow).toContainText("歷屆出題率 71.4%");
+  await expect(actRow).toContainText("年度覆蓋 5／7 年");
+  await expect(actRow).toContainText("題目 7／28 題（25%）");
+  await expect(actRow).toContainText("最近出題 113 年");
+  // 覆蓋率排序下為第一名
+  await expect(actRow.locator(".essay-ranking-index")).toHaveText("01");
+
+  // 展開後可看到出現年度與該年官方題目，點題目跳回練習模式核對原題
+  await actRow.locator(".essay-ranking-row").click();
+  await expect(actRow).toContainText("108 年（1 題）");
+  await expect(actRow).toContainText("110 年（3 題）");
+  await actRow.locator(".essay-ranking-years button").first().click();
+  await expect(
+    page.locator("article.question-card").getByRole("button", { name: /標記已閱讀|再次標記/ }),
+  ).toBeVisible();
+
+  // 回到總覽並收窄年度範圍：分子／分母隨範圍重算（110–114 → 3／5 年）
+  await page.locator(".nav-item", { hasText: "申論考點" }).click();
+  await page.getByRole("group", { name: "依科目切換" }).getByRole("button", { name: "行政法", exact: true }).click();
+  await page.getByLabel("起始年度").selectOption("110");
+  const narrowedRow = page.locator(".essay-ranking > li", { hasText: "行政處分" });
+  await expect(narrowedRow).toContainText("年度覆蓋 3／5 年");
+  await expect(page.getByText(/110–114 年，共 5 個收錄年度、20 題/)).toBeVisible();
+  await expect(page.getByText("已依選取年度範圍重算分母", { exact: false })).toBeVisible();
+});

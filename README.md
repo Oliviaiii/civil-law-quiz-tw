@@ -42,6 +42,7 @@
 - 法條速查（民法、刑法站內條文＋出題頻率排行＋相關題目）與法條閃卡自測
 - 申論題自我練習（本機草稿、計時器、自我檢核清單；不提供 AI 擬答）
 - 法科申論題顯示本站整理的命題主旨、主要／次要爭點、法規版本提醒；點選爭點可展開同標籤歷屆題目並直接跳題（目前均標示為尚未人工複核）
+- 申論考點總覽：以章節層級呈現已收錄歷屆申論題的「歷屆出題率（年度覆蓋率）」排行、出題題數與題目占比，可依科目與收錄年度範圍篩選、依覆蓋率或題數排序；點考點可展開各年度官方題目並跳回練習。統計卡同時揭露分子／分母、公式與資料範圍，並明確標示為草稿統計、非未來命題預測（統計於瀏覽器端按需載入，不進首頁 bundle）
 - 深色模式（跟隨系統或手動切換）、PWA 離線練習（已載入題目離線可作答）
 - 每題「回報問題」一鍵開啟預填的 GitHub Issue（題庫勘誤）
 - 響應式版面；手機功能收進右側漢堡選單、篩選收合列懸浮於 Header 下方，底部整合收藏／不確定／上下題並在切題後對齊題幹
@@ -97,6 +98,8 @@ GitHub Pages 建置會將該值注入 `NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKE
 - 刑法完整條文索引：`app/data/criminal-code-articles.json`
 - 申論題命題主旨、主次爭點與子題標註：`app/data/essay-issues/*.json`
 - 申論題標註型別與合併入口：`app/data/essay-issues.ts`
+- 申論考點章節層級統計（建置期由標註＋題目資料產生、按需載入）：`public/data/essay-issue-stats.json`
+- 申論考點統計型別、載入與年度範圍重算：`app/lib/essay-stats.ts`；總覽畫面：`app/components/EssayIssueOverview.tsx`
 - 考選部 PDF 匯入器：`scripts/import-moex-judicial-fourth.py`
 - 刑法 PDF 匯入器：`scripts/import-moex-criminal-law.py`
 - 法學知識與英文共用匯入器：`scripts/import-moex-legal-knowledge.py`

@@ -157,9 +157,15 @@ test("keeps questions and local progress behind replaceable data modules", async
     item.id && item.subject && item.subjectLabel && item.prompt && Array.isArray(item.options) && item.source
   ));
   const dataManifest = JSON.parse(dataManifestJson);
-  assert.equal(dataManifest.version, createHash("sha256").update(searchIndexJson).digest("hex").slice(0, 12));
+  // 資料版本同時涵蓋搜尋索引與申論考點統計，任一改變都會觸發 Service Worker 更新舊快取。
+  const essayStatsJson = await readFile(new URL("../public/data/essay-issue-stats.json", import.meta.url), "utf8");
+  assert.equal(
+    dataManifest.version,
+    createHash("sha256").update(searchIndexJson).update(essayStatsJson).digest("hex").slice(0, 12),
+  );
   assert.match(bankManifest, new RegExp(`dataVersion = "${dataManifest.version}"`));
   assert.equal(dataManifest.files["search-index.json"].entries, searchEntries.length);
+  assert.equal(dataManifest.files["essay-issue-stats.json"].subjects, 5);
 
   // PWA：Service Worker cache 名稱帶資料版本 hash、Web App Manifest 完整
   const serviceWorker = await readFile(new URL("../out/sw.js", import.meta.url), "utf8");

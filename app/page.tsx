@@ -2,6 +2,7 @@
 
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 import type { Question } from "./data/questions";
+import { EssayIssueOverview } from "./components/EssayIssueOverview";
 import { ExamCountdownCard } from "./components/ExamCountdownCard";
 import { FiltersBar } from "./components/FiltersBar";
 import { IntroductionView } from "./components/IntroductionView";
@@ -130,7 +131,7 @@ export default function Home() {
     loading: bankLoading,
     error: bankError,
   } = useQuestionBank(
-    view === "stats" || view === "mock"
+    view === "stats" || view === "mock" || view === "essay-map"
       ? []
       : view === "law"
         ? ["civil-law", "criminal-law"]
@@ -385,6 +386,20 @@ export default function Home() {
     setScope("all");
     setReviewingId(null);
     setCurrentId(question.id);
+    setView("practice");
+  }
+
+  // 申論考點總覽跳題：只有 id 與科目，切到該科練習並定位（題庫載入後解析出題目）。
+  function openEssayQuestion(questionId: string, subject: SubjectFilter) {
+    pendingQuestionScrollRef.current = true;
+    setSelectedSubjects([subject]);
+    setSelectedCorpora([]);
+    setFormatFilter("申論題");
+    setSelectedYears([]);
+    setSelectedCategories([]);
+    setScope("all");
+    setReviewingId(null);
+    setCurrentId(questionId);
     setView("practice");
   }
 
@@ -671,6 +686,8 @@ export default function Home() {
               onGradeCard={gradeStatuteCard}
               onOpenQuestion={openQuestionInPractice}
             />
+          ) : view === "essay-map" ? (
+            <EssayIssueOverview onOpenQuestion={openEssayQuestion} />
           ) : view === "practice" && practiceSet ? (
             <PracticeSetSession
               practiceSet={practiceSet}

@@ -1,7 +1,8 @@
 // 由原始題庫 JSON 產生：
 //   1. app/data/bank-manifest.ts —— 首頁 shell 需要的年度清單與題數統計（不含題目內容）
 //   2. public/data/search-index.json —— 全文搜尋用的輕量索引（題幹、選項、科目、來源、年度、題號、法規）
-//   3. public/data/manifest.json —— 資料版本 hash，供 Service Worker 判斷快取失效
+//   3. public/data/essay-issue-stats.json —— 申論考點章節層級歷屆統計（按需載入，不進首頁 bundle）
+//   4. public/data/manifest.json —— 資料版本 hash，供 Service Worker 判斷快取失效
 // 以 npm run build:pages 的 prebuild hook 自動執行。
 import { createHash } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
@@ -189,8 +190,121 @@ await writeFile(
 );
 console.log(`civil chapter tags: ${Object.keys(civilTags).length}/${civilMcqCount} mcq tagged`);
 
+// ---- 申論考點章節層級統計 ----
+// 只做「章節層級」（爭點 ID 第二段）統計，葉節點繁中名稱與真人複核尚未完成前不發布葉節點排行。
+// 統計把已收錄歷屆題目的主要＋次要爭點合併計章，同題同章只計一次、同年多題只計一個出現年度。
+// 分母（收錄年度數、收錄申論題數）由實際題目資料推導，前台可再依選取年度範圍重算。
+const essayTaxonomy = require("../app/data/essay-issues/taxonomy.json");
+const essayAnnotationSources = {
+  civil: require("../app/data/essay-issues/civil-law.json"),
+  criminal: require("../app/data/essay-issues/criminal-law.json"),
+  administrative: require("../app/data/essay-issues/administrative-law.json"),
+  "civil-procedure": require("../app/data/essay-issues/civil-procedure.json"),
+  "criminal-procedure": require("../app/data/essay-issues/criminal-procedure.json"),
+};
+const essayAnnotationByQuestionId = {};
+for (const source of Object.values(essayAnnotationSources)) {
+  for (const [questionId, annotation] of Object.entries(source)) {
+    essayAnnotationByQuestionId[questionId] = annotation;
+  }
+}
+
+// 申論題的科目歸屬（對應統一爭點樹的根鍵）、可跳題的科目篩選鍵、年度與官方題號。
+const essayQuestionMeta = [];
+function pushEssayMeta(record, taxonomyKey, subjectFilter) {
+  if (record.format !== "申論題") return;
+  essayQuestionMeta.push({
+    questionId: record.id,
+    taxonomyKey,
+    subject: subjectFilter,
+    subjectLabel: record.subject,
+    rocYear: record.rocYear,
+    number: record.officialQuestionNumber,
+    sourceUrl: record.sourceUrl,
+    source: `${record.rocYear} 年司法特考四等｜${record.subject}｜申論第 ${record.officialQuestionNumber} 題`,
+  });
+}
+for (const record of civilRecords) pushEssayMeta(record, "civil", "civil-law");
+for (const record of criminalRecords) pushEssayMeta(record, "criminal", "criminal-law");
+for (const record of remainingRecords) {
+  if (record.format !== "申論題") continue;
+  if (record.studySubject === "administrative-law") pushEssayMeta(record, "administrative", "administrative-law");
+  else if (record.studySubject === "civil-procedure") pushEssayMeta(record, "civil-procedure", "civil-procedure");
+  else if (record.studySubject === "criminal-procedure") pushEssayMeta(record, "criminal-procedure", "criminal-procedure");
+  // 國文申論不納入法律爭點統計。
+}
+
+const essaySubjectOrder = ["civil", "criminal", "administrative", "civil-procedure", "criminal-procedure"];
+const essaySubjects = essaySubjectOrder.map((taxonomyKey) => {
+  const subjectMeta = essayTaxonomy.subjects[taxonomyKey];
+  const questions = essayQuestionMeta.filter((question) => question.taxonomyKey === taxonomyKey);
+  const years = [...new Set(questions.map((question) => question.rocYear))].sort((a, b) => a - b);
+  const essayCountsByYear = {};
+  for (const year of years) {
+    essayCountsByYear[year] = questions.filter((question) => question.rocYear === year).length;
+  }
+
+  // chapter -> year -> 題目清單（同題同章只計一次，故以爭點章節去重）。
+  const chapterMap = new Map();
+  for (const question of questions) {
+    const annotation = essayAnnotationByQuestionId[question.questionId];
+    if (!annotation) continue;
+    const primaryChapters = new Set(annotation.primaryIssueIds.map((id) => id.split(".")[1]));
+    const secondaryChapters = new Set(annotation.secondaryIssueIds.map((id) => id.split(".")[1]));
+    for (const chapter of new Set([...primaryChapters, ...secondaryChapters])) {
+      const match = primaryChapters.has(chapter) ? "primary" : "secondary";
+      if (!chapterMap.has(chapter)) chapterMap.set(chapter, new Map());
+      const yearMap = chapterMap.get(chapter);
+      if (!yearMap.has(question.rocYear)) yearMap.set(question.rocYear, []);
+      yearMap.get(question.rocYear).push({
+        id: question.questionId,
+        number: question.number,
+        source: question.source,
+        sourceUrl: question.sourceUrl,
+        gist: annotation.gist,
+        match,
+      });
+    }
+  }
+  const chapters = [...chapterMap.entries()]
+    .map(([chapter, yearMap]) => ({
+      chapter,
+      label: essayTaxonomy.chapters[taxonomyKey]?.[chapter] ?? chapter,
+      questionsByYear: [...yearMap.entries()]
+        .sort(([a], [b]) => a - b)
+        .map(([year, list]) => ({
+          year,
+          questions: list.sort((a, b) => (a.number ?? 0) - (b.number ?? 0)),
+        })),
+    }))
+    .sort((a, b) => a.chapter.localeCompare(b.chapter));
+
+  return {
+    key: taxonomyKey,
+    subject: questions[0]?.subject ?? subjectMeta.subject,
+    label: subjectMeta.label,
+    examLabel: "司法特考四等 法院書記官",
+    years,
+    essayCountsByYear,
+    chapters,
+  };
+});
+
+const essayIssueStats = {
+  version: essayTaxonomy.version,
+  reviewStatus: "draft",
+  note: "歷屆統計不代表未來命題預測；資料為草稿統計，尚未經真人法律複核。",
+  subjects: essaySubjects,
+};
+const essayStatsJson = JSON.stringify(essayIssueStats);
+
 const searchIndexJson = JSON.stringify(searchIndex);
-const dataVersion = createHash("sha256").update(searchIndexJson).digest("hex").slice(0, 12);
+// 資料版本同時涵蓋搜尋索引與申論考點統計，任一資料改變都會觸發 Service Worker 更新舊快取。
+const dataVersion = createHash("sha256")
+  .update(searchIndexJson)
+  .update(essayStatsJson)
+  .digest("hex")
+  .slice(0, 12);
 
 const manifestTs = `// 此檔由 scripts/generate-question-data.mjs 自動產生，請勿手動修改。
 // 提供首頁 shell 在題庫載入前就需要的統計與年度資訊（不含題目內容）。
@@ -207,6 +321,7 @@ export const dataVersion = ${JSON.stringify(dataVersion)};
 await writeFile(new URL("../app/data/bank-manifest.ts", import.meta.url), manifestTs);
 await mkdir(new URL("../public/data", import.meta.url), { recursive: true });
 await writeFile(new URL("../public/data/search-index.json", import.meta.url), searchIndexJson);
+await writeFile(new URL("../public/data/essay-issue-stats.json", import.meta.url), essayStatsJson);
 await writeFile(
   new URL("../public/data/manifest.json", import.meta.url),
   JSON.stringify(
@@ -216,6 +331,10 @@ await writeFile(
         "search-index.json": {
           bytes: Buffer.byteLength(searchIndexJson),
           entries: searchIndex.length,
+        },
+        "essay-issue-stats.json": {
+          bytes: Buffer.byteLength(essayStatsJson),
+          subjects: essaySubjects.length,
         },
       },
     },
@@ -304,5 +423,5 @@ self.addEventListener("fetch", (event) => {
 await writeFile(new URL("../public/sw.js", import.meta.url), serviceWorker);
 
 console.log(
-  `generated bank-manifest.ts + public/data + sw.js (version ${dataVersion}, ${searchIndex.length} search entries) at ${root}`,
+  `generated bank-manifest.ts + public/data + sw.js (version ${dataVersion}, ${searchIndex.length} search entries, ${essaySubjects.length} essay subjects) at ${root}`,
 );

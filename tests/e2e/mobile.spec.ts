@@ -206,3 +206,38 @@ test("手機版展開篩選：點擊題目卡自動收合面板", async ({ page 
   await expect(page.locator(".filters")).toBeHidden();
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
 });
+
+test("手機版申論考點總覽：切換科目、展開考點跳題並支援鍵盤與深色模式", async ({ page }) => {
+  await openApp(page);
+
+  // 由漢堡選單進入申論考點
+  await page.getByRole("button", { name: "開啟主要功能選單" }).click();
+  await page.locator(".nav-item", { hasText: "申論考點" }).click();
+  await expect(page.getByRole("heading", { name: "申論考點總覽" })).toBeVisible();
+  await expect(page.locator(".sidebar")).not.toHaveClass(/menu-open/);
+
+  // 切換行政法，排行不橫向溢出
+  await page.getByRole("group", { name: "依科目切換" }).getByRole("button", { name: "行政法", exact: true }).click();
+  const actRow = page.locator(".essay-ranking > li", { hasText: "行政處分" });
+  await expect(actRow).toContainText("年度覆蓋 5／7 年");
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1,
+  );
+  expect(overflow).toBe(true);
+
+  // 鍵盤操作：聚焦考點列並以 Enter 展開
+  await actRow.locator(".essay-ranking-row").focus();
+  await page.keyboard.press("Enter");
+  await expect(actRow.locator(".essay-ranking-row")).toHaveAttribute("aria-expanded", "true");
+
+  // 深色模式下排行與統計仍可讀
+  await page.getByRole("button", { name: "切換深淺色主題" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(actRow).toContainText("歷屆出題率 71.4%");
+
+  // 點官方題目跳回練習模式核對原題
+  await actRow.locator(".essay-ranking-years button").first().click();
+  await expect(
+    page.locator("article.question-card").getByRole("button", { name: /標記已閱讀|再次標記/ }),
+  ).toBeVisible();
+});
