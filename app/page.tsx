@@ -376,6 +376,7 @@ export default function Home() {
 
   // 回練習模式檢視指定題目（含解析）：供模擬考錯題清單、法條頁與同法條關聯題使用。
   function openQuestionInPractice(question: Question) {
+    pendingQuestionScrollRef.current = true;
     setSelectedSubjects([question.subject]);
     setSelectedCorpora([]);
     setFormatFilter(question.format === "申論題" ? "申論題" : "選擇題");

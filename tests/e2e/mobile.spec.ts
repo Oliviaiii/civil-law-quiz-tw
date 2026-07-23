@@ -145,6 +145,23 @@ test("手機深色模式：申論主要按鈕與考點入口維持足夠對比",
   for (const ratio of ratios) expect(ratio).toBeGreaterThanOrEqual(4.5);
 });
 
+test("手機申論考點：前往相關題目後定位到新題目上方", async ({ page }) => {
+  await page.goto(appUrl("#q=judicial-fourth-114-essay-02"));
+  await page.waitForSelector('html[data-app-ready="true"]');
+
+  const panel = page.locator(".essay-issues");
+  await panel.getByRole("button", { name: /次要爭點 2.*平台責任/ }).click();
+  await panel.getByRole("button", { name: /同類考點・前往題目.*105 年司法特考四等/ }).click();
+
+  await expect(page.locator(".source-line")).toContainText("105 年司法特考四等");
+  await expect.poll(async () => {
+    const top = await page.locator("article.question-card > h2").evaluate((heading) =>
+      Math.round(heading.getBoundingClientRect().top),
+    );
+    return top >= 140 && top <= 152;
+  }).toBe(true);
+});
+
 test("手機版展開篩選：下拉複選選單不被裁切、選項可點", async ({ page }) => {
   await openApp(page);
 
